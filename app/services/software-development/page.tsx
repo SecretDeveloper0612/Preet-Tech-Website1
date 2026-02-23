@@ -69,7 +69,7 @@ const SectionHeader = ({ badge, title, subtitle, centered = true }: { badge: str
         <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className={`text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block`}
+            className={`text-emerald-500 font-black uppercase tracking-[0.4em] mb-4 block`}
         >
             {badge}
         </motion.span>
@@ -77,19 +77,19 @@ const SectionHeader = ({ badge, title, subtitle, centered = true }: { badge: str
             {title}
         </h2>
         {subtitle && <p className={`mt-6 text-slate-500 dark:text-slate-400 text-lg max-w-3xl ${centered ? 'mx-auto' : ''}`}>{subtitle}</p>}
-        {centered && <div className="h-1.5 w-24 bg-brand-cyan mx-auto rounded-full mt-8" />}
+        {centered && <div className="h-1.5 w-24 bg-emerald-500 mx-auto rounded-full mt-8" />}
     </div>
 );
 
 const SoftwareDevelopmentPage = () => {
-    const [theme, setTheme] = useState<Theme>(Theme.DARK);
+    const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
     const [expandedSolution, setExpandedSolution] = useState<number | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // Set dark theme by default as requested "modern dark theme"
-        document.documentElement.classList.add('dark');
-        setTheme(Theme.DARK);
+        // Default to Light theme as requested
+        document.documentElement.classList.remove('dark');
+        setTheme(Theme.LIGHT);
     }, []);
 
     const toggleTheme = () => {
@@ -227,8 +227,8 @@ const SoftwareDevelopmentPage = () => {
             <section className="relative min-h-screen flex items-center pt-32 pb-20 px-6 overflow-hidden">
                 {/* Background Decor */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
-                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-medium/5 dark:bg-brand-medium/10 blur-[150px] rounded-full animate-pulse" />
-                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-cyan/5 dark:bg-brand-cyan/10 blur-[130px] rounded-full animate-pulse delay-700" />
+                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-500/5 dark:bg-emerald-500/10 blur-[150px] rounded-full animate-pulse" />
+                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-400/5 dark:bg-emerald-400/10 blur-[130px] rounded-full animate-pulse delay-700" />
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.2] dark:opacity-[0.1] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]" />
                 </div>
 
@@ -238,15 +238,15 @@ const SoftwareDevelopmentPage = () => {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-medium/10 border border-brand-medium/20 text-brand-cyan text-[10px] font-black uppercase tracking-[0.3em] mb-8"
+                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[10px] font-black uppercase tracking-[0.3em] mb-8"
                         >
-                            <span className="w-2 h-2 rounded-full bg-brand-cyan animate-ping" />
-                            Enterprise Engineering
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                            Eco-Conscious Engineering
                         </motion.div>
 
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-outfit font-black tracking-tighter uppercase leading-[0.9] mb-8 text-slate-900 dark:text-white">
-                            Custom Software <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-medium to-brand-deep italic">Built for Growth.</span>
+                            Sustainable <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-600 to-emerald-800 italic">Growth Engine.</span>
                         </h1>
 
                         <p className="text-xl md:text-2xl text-slate-900 dark:text-white font-bold mb-4">
@@ -281,29 +281,29 @@ const SoftwareDevelopmentPage = () => {
                         <div className="glass-morphism rounded-[3rem] p-8 md:p-10 border border-slate-200 dark:border-white/10 shadow-2xl relative z-10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl">
                             <div className="mb-8">
                                 <h3 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-2">Request Strategy Call</h3>
-                                <p className="text-[10px] font-black text-brand-cyan uppercase tracking-widest">Free Consultation • Zero Obligation</p>
+                                <p className="text-[10px] font-black text-emerald-500 uppercase tracking-widest">Free Consultation • Zero Obligation</p>
                             </div>
 
                             <form className="space-y-4">
                                 <div className="space-y-2">
-                                    <input type="text" placeholder="Full Name" className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 transition-all font-medium" />
+                                    <input type="text" placeholder="Full Name" className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all font-medium" />
                                 </div>
                                 <div className="space-y-2">
-                                    <input type="text" placeholder="Company Name" className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 transition-all font-medium" />
+                                    <input type="text" placeholder="Company Name" className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all font-medium" />
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <input type="email" placeholder="Work Email" className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 transition-all font-medium" />
-                                    <input type="tel" placeholder="Phone Number" className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 transition-all font-medium" />
+                                    <input type="email" placeholder="Work Email" className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all font-medium" />
+                                    <input type="tel" placeholder="Phone Number" className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all font-medium" />
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <select className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-500 dark:text-slate-400 appearance-none focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 cursor-pointer">
+                                    <select className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-500 dark:text-slate-400 appearance-none focus:outline-none focus:ring-2 focus:ring-emerald-500/50 cursor-pointer">
                                         <option value="">Company Size</option>
                                         <option value="1-10">1-10 Employees</option>
                                         <option value="11-50">11-50 Employees</option>
                                         <option value="51-200">51-200 Employees</option>
                                         <option value="201+">201+ Employees</option>
                                     </select>
-                                    <select className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-500 dark:text-slate-400 appearance-none focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 cursor-pointer">
+                                    <select className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-500 dark:text-slate-400 appearance-none focus:outline-none focus:ring-2 focus:ring-emerald-500/50 cursor-pointer">
                                         <option value="">Project Type</option>
                                         <option value="custom">Custom Software</option>
                                         <option value="crm">CRM / ERP</option>
@@ -312,16 +312,16 @@ const SoftwareDevelopmentPage = () => {
                                         <option value="other">Other</option>
                                     </select>
                                 </div>
-                                <select className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-500 dark:text-slate-400 appearance-none focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 cursor-pointer">
+                                <select className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-500 dark:text-slate-400 appearance-none focus:outline-none focus:ring-2 focus:ring-emerald-500/50 cursor-pointer">
                                     <option value="">Estimated Budget</option>
                                     <option value="15-25k">$15,000 - $25,000</option>
                                     <option value="25-50k">$25,000 - $50,000</option>
                                     <option value="50-100k">$50,000 - $100,000</option>
                                     <option value="100k+">$100,000+</option>
                                 </select>
-                                <textarea placeholder="Project Description" rows={3} className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 transition-all font-medium resize-none"></textarea>
+                                <textarea placeholder="Project Description" rows={3} className="w-full bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all font-medium resize-none"></textarea>
 
-                                <button type="submit" className="w-full group bg-brand-cyan hover:bg-slate-900 dark:hover:bg-white text-brand-deep dark:hover:text-brand-deep rounded-2xl py-5 font-black text-xs uppercase tracking-[0.2em] transition-all shadow-xl shadow-brand-cyan/20 flex items-center justify-center gap-2">
+                                <button type="submit" className="w-full group bg-emerald-500 hover:bg-slate-900 dark:hover:bg-white text-white dark:hover:text-emerald-500 rounded-2xl py-5 font-black text-xs uppercase tracking-[0.2em] transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2">
                                     Request Free Software Strategy Call <ArrowRight className="w-4 h-4" />
                                 </button>
                             </form>
@@ -344,10 +344,10 @@ const SoftwareDevelopmentPage = () => {
                             <motion.div
                                 key={i}
                                 whileHover={{ y: -10 }}
-                                className="group p-8 rounded-[2.5rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-white/5 hover:border-brand-cyan/30 transition-all"
+                                className="group p-8 rounded-[2.5rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-white/5 hover:border-emerald-500/30 transition-all"
                             >
-                                <div className="w-14 h-14 rounded-2xl bg-brand-cyan/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <item.icon className="w-7 h-7 text-brand-cyan" />
+                                <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                    <item.icon className="w-7 h-7 text-emerald-500" />
                                 </div>
                                 <h4 className="text-xl font-black uppercase tracking-tight text-slate-900 dark:text-white mb-4 leading-tight">{item.title}</h4>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{item.detail}</p>
@@ -415,12 +415,12 @@ const SoftwareDevelopmentPage = () => {
                                 whileHover={{ scale: 1.02 }}
                                 className="p-10 rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/30 flex flex-col items-start shadow-sm"
                             >
-                                <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 flex items-center justify-center mb-8 text-brand-cyan">
+                                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-8 text-emerald-500">
                                     <item.icon className="w-6 h-6" />
                                 </div>
                                 <h4 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-4">{item.type}</h4>
                                 <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-medium">{item.benefit}</p>
-                                <div className="mt-8 pt-6 border-t border-slate-100 dark:border-white/5 w-full flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan">
+                                <div className="mt-8 pt-6 border-t border-slate-100 dark:border-white/5 w-full flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-emerald-500">
                                     Strategic Growth Solution <ArrowRight className="w-3 h-3 ml-2" />
                                 </div>
                             </motion.div>
@@ -443,11 +443,11 @@ const SoftwareDevelopmentPage = () => {
                             <div key={i} className="group relative">
                                 <button
                                     onClick={() => setExpandedSolution(expandedSolution === i ? null : i)}
-                                    className={`w-full text-left p-8 rounded-3xl border transition-all flex items-start justify-between ${expandedSolution === i ? 'bg-brand-medium border-brand-medium' : 'bg-white/5 border-white/10 hover:border-brand-cyan/50'}`}
+                                    className={`w-full text-left p-8 rounded-3xl border transition-all flex items-start justify-between ${expandedSolution === i ? 'bg-brand-medium border-brand-medium' : 'bg-white/5 border-white/10 hover:border-emerald-500/50'}`}
                                 >
                                     <div>
                                         <h4 className="text-lg font-black uppercase tracking-tight mb-2">{item.title}</h4>
-                                        <div className="text-[10px] font-black uppercase tracking-widest text-brand-cyan mb-0">Business Outcome:</div>
+                                        <div className="text-[10px] font-black uppercase tracking-widest text-emerald-500 mb-0">Business Outcome:</div>
                                         <p className="text-sm font-bold opacity-80">{item.outcome}</p>
                                     </div>
                                     <div className={`mt-1 shrink-0 transition-transform ${expandedSolution === i ? 'rotate-180' : ''}`}>
@@ -490,15 +490,15 @@ const SoftwareDevelopmentPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 relative z-10">
                         {steps.map((step, i) => (
                             <div key={i} className="flex flex-col items-center">
-                                <div className="w-16 h-16 rounded-full bg-white dark:bg-slate-900 border-4 border-brand-cyan flex items-center justify-center mb-8 relative">
-                                    <span className="text-xl font-black text-brand-cyan">{i + 1}</span>
+                                <div className="w-16 h-16 rounded-full bg-white dark:bg-slate-900 border-4 border-emerald-500 flex items-center justify-center mb-8 relative">
+                                    <span className="text-xl font-black text-emerald-500">{i + 1}</span>
                                     {/* Animated pulse for current step (simulated) */}
-                                    {i === 0 && <span className="absolute inset-0 rounded-full bg-brand-cyan animate-ping opacity-20" />}
+                                    {i === 0 && <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-20" />}
                                 </div>
                                 <div className="text-center">
                                     <h4 className="text-xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-2">{step.name}</h4>
                                     <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mb-4">{step.desc}</p>
-                                    <div className="p-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 text-[9px] font-black uppercase tracking-widest text-brand-cyan">
+                                    <div className="p-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 text-[9px] font-black uppercase tracking-widest text-emerald-500">
                                         Deliverable: {step.deliverables}
                                     </div>
                                 </div>
@@ -520,11 +520,11 @@ const SoftwareDevelopmentPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
                         {Object.entries(techStack).map(([category, techs], i) => (
                             <div key={i} className="p-8 rounded-[2.5rem] bg-white/5 border border-white/10">
-                                <h4 className="text-sm font-black uppercase tracking-widest text-brand-cyan mb-8 pb-4 border-b border-white/10">{category}</h4>
+                                <h4 className="text-sm font-black uppercase tracking-widest text-emerald-500 mb-8 pb-4 border-b border-white/10">{category}</h4>
                                 <ul className="space-y-4">
                                     {techs.map((tech, j) => (
                                         <li key={j} className="flex items-center gap-3 text-lg font-bold group">
-                                            <CheckCircle2 className="w-5 h-5 text-brand-cyan/50 group-hover:text-brand-cyan transition-colors" />
+                                            <CheckCircle2 className="w-5 h-5 text-emerald-500/50 group-hover:text-emerald-500 transition-colors" />
                                             {tech}
                                         </li>
                                     ))}
@@ -577,8 +577,8 @@ const SoftwareDevelopmentPage = () => {
                                         </div>
                                     </div>
 
-                                    <div className="mt-8 p-5 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/20">
-                                        <p className="text-[10px] font-black uppercase text-brand-cyan mb-1">Measurable Result</p>
+                                    <div className="mt-8 p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
+                                        <p className="text-[10px] font-black uppercase text-emerald-500 mb-1">Measurable Result</p>
                                         <p className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight">{caseStudy.result}</p>
                                     </div>
                                 </div>
@@ -652,7 +652,7 @@ const SoftwareDevelopmentPage = () => {
 
                     <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-12">
                         Future-Proof Your Business with <br />
-                        <span className="text-brand-cyan italic">Scalable Software</span>
+                        <span className="text-emerald-500 italic">Sustainable Tech</span>
                     </h2>
 
                     <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-16 leading-relaxed">
@@ -660,28 +660,13 @@ const SoftwareDevelopmentPage = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <button className="w-full sm:w-auto px-12 py-6 bg-brand-cyan text-brand-deep rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl shadow-brand-cyan/20">
+                        <button className="w-full sm:w-auto px-12 py-6 bg-emerald-500 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-slate-900 transition-all shadow-xl shadow-emerald-500/20">
                             Start Your Software Project
                         </button>
-                        <button className="w-full sm:w-auto px-12 py-6 bg-white/5 border border-white/20 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-white/10 transition-all">
+                        <button className="w-full sm:w-auto px-12 py-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-emerald-500 transition-all">
                             Talk to Our Experts
                         </button>
                     </div>
-                </div>
-
-                {/* Sticky CTA Button (Visible on scroll) */}
-                <div className="fixed bottom-10 right-10 z-[100] hidden md:block">
-                    <motion.button
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        whileHover={{ scale: 1.1 }}
-                        className="bg-brand-cyan text-brand-deep w-16 h-16 rounded-full flex items-center justify-center shadow-2xl shadow-brand-cyan/50 group"
-                    >
-                        <MessageSquare className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                        <span className="absolute right-full mr-4 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap border border-white/10">
-                            Project Discovery
-                        </span>
-                    </motion.button>
                 </div>
             </section>
 
