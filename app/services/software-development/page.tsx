@@ -42,7 +42,7 @@ import {
     Smartphone,
     Share2,
     HardDrive,
-    Infinity,
+    Infinity as InfinityIcon,
     Key,
     UserCheck,
     Briefcase,
@@ -688,8 +688,8 @@ const SoftwareDevelopmentPage = () => {
 
                         <div className="flex overflow-hidden py-10 rounded-full bg-white/[0.02] border border-white/5">
                             <motion.div
-                                animate={{ x: [0, -1000] }}
-                                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                                animate={{ x: [0, -2000] }}
+                                transition={{ duration: 40, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                                 className="flex flex-nowrap gap-20 items-center justify-around min-w-full shrink-0"
                             >
                                 {marqueeTechs.concat(marqueeTechs).map((tech, i) => (
