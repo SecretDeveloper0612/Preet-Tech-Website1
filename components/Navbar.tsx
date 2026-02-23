@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
     { name: 'About', href: '/about', desc: 'The Preet Edge' },
     { name: 'Services', href: '/services', desc: 'Strategic Multipliers', hasMegaMenu: true },
     { name: 'Case Studies', href: '/#case-studies', desc: 'Measurable Outcomes' },
-    { name: 'Blog', href: '/#insights', desc: 'Digital Logic' },
+    { name: 'Blog', href: '/blog', desc: 'Digital Logic' },
     { name: 'Contact', href: '/contact', desc: 'Start a Journey' },
   ];
 
@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
         { name: 'Website Development', icon: Globe, href: '/services/website-development', detail: 'Eco-Budget & Advance Platforms', longDesc: 'We engineer blazingly fast websites. Choose between our Eco-Budget path for rapid deployment or Advance Websites for custom enterprise features.' },
         { name: 'App Development', icon: Smartphone, href: '/services/app-development', detail: 'Native & Cross-platform reach', longDesc: 'Building high-performance mobile applications with seamless user experiences across iOS and Android ecosystems.' },
         { name: 'Software Development', icon: Cpu, href: '/services/software-development', detail: 'Custom enterprise logic', longDesc: 'Architecting complex software systems tailored to your business operations, ensuring efficiency and long-term scalability.' },
-        { name: 'Tools for Business', icon: Zap, href: '/services/business-tools', detail: 'Internal workflow automation', longDesc: 'Custom internal tools and integrations that automate repetitive tasks and optimize your business intelligence.' },
+        { name: 'Tools for Business', icon: Zap, href: '/services/business-tools', detail: 'Marketplace | Up to 95% Off', longDesc: 'Access high-value premium business software, templates, and digital licenses at unbeatable discounted prices through our exclusive marketplace.' },
       ]
     },
     marketing: {

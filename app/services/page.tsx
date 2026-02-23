@@ -65,10 +65,10 @@ const SERVICE_CATEGORIES = [
                 image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
             },
             {
-                title: "Tools & Automation",
-                description: "Proprietary internal systems and automation tools designed to optimize operations and reduce resource friction using AI and custom logic.",
+                title: "Premium Tools Marketplace",
+                description: "Access high-value enterprise software licenses, templates, and digital tools at up to 95% off. Verified premium access delivered via WhatsApp confirmation.",
                 icon: Cpu,
-                tag: "TOOLS_05",
+                tag: "DEALS_05",
                 color: "from-indigo-600 to-cyan-500",
                 href: "/services/business-tools",
                 image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"

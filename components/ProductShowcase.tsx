@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 
 const PRODUCTS = [
     {
@@ -150,24 +151,32 @@ const ProductShowcase: React.FC = () => {
                         </motion.h2>
                     </div>
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-wrap items-center gap-4">
+                        <Link
+                            href="/services/business-tools"
+                            className="mr-2 px-6 py-3 bg-brand-medium/10 border border-brand-medium/20 text-brand-medium hover:bg-brand-medium hover:text-white rounded-full text-[10px] font-black uppercase tracking-widest transition-all active:scale-95"
+                        >
+                            View More Deals
+                        </Link>
                         <div className="flex items-center gap-3 mr-4">
                             {PRODUCTS.map((_, i) => (
                                 <div key={i} className={`h-1 rounded-full transition-all duration-500 ${currentIndex === i ? 'w-8 bg-brand-medium' : 'w-2 bg-slate-200 dark:bg-white/10'}`} />
                             ))}
                         </div>
-                        <button
-                            onClick={() => scroll('left')}
-                            className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-foreground hover:bg-brand-medium hover:text-white hover:border-brand-medium transition-all active:scale-90"
-                        >
-                            <ChevronLeft className="w-5 h-5" />
-                        </button>
-                        <button
-                            onClick={() => scroll('right')}
-                            className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-foreground hover:bg-brand-medium hover:text-white hover:border-brand-medium transition-all active:scale-90"
-                        >
-                            <ChevronRight className="w-5 h-5" />
-                        </button>
+                        <div className="flex items-center gap-2">
+                            <button
+                                onClick={() => scroll('left')}
+                                className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-foreground hover:bg-brand-medium hover:text-white hover:border-brand-medium transition-all active:scale-90"
+                            >
+                                <ChevronLeft className="w-5 h-5" />
+                            </button>
+                            <button
+                                onClick={() => scroll('right')}
+                                className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-foreground hover:bg-brand-medium hover:text-white hover:border-brand-medium transition-all active:scale-90"
+                            >
+                                <ChevronRight className="w-5 h-5" />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

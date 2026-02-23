@@ -81,7 +81,7 @@ const Navbar = ({ isDark, toggleTheme })=>{
         },
         {
             name: 'Blog',
-            href: '/#insights',
+            href: '/blog',
             desc: 'Digital Logic'
         },
         {
@@ -120,8 +120,8 @@ const Navbar = ({ isDark, toggleTheme })=>{
                     name: 'Tools for Business',
                     icon: __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__["Zap"],
                     href: '/services/business-tools',
-                    detail: 'Internal workflow automation',
-                    longDesc: 'Custom internal tools and integrations that automate repetitive tasks and optimize your business intelligence.'
+                    detail: 'Marketplace | Up to 95% Off',
+                    longDesc: 'Access high-value premium business software, templates, and digital licenses at unbeatable discounted prices through our exclusive marketplace.'
                 }
             ]
         },
