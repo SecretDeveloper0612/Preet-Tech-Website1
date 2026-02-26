@@ -171,7 +171,7 @@ const CaseStudies: React.FC = () => {
                         </button>
                         <button
                             onClick={() => scroll('right')}
-                            className="w-12 h-12 rounded-full bg-foreground text-background flex items-center justify-center hover:bg-brand-medium hover:text-white transition-colors"
+                            className="w-12 h-12 rounded-full bg-brand-medium text-white shadow-lg shadow-brand-medium/20 flex items-center justify-center hover:bg-brand-medium/90 hover:-translate-y-0.5 transition-all"
                         >
                             <ChevronRight className="w-5 h-5" />
                         </button>

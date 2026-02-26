@@ -116,19 +116,39 @@ const SimpleSteps: React.FC = () => {
 
                 {/* Final CTA Visual */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mt-12 md:mt-16 p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5 text-center relative overflow-hidden group"
+                    className="mt-16 md:mt-24 relative rounded-[2rem] md:rounded-[3rem] p-[1px] overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-2xl dark:shadow-brand-medium/5"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-r from-brand-medium/0 via-brand-medium/5 to-brand-medium/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                    <h4 className="text-xl md:text-3xl font-bold text-foreground mb-4">Ready to start your journey?</h4>
-                    <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-xl mx-auto mb-8">
-                        The first step is a conversation. Let's discuss how we can engineer your business's next growth phase.
-                    </p>
-                    <button className="w-full sm:w-auto px-8 py-4 rounded-full bg-foreground text-background font-bold uppercase tracking-widest text-xs hover:bg-brand-medium hover:text-white transition-all">
-                        Schedule an Audit
-                    </button>
+                    {/* Animated Gradient Border */}
+                    <div className="absolute inset-[-50%] bg-[conic-gradient(from_0deg,transparent_0_340deg,var(--tw-colors-brand-medium)_360deg)] animate-[spin_4s_linear_infinite] opacity-20 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-brand-medium/30 via-brand-cyan/30 to-brand-medium/30 rounded-[2rem] md:rounded-[3rem] opacity-30 dark:opacity-50 group-hover:opacity-100 transition-opacity" />
+
+                    <div className="relative h-full w-full bg-slate-50/90 dark:bg-[#070b14] backdrop-blur-xl rounded-[2rem] md:rounded-[3rem] p-10 md:p-14 lg:p-20 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden">
+
+                        {/* Background Accents (Inner) */}
+                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-medium/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-cyan/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+
+                        <div className="relative z-10 text-center lg:text-left max-w-2xl">
+                            <h4 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4 md:mb-6 tracking-tighter leading-[1.1]">
+                                Ready to start your <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-cyan italic pr-2">journey?</span>
+                            </h4>
+                            <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed m-0">
+                                The first step is a conversation. Let's discuss how we can engineer your business's next exponential growth phase.
+                            </p>
+                        </div>
+
+                        <div className="relative z-10 shrink-0 w-full sm:w-auto">
+                            <button className="w-full lg:w-auto px-10 py-5 rounded-full bg-brand-medium text-white shadow-[0_0_40px_-10px_rgba(59,130,246,0.4)] font-black uppercase tracking-[0.2em] text-xs hover:bg-brand-medium/90 hover:scale-105 hover:shadow-[0_0_60px_-15px_rgba(59,130,246,0.6)] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group/btn border border-white/10 relative overflow-hidden">
+                                <span className="relative z-10 flex items-center gap-2">
+                                    Schedule an Audit
+                                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                </span>
+                            </button>
+                        </div>
+                    </div>
                 </motion.div>
             </div>
         </section>

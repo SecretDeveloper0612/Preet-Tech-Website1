@@ -1,9 +1,47 @@
+"use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Twitter, Linkedin, Instagram, ArrowUp, Mail, MapPin, Send, Cpu, ChevronRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
+    // Newsletter State
+    const [subscribeEmail, setSubscribeEmail] = useState('');
+    const [subscribeStatus, setSubscribeStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [subscribeMessage, setSubscribeMessage] = useState('');
+
+    const handleSubscribe = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setSubscribeStatus('loading');
+        setSubscribeMessage('');
+
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: subscribeEmail })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setSubscribeStatus('success');
+                setSubscribeEmail('');
+                setSubscribeMessage(data.message || 'Subscription successful!');
+                setTimeout(() => {
+                    setSubscribeStatus('idle');
+                    setSubscribeMessage('');
+                }, 5000);
+            } else {
+                setSubscribeStatus('error');
+                setSubscribeMessage(data.message || 'Something went wrong.');
+            }
+        } catch (err) {
+            setSubscribeStatus('error');
+            setSubscribeMessage('Network Error. Please try again.');
+        }
+    };
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -97,16 +135,33 @@ const Footer: React.FC = () => {
                     <div className="lg:col-span-4 space-y-8">
                         <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-medium">Stay Updated</h4>
                         <p className="text-slate-400 text-sm leading-relaxed">Join our high-performance newsletter to receive the latest insights on digital growth.</p>
-                        <div className="relative group">
+                        <form onSubmit={handleSubscribe} className="relative group">
                             <input
                                 type="email"
                                 placeholder="Email address"
-                                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-brand-medium transition-all text-sm text-white placeholder:text-slate-600 group-hover:bg-white/[0.07]"
+                                value={subscribeEmail}
+                                onChange={(e) => setSubscribeEmail(e.target.value)}
+                                required
+                                disabled={subscribeStatus === 'loading'}
+                                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-brand-medium transition-all text-sm text-white placeholder:text-slate-600 group-hover:bg-white/[0.07] disabled:opacity-50"
                             />
-                            <button className="absolute right-2 top-2 bottom-2 px-4 rounded-xl bg-brand-medium text-white flex items-center justify-center hover:bg-brand-medium/80 transition-all shadow-lg shadow-brand-medium/20">
-                                <Send className="w-4 h-4" />
+                            <button
+                                type="submit"
+                                disabled={subscribeStatus === 'loading'}
+                                className="absolute right-2 top-2 bottom-2 px-5 rounded-xl bg-[#4392CE] text-white flex items-center justify-center hover:bg-[#4392CE]/90 transition-all shadow-[0_4px_14px_rgba(67,146,206,0.4)] disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                {subscribeStatus === 'loading' ? (
+                                    <span className="w-4 h-4 rounded-full border-2 border-white/20 border-t-white animate-spin" />
+                                ) : (
+                                    <Send className="w-4 h-4" />
+                                )}
                             </button>
-                        </div>
+                        </form>
+                        {subscribeMessage && (
+                            <p className={`text-xs ml-2 font-bold ${subscribeStatus === 'success' ? 'text-emerald-400' : 'text-red-400'}`}>
+                                {subscribeMessage}
+                            </p>
+                        )}
                         <div className="space-y-3">
                             <div className="flex items-center gap-3 text-xs font-mono text-slate-500">
                                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, Sun, Moon, Globe, Smartphone, Palette, Share2, TrendingUp, ChevronRight, ChevronLeft, Target, Rocket, Cpu, Zap, Shield } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sun, Moon, Globe, Smartphone, Palette, Share2, TrendingUp, ChevronRight, ChevronLeft, Target, Rocket, Cpu, Zap, Shield, Monitor, Layout } from 'lucide-react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
@@ -56,10 +56,10 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
       title: 'Digital Engineering',
       desc: 'High-performance code for scalable digital infrastructure.',
       items: [
-        { name: 'Website Development', icon: Globe, href: '/services/website-development', detail: 'Eco-Budget & Advance Platforms', longDesc: 'We engineer blazingly fast websites. Choose between our Eco-Budget path for rapid deployment or Advance Websites for custom enterprise features.' },
+        { name: 'Eco Website', icon: Layout, href: '/services/website-development/eco', detail: 'Rapid & Budget-Friendly', longDesc: 'Our Eco-Budget path engineered for rapid deployment, perfect for starting out with a blazingly fast website.' },
+        { name: 'Advance Website', icon: Monitor, href: '/services/website-development/advanced', detail: 'Custom Enterprise Features', longDesc: 'Advance Websites engineered for complex operations, custom enterprise features, and maximum scalability.' },
         { name: 'App Development', icon: Smartphone, href: '/services/app-development', detail: 'Native & Cross-platform reach', longDesc: 'Building high-performance mobile applications with seamless user experiences across iOS and Android ecosystems.' },
         { name: 'Software Development', icon: Cpu, href: '/services/software-development', detail: 'Custom enterprise logic', longDesc: 'Architecting complex software systems tailored to your business operations, ensuring efficiency and long-term scalability.' },
-        { name: 'Tools for Business', icon: Zap, href: '/services/business-tools', detail: 'Marketplace | Up to 95% Off', longDesc: 'Access high-value premium business software, templates, and digital licenses at unbeatable discounted prices through our exclusive marketplace.' },
       ]
     },
     marketing: {
@@ -155,107 +155,93 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Desktop Mega Menu */}
-      <AnimatePresence>
-        {showMegaMenu && (
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 15 }}
-            transition={{ duration: 0.3, ease: "circOut" }}
-            className="absolute top-full left-6 right-6 mt-4 hidden lg:block"
-            onMouseEnter={() => setShowMegaMenu(true)}
-          >
-            <div className="bg-white dark:bg-[#050505] p-2 rounded-[2.5rem] border border-slate-200 dark:border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.2)] overflow-hidden">
-              <div className="flex bg-slate-50/50 dark:bg-white/[0.02] rounded-[2rem] overflow-hidden min-h-[500px]">
-                {/* Tab Switcher Panel */}
-                <div className="w-1/4 p-8 border-r border-slate-100 dark:border-white/5 flex flex-col justify-between">
-                  <div className="space-y-4">
-                    <p className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-medium mb-8">Capabilities</p>
-                    {(Object.keys(megaMenuContent) as Array<keyof typeof megaMenuContent>).map((tab) => (
-                      <button
-                        key={tab}
-                        onMouseEnter={() => {
-                          setActiveTab(tab);
-                          setHoveredItem(null);
-                        }}
-                        className={`w-full text-left p-4 rounded-2xl transition-all flex items-center justify-between group ${activeTab === tab ? 'bg-white dark:bg-white/10 shadow-sm text-brand-medium translate-x-2' : 'hover:translate-x-1 text-slate-500'}`}
+        {/* Desktop Mega Menu */}
+        <AnimatePresence>
+          {showMegaMenu && (
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 15 }}
+              transition={{ duration: 0.3, ease: "circOut" }}
+              className="absolute top-full left-6 right-6 mt-4 hidden lg:block"
+              onMouseEnter={() => setShowMegaMenu(true)}
+            >
+              <div className="bg-white dark:bg-[#050505] p-2 rounded-[2.5rem] border border-slate-200 dark:border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.2)] overflow-hidden">
+                <div className="flex bg-slate-50/50 dark:bg-white/[0.02] rounded-[2rem] overflow-hidden min-h-[500px]">
+                  {/* Tab Switcher Panel */}
+                  <div className="w-1/4 p-8 border-r border-slate-100 dark:border-white/5 flex flex-col justify-between">
+                    <div className="space-y-4">
+                      <p className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-medium mb-8">Capabilities</p>
+                      {(Object.keys(megaMenuContent) as Array<keyof typeof megaMenuContent>).map((tab) => (
+                        <button
+                          key={tab}
+                          onMouseEnter={() => {
+                            setActiveTab(tab);
+                            setHoveredItem(null);
+                          }}
+                          className={`w-full text-left p-4 rounded-2xl transition-all flex items-center justify-between group ${activeTab === tab ? 'bg-white dark:bg-white/10 shadow-sm text-brand-medium translate-x-2' : 'hover:translate-x-1 text-slate-500'}`}
+                        >
+                          <span className="font-bold uppercase text-sm tracking-tighter">{tab}</span>
+                          <ChevronRight className={`w-4 h-4 transition-all ${activeTab === tab ? 'opacity-100' : 'opacity-0 -translate-x-2'}`} />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Content Area */}
+                  <div className="flex-1 p-12 bg-white dark:bg-transparent relative">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activeTab}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className="h-full flex flex-col"
                       >
-                        <span className="font-bold uppercase text-sm tracking-tighter">{tab}</span>
-                        <ChevronRight className={`w-4 h-4 transition-all ${activeTab === tab ? 'opacity-100' : 'opacity-0 -translate-x-2'}`} />
-                      </button>
-                    ))}
-                  </div>
-                  <div className="p-6 bg-brand-medium/5 dark:bg-brand-medium/10 rounded-3xl">
-                    <p className="text-[9px] font-black uppercase tracking-widest text-brand-medium mb-3">Next Step</p>
-                    <p className="text-xs font-bold text-foreground mb-4 leading-relaxed">Ready for a Strategic Audit?</p>
-                    <button className="text-[10px] font-black uppercase text-brand-medium flex items-center gap-2 group hover:gap-3 transition-all">
-                      Schedule <ArrowUpRight className="w-3 h-3" />
-                    </button>
-                  </div>
-                </div>
-                {/* Content Area */}
-                <div className="flex-1 p-12 bg-white dark:bg-transparent relative">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeTab}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -20 }}
-                      transition={{ duration: 0.3 }}
-                      className="h-full flex flex-col"
-                    >
-                      <div className="mb-12 min-h-[100px] flex flex-col justify-end">
-                        <AnimatePresence mode="wait">
-                          {hoveredItem ? (
-                            <motion.div key={hoveredItem.name} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-2">
-                              <h3 className="text-4xl font-black text-brand-medium tracking-tighter uppercase">{hoveredItem.name}</h3>
-                              <p className="text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed font-medium">{hoveredItem.longDesc}</p>
-                            </motion.div>
-                          ) : (
-                            <motion.div key={megaMenuContent[activeTab].title} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-                              <h3 className="text-4xl font-black text-foreground tracking-tighter uppercase mb-4">{megaMenuContent[activeTab].title}</h3>
-                              <p className="text-slate-500 dark:text-slate-400 max-w-lg leading-relaxed">{megaMenuContent[activeTab].desc}</p>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                      <div className="grid grid-cols-2 gap-x-8 gap-y-10 flex-1">
-                        {megaMenuContent[activeTab].items.map((item, i) => (
-                          <Link
-                            key={i}
-                            href={item.href}
-                            className={`group flex gap-6 items-start transition-all origin-left ${hoveredItem?.name === item.name ? 'scale-[1.05]' : 'scale-100 opacity-70 hover:opacity-100'}`}
-                            onMouseEnter={() => setHoveredItem(item)}
-                            onClick={() => setShowMegaMenu(false)}
-                          >
-                            <div className={`w-12 h-12 rounded-xl border flex items-center justify-center transition-all ${hoveredItem?.name === item.name ? 'bg-brand-medium text-white border-brand-medium shadow-lg shadow-brand-medium/20' : 'bg-slate-50 dark:bg-white/5 border-slate-100 dark:border-white/10 group-hover:bg-brand-medium/10'}`}>
-                              <item.icon className={`w-6 h-6 transition-transform ${hoveredItem?.name === item.name ? 'scale-110' : 'text-brand-medium'}`} />
-                            </div>
-                            <div>
-                              <h4 className={`font-bold uppercase tracking-tight mb-1 transition-colors ${hoveredItem?.name === item.name ? 'text-brand-medium' : 'text-foreground'}`}>{item.name}</h4>
-                              <p className="text-xs text-slate-500 dark:text-slate-400 font-mono tracking-tight">{item.detail}</p>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                      <div className="mt-auto pt-8 border-t border-slate-100 dark:border-white/5 flex items-center gap-12 text-slate-400">
-                        <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest"><Shield className="w-3.5 h-3.5" />Zero Upfront Friction</div>
-                        <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest"><Zap className="w-3.5 h-3.5" />Performance Optimized</div>
-                        <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest ml-auto text-brand-medium">
-                          View Success Cases <ArrowUpRight className="w-3.5 h-3.5" />
+                        <div className="mb-12 min-h-[100px] flex flex-col justify-end">
+                          <AnimatePresence mode="wait">
+                            {hoveredItem ? (
+                              <motion.div key={hoveredItem.name} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-2">
+                                <h3 className="text-4xl font-black text-brand-medium tracking-tighter uppercase">{hoveredItem.name}</h3>
+                                <p className="text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed font-medium">{hoveredItem.longDesc}</p>
+                              </motion.div>
+                            ) : (
+                              <motion.div key={megaMenuContent[activeTab].title} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
+                                <h3 className="text-4xl font-black text-foreground tracking-tighter uppercase mb-4">{megaMenuContent[activeTab].title}</h3>
+                                <p className="text-slate-500 dark:text-slate-400 max-w-lg leading-relaxed">{megaMenuContent[activeTab].desc}</p>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
                         </div>
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
+                        <div className="grid grid-cols-2 gap-x-8 gap-y-10 flex-1">
+                          {megaMenuContent[activeTab].items.map((item, i) => (
+                            <Link
+                              key={i}
+                              href={item.href}
+                              className={`group flex gap-6 items-start transition-all origin-left ${hoveredItem?.name === item.name ? 'scale-[1.05]' : 'scale-100 opacity-70 hover:opacity-100'}`}
+                              onMouseEnter={() => setHoveredItem(item)}
+                              onClick={() => setShowMegaMenu(false)}
+                            >
+                              <div className={`w-12 h-12 rounded-xl border flex items-center justify-center transition-all ${hoveredItem?.name === item.name ? 'bg-brand-medium text-white border-brand-medium shadow-lg shadow-brand-medium/20' : 'bg-slate-50 dark:bg-white/5 border-slate-100 dark:border-white/10 group-hover:bg-brand-medium/10'}`}>
+                                <item.icon className={`w-6 h-6 transition-transform ${hoveredItem?.name === item.name ? 'scale-110' : 'text-brand-medium'}`} />
+                              </div>
+                              <div>
+                                <h4 className={`font-bold uppercase tracking-tight mb-1 transition-colors ${hoveredItem?.name === item.name ? 'text-brand-medium' : 'text-foreground'}`}>{item.name}</h4>
+                                <p className="text-xs text-slate-500 dark:text-slate-400 font-mono tracking-tight">{item.detail}</p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
       {/* Mobile Menu Portal */}
       <AnimatePresence>

@@ -24,9 +24,8 @@ const ReadyToPartner: React.FC = () => {
                         <span className="text-[10px] md:text-xs font-bold text-brand-medium uppercase tracking-widest">Growth Partnership</span>
                     </div>
 
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-foreground tracking-tighter leading-[1] md:leading-tight mb-6">
-                        Ready to <br className="md:hidden" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium via-brand-sky to-brand-cyan">Partner?</span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground tracking-tighter leading-[1] md:leading-tight mb-6">
+                        Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium via-brand-sky to-brand-cyan">Partner?</span>
                     </h2>
 
                     <p className="text-base md:text-xl lg:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed font-semibold md:font-medium">

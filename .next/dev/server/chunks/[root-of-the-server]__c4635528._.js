@@ -421,8 +421,8 @@ async function POST(req) {
             });
         }
         await __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$lib$2f$googleSheetsService$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["googleSheetsService"].addSubscriber(name || 'Subscriber', email);
-        // Fire and forget email notification to subscriber
-        __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$lib$2f$emailService$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["emailService"].sendConfirmationEmail(email);
+        // Send email notification to subscriber
+        await __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$lib$2f$emailService$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["emailService"].sendConfirmationEmail(email);
         return __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             success: true,
             message: "Subscription successful"

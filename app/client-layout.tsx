@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Lenis from "lenis";
 import CustomCursor from "../components/CustomCursor";
+import ChatWidget from "../components/ChatWidget";
 
 export default function ClientLayout({
     children,
@@ -36,6 +37,7 @@ export default function ClientLayout({
         <>
             <CustomCursor />
             {children}
+            <ChatWidget />
         </>
     );
 }

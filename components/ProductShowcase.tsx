@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ShoppingCart, ChevronLeft, ChevronRight, MessageCircle, ArrowUpRight, ShoppingBag } from 'lucide-react';
+import { ArrowRight, ArrowLeft, ShoppingCart, ChevronLeft, ChevronRight, MessageCircle, ArrowUpRight, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 
 const PRODUCTS = [
@@ -56,6 +56,7 @@ const PRODUCTS = [
 
 const ProductShowcase: React.FC = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
     const [startX, setStartX] = useState(0);
@@ -67,7 +68,8 @@ const ProductShowcase: React.FC = () => {
 
     const handleInfiniteScroll = () => {
         if (!scrollContainerRef.current) return;
-        const { scrollLeft, scrollWidth } = scrollContainerRef.current;
+        const container = scrollContainerRef.current;
+        const { scrollLeft, scrollWidth } = container;
         const singleSetWidth = scrollWidth / 3;
 
         // Update dot index
@@ -75,30 +77,56 @@ const ProductShowcase: React.FC = () => {
         const index = Math.round(relativeScroll / (scrollWidth / LOOPED_PRODUCTS.length));
         setCurrentIndex(index % PRODUCTS.length);
 
-        if (scrollLeft >= singleSetWidth * 2) {
-            scrollContainerRef.current.scrollLeft = scrollLeft - singleSetWidth;
-        } else if (scrollLeft <= singleSetWidth / 2) {
-            scrollContainerRef.current.scrollLeft = scrollLeft + singleSetWidth;
-        }
+        // Debounce seamless infinite loop jump to avoid breaking smooth scrolling
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+
+        scrollTimeoutRef.current = setTimeout(() => {
+            if (!container || isDragging) return;
+            const currentScroll = container.scrollLeft;
+
+            // Jump instantly and invisibly once scroll stops
+            if (currentScroll >= singleSetWidth * 2 - 50) {
+                container.style.scrollBehavior = 'auto';
+                container.scrollLeft = currentScroll - singleSetWidth;
+            } else if (currentScroll <= singleSetWidth / 2 + 50) {
+                container.style.scrollBehavior = 'auto';
+                container.scrollLeft = currentScroll + singleSetWidth;
+            }
+        }, 150);
     };
 
     useEffect(() => {
         const container = scrollContainerRef.current;
         if (container) {
             const setupInitialScroll = () => {
+                container.style.scrollBehavior = 'auto';
                 container.scrollLeft = container.scrollWidth / 3;
             };
+            setupInitialScroll();
             const timeout = setTimeout(setupInitialScroll, 100);
             return () => clearTimeout(timeout);
         }
     }, []);
 
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollContainerRef.current) {
+            const container = scrollContainerRef.current;
+            const firstCard = container.querySelector('.product-card') as HTMLElement;
+            if (firstCard) {
+                const cardWidth = firstCard.offsetWidth + 24; // includes gap size
+                container.style.scrollBehavior = 'smooth';
+                container.scrollLeft += direction === 'left' ? -cardWidth : cardWidth;
+            }
+        }
+    };
+
+    // --- Auto Slide and Loop Logic ---
     useEffect(() => {
         let interval: NodeJS.Timeout;
         if (isAutoPlaying && !isDragging) {
             interval = setInterval(() => {
                 scroll('right');
-            }, 5000);
+            }, 3000); // 3 seconds for a prominent auto slide
         }
         return () => clearInterval(interval);
     }, [isAutoPlaying, isDragging]);
@@ -107,6 +135,7 @@ const ProductShowcase: React.FC = () => {
         setIsDragging(true);
         setIsAutoPlaying(false);
         if (!scrollContainerRef.current) return;
+        scrollContainerRef.current.style.scrollBehavior = 'auto';
         setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
         setScrollLeft(scrollContainerRef.current.scrollLeft);
     };
@@ -121,22 +150,7 @@ const ProductShowcase: React.FC = () => {
 
     const handleMouseUp = () => {
         setIsDragging(false);
-        setTimeout(() => setIsAutoPlaying(true), 2000);
-    };
-
-    const scroll = (direction: 'left' | 'right') => {
-        if (scrollContainerRef.current) {
-            const firstCard = scrollContainerRef.current.querySelector('.product-card') as HTMLElement;
-            if (firstCard) {
-                const cardWidth = firstCard.offsetWidth + 24;
-                const currentScroll = scrollContainerRef.current.scrollLeft;
-                const newScroll = direction === 'left' ? currentScroll - cardWidth : currentScroll + cardWidth;
-                scrollContainerRef.current.scrollTo({
-                    left: newScroll,
-                    behavior: 'smooth'
-                });
-            }
-        }
+        setTimeout(() => setIsAutoPlaying(true), 2500); // Resume sliding after user interacts
     };
 
     return (
@@ -168,29 +182,19 @@ const ProductShowcase: React.FC = () => {
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <Link
-                            href="/services/business-tools"
-                            className="mr-2 px-6 py-3 bg-brand-medium/10 border border-brand-medium/20 text-brand-medium hover:bg-brand-medium hover:text-white rounded-full text-[10px] font-black uppercase tracking-widest transition-all active:scale-95"
-                        >
-                            View More Deals
-                        </Link>
-                        <div className="flex items-center gap-3 mr-4">
-                            {PRODUCTS.map((_, i) => (
-                                <div key={i} className={`h-1 rounded-full transition-all duration-500 ${currentIndex === i ? 'w-8 bg-brand-medium' : 'w-2 bg-slate-200 dark:bg-white/10'}`} />
-                            ))}
-                        </div>
-                        <div className="flex items-center gap-2">
+
+                        <div className="hidden md:flex items-center gap-4">
                             <button
                                 onClick={() => scroll('left')}
-                                className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-foreground hover:bg-brand-medium hover:text-white hover:border-brand-medium transition-all active:scale-90"
+                                className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full border-2 border-[#E9EEF4] dark:border-white/10 flex items-center justify-center text-[#8C9FAF] hover:bg-[#4392CE] hover:text-white hover:border-[#4392CE] shadow-sm hover:shadow-[0_12px_24px_rgba(67,146,206,0.3)] transition-all duration-300 active:scale-95 group"
                             >
-                                <ChevronLeft className="w-5 h-5" />
+                                <ArrowLeft className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
                             </button>
                             <button
                                 onClick={() => scroll('right')}
-                                className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-foreground hover:bg-brand-medium hover:text-white hover:border-brand-medium transition-all active:scale-90"
+                                className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full border-2 border-[#E9EEF4] dark:border-white/10 flex items-center justify-center text-[#8C9FAF] hover:bg-[#4392CE] hover:text-white hover:border-[#4392CE] shadow-sm hover:shadow-[0_12px_24px_rgba(67,146,206,0.3)] transition-all duration-300 active:scale-95 group"
                             >
-                                <ChevronRight className="w-5 h-5" />
+                                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
                             </button>
                         </div>
                     </div>
@@ -215,7 +219,7 @@ const ProductShowcase: React.FC = () => {
                             className="product-card shrink-0 snap-center snap-always w-[calc(100vw-48px)] md:w-[280px] lg:w-[calc((100vw-120px)/4)] xl:w-[290px]"
                         >
                             <motion.div
-                                className="group relative h-[420px] md:h-[460px] bg-white dark:bg-slate-900/50 rounded-[2rem] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm hover:shadow-2xl hover:border-brand-medium/50 transition-all duration-500 flex flex-col"
+                                className="group relative h-[360px] md:h-[400px] bg-white dark:bg-slate-900/50 rounded-[2rem] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm hover:shadow-2xl hover:border-brand-medium/50 transition-all duration-500 flex flex-col"
                             >
                                 {/* 1. Image & Overlay Container */}
                                 <div className="relative h-36 w-full overflow-hidden shrink-0">
@@ -285,6 +289,17 @@ const ProductShowcase: React.FC = () => {
                 {/* Bleed Masking Gradients */}
                 <div className="absolute left-0 top-0 bottom-0 w-12 lg:w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none hidden md:block" />
                 <div className="absolute right-0 top-0 bottom-0 w-12 lg:w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none hidden md:block" />
+            </div>
+
+            {/* Bottom View More Button */}
+            <div className="mt-2 md:mt-6 flex justify-center items-center w-full px-6 relative z-10">
+                <Link
+                    href="/services/business-tools"
+                    className="px-8 py-3.5 rounded-full bg-brand-medium hover:bg-brand-medium/90 text-white text-[11px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-brand-medium/20 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                    View More Deals
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                </Link>
             </div>
         </section>
     );

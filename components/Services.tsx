@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Smartphone, Palette, Share2, TrendingUp, ArrowUpRight, ChevronLeft, ChevronRight, Binary, Rocket, MessageSquare, Code2, Wrench, Users, Target } from 'lucide-react';
+import { Globe, Smartphone, Palette, Share2, TrendingUp, ArrowUpRight, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight, Binary, Rocket, MessageSquare, Code2, Wrench, Users, Target } from 'lucide-react';
 import Link from 'next/link';
 
 const SERVICES = [
@@ -188,7 +188,7 @@ const Services: React.FC = () => {
   return (
     <section
       id="services"
-      className="pt-20 md:pt-32 pb-10 md:pb-16 relative bg-background overflow-hidden transition-colors duration-500"
+      className="pt-12 md:pt-20 pb-6 md:pb-8 relative bg-background overflow-hidden transition-colors duration-500"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => !isDragging && setIsAutoPlaying(true)}
     >
@@ -198,7 +198,7 @@ const Services: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Responsive Header */}
-        <div className="mb-8 md:mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-10">
+        <div className="mb-6 md:mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-10">
           <div className="space-y-2 md:space-y-4">
 
 
@@ -213,20 +213,20 @@ const Services: React.FC = () => {
             </motion.h2>
           </div>
 
-          <div className="flex items-center gap-4 mt-2 md:mt-0">
+          <div className="hidden md:flex items-center gap-4 mt-2 md:mt-0">
             <button
               onClick={() => scroll('left')}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border border-brand-medium text-brand-medium hover:bg-brand-medium hover:text-white shadow-lg shadow-brand-medium/10 transition-all duration-300 active:scale-90"
+              className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full flex items-center justify-center border-2 border-[#E9EEF4] dark:border-white/10 text-[#8C9FAF] hover:bg-[#4392CE] hover:text-white hover:border-[#4392CE] shadow-sm hover:shadow-[0_12px_24px_rgba(67,146,206,0.3)] transition-all duration-300 active:scale-95 group"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
+              <ArrowLeft className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border border-brand-medium text-brand-medium hover:bg-brand-medium hover:text-white shadow-lg shadow-brand-medium/10 transition-all duration-300 active:scale-90"
+              className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full flex items-center justify-center border-2 border-[#E9EEF4] dark:border-white/10 text-[#8C9FAF] hover:bg-[#4392CE] hover:text-white hover:border-[#4392CE] shadow-sm hover:shadow-[0_12px_24px_rgba(67,146,206,0.3)] transition-all duration-300 active:scale-95 group"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
             </button>
           </div>
         </div>
@@ -249,13 +249,13 @@ const Services: React.FC = () => {
               key={`${service.id}-${idx}`}
               className="service-card snap-center snap-always shrink-0"
             >
-              <div className="group w-[calc(100vw-48px)] md:w-[310px] h-[380px] md:h-[400px] relative rounded-[2rem] bg-slate-50/80 dark:bg-[#080c14] backdrop-blur-xl border border-slate-200/60 dark:border-white/[0.05] p-7 md:p-8 flex flex-col justify-between overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-none hover:shadow-2xl hover:shadow-brand-medium/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="group w-[calc(100vw-48px)] md:w-[310px] h-[320px] md:h-[400px] relative rounded-[2rem] bg-slate-50/80 dark:bg-[#080c14] backdrop-blur-xl border border-slate-200/60 dark:border-white/[0.05] p-6 md:p-8 flex flex-col justify-between overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-none hover:shadow-2xl hover:shadow-brand-medium/10 transition-all duration-500 hover:-translate-y-2">
 
                 {/* Decorative Background Glow */}
                 <div className={`absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br ${service.bg} blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000`} />
 
                 <div className="relative z-10">
-                  <div className="flex justify-between items-start mb-6 md:mb-8">
+                  <div className="flex justify-between items-start mb-4 md:mb-8">
                     <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-100 dark:bg-white/5 flex items-center justify-center ${service.accent} group-hover:bg-brand-medium group-hover:text-white transition-all duration-500`}>
                       <service.icon className="w-5 h-5 md:w-6 md:h-6" />
                     </div>
@@ -305,12 +305,14 @@ const Services: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Responsive Footer */}
-        <div className="mt-4 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 border-t border-slate-50 dark:border-white/5 pt-10 md:pt-12">
-          <div className="flex gap-1.5">
-            {[...Array(SERVICES.length)].map((_, i) => (
-              <div key={i} className={`h-1 rounded-full transition-all duration-500 ${currentIndex === i ? 'w-8 md:w-10 bg-brand-medium' : 'w-3 md:w-4 bg-slate-100 dark:bg-white/5'}`} />
-            ))}
-          </div>
+        <div className="mt-2 flex flex-col justify-center items-center gap-6 md:gap-8 border-t border-slate-50 dark:border-white/5 pt-6 md:pt-8">
+          <Link
+            href="/services"
+            className="px-8 py-3.5 rounded-full bg-brand-medium hover:bg-brand-medium/90 text-white text-[11px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-brand-medium/20 hover:-translate-y-0.5 transition-all duration-300 w-[180px]"
+          >
+            View more
+            <ArrowRight className="w-4 h-4 ml-1" />
+          </Link>
         </div>
       </div>
     </section>

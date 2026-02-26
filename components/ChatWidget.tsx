@@ -97,8 +97,8 @@ export default function ChatWidget() {
                         {/* Header */}
                         <div className="p-6 border-b border-slate-200 dark:border-white/10 flex items-center justify-between bg-gradient-to-r from-brand-medium/10 to-transparent">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-2xl bg-brand-medium flex items-center justify-center text-black">
-                                    <Bot size={24} />
+                                <div className="w-10 h-10 rounded-2xl bg-brand-medium flex items-center justify-center text-black overflow-hidden">
+                                    <img src="/chatbot-icon.png" alt="Preet Tech AI" className="w-full h-full object-cover" />
                                 </div>
                                 <div>
                                     <h3 className="text-sm font-black uppercase tracking-wider">Preet Tech AI</h3>
@@ -219,22 +219,32 @@ export default function ChatWidget() {
 
             {/* Toggle Button */}
             <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
                 className={cn(
-                    "w-16 h-16 rounded-[2rem] shadow-2xl flex items-center justify-center transition-all duration-500",
+                    "w-16 h-16 md:w-[4.5rem] md:h-[4.5rem] rounded-full shadow-2xl flex items-center justify-center transition-all duration-500 relative",
                     isOpen
                         ? "bg-slate-900 border border-white/10 text-white rotate-90"
-                        : "bg-brand-medium text-black border-4 border-white dark:border-slate-900"
+                        : "bg-transparent border-0 p-0"
                 )}
             >
-                {isOpen ? <X size={28} /> : <MessageSquare size={28} />}
+                {isOpen ? (
+                    <X size={36} />
+                ) : (
+                    <div className="absolute inset-0 w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-xl bg-brand-medium">
+                        <img
+                            src="/chatbot-icon.png"
+                            alt="ChatBot"
+                            className="w-full h-full object-cover scale-[1.25]"
+                        />
+                    </div>
+                )}
                 {!isOpen && (
                     <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white dark:border-slate-900"
+                        className="absolute top-0 right-0 w-4 h-4 md:w-5 md:h-5 bg-emerald-500 rounded-full border-2 border-white dark:border-slate-800 z-10 shadow-sm"
                     />
                 )}
             </motion.button>

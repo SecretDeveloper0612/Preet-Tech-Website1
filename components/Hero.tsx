@@ -46,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ isDark: _ignoredIsDark }) => {
             >
               Welcome to Preet Tech
             </motion.span>
-            <h1 className="text-[3.5rem] sm:text-7xl md:text-8xl lg:text-[11rem] font-black tracking-tighter leading-[0.9] md:leading-[0.8] flex flex-col items-center text-center">
+            <h1 className="text-[3.5rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[11rem] font-black tracking-tighter leading-[0.9] md:leading-[0.8] flex flex-col items-center text-center">
               <span className="block text-slate-900 dark:text-white">DIGITAL</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium via-brand-cyan to-brand-deep animate-gradient-x italic pb-4 md:pb-8 px-2 md:px-4">
                 SOLUTIONS.
@@ -73,17 +73,17 @@ const Hero: React.FC<HeroProps> = ({ isDark: _ignoredIsDark }) => {
             <button
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              className="group relative px-8 sm:px-12 py-4 sm:py-5 bg-brand-medium text-black font-black tracking-widest uppercase text-[10px] sm:text-xs rounded-2xl overflow-hidden transition-all shadow-[0_20px_50px_rgba(63,143,204,0.3)] hover:shadow-brand-medium/50 hover:-translate-y-1 active:scale-95"
+              className="group relative px-8 sm:px-12 py-4 sm:py-5 bg-brand-medium text-white font-black tracking-widest uppercase text-[10px] sm:text-xs rounded-2xl overflow-hidden transition-all shadow-lg shadow-brand-medium/20 hover:bg-brand-medium/90 hover:-translate-y-1 active:scale-95"
             >
-              <div className="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
               <span className="relative flex items-center justify-center gap-3">
-                Initialize System <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                Get Started <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </span>
             </button>
 
-            <button className="group px-8 sm:px-12 py-4 sm:py-5 border-2 border-slate-200 dark:border-white/10 text-foreground font-black text-[10px] sm:text-xs tracking-widest uppercase transition-all rounded-2xl hover:bg-slate-50 dark:hover:bg-white/5 hover:-translate-y-1 active:scale-95">
+            <button className="group px-8 sm:px-12 py-4 sm:py-5 bg-brand-medium/10 border-2 border-brand-medium/20 text-brand-medium font-black text-[10px] sm:text-xs tracking-widest uppercase transition-all rounded-2xl hover:bg-brand-medium hover:text-white hover:-translate-y-1 active:scale-95">
               <span className="flex items-center justify-center gap-3">
-                Architecture <Hexagon className="w-5 h-5 text-brand-medium group-hover:rotate-180 transition-transform duration-700" />
+                Book Strategy Call <Hexagon className="w-5 h-5 transition-transform duration-700 group-hover:rotate-180" />
               </span>
             </button>
           </motion.div>
@@ -93,7 +93,7 @@ const Hero: React.FC<HeroProps> = ({ isDark: _ignoredIsDark }) => {
       {/* 4. ANIMATED PROPS (LEFT & RIGHT) */}
 
       {/* Left Props */}
-      <div className="absolute left-10 lg:left-20 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-16 z-30 pointer-events-none">
+      <div className="absolute left-4 lg:left-8 xl:left-12 2xl:left-20 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-10 2xl:gap-16 z-30 pointer-events-none scale-75 xl:scale-90 2xl:scale-100 origin-left">
         {/* Prop 1: System Latency */}
         <motion.div
           animate={{ y: [0, -20, 0], rotate: [0, 2, 0] }}
@@ -146,7 +146,7 @@ const Hero: React.FC<HeroProps> = ({ isDark: _ignoredIsDark }) => {
       </div>
 
       {/* Right Props */}
-      <div className="absolute right-10 lg:right-20 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-10 z-30 pointer-events-none">
+      <div className="absolute right-4 lg:right-8 xl:right-12 2xl:right-20 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 2xl:gap-10 z-30 pointer-events-none scale-75 xl:scale-90 2xl:scale-100 origin-right">
         {/* Prop 3: Security Shield */}
         <motion.div
           animate={{ y: [0, 15, 0], rotate: [0, -2, 0] }}

@@ -56,10 +56,28 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
+      "page": "/api/blog/publish",
+      "regex": "^/api/blog/publish(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/blog/publish(?:/)?$"
+    },
+    {
       "page": "/api/chat",
       "regex": "^/api/chat(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/chat(?:/)?$"
+    },
+    {
+      "page": "/api/subscribe",
+      "regex": "^/api/subscribe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/subscribe(?:/)?$"
+    },
+    {
+      "page": "/api/unsubscribe",
+      "regex": "^/api/unsubscribe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/unsubscribe(?:/)?$"
     },
     {
       "page": "/blog",

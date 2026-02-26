@@ -135,22 +135,16 @@ const Insights: React.FC = () => {
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-6 md:gap-8 border-t border-slate-100 dark:border-white/5 pt-12">
                     <div className="max-w-2xl">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-medium/10 border border-brand-medium/20 mb-6 font-mono">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-medium/10 border border-brand-medium/20 mb-3 md:mb-4 font-mono">
                             <BookOpen className="w-4 h-4 text-brand-medium" />
                             <span className="text-[10px] md:text-xs font-bold text-brand-medium uppercase tracking-[0.2em]">Knowledge Base</span>
                         </div>
                         <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-foreground mb-6 leading-[1.1] md:leading-tight uppercase tracking-tighter">
-                            <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-cyan">Case Studies.</span>
                         </h2>
                     </div>
 
-                    <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2 mr-4">
-                            {INSIGHTS.map((_, i) => (
-                                <div key={i} className={`h-1 rounded-full transition-all duration-500 ${currentIndex === i ? 'w-8 bg-brand-medium' : 'w-2 bg-slate-200 dark:bg-white/10'}`} />
-                            ))}
-                        </div>
+                    <div className="hidden md:flex items-center gap-4">
                         <button
                             onClick={() => scroll('left')}
                             className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group"
@@ -159,7 +153,7 @@ const Insights: React.FC = () => {
                         </button>
                         <button
                             onClick={() => scroll('right')}
-                            className="w-12 h-12 rounded-full bg-foreground text-background flex items-center justify-center hover:bg-brand-medium hover:text-white transition-colors"
+                            className="w-12 h-12 rounded-full bg-brand-medium text-white shadow-lg shadow-brand-medium/20 flex items-center justify-center hover:bg-brand-medium/90 hover:-translate-y-0.5 transition-all"
                         >
                             <ArrowRight className="w-5 h-5" />
                         </button>
@@ -231,7 +225,7 @@ const Insights: React.FC = () => {
             </div>
 
             <div className="mt-8 flex justify-center w-full">
-                <button className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-foreground text-background text-[10px] font-black uppercase tracking-[0.2em] hover:bg-brand-medium hover:text-white transition-all">
+                <button className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-medium text-white shadow-lg shadow-brand-medium/20 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-brand-medium/90 hover:-translate-y-0.5 transition-all">
                     Enter Archives
                     <ArrowRight className="w-4 h-4" />
                 </button>

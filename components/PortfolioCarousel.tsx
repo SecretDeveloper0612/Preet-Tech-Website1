@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useCallback } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, ArrowLeft } from 'lucide-react';
 
 interface CardData {
     id: string;
@@ -87,10 +87,10 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
                                 id="portfolio-prev"
                                 onClick={() => snapTo(activeIndex - 1)}
                                 disabled={activeIndex === 0}
-                                className="w-11 h-11 rounded-full border border-white/10 bg-white/5 hover:bg-brand-medium/20 hover:border-brand-medium/40 flex items-center justify-center transition-all disabled:opacity-30 disabled:cursor-not-allowed group"
+                                className="w-11 h-11 rounded-full border-2 border-white/10 flex items-center justify-center transition-all disabled:opacity-30 disabled:cursor-not-allowed text-slate-400 hover:bg-brand-medium hover:text-white hover:border-brand-medium"
                                 aria-label="Previous slide"
                             >
-                                <ChevronLeft className="w-5 h-5 text-white group-hover:text-brand-cyan transition-colors" />
+                                <ArrowLeft className="w-5 h-5" />
                             </button>
                             <span className="text-slate-500 text-sm font-bold tabular-nums">
                                 {String(activeIndex + 1).padStart(2, '0')} / {String(cards.length).padStart(2, '0')}
@@ -99,10 +99,10 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
                                 id="portfolio-next"
                                 onClick={() => snapTo(activeIndex + 1)}
                                 disabled={activeIndex === cards.length - 1}
-                                className="w-11 h-11 rounded-full border border-white/10 bg-white/5 hover:bg-brand-medium/20 hover:border-brand-medium/40 flex items-center justify-center transition-all disabled:opacity-30 disabled:cursor-not-allowed group"
+                                className="w-11 h-11 rounded-full border-2 border-white/10 flex items-center justify-center transition-all disabled:opacity-30 disabled:cursor-not-allowed text-slate-400 hover:bg-brand-medium hover:text-white hover:border-brand-medium"
                                 aria-label="Next slide"
                             >
-                                <ChevronRight className="w-5 h-5 text-white group-hover:text-brand-cyan transition-colors" />
+                                <ArrowRight className="w-5 h-5" />
                             </button>
                         </div>
                     </div>
@@ -185,8 +185,8 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
                         key={i}
                         onClick={() => snapTo(i)}
                         className={`transition-all duration-300 rounded-full ${i === activeIndex
-                                ? 'w-7 h-2 bg-brand-cyan'
-                                : 'w-2 h-2 bg-white/20 hover:bg-white/40'
+                            ? 'w-7 h-2 bg-brand-cyan'
+                            : 'w-2 h-2 bg-white/20 hover:bg-white/40'
                             }`}
                         aria-label={`Go to slide ${i + 1}`}
                     />
