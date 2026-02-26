@@ -167,11 +167,8 @@ export default function AboutPage() {
                             custom={3}
                             className="flex flex-wrap justify-center gap-6"
                         >
-                            <button className="group relative px-10 py-5 bg-brand-medium text-black rounded-2xl font-black text-xs uppercase tracking-widest overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(63,143,204,0.3)]">
-                                <span className="relative z-10 flex items-center gap-2">
-                                    Work With Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </span>
-                                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
+                            <button className="px-8 py-3.5 rounded-full bg-brand-medium hover:bg-brand-medium/90 text-white text-[11px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-brand-medium/20 hover:-translate-y-0.5 transition-all duration-300">
+                                Work With Us <ArrowRight className="w-4 h-4" />
                             </button>
                         </motion.div>
                     </motion.div>

@@ -1,8 +1,12 @@
 (globalThis.TURBOPACK_CHUNK_LISTS || (globalThis.TURBOPACK_CHUNK_LISTS = [])).push({
     script: typeof document === "object" ? document.currentScript : undefined,
     chunks: [
-  "static/chunks/preet-tech-next-gen-digital-agency 2_e45de99e._.js",
-  "static/chunks/e0675_ebbd6854._.js"
+  "static/chunks/preet-tech-next-gen-digital-agency 2_d48e3a9b._.js",
+  "static/chunks/e0675_three_build_three_core_941b1313.js",
+  "static/chunks/e0675_three_build_three_module_00d430c6.js",
+  "static/chunks/e0675_three_build_three_module_e148a3f4.js",
+  "static/chunks/e0675_@react-three_fiber_dist_69dfc2b7._.js",
+  "static/chunks/e0675_46a4eebc._.js"
 ],
     source: "dynamic"
 });

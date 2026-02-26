@@ -12,13 +12,8 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
-if (typeof window !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-}
+import ThreeSphereScene from '@/components/ThreeSphere';
+// GSAP removed for performance
 
 // --- 🛰️ Background Animation Components ---
 
@@ -34,7 +29,7 @@ const TechnicalBackground = ({ isDarkMode }: { isDarkMode: boolean }) => {
                     {[...Array(30)].map((_, i) => (
                         <motion.div
                             key={`star-${i}`}
-                            initial={{ opacity: Math.random() * 0.5 }}
+
                             animate={{
                                 opacity: [0.1, 0.6, 0.1],
                                 scale: [1, 1.4, 1],
@@ -90,7 +85,7 @@ const TechnicalBackground = ({ isDarkMode }: { isDarkMode: boolean }) => {
             {mounted && [...Array(3)].map((_, i) => (
                 <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: "100%" }}
+
                     animate={{
                         opacity: [0, 0.3, 0],
                         y: "-100%"
@@ -174,34 +169,7 @@ export default function EcoWebsiteDevelopment() {
         }
     };
 
-    useGSAP(() => {
-        // Smooth scroll reveal animations
-        const sections = gsap.utils.toArray('.reveal-section');
-        sections.forEach((section: any) => {
-            gsap.from(section, {
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                }
-            });
-        });
-
-        // Specific animations for elements
-        gsap.from(".hero-content", {
-            y: 30,
-            opacity: 0,
-            duration: 1,
-            delay: 0.2,
-            stagger: 0.1,
-            ease: "power3.out"
-        });
-
-    }, { scope: containerRef });
+    // GSAP ScrollTrigger animations removed for performance
 
     const toggleFAQ = (index: number) => {
         setOpenFAQ(openFAQ === index ? null : index);
@@ -214,6 +182,7 @@ export default function EcoWebsiteDevelopment() {
             {/* 1️⃣ Hero Section */}
             <section className="relative pt-32 pb-12 lg:pt-48 lg:pb-32 px-6 overflow-hidden">
                 <TechnicalBackground isDarkMode={isDarkMode} />
+                <ThreeSphereScene />
 
                 {/* Spotlight */}
                 <div
@@ -281,32 +250,17 @@ export default function EcoWebsiteDevelopment() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <div className="space-y-1.5">
-                                        <label className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Website Type</label>
-                                        <div className="relative group">
-                                            <Layout strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-brand-cyan transition-colors pointer-events-none" />
-                                            <select className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-10 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all appearance-none text-slate-700 dark:text-slate-200 text-sm">
-                                                <option>Eco-Budget</option>
-                                                <option>Standard</option>
-                                                <option>Advanced</option>
-                                                <option>E-Commerce</option>
-                                            </select>
-                                            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
-                                        </div>
-                                    </div>
-                                    <div className="space-y-1.5">
-                                        <label className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Budget Range</label>
-                                        <div className="relative group">
-                                            <CreditCard strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-brand-cyan transition-colors pointer-events-none" />
-                                            <select className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-10 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all appearance-none text-slate-700 dark:text-slate-200 text-sm">
-                                                <option>₹5k - ₹10k</option>
-                                                <option>₹10k - ₹25k</option>
-                                                <option>₹25k - ₹50k</option>
-                                                <option>₹50k+</option>
-                                            </select>
-                                            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
-                                        </div>
+                                <div className="space-y-1.5">
+                                    <label className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Budget Range</label>
+                                    <div className="relative group">
+                                        <CreditCard strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-brand-cyan transition-colors pointer-events-none" />
+                                        <select className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-10 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all appearance-none text-slate-700 dark:text-slate-200 text-sm">
+                                            <option>₹5k - ₹10k</option>
+                                            <option>₹10k - ₹25k</option>
+                                            <option>₹25k - ₹50k</option>
+                                            <option>₹50k+</option>
+                                        </select>
+                                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
                                     </div>
                                 </div>
                                 <div className="pt-2">
@@ -357,15 +311,15 @@ export default function EcoWebsiteDevelopment() {
                     <div className="space-y-6 md:space-y-8">
                         <div>
                             <motion.span
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+
+
                                 className="text-brand-cyan font-bold uppercase tracking-widest text-[10px] md:text-xs"
                             >
                                 The Digital Necessity
                             </motion.span>
                             <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+
+
                                 className="text-3xl md:text-4xl lg:text-5xl font-black mt-4 mb-6 text-slate-900 dark:text-white leading-[1.2]"
                             >
                                 Why Your Business <br className="hidden sm:block" /> Needs This.
@@ -381,8 +335,8 @@ export default function EcoWebsiteDevelopment() {
                             ].map((item, i) => (
                                 <motion.li
                                     key={i}
-                                    initial={{ opacity: 0, x: -30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
+
+
                                     transition={{ delay: i * 0.1 }}
                                     className="flex items-start gap-4 group"
                                 >
@@ -410,8 +364,8 @@ export default function EcoWebsiteDevelopment() {
                                 ].map((stat: any, i) => (
                                     <motion.div
                                         key={i}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
+
+
                                         transition={{ delay: i * 0.1 }}
                                         whileHover={{ y: -5, scale: 1.02 }}
                                         className={`bg-white dark:bg-slate-900/80 p-4 sm:p-6 rounded-[1.25rem] sm:rounded-2xl border border-slate-100 dark:border-white/5 relative overflow-hidden group/stat transition-all duration-300 shadow-sm hover:shadow-xl ${stat.shift ? 'mt-6 sm:mt-8' : ''} ${stat.glow}`}
@@ -439,8 +393,8 @@ export default function EcoWebsiteDevelopment() {
                                         {/* Animated Progress Bar */}
                                         <div className="mt-4 sm:mt-5 h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden relative">
                                             <motion.div
-                                                initial={{ width: 0 }}
-                                                whileInView={{ width: stat.progress }}
+
+
                                                 transition={{ duration: 1.5, delay: 0.5 + (i * 0.1), ease: "easeOut" }}
                                                 className={`h-full relative overflow-hidden ${stat.color.replace('text', 'bg')}`}
                                             >
@@ -770,8 +724,8 @@ export default function EcoWebsiteDevelopment() {
                                     stroke="url(#speedGradient)"
                                     strokeWidth="3"
                                     strokeDasharray="283"
-                                    initial={{ strokeDashoffset: 283 }}
-                                    whileInView={{ strokeDashoffset: 283 * 0.05 }}
+
+
                                     transition={{ duration: 2, ease: "easeOut" }}
                                     strokeLinecap="round"
                                 />
@@ -786,8 +740,8 @@ export default function EcoWebsiteDevelopment() {
                             {/* Center Metrics */}
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                                 <motion.span
-                                    initial={{ opacity: 0, scale: 0.5 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
+
+
                                     className="text-6xl md:text-8xl font-black text-slate-900 dark:text-white tracking-widest"
                                 >
                                     99
@@ -829,8 +783,8 @@ export default function EcoWebsiteDevelopment() {
                     <div className="relative order-2 lg:order-1">
                         {/* Google Search Mockup */}
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+
+
                             className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-6 md:p-8 max-w-xl mx-auto lg:ml-0 overflow-hidden border border-white/10"
                         >
                             <div className="flex items-center gap-2 mb-6 border-b border-slate-100 dark:border-slate-700 pb-4">
@@ -932,8 +886,8 @@ export default function EcoWebsiteDevelopment() {
                         <div className="relative flex justify-center items-center h-[280px] xs:h-[350px] md:h-[450px] lg:h-[400px]">
                             {/* Tablet Frame */}
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+
+
                                 transition={{ duration: 0.8, ease: "easeOut" }}
                                 className="absolute w-[200px] xs:w-[260px] md:w-[320px] aspect-[4/3] bg-slate-800 rounded-xl md:rounded-2xl border-[4px] md:border-[8px] border-slate-700 shadow-2xl overflow-hidden z-10"
                             >
@@ -954,8 +908,8 @@ export default function EcoWebsiteDevelopment() {
 
                             {/* Phone Frame */}
                             <motion.div
-                                initial={{ opacity: 0, x: -40, y: 40, rotate: -10 }}
-                                whileInView={{ opacity: 1, x: 0, y: 0, rotate: -5 }}
+
+
                                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                                 className="absolute w-[100px] xs:w-[130px] md:w-[160px] aspect-[9/19] bg-slate-800 rounded-[1.5rem] md:rounded-[2.5rem] border-[4px] md:border-[8px] border-slate-700 shadow-2xl overflow-hidden z-20 -translate-x-[60px] xs:-translate-x-[90px] md:-translate-x-[110px] translate-y-12 xs:translate-y-20 md:translate-y-28 shadow-brand-cyan/5"
                             >
@@ -1115,8 +1069,8 @@ export default function EcoWebsiteDevelopment() {
                             <div className="text-3xl font-black text-slate-900 dark:text-white">100/100</div>
                             <div className="mt-4 w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
                                 <motion.div
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: '100%' }}
+
+
                                     className="h-full bg-green-500"
                                 />
                             </div>
@@ -1220,8 +1174,8 @@ export default function EcoWebsiteDevelopment() {
                                         ].map((item, i) => (
                                             <motion.div
                                                 key={i}
-                                                initial={{ opacity: 0, x: 20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
+
+
                                                 transition={{ delay: i * 0.1 }}
                                                 className="flex items-center gap-3 sm:gap-4 group/item"
                                             >
@@ -1414,14 +1368,14 @@ export default function EcoWebsiteDevelopment() {
             <AnimatePresence>
                 {isVideoOpen && (
                     <motion.div
-                        initial={{ opacity: 0 }}
+
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
                         onClick={() => setIsVideoOpen(false)}
                     >
                         <motion.div
-                            initial={{ scale: 0.95, opacity: 0 }}
+
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.95, opacity: 0 }}
                             className="relative w-full aspect-video max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center"

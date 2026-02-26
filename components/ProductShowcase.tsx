@@ -186,13 +186,13 @@ const ProductShowcase: React.FC = () => {
                         <div className="hidden md:flex items-center gap-4">
                             <button
                                 onClick={() => scroll('left')}
-                                className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full border-2 border-[#E9EEF4] dark:border-white/10 flex items-center justify-center text-[#8C9FAF] hover:bg-[#4392CE] hover:text-white hover:border-[#4392CE] shadow-sm hover:shadow-[0_12px_24px_rgba(67,146,206,0.3)] transition-all duration-300 active:scale-95 group"
+                                className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full border-2 border-[#E9EEF4] dark:border-white/10 flex items-center justify-center text-[#8C9FAF] hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 hover:border-slate-900 dark:hover:border-white shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
                             >
                                 <ArrowLeft className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
                             </button>
                             <button
                                 onClick={() => scroll('right')}
-                                className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full border-2 border-[#E9EEF4] dark:border-white/10 flex items-center justify-center text-[#8C9FAF] hover:bg-[#4392CE] hover:text-white hover:border-[#4392CE] shadow-sm hover:shadow-[0_12px_24px_rgba(67,146,206,0.3)] transition-all duration-300 active:scale-95 group"
+                                className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full border-2 border-[#E9EEF4] dark:border-white/10 flex items-center justify-center text-[#8C9FAF] hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 hover:border-slate-900 dark:hover:border-white shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
                             >
                                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
                             </button>

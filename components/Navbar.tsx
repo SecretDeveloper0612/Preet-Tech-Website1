@@ -168,11 +168,11 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
               onMouseEnter={() => setShowMegaMenu(true)}
             >
               <div className="bg-white dark:bg-[#050505] p-2 rounded-[2.5rem] border border-slate-200 dark:border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.2)] overflow-hidden">
-                <div className="flex bg-slate-50/50 dark:bg-white/[0.02] rounded-[2rem] overflow-hidden min-h-[500px]">
+                <div className="flex bg-slate-50/50 dark:bg-white/[0.02] rounded-[2rem] overflow-hidden min-h-[350px]">
                   {/* Tab Switcher Panel */}
-                  <div className="w-1/4 p-8 border-r border-slate-100 dark:border-white/5 flex flex-col justify-between">
-                    <div className="space-y-4">
-                      <p className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-medium mb-8">Capabilities</p>
+                  <div className="w-1/4 p-6 border-r border-slate-100 dark:border-white/5 flex flex-col justify-between">
+                    <div className="space-y-2">
+                      <p className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-medium mb-6">Capabilities</p>
                       {(Object.keys(megaMenuContent) as Array<keyof typeof megaMenuContent>).map((tab) => (
                         <button
                           key={tab}
@@ -180,7 +180,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                             setActiveTab(tab);
                             setHoveredItem(null);
                           }}
-                          className={`w-full text-left p-4 rounded-2xl transition-all flex items-center justify-between group ${activeTab === tab ? 'bg-white dark:bg-white/10 shadow-sm text-brand-medium translate-x-2' : 'hover:translate-x-1 text-slate-500'}`}
+                          className={`w-full text-left p-3 rounded-2xl transition-all flex items-center justify-between group ${activeTab === tab ? 'bg-white dark:bg-white/10 shadow-sm text-brand-medium translate-x-2' : 'hover:translate-x-1 text-slate-500'}`}
                         >
                           <span className="font-bold uppercase text-sm tracking-tighter">{tab}</span>
                           <ChevronRight className={`w-4 h-4 transition-all ${activeTab === tab ? 'opacity-100' : 'opacity-0 -translate-x-2'}`} />
@@ -189,7 +189,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                     </div>
                   </div>
                   {/* Content Area */}
-                  <div className="flex-1 p-12 bg-white dark:bg-transparent relative">
+                  <div className="flex-1 p-8 bg-white dark:bg-transparent relative">
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={activeTab}
@@ -199,7 +199,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                         transition={{ duration: 0.3 }}
                         className="h-full flex flex-col"
                       >
-                        <div className="mb-12 min-h-[100px] flex flex-col justify-end">
+                        <div className="mb-8 min-h-[80px] flex flex-col justify-end">
                           <AnimatePresence mode="wait">
                             {hoveredItem ? (
                               <motion.div key={hoveredItem.name} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-2">
@@ -214,12 +214,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                             )}
                           </AnimatePresence>
                         </div>
-                        <div className="grid grid-cols-2 gap-x-8 gap-y-10 flex-1">
+                        <div className="grid grid-cols-2 gap-x-6 gap-y-6 flex-1">
                           {megaMenuContent[activeTab].items.map((item, i) => (
                             <Link
                               key={i}
                               href={item.href}
-                              className={`group flex gap-6 items-start transition-all origin-left ${hoveredItem?.name === item.name ? 'scale-[1.05]' : 'scale-100 opacity-70 hover:opacity-100'}`}
+                              className={`group flex gap-4 items-start transition-all origin-left ${hoveredItem?.name === item.name ? 'scale-[1.05]' : 'scale-100 opacity-70 hover:opacity-100'}`}
                               onMouseEnter={() => setHoveredItem(item)}
                               onClick={() => setShowMegaMenu(false)}
                             >

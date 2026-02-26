@@ -12,13 +12,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-if (typeof window !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-}
 
 // ----------------------------------------------------------------------
 // Advanced Website Development Page Component
@@ -55,33 +49,6 @@ export default function AdvancedWebsiteDevelopment() {
         }
     };
 
-    useGSAP(() => {
-        const sections = gsap.utils.toArray('.reveal-section');
-        sections.forEach((section: any) => {
-            gsap.from(section, {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                }
-            });
-        });
-
-        // Parallax grid background
-        gsap.to(".grid-parallax", {
-            backgroundPosition: "0px -100px",
-            scrollTrigger: {
-                trigger: "body",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: true
-            }
-        });
-    }, { scope: containerRef });
 
     return (
         <main ref={containerRef} className="relative z-10 selection:bg-brand-cyan/20 overflow-x-hidden bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-500 font-sans">
@@ -127,27 +94,7 @@ export default function AdvancedWebsiteDevelopment() {
                         className="absolute top-[40%] left-[30%] w-[400px] h-[400px] bg-violet-500/10 blur-[140px] rounded-full"
                     />
 
-                    {/* Animated Tech Grid - Layer 1 */}
-                    <motion.div
-                        animate={{ x: [0, 40], y: [0, 40] }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                        className="absolute -inset-[100px] opacity-[0.04] dark:opacity-[0.08] will-change-transform"
-                        style={{
-                            backgroundImage: `linear-gradient(to right, ${isDarkMode ? '#5FD3E6' : '#3F8FCC'} 1px, transparent 1px), linear-gradient(to bottom, ${isDarkMode ? '#5FD3E6' : '#3F8FCC'} 1px, transparent 1px)`,
-                            backgroundSize: '40px 40px'
-                        }}
-                    />
 
-                    {/* Animated Tech Grid - Layer 2 (Diagonal movement for depth) */}
-                    <motion.div
-                        animate={{ x: [0, -60], y: [0, 60] }}
-                        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                        className="absolute -inset-[120px] opacity-[0.02] dark:opacity-[0.05] will-change-transform"
-                        style={{
-                            backgroundImage: `linear-gradient(to right, ${isDarkMode ? '#5FD3E6' : '#3F8FCC'} 1px, transparent 1px), linear-gradient(to bottom, ${isDarkMode ? '#5FD3E6' : '#3F8FCC'} 1px, transparent 1px)`,
-                            backgroundSize: '60px 60px'
-                        }}
-                    />
 
                     {/* Ambient Glows around the grid */}
                     <motion.div
@@ -281,12 +228,12 @@ export default function AdvancedWebsiteDevelopment() {
                             transition={{ duration: 0.8, delay: 0.75, ease: "easeOut" }}
                             className="flex flex-col sm:flex-row gap-5"
                         >
-                            <a href="#contact" className="px-6 sm:px-10 py-4 sm:py-5 bg-slate-900 text-white dark:bg-brand-cyan dark:text-slate-950 font-bold rounded-xl transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(95,211,230,0.4)] flex items-center justify-center gap-3 text-xs sm:text-sm uppercase tracking-wider relative overflow-hidden group">
+                            <a href="#contact" className="px-6 sm:px-10 py-4 sm:py-5 overflow-hidden gap-3 text-xs sm:text-sm group bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
                                 {/* Shimmer effect on hover */}
                                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                                 <span className="relative z-10 flex items-center gap-2">Book Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
                             </a>
-                            <a href="#portfolio" className="px-6 sm:px-10 py-4 sm:py-5 border border-slate-300 dark:border-white/20 rounded-xl font-bold hover:bg-slate-100 dark:hover:bg-white/5 transition-all text-center text-xs sm:text-sm uppercase tracking-wider hover:border-brand-cyan/50 hover:shadow-[0_0_20px_rgba(95,211,230,0.1)]">
+                            <a href="#portfolio" className="px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
                                 View Our Work
                             </a>
                         </motion.div>
@@ -402,40 +349,21 @@ export default function AdvancedWebsiteDevelopment() {
                                             </div>
                                         </div>
 
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-4">
-                                            {/* Website Type */}
-                                            <div className="space-y-2">
-                                                <label className="text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">Website Type</label>
-                                                <div className="relative group/field">
-                                                    <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan">
-                                                        <Layout className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors" strokeWidth={1.5} />
-                                                    </div>
-                                                    <select className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-10 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium appearance-none shadow-sm text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer">
-                                                        <option value="eco">Eco-Budget</option>
-                                                        <option value="advanced">Advanced Package</option>
-                                                        <option value="custom">Custom Enterprise</option>
-                                                    </select>
-                                                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400 transition-colors group-focus-within/field:text-brand-cyan">
-                                                        <ChevronRight className="w-4 h-4 rotate-90" />
-                                                    </div>
+                                        {/* Budget Range */}
+                                        <div className="space-y-2">
+                                            <label className="text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">Budget Range</label>
+                                            <div className="relative group/field">
+                                                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan">
+                                                    <CreditCard className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors" strokeWidth={1.5} />
                                                 </div>
-                                            </div>
-                                            {/* Budget Range */}
-                                            <div className="space-y-2">
-                                                <label className="text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">Budget Range</label>
-                                                <div className="relative group/field">
-                                                    <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan">
-                                                        <CreditCard className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors" strokeWidth={1.5} />
-                                                    </div>
-                                                    <select className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-10 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium appearance-none shadow-sm text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer">
-                                                        <option value="5k-10k">₹5k - ₹10k</option>
-                                                        <option value="10k-25k">₹10k - ₹25k</option>
-                                                        <option value="25k-50k">₹25k - ₹50k</option>
-                                                        <option value="50k+">₹50k+</option>
-                                                    </select>
-                                                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400 transition-colors group-focus-within/field:text-brand-cyan">
-                                                        <ChevronRight className="w-4 h-4 rotate-90" />
-                                                    </div>
+                                                <select className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-10 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium appearance-none shadow-sm text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer">
+                                                    <option value="5k-10k">₹5k - ₹10k</option>
+                                                    <option value="10k-25k">₹10k - ₹25k</option>
+                                                    <option value="25k-50k">₹25k - ₹50k</option>
+                                                    <option value="50k+">₹50k+</option>
+                                                </select>
+                                                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400 transition-colors group-focus-within/field:text-brand-cyan">
+                                                    <ChevronRight className="w-4 h-4 rotate-90" />
                                                 </div>
                                             </div>
                                         </div>
@@ -444,11 +372,11 @@ export default function AdvancedWebsiteDevelopment() {
                                             <button
                                                 disabled={isSubmitting}
                                                 type="submit"
-                                                className="w-full bg-brand-cyan text-slate-900 font-black py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-[#4bc2d6] transition-all disabled:opacity-70 group/btn hover:shadow-[0_0_20px_rgba(95,211,230,0.3)] duration-300"
+                                                className="w-full py-4 text-[13px] gap-2 disabled:opacity-70 group/btn duration-300 bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center"
                                             >
                                                 {isSubmitting ? (
                                                     <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest">
-                                                        <span className="w-4 h-4 border-2 border-slate-900 border-t-transparent rounded-full animate-spin" />
+                                                        <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                                                     </span>
                                                 ) : (
                                                     <span className="flex items-center gap-2 uppercase tracking-widest text-[13px]">
@@ -466,15 +394,15 @@ export default function AdvancedWebsiteDevelopment() {
             </section>
 
             {/* 2️⃣ Why Do Businesses Need This */}
-            <section className="py-16 md:py-32 px-4 md:px-6 reveal-section border-t border-slate-200/50 dark:border-white/5">
+            <section className="py-12 md:py-20 px-4 md:px-6 reveal-section border-t border-slate-200/50 dark:border-white/5">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-                        <div className="space-y-10">
-                            <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">The Problem Matrix</span>
-                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">Why Template Websites Fail Scaling Businesses.</h2>
-                            <p className="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">Basic setups crack under pressure. As your traffic grows, limitations quickly turn into lost revenue.</p>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                        <div className="space-y-6">
+                            <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">The Problem Matrix</span>
+                            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Why Template Websites Fail Scaling Businesses.</h2>
+                            <p className="text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed">Basic setups crack under pressure. As your traffic grows, limitations quickly turn into lost revenue.</p>
 
-                            <ul className="space-y-6">
+                            <ul className="space-y-4">
                                 {[
                                     { t: "Limited Scalability", d: "Inflexible architecture that cannot adapt to complex operational workflows or traffic spikes." },
                                     { t: "Slow Performance", d: "Bloated plugins and poor databases that kill SEO rankings and user retention." },
@@ -482,13 +410,13 @@ export default function AdvancedWebsiteDevelopment() {
                                     { t: "No Advanced Integrations", d: "Inability to sync natively with external CRMs, ERPs, or payment gateways." },
                                     { t: "Weak Backend Systems", d: "Unstable foundation lacking enterprise-grade security and custom logic." }
                                 ].map((item, i) => (
-                                    <li key={i} className="flex gap-4">
-                                        <div className="mt-1 w-6 h-6 shrink-0 rounded-full bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400 flex items-center justify-center">
-                                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" /></svg>
+                                    <li key={i} className="flex gap-3">
+                                        <div className="mt-0.5 w-5 h-5 shrink-0 rounded-full bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400 flex items-center justify-center">
+                                            <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" /></svg>
                                         </div>
                                         <div>
-                                            <strong className="text-slate-900 dark:text-white block text-lg">{item.t}</strong>
-                                            <span className="text-slate-500 text-sm mt-1 block">{item.d}</span>
+                                            <strong className="text-slate-900 dark:text-white block text-base leading-tight">{item.t}</strong>
+                                            <span className="text-slate-500 text-xs mt-0.5 block">{item.d}</span>
                                         </div>
                                     </li>
                                 ))}
@@ -496,39 +424,39 @@ export default function AdvancedWebsiteDevelopment() {
                         </div>
 
                         {/* Comparison Infographic */}
-                        <div className="relative p-5 sm:p-8 md:p-12 rounded-2xl sm:rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-xl overflow-hidden">
+                        <div className="relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[1.5rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-xl overflow-hidden">
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/5 to-transparent pointer-events-none" />
-                            <h3 className="text-2xl font-bold mb-10 text-center">Architecture Comparison</h3>
+                            <h3 className="text-xl font-bold mb-6 text-center">Architecture Comparison</h3>
 
-                            <div className="grid grid-cols-2 gap-4 md:gap-8">
+                            <div className="grid grid-cols-2 gap-3 md:gap-6">
                                 {/* Basic */}
-                                <div className="space-y-6">
-                                    <h4 className="text-center font-bold text-slate-400 uppercase tracking-widest text-xs mb-6">Basic CMS</h4>
+                                <div className="space-y-3 md:space-y-4">
+                                    <h4 className="text-center font-bold text-slate-400 uppercase tracking-widest text-[10px] md:text-xs mb-4">Basic CMS</h4>
                                     {[
                                         { l: "Speed", s: "Avg 3-5s", c: "text-red-500 bg-red-50 dark:bg-red-500/10" },
                                         { l: "Security", s: "Vulnerable", c: "text-red-500 bg-red-50 dark:bg-red-500/10" },
                                         { l: "Scale", s: "Capped", c: "text-yellow-500 bg-yellow-50 dark:bg-yellow-500/10" },
                                         { l: "UI/UX", s: "Template", c: "text-slate-500 bg-slate-50 dark:bg-white/5" }
                                     ].map((stat, i) => (
-                                        <div key={i} className="text-center p-4 rounded-2xl border border-slate-100 dark:border-white/5">
-                                            <span className="block text-[10px] font-bold text-slate-400 mb-1">{stat.l}</span>
-                                            <span className={`block font-bold text-sm md:text-md rounded-lg py-1 ${stat.c}`}>{stat.s}</span>
+                                        <div key={i} className="text-center p-2.5 md:p-3 rounded-xl border border-slate-100 dark:border-white/5">
+                                            <span className="block text-[9px] md:text-[10px] font-bold text-slate-400 mb-0.5">{stat.l}</span>
+                                            <span className={`block font-bold text-xs md:text-sm rounded-md py-1 ${stat.c}`}>{stat.s}</span>
                                         </div>
                                     ))}
                                 </div>
                                 {/* Advanced */}
-                                <div className="space-y-6">
-                                    <h4 className="text-center font-bold text-brand-cyan uppercase tracking-widest text-xs mb-6 focus:text-white">Advanced System</h4>
+                                <div className="space-y-3 md:space-y-4">
+                                    <h4 className="text-center font-bold text-brand-cyan uppercase tracking-widest text-[10px] md:text-xs mb-4 focus:text-white">Advanced System</h4>
                                     {[
                                         { l: "Speed", s: "Sub-Second", c: "text-emerald-500 bg-emerald-50 dark:bg-emerald-500/10" },
                                         { l: "Security", s: "Bank-Grade", c: "text-emerald-500 bg-emerald-50 dark:bg-emerald-500/10" },
                                         { l: "Scale", s: "Infinite", c: "text-brand-cyan bg-brand-cyan/10" },
                                         { l: "UI/UX", s: "Custom Built", c: "text-brand-cyan bg-brand-cyan/10" }
                                     ].map((stat, i) => (
-                                        <div key={i} className="text-center p-4 rounded-2xl border border-brand-cyan/20 dark:border-brand-cyan/30 relative overflow-hidden group">
+                                        <div key={i} className="text-center p-2.5 md:p-3 rounded-xl border border-brand-cyan/20 dark:border-brand-cyan/30 relative overflow-hidden group">
                                             <div className="absolute inset-0 bg-brand-cyan/5 group-hover:bg-brand-cyan/10 transition-colors" />
-                                            <span className="block text-[10px] font-bold text-slate-500 dark:text-slate-300 mb-1 relative z-10">{stat.l}</span>
-                                            <span className={`block font-bold text-sm md:text-md rounded-lg py-1 ${stat.c} relative z-10 shadow-[0_0_15px_rgba(16,185,129,0.2)]`}>{stat.s}</span>
+                                            <span className="block text-[9px] md:text-[10px] font-bold text-slate-500 dark:text-slate-300 mb-0.5 relative z-10">{stat.l}</span>
+                                            <span className={`block font-bold text-xs md:text-sm rounded-md py-1 ${stat.c} relative z-10 shadow-[0_0_15px_rgba(16,185,129,0.2)]`}>{stat.s}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -787,15 +715,15 @@ export default function AdvancedWebsiteDevelopment() {
                                 </p>
 
                                 <div className="mt-auto">
-                                    <a href="#contact" className="inline-flex items-center gap-2 group/btn">
-                                        <span className="text-white font-bold text-sm border-b border-brand-cyan/50 pb-0.5 group-hover/btn:border-brand-cyan group-hover/btn:text-brand-cyan transition-all">
+                                    <a href="#contact" className="inline-flex px-8 py-3.5 gap-2 group/btn text-xs bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
+                                        <span className="">
                                             Start Selling
                                         </span>
                                         <motion.div
                                             animate={{ x: [0, 4, 0] }}
                                             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                                         >
-                                            <ArrowRight className="w-4 h-4 text-brand-cyan" />
+                                            <ArrowRight className="w-4 h-4 text-white" />
                                         </motion.div>
                                     </a>
                                 </div>
@@ -1129,41 +1057,37 @@ export default function AdvancedWebsiteDevelopment() {
                     </div>
 
                     {/* Architecture Diagram */}
-                    <div className="mt-10 sm:mt-16 p-4 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 relative overflow-hidden">
-                        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                        <h3 className="text-xl font-bold mb-8 text-center">System Architecture Overview</h3>
-                        <div className="flex flex-col md:flex-row items-stretch justify-between gap-4 sm:gap-6 relative z-10 overflow-x-auto">
+                    <div className="mt-10 sm:mt-16 p-8 sm:p-12 md:p-16 rounded-[2rem] bg-white dark:bg-[#0a0a0a] border border-slate-100 dark:border-white/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none relative overflow-hidden">
+                        <div className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+                        <h3 className="text-lg md:text-xl font-bold mb-10 md:mb-14 text-center text-slate-800 dark:text-white">System Architecture Overview</h3>
+                        <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-4 sm:gap-6 relative z-10 w-full max-w-6xl mx-auto">
                             {[
-                                { label: 'Client Layer', items: [{ name: 'React SPA', icon: Monitor }, { name: 'Next.js SSR', icon: Globe }, { name: 'PWA Support', icon: Smartphone }], color: 'border-brand-cyan', bg: 'bg-brand-cyan/5', text: 'text-brand-cyan' },
-                                { label: 'API Gateway', items: [{ name: 'REST / GraphQL', icon: Network }, { name: 'Rate Limiting', icon: ShieldCheck }, { name: 'Auth Middleware', icon: Key }], color: 'border-indigo-500', bg: 'bg-indigo-500/5', text: 'text-indigo-500' },
-                                { label: 'Business Logic', items: [{ name: 'Microservices', icon: Component }, { name: 'Event Queue', icon: GitBranch }, { name: 'Cache Layer', icon: Zap }], color: 'border-violet-500', bg: 'bg-violet-500/5', text: 'text-violet-500' },
-                                { label: 'Data Layer', items: [{ name: 'PostgreSQL', icon: Database }, { name: 'Redis Cache', icon: RefreshCw }, { name: 'S3 Storage', icon: Cloud }], color: 'border-emerald-500', bg: 'bg-emerald-500/5', text: 'text-emerald-500' }
+                                { label: 'Client Layer', items: [{ name: 'React SPA', icon: Monitor }, { name: 'Next.js SSR', icon: Globe }, { name: 'PWA Support', icon: Smartphone }], color: 'border-brand-cyan/20' },
+                                { label: 'API Gateway', items: [{ name: 'REST / GraphQL', icon: Network }, { name: 'Rate Limiting', icon: ShieldCheck }, { name: 'Auth Middleware', icon: Key }], color: 'border-indigo-400/20' },
+                                { label: 'Business Logic', items: [{ name: 'Microservices', icon: Component }, { name: 'Event Queue', icon: GitBranch }, { name: 'Cache Layer', icon: Zap }], color: 'border-violet-300 dark:border-violet-500/40 bg-violet-50/30 dark:bg-violet-500/5 shadow-sm shadow-violet-500/5', dot: true },
+                                { label: 'Data Layer', items: [{ name: 'PostgreSQL', icon: Database }, { name: 'Redis Cache', icon: RefreshCw }, { name: 'S3 Storage', icon: Cloud }], color: 'border-emerald-400/20' }
                             ].map((layer, i) => (
                                 <React.Fragment key={i}>
-                                    <div className={`flex-1 w-full p-6 rounded-2xl bg-white dark:bg-slate-800 border-2 ${layer.color} border-opacity-30 text-center space-y-4 relative group`}>
-                                        <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 ${layer.bg} transition-opacity duration-500 rounded-2xl pointer-events-none`} />
-                                        <h4 className="font-bold text-sm uppercase tracking-widest text-slate-500 relative z-10">{layer.label}</h4>
-                                        <div className="space-y-3 relative z-10">
+                                    <div className={`flex-1 w-full sm:max-w-[240px] p-6 rounded-[1.25rem] bg-white dark:bg-slate-900 border ${layer.color} text-center relative transition-all duration-300 hover:shadow-md dark:hover:shadow-none`}>
+                                        {layer.dot && (
+                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-violet-500 ring-4 ring-white dark:ring-slate-900" />
+                                        )}
+                                        <h4 className="font-bold text-[10px] md:text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-6">{layer.label}</h4>
+                                        <div className="space-y-3">
                                             {layer.items.map((item, j) => (
-                                                <motion.div
+                                                <div
                                                     key={j}
-                                                    whileHover={{ scale: 1.05 }}
-                                                    className={`flex items-center justify-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-3 hover:border-current hover:${layer.text} transition-all cursor-pointer group/item`}
+                                                    className="flex items-center justify-center gap-2.5 text-[11px] md:text-xs font-semibold text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-white/5 rounded-xl py-3 px-3 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-slate-200 dark:hover:border-white/10 transition-all cursor-pointer"
                                                 >
-                                                    <item.icon className="w-3.5 h-3.5 opacity-60 group-hover/item:opacity-100 transition-opacity" />
+                                                    <item.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-400" strokeWidth={1.5} />
                                                     {item.name}
-                                                </motion.div>
+                                                </div>
                                             ))}
                                         </div>
                                     </div>
                                     {i < 3 && (
                                         <div className="shrink-0 hidden md:flex items-center justify-center">
-                                            <motion.div
-                                                animate={{ x: [0, 5, 0] }}
-                                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                                            >
-                                                <ArrowRight className="w-6 h-6 text-slate-300 dark:text-white/20" />
-                                            </motion.div>
+                                            <ArrowRight className="w-4 h-4 text-slate-300 dark:text-slate-600" />
                                         </div>
                                     )}
                                 </React.Fragment>
@@ -1353,10 +1277,7 @@ export default function AdvancedWebsiteDevelopment() {
                                         </li>
                                     ))}
                                 </ul>
-                                <a href="#contact" className={`block w-full mt-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider text-center transition-all ${plan.highlight
-                                    ? 'bg-brand-cyan text-slate-950 hover:bg-white hover:shadow-lg'
-                                    : 'bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-brand-cyan/50'
-                                    }`}>
+                                <a href="#contact" className={`w-full mt-8 py-4 text-sm ${plan.highlight ? "ring-2 ring-brand-cyan ring-offset-2 ring-offset-slate-900" : ""} bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center`}>
                                     Get Started
                                 </a>
                             </motion.div>
@@ -1436,10 +1357,7 @@ export default function AdvancedWebsiteDevelopment() {
                                         ))}
                                     </ul>
 
-                                    <a href="#contact" className={`block w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wider text-center transition-all ${plan.highlight
-                                        ? 'bg-brand-cyan text-slate-950 hover:bg-white hover:shadow-lg shadow-brand-cyan/20'
-                                        : 'bg-slate-900 dark:bg-white/5 text-white border border-slate-800 dark:border-white/10 hover:border-brand-cyan/50'
-                                        }`}>
+                                    <a href="#contact" className={`w-full py-4 text-sm ${plan.highlight ? "ring-2 ring-brand-cyan ring-offset-2 ring-offset-slate-900" : ""} bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center`}>
                                         {plan.highlight ? 'Start Enterprise Project' : 'Get a Quote'}
                                     </a>
                                 </div>
@@ -1616,7 +1534,7 @@ export default function AdvancedWebsiteDevelopment() {
                                     <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Tell us about your project *</label>
                                     <textarea rows={4} placeholder="Describe your business, goals, and what you're looking to build..." className="w-full px-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all resize-none" />
                                 </div>
-                                <button type="submit" className="w-full py-5 rounded-xl bg-brand-cyan text-slate-950 font-black uppercase tracking-widest text-sm hover:bg-white hover:shadow-xl transition-all flex items-center justify-center gap-3 shadow-lg shadow-brand-cyan/20">
+                                <button type="submit" className="w-full py-5 gap-3 text-sm bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
                                     <Send className="w-5 h-5" />
                                     Submit Consultation Request
                                 </button>
@@ -1665,11 +1583,11 @@ export default function AdvancedWebsiteDevelopment() {
                         transition={{ delay: 0.2 }}
                         className="flex flex-col sm:flex-row items-center justify-center gap-6"
                     >
-                        <a href="#contact" className="px-8 sm:px-12 py-5 sm:py-6 bg-brand-cyan text-slate-950 rounded-xl sm:rounded-2xl font-black uppercase tracking-widest text-xs sm:text-sm hover:bg-white hover:shadow-[0_0_60px_rgba(95,211,230,0.4)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                        <a href="#contact" className="px-8 sm:px-12 py-5 sm:py-6 gap-3 text-xs sm:text-sm group bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
                             <Rocket className="w-5 h-5" />
                             Start Your Project Now
                         </a>
-                        <a href="tel:+919876543210" className="px-8 sm:px-12 py-5 sm:py-6 border-2 border-white/10 rounded-xl sm:rounded-2xl font-bold uppercase tracking-widest text-xs sm:text-sm hover:bg-white/5 transition-all flex items-center justify-center gap-3">
+                        <a href="tel:+919876543210" className="px-8 sm:px-12 py-5 sm:py-6 gap-3 text-xs sm:text-sm bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
                             <Phone className="w-5 h-5" />
                             Call Us Directly
                         </a>

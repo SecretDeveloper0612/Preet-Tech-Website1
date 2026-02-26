@@ -358,15 +358,15 @@ const Navbar = ({ isDark: _ignoredIsDark, toggleTheme: _ignoredToggleTheme })=>{
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "bg-white dark:bg-[#050505] p-2 rounded-[2.5rem] border border-slate-200 dark:border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.2)] overflow-hidden",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex bg-slate-50/50 dark:bg-white/[0.02] rounded-[2rem] overflow-hidden min-h-[500px]",
+                                    className: "flex bg-slate-50/50 dark:bg-white/[0.02] rounded-[2rem] overflow-hidden min-h-[350px]",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-1/4 p-8 border-r border-slate-100 dark:border-white/5 flex flex-col justify-between",
+                                            className: "w-1/4 p-6 border-r border-slate-100 dark:border-white/5 flex flex-col justify-between",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "space-y-4",
+                                                className: "space-y-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-[10px] font-black uppercase tracking-[0.4em] text-brand-medium mb-8",
+                                                        className: "text-[10px] font-black uppercase tracking-[0.4em] text-brand-medium mb-6",
                                                         children: "Capabilities"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Navbar.tsx",
@@ -378,7 +378,7 @@ const Navbar = ({ isDark: _ignoredIsDark, toggleTheme: _ignoredToggleTheme })=>{
                                                                 setActiveTab(tab);
                                                                 setHoveredItem(null);
                                                             },
-                                                            className: `w-full text-left p-4 rounded-2xl transition-all flex items-center justify-between group ${activeTab === tab ? 'bg-white dark:bg-white/10 shadow-sm text-brand-medium translate-x-2' : 'hover:translate-x-1 text-slate-500'}`,
+                                                            className: `w-full text-left p-3 rounded-2xl transition-all flex items-center justify-between group ${activeTab === tab ? 'bg-white dark:bg-white/10 shadow-sm text-brand-medium translate-x-2' : 'hover:translate-x-1 text-slate-500'}`,
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "font-bold uppercase text-sm tracking-tighter",
@@ -413,7 +413,7 @@ const Navbar = ({ isDark: _ignoredIsDark, toggleTheme: _ignoredToggleTheme })=>{
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex-1 p-12 bg-white dark:bg-transparent relative",
+                                            className: "flex-1 p-8 bg-white dark:bg-transparent relative",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
                                                 mode: "wait",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -435,7 +435,7 @@ const Navbar = ({ isDark: _ignoredIsDark, toggleTheme: _ignoredToggleTheme })=>{
                                                     className: "h-full flex flex-col",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "mb-12 min-h-[100px] flex flex-col justify-end",
+                                                            className: "mb-8 min-h-[80px] flex flex-col justify-end",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
                                                                 mode: "wait",
                                                                 children: hoveredItem ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -521,10 +521,10 @@ const Navbar = ({ isDark: _ignoredIsDark, toggleTheme: _ignoredToggleTheme })=>{
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "grid grid-cols-2 gap-x-8 gap-y-10 flex-1",
+                                                            className: "grid grid-cols-2 gap-x-6 gap-y-6 flex-1",
                                                             children: megaMenuContent[activeTab].items.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                                     href: item.href,
-                                                                    className: `group flex gap-6 items-start transition-all origin-left ${hoveredItem?.name === item.name ? 'scale-[1.05]' : 'scale-100 opacity-70 hover:opacity-100'}`,
+                                                                    className: `group flex gap-4 items-start transition-all origin-left ${hoveredItem?.name === item.name ? 'scale-[1.05]' : 'scale-100 opacity-70 hover:opacity-100'}`,
                                                                     onMouseEnter: ()=>setHoveredItem(item),
                                                                     onClick: ()=>setShowMegaMenu(false),
                                                                     children: [
@@ -1056,6 +1056,7 @@ __turbopack_context__.s([
     ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$github$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Github$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/github.js [app-client] (ecmascript) <export default as Github>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$twitter$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Twitter$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/twitter.js [app-client] (ecmascript) <export default as Twitter>");
@@ -1066,9 +1067,49 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-client] (ecmascript) <export default as MapPin>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/send.js [app-client] (ecmascript) <export default as Send>");
 ;
+var _s = __turbopack_context__.k.signature();
+"use client";
+;
 ;
 ;
 const Footer = ()=>{
+    _s();
+    // Newsletter State
+    const [subscribeEmail, setSubscribeEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [subscribeStatus, setSubscribeStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('idle');
+    const [subscribeMessage, setSubscribeMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const handleSubscribe = async (e)=>{
+        e.preventDefault();
+        setSubscribeStatus('loading');
+        setSubscribeMessage('');
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: subscribeEmail
+                })
+            });
+            const data = await response.json();
+            if (data.success) {
+                setSubscribeStatus('success');
+                setSubscribeEmail('');
+                setSubscribeMessage(data.message || 'Subscription successful!');
+                setTimeout(()=>{
+                    setSubscribeStatus('idle');
+                    setSubscribeMessage('');
+                }, 5000);
+            } else {
+                setSubscribeStatus('error');
+                setSubscribeMessage(data.message || 'Something went wrong.');
+            }
+        } catch (err) {
+            setSubscribeStatus('error');
+            setSubscribeMessage('Network Error. Please try again.');
+        }
+    };
     const scrollToTop = ()=>{
         window.scrollTo({
             top: 0,
@@ -1150,12 +1191,12 @@ const Footer = ()=>{
                                         className: "h-12 md:h-14 w-auto object-contain"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 80,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 79,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1163,7 +1204,7 @@ const Footer = ()=>{
                                     children: '"A high-performance digital partner specializing in engineering growth, building scalable architectures, and delivering measurable results for global visionaries."'
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 86,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1184,23 +1225,23 @@ const Footer = ()=>{
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                lineNumber: 59,
+                                                lineNumber: 97,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, i, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                            lineNumber: 53,
+                                            lineNumber: 91,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 51,
+                                    lineNumber: 89,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                            lineNumber: 40,
+                            lineNumber: 78,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1214,7 +1255,7 @@ const Footer = ()=>{
                                             children: "Solutions"
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                            lineNumber: 68,
+                                            lineNumber: 106,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1228,30 +1269,30 @@ const Footer = ()=>{
                                                                 className: "w-1.5 h-1.5 rounded-full bg-brand-medium/0 group-hover:bg-brand-medium transition-all"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                                lineNumber: 73,
+                                                                lineNumber: 111,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             link.name
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                        lineNumber: 72,
+                                                        lineNumber: 110,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, link.name, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                    lineNumber: 71,
+                                                    lineNumber: 109,
                                                     columnNumber: 37
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                            lineNumber: 69,
+                                            lineNumber: 107,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 67,
+                                    lineNumber: 105,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1262,7 +1303,7 @@ const Footer = ()=>{
                                             children: "Company"
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                            lineNumber: 82,
+                                            lineNumber: 120,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1276,36 +1317,36 @@ const Footer = ()=>{
                                                                 className: "w-1.5 h-1.5 rounded-full bg-brand-medium/0 group-hover:bg-brand-medium transition-all"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                                lineNumber: 87,
+                                                                lineNumber: 125,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             link.name
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                        lineNumber: 86,
+                                                        lineNumber: 124,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, link.name, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                    lineNumber: 85,
+                                                    lineNumber: 123,
                                                     columnNumber: 37
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 121,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 81,
+                                    lineNumber: 119,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                            lineNumber: 66,
+                            lineNumber: 104,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1316,7 +1357,7 @@ const Footer = ()=>{
                                     children: "Stay Updated"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 98,
+                                    lineNumber: 136,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1324,40 +1365,61 @@ const Footer = ()=>{
                                     children: "Join our high-performance newsletter to receive the latest insights on digital growth."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 137,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                    onSubmit: handleSubscribe,
                                     className: "relative group",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                             type: "email",
                                             placeholder: "Email address",
-                                            className: "w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-brand-medium transition-all text-sm text-white placeholder:text-slate-600 group-hover:bg-white/[0.07]"
+                                            value: subscribeEmail,
+                                            onChange: (e)=>setSubscribeEmail(e.target.value),
+                                            required: true,
+                                            disabled: subscribeStatus === 'loading',
+                                            className: "w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-brand-medium transition-all text-sm text-white placeholder:text-slate-600 group-hover:bg-white/[0.07] disabled:opacity-50"
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 139,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            className: "absolute right-2 top-2 bottom-2 px-4 rounded-xl bg-brand-medium text-white flex items-center justify-center hover:bg-brand-medium/80 transition-all shadow-lg shadow-brand-medium/20",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
+                                            type: "submit",
+                                            disabled: subscribeStatus === 'loading',
+                                            className: "absolute right-2 top-2 bottom-2 px-5 rounded-xl bg-[#4392CE] text-white flex items-center justify-center hover:bg-[#4392CE]/90 transition-all shadow-[0_4px_14px_rgba(67,146,206,0.4)] disabled:opacity-50 disabled:cursor-not-allowed",
+                                            children: subscribeStatus === 'loading' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "w-4 h-4 rounded-full border-2 border-white/20 border-t-white animate-spin"
+                                            }, void 0, false, {
+                                                fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
+                                                lineNumber: 154,
+                                                columnNumber: 37
+                                            }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                lineNumber: 107,
-                                                columnNumber: 33
+                                                lineNumber: 156,
+                                                columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                            lineNumber: 106,
+                                            lineNumber: 148,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 100,
+                                    lineNumber: 138,
                                     columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                subscribeMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: `text-xs ml-2 font-bold ${subscribeStatus === 'success' ? 'text-emerald-400' : 'text-red-400'}`,
+                                    children: subscribeMessage
+                                }, void 0, false, {
+                                    fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
+                                    lineNumber: 161,
+                                    columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "space-y-3",
@@ -1371,19 +1433,19 @@ const Footer = ()=>{
                                                         className: "w-3.5 h-3.5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                        lineNumber: 113,
+                                                        lineNumber: 168,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                    lineNumber: 112,
+                                                    lineNumber: 167,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "HQ // Global Virtual"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 166,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1395,37 +1457,37 @@ const Footer = ()=>{
                                                         className: "w-3.5 h-3.5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                        lineNumber: 119,
+                                                        lineNumber: 174,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                                    lineNumber: 118,
+                                                    lineNumber: 173,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "hello@preettech.com"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                            lineNumber: 117,
+                                            lineNumber: 172,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 110,
+                                    lineNumber: 165,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                            lineNumber: 97,
+                            lineNumber: 135,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                    lineNumber: 37,
+                    lineNumber: 75,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1443,7 +1505,7 @@ const Footer = ()=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 131,
+                                    lineNumber: 186,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1454,18 +1516,18 @@ const Footer = ()=>{
                                             children: link.name
                                         }, link.name, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                            lineNumber: 134,
+                                            lineNumber: 189,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 187,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                            lineNumber: 130,
+                            lineNumber: 185,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1479,38 +1541,39 @@ const Footer = ()=>{
                                         className: "w-4 h-4 group-hover:-translate-y-1 transition-transform"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                        lineNumber: 145,
+                                        lineNumber: 200,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 199,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                            lineNumber: 139,
+                            lineNumber: 194,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-                    lineNumber: 129,
+                    lineNumber: 184,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-            lineNumber: 34,
+            lineNumber: 72,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx",
-        lineNumber: 33,
+        lineNumber: 71,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
+_s(Footer, "HkdivxAzUcApRjDFcsJcEKBt40w=");
 _c = Footer;
 const __TURBOPACK__default__export__ = Footer;
 var _c;
@@ -1537,7 +1600,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$server$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Server$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/server.js [app-client] (ecmascript) <export default as Server>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/database.js [app-client] (ecmascript) <export default as Database>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/smartphone.js [app-client] (ecmascript) <export default as Smartphone>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$panels$2d$top$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Layout$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/panels-top-left.js [app-client] (ecmascript) <export default as Layout>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rocket$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Rocket$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/rocket.js [app-client] (ecmascript) <export default as Rocket>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/shield-check.js [app-client] (ecmascript) <export default as ShieldCheck>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/zap.js [app-client] (ecmascript) <export default as Zap>");
@@ -1586,9 +1648,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$container$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Container$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/lucide-react/dist/esm/icons/container.js [app-client] (ecmascript) <export default as Container>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$components$2f$Navbar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/components/Navbar.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$components$2f$Footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/components/Footer.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/gsap/index.js [app-client] (ecmascript) <locals>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/@gsap/react/src/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$gsap$2f$dist$2f$ScrollTrigger$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/preet-tech-next-gen-digital-agency 2/node_modules/gsap/dist/ScrollTrigger.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -1598,12 +1657,6 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-;
-;
-;
-if ("TURBOPACK compile-time truthy", 1) {
-    __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].registerPlugin(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$gsap$2f$dist$2f$ScrollTrigger$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollTrigger"]);
-}
 function AdvancedWebsiteDevelopment() {
     _s();
     const [isDarkMode, setIsDarkMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -1632,38 +1685,6 @@ function AdvancedWebsiteDevelopment() {
             /* handled by next-themes */ localStorage.setItem('theme', 'light');
         }
     };
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"])({
-        "AdvancedWebsiteDevelopment.useGSAP": ()=>{
-            const sections = __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].utils.toArray('.reveal-section');
-            sections.forEach({
-                "AdvancedWebsiteDevelopment.useGSAP": (section)=>{
-                    __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].from(section, {
-                        opacity: 0,
-                        y: 50,
-                        duration: 1,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: section,
-                            start: "top 85%",
-                            toggleActions: "play none none none"
-                        }
-                    });
-                }
-            }["AdvancedWebsiteDevelopment.useGSAP"]);
-            // Parallax grid background
-            __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].to(".grid-parallax", {
-                backgroundPosition: "0px -100px",
-                scrollTrigger: {
-                    trigger: "body",
-                    start: "top top",
-                    end: "bottom bottom",
-                    scrub: true
-                }
-            });
-        }
-    }["AdvancedWebsiteDevelopment.useGSAP"], {
-        scope: containerRef
-    });
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         ref: containerRef,
         className: "relative z-10 selection:bg-brand-cyan/20 overflow-x-hidden bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-500 font-sans",
@@ -1673,7 +1694,7 @@ function AdvancedWebsiteDevelopment() {
                 toggleTheme: toggleTheme
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 88,
+                lineNumber: 55,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1684,7 +1705,7 @@ function AdvancedWebsiteDevelopment() {
                 }
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 91,
+                lineNumber: 58,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1724,7 +1745,7 @@ function AdvancedWebsiteDevelopment() {
                                 className: "absolute top-[10%] -right-[10%] w-[700px] h-[700px] bg-brand-cyan/20 dark:bg-brand-cyan/30 blur-[180px] rounded-full"
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 101,
+                                lineNumber: 68,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1759,7 +1780,7 @@ function AdvancedWebsiteDevelopment() {
                                 className: "absolute -bottom-[15%] -left-[15%] w-[600px] h-[600px] bg-indigo-500/15 dark:bg-indigo-500/25 blur-[160px] rounded-full"
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 111,
+                                lineNumber: 78,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1784,59 +1805,7 @@ function AdvancedWebsiteDevelopment() {
                                 className: "absolute top-[40%] left-[30%] w-[400px] h-[400px] bg-violet-500/10 blur-[140px] rounded-full"
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 121,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                animate: {
-                                    x: [
-                                        0,
-                                        40
-                                    ],
-                                    y: [
-                                        0,
-                                        40
-                                    ]
-                                },
-                                transition: {
-                                    duration: 8,
-                                    repeat: Infinity,
-                                    ease: "linear"
-                                },
-                                className: "absolute -inset-[100px] opacity-[0.04] dark:opacity-[0.08] will-change-transform",
-                                style: {
-                                    backgroundImage: `linear-gradient(to right, ${isDarkMode ? '#5FD3E6' : '#3F8FCC'} 1px, transparent 1px), linear-gradient(to bottom, ${isDarkMode ? '#5FD3E6' : '#3F8FCC'} 1px, transparent 1px)`,
-                                    backgroundSize: '40px 40px'
-                                }
-                            }, void 0, false, {
-                                fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 131,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                animate: {
-                                    x: [
-                                        0,
-                                        -60
-                                    ],
-                                    y: [
-                                        0,
-                                        60
-                                    ]
-                                },
-                                transition: {
-                                    duration: 12,
-                                    repeat: Infinity,
-                                    ease: "linear"
-                                },
-                                className: "absolute -inset-[120px] opacity-[0.02] dark:opacity-[0.05] will-change-transform",
-                                style: {
-                                    backgroundImage: `linear-gradient(to right, ${isDarkMode ? '#5FD3E6' : '#3F8FCC'} 1px, transparent 1px), linear-gradient(to bottom, ${isDarkMode ? '#5FD3E6' : '#3F8FCC'} 1px, transparent 1px)`,
-                                    backgroundSize: '60px 60px'
-                                }
-                            }, void 0, false, {
-                                fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 142,
+                                lineNumber: 88,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1855,7 +1824,7 @@ function AdvancedWebsiteDevelopment() {
                                 className: "absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(95,211,230,0.1)_0%,transparent_60%)] will-change-opacity"
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 153,
+                                lineNumber: 100,
                                 columnNumber: 21
                             }, this),
                             mounted && [
@@ -1892,7 +1861,7 @@ function AdvancedWebsiteDevelopment() {
                                     }
                                 }, `particle-${i}`, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 108,
                                     columnNumber: 25
                                 }, this)),
                             mounted && [
@@ -1923,7 +1892,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: Array(25).fill(0).map(()=>Math.round(Math.random())).join('')
                                 }, `stream-${i}`, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 187,
+                                    lineNumber: 134,
                                     columnNumber: 25
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1938,7 +1907,7 @@ function AdvancedWebsiteDevelopment() {
                                 className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-brand-cyan/5 rounded-full hidden lg:block will-change-transform"
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 205,
+                                lineNumber: 152,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1953,13 +1922,13 @@ function AdvancedWebsiteDevelopment() {
                                 className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] border border-dashed border-brand-cyan/[0.03] rounded-full hidden lg:block will-change-transform"
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 210,
+                                lineNumber: 157,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 98,
+                        lineNumber: 65,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1992,20 +1961,20 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 229,
+                                                        lineNumber: 176,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-cyan"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 230,
+                                                        lineNumber: 177,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 228,
+                                                lineNumber: 175,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2013,13 +1982,13 @@ function AdvancedWebsiteDevelopment() {
                                                 children: "Advanced Development Framework"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 232,
+                                                lineNumber: 179,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 222,
+                                        lineNumber: 169,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].h1, {
@@ -2051,7 +2020,7 @@ function AdvancedWebsiteDevelopment() {
                                                 children: "High-Performance"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 241,
+                                                lineNumber: 188,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].span, {
@@ -2074,7 +2043,7 @@ function AdvancedWebsiteDevelopment() {
                                                 children: "Custom Websites"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 249,
+                                                lineNumber: 196,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].span, {
@@ -2097,13 +2066,13 @@ function AdvancedWebsiteDevelopment() {
                                                 children: "Built to Scale."
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 257,
+                                                lineNumber: 204,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 236,
+                                        lineNumber: 183,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -2126,7 +2095,7 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Advanced architecture, custom UI/UX, and powerful backend systems designed for serious business growth and enterprise scalability."
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 268,
+                                        lineNumber: 215,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2149,13 +2118,13 @@ function AdvancedWebsiteDevelopment() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#contact",
-                                                className: "px-6 sm:px-10 py-4 sm:py-5 bg-slate-900 text-white dark:bg-brand-cyan dark:text-slate-950 font-bold rounded-xl transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(95,211,230,0.4)] flex items-center justify-center gap-3 text-xs sm:text-sm uppercase tracking-wider relative overflow-hidden group",
+                                                className: "px-6 sm:px-10 py-4 sm:py-5 overflow-hidden gap-3 text-xs sm:text-sm group bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 286,
+                                                        lineNumber: 233,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2166,34 +2135,34 @@ function AdvancedWebsiteDevelopment() {
                                                                 className: "w-5 h-5 group-hover:translate-x-1 transition-transform"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 287,
+                                                                lineNumber: 234,
                                                                 columnNumber: 108
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 287,
+                                                        lineNumber: 234,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 284,
+                                                lineNumber: 231,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#portfolio",
-                                                className: "px-6 sm:px-10 py-4 sm:py-5 border border-slate-300 dark:border-white/20 rounded-xl font-bold hover:bg-slate-100 dark:hover:bg-white/5 transition-all text-center text-xs sm:text-sm uppercase tracking-wider hover:border-brand-cyan/50 hover:shadow-[0_0_20px_rgba(95,211,230,0.1)]",
+                                                className: "px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center",
                                                 children: "View Our Work"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 289,
+                                                lineNumber: 236,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 278,
+                                        lineNumber: 225,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2234,18 +2203,18 @@ function AdvancedWebsiteDevelopment() {
                                                 children: tech
                                             }, tech, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 302,
+                                                lineNumber: 249,
                                                 columnNumber: 33
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 295,
+                                        lineNumber: 242,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 219,
+                                lineNumber: 166,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2267,7 +2236,7 @@ function AdvancedWebsiteDevelopment() {
                                         className: "absolute -inset-8 bg-gradient-to-br from-brand-cyan/20 via-indigo-500/10 to-brand-cyan/20 blur-[60px] rounded-[3rem] -z-10 will-change-opacity"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 318,
+                                        lineNumber: 265,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2295,14 +2264,14 @@ function AdvancedWebsiteDevelopment() {
                                                 className: "absolute top-0 right-0 w-64 h-64 bg-brand-cyan/5 dark:bg-brand-cyan/10 blur-[60px] rounded-full pointer-events-none transition-colors duration-1000 group-hover:bg-brand-cyan/10 dark:group-hover:bg-brand-cyan/20"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 332,
+                                                lineNumber: 279,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/5 dark:bg-indigo-500/10 blur-[60px] rounded-full pointer-events-none transition-colors duration-1000 group-hover:bg-indigo-500/10 dark:group-hover:bg-indigo-500/20"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 333,
+                                                lineNumber: 280,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2317,20 +2286,20 @@ function AdvancedWebsiteDevelopment() {
                                                                     className: "absolute inset-0 bg-emerald-500/30 rounded-full animate-ping"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 339,
+                                                                    lineNumber: 286,
                                                                     columnNumber: 45
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
                                                                     className: "w-8 h-8 text-emerald-500 relative z-10"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 340,
+                                                                    lineNumber: 287,
                                                                     columnNumber: 45
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 338,
+                                                            lineNumber: 285,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -2338,7 +2307,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "Consultation Requested"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 342,
+                                                            lineNumber: 289,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2346,13 +2315,13 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "Our team will contact you shortly."
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 343,
+                                                            lineNumber: 290,
                                                             columnNumber: 41
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 337,
+                                                    lineNumber: 284,
                                                     columnNumber: 37
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                                     onSubmit: (e)=>{
@@ -2373,7 +2342,7 @@ function AdvancedWebsiteDevelopment() {
                                                                     children: "Full Name"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 359,
+                                                                    lineNumber: 306,
                                                                     columnNumber: 45
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2386,12 +2355,12 @@ function AdvancedWebsiteDevelopment() {
                                                                                 strokeWidth: 1.5
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                lineNumber: 362,
+                                                                                lineNumber: 309,
                                                                                 columnNumber: 53
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 361,
+                                                                            lineNumber: 308,
                                                                             columnNumber: 49
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2401,19 +2370,19 @@ function AdvancedWebsiteDevelopment() {
                                                                             placeholder: "John Doe"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 364,
+                                                                            lineNumber: 311,
                                                                             columnNumber: 49
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 360,
+                                                                    lineNumber: 307,
                                                                     columnNumber: 45
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 358,
+                                                            lineNumber: 305,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2424,7 +2393,7 @@ function AdvancedWebsiteDevelopment() {
                                                                     children: "Business Name"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 370,
+                                                                    lineNumber: 317,
                                                                     columnNumber: 45
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2437,12 +2406,12 @@ function AdvancedWebsiteDevelopment() {
                                                                                 strokeWidth: 1.5
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                lineNumber: 373,
+                                                                                lineNumber: 320,
                                                                                 columnNumber: 53
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 372,
+                                                                            lineNumber: 319,
                                                                             columnNumber: 49
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2451,19 +2420,19 @@ function AdvancedWebsiteDevelopment() {
                                                                             placeholder: "Your Company Ltd."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 375,
+                                                                            lineNumber: 322,
                                                                             columnNumber: 49
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 371,
+                                                                    lineNumber: 318,
                                                                     columnNumber: 45
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 369,
+                                                            lineNumber: 316,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2477,7 +2446,7 @@ function AdvancedWebsiteDevelopment() {
                                                                             children: "Email"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 382,
+                                                                            lineNumber: 329,
                                                                             columnNumber: 49
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2490,12 +2459,12 @@ function AdvancedWebsiteDevelopment() {
                                                                                         strokeWidth: 1.5
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                        lineNumber: 385,
+                                                                                        lineNumber: 332,
                                                                                         columnNumber: 57
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                    lineNumber: 384,
+                                                                                    lineNumber: 331,
                                                                                     columnNumber: 53
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2505,19 +2474,19 @@ function AdvancedWebsiteDevelopment() {
                                                                                     placeholder: "john@example.com"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                    lineNumber: 387,
+                                                                                    lineNumber: 334,
                                                                                     columnNumber: 53
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 383,
+                                                                            lineNumber: 330,
                                                                             columnNumber: 49
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 381,
+                                                                    lineNumber: 328,
                                                                     columnNumber: 45
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2528,7 +2497,7 @@ function AdvancedWebsiteDevelopment() {
                                                                             children: "Phone"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 392,
+                                                                            lineNumber: 339,
                                                                             columnNumber: 49
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2544,25 +2513,25 @@ function AdvancedWebsiteDevelopment() {
                                                                                                 strokeWidth: 1.5
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                                lineNumber: 396,
+                                                                                                lineNumber: 343,
                                                                                                 columnNumber: 61
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                                 className: "absolute -top-1 -right-1 w-2 h-2 bg-indigo-500 rounded-full border-[1.5px] border-white dark:border-slate-900"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                                lineNumber: 397,
+                                                                                                lineNumber: 344,
                                                                                                 columnNumber: 61
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                        lineNumber: 395,
+                                                                                        lineNumber: 342,
                                                                                         columnNumber: 57
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                    lineNumber: 394,
+                                                                                    lineNumber: 341,
                                                                                     columnNumber: 53
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2572,218 +2541,121 @@ function AdvancedWebsiteDevelopment() {
                                                                                     placeholder: "+91 98765 43210"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                    lineNumber: 400,
+                                                                                    lineNumber: 347,
                                                                                     columnNumber: 53
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 393,
+                                                                            lineNumber: 340,
                                                                             columnNumber: 49
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 391,
+                                                                    lineNumber: 338,
                                                                     columnNumber: 45
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 379,
+                                                            lineNumber: 326,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-4",
+                                                            className: "space-y-2",
                                                             children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "space-y-2",
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                                            className: "text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1",
-                                                                            children: "Website Type"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 408,
-                                                                            columnNumber: 49
-                                                                        }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "relative group/field",
-                                                                            children: [
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                    className: "absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan",
-                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$panels$2d$top$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Layout$3e$__["Layout"], {
-                                                                                        className: "w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors",
-                                                                                        strokeWidth: 1.5
-                                                                                    }, void 0, false, {
-                                                                                        fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                        lineNumber: 411,
-                                                                                        columnNumber: 57
-                                                                                    }, this)
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                    lineNumber: 410,
-                                                                                    columnNumber: 53
-                                                                                }, this),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                                                                    className: "w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-10 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium appearance-none shadow-sm text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer",
-                                                                                    children: [
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                            value: "eco",
-                                                                                            children: "Eco-Budget"
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                            lineNumber: 414,
-                                                                                            columnNumber: 57
-                                                                                        }, this),
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                            value: "advanced",
-                                                                                            children: "Advanced Package"
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                            lineNumber: 415,
-                                                                                            columnNumber: 57
-                                                                                        }, this),
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                            value: "custom",
-                                                                                            children: "Custom Enterprise"
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                            lineNumber: 416,
-                                                                                            columnNumber: 57
-                                                                                        }, this)
-                                                                                    ]
-                                                                                }, void 0, true, {
-                                                                                    fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                    lineNumber: 413,
-                                                                                    columnNumber: 53
-                                                                                }, this),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                    className: "absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400 transition-colors group-focus-within/field:text-brand-cyan",
-                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
-                                                                                        className: "w-4 h-4 rotate-90"
-                                                                                    }, void 0, false, {
-                                                                                        fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                        lineNumber: 419,
-                                                                                        columnNumber: 57
-                                                                                    }, this)
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                    lineNumber: 418,
-                                                                                    columnNumber: 53
-                                                                                }, this)
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 409,
-                                                                            columnNumber: 49
-                                                                        }, this)
-                                                                    ]
-                                                                }, void 0, true, {
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                    className: "text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1",
+                                                                    children: "Budget Range"
+                                                                }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 407,
+                                                                    lineNumber: 354,
                                                                     columnNumber: 45
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "space-y-2",
+                                                                    className: "relative group/field",
                                                                     children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                                            className: "text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1",
-                                                                            children: "Budget Range"
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan",
+                                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__["CreditCard"], {
+                                                                                className: "w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors",
+                                                                                strokeWidth: 1.5
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
+                                                                                lineNumber: 357,
+                                                                                columnNumber: 53
+                                                                            }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 425,
+                                                                            lineNumber: 356,
                                                                             columnNumber: 49
                                                                         }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "relative group/field",
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                                            className: "w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-10 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium appearance-none shadow-sm text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer",
                                                                             children: [
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                    className: "absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan",
-                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__["CreditCard"], {
-                                                                                        className: "w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors",
-                                                                                        strokeWidth: 1.5
-                                                                                    }, void 0, false, {
-                                                                                        fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                        lineNumber: 428,
-                                                                                        columnNumber: 57
-                                                                                    }, this)
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                    value: "5k-10k",
+                                                                                    children: "₹5k - ₹10k"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                    lineNumber: 427,
+                                                                                    lineNumber: 360,
                                                                                     columnNumber: 53
                                                                                 }, this),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                                                                    className: "w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-10 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium appearance-none shadow-sm text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer",
-                                                                                    children: [
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                            value: "5k-10k",
-                                                                                            children: "₹5k - ₹10k"
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                            lineNumber: 431,
-                                                                                            columnNumber: 57
-                                                                                        }, this),
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                            value: "10k-25k",
-                                                                                            children: "₹10k - ₹25k"
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                            lineNumber: 432,
-                                                                                            columnNumber: 57
-                                                                                        }, this),
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                            value: "25k-50k",
-                                                                                            children: "₹25k - ₹50k"
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                            lineNumber: 433,
-                                                                                            columnNumber: 57
-                                                                                        }, this),
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                            value: "50k+",
-                                                                                            children: "₹50k+"
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                            lineNumber: 434,
-                                                                                            columnNumber: 57
-                                                                                        }, this)
-                                                                                    ]
-                                                                                }, void 0, true, {
-                                                                                    fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                    lineNumber: 430,
-                                                                                    columnNumber: 53
-                                                                                }, this),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                    className: "absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400 transition-colors group-focus-within/field:text-brand-cyan",
-                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
-                                                                                        className: "w-4 h-4 rotate-90"
-                                                                                    }, void 0, false, {
-                                                                                        fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                        lineNumber: 437,
-                                                                                        columnNumber: 57
-                                                                                    }, this)
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                    value: "10k-25k",
+                                                                                    children: "₹10k - ₹25k"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                                    lineNumber: 436,
+                                                                                    lineNumber: 361,
+                                                                                    columnNumber: 53
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                    value: "25k-50k",
+                                                                                    children: "₹25k - ₹50k"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
+                                                                                    lineNumber: 362,
+                                                                                    columnNumber: 53
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                    value: "50k+",
+                                                                                    children: "₹50k+"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
+                                                                                    lineNumber: 363,
                                                                                     columnNumber: 53
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 426,
+                                                                            lineNumber: 359,
+                                                                            columnNumber: 49
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400 transition-colors group-focus-within/field:text-brand-cyan",
+                                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                                                                className: "w-4 h-4 rotate-90"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
+                                                                                lineNumber: 366,
+                                                                                columnNumber: 53
+                                                                            }, this)
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
+                                                                            lineNumber: 365,
                                                                             columnNumber: 49
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 424,
+                                                                    lineNumber: 355,
                                                                     columnNumber: 45
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 405,
+                                                            lineNumber: 353,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2791,19 +2663,19 @@ function AdvancedWebsiteDevelopment() {
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                                 disabled: isSubmitting,
                                                                 type: "submit",
-                                                                className: "w-full bg-brand-cyan text-slate-900 font-black py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-[#4bc2d6] transition-all disabled:opacity-70 group/btn hover:shadow-[0_0_20px_rgba(95,211,230,0.3)] duration-300",
+                                                                className: "w-full py-4 text-[13px] gap-2 disabled:opacity-70 group/btn duration-300 bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center",
                                                                 children: isSubmitting ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "flex items-center gap-2 font-mono text-xs uppercase tracking-widest",
                                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "w-4 h-4 border-2 border-slate-900 border-t-transparent rounded-full animate-spin"
+                                                                        className: "w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 451,
+                                                                        lineNumber: 379,
                                                                         columnNumber: 57
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 450,
+                                                                    lineNumber: 378,
                                                                     columnNumber: 53
                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "flex items-center gap-2 uppercase tracking-widest text-[13px]",
@@ -2813,96 +2685,96 @@ function AdvancedWebsiteDevelopment() {
                                                                             className: "w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 455,
+                                                                            lineNumber: 383,
                                                                             columnNumber: 79
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 454,
+                                                                    lineNumber: 382,
                                                                     columnNumber: 53
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 444,
+                                                                lineNumber: 372,
                                                                 columnNumber: 45
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 443,
+                                                            lineNumber: 371,
                                                             columnNumber: 41
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 346,
+                                                    lineNumber: 293,
                                                     columnNumber: 37
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 335,
+                                                lineNumber: 282,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 325,
+                                        lineNumber: 272,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 315,
+                                lineNumber: 262,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 218,
+                        lineNumber: 165,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 95,
+                lineNumber: 62,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "py-16 md:py-32 px-4 md:px-6 reveal-section border-t border-slate-200/50 dark:border-white/5",
+                className: "py-12 md:py-20 px-4 md:px-6 reveal-section border-t border-slate-200/50 dark:border-white/5",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "max-w-7xl mx-auto",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center",
+                        className: "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "space-y-10",
+                                className: "space-y-6",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs",
+                                        className: "text-brand-cyan font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs",
                                         children: "The Problem Matrix"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 473,
+                                        lineNumber: 401,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: "text-3xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white",
+                                        className: "text-2xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white",
                                         children: "Why Template Websites Fail Scaling Businesses."
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 474,
+                                        lineNumber: 402,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed",
+                                        className: "text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed",
                                         children: "Basic setups crack under pressure. As your traffic grows, limitations quickly turn into lost revenue."
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 475,
+                                        lineNumber: 403,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                        className: "space-y-6",
+                                        className: "space-y-4",
                                         children: [
                                             {
                                                 t: "Limited Scalability",
@@ -2925,12 +2797,12 @@ function AdvancedWebsiteDevelopment() {
                                                 d: "Unstable foundation lacking enterprise-grade security and custom logic."
                                             }
                                         ].map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                className: "flex gap-4",
+                                                className: "flex gap-3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "mt-1 w-6 h-6 shrink-0 rounded-full bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400 flex items-center justify-center",
+                                                        className: "mt-0.5 w-5 h-5 shrink-0 rounded-full bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400 flex items-center justify-center",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                            className: "w-3 h-3",
+                                                            className: "w-2.5 h-2.5",
                                                             fill: "none",
                                                             viewBox: "0 0 24 24",
                                                             stroke: "currentColor",
@@ -2941,90 +2813,90 @@ function AdvancedWebsiteDevelopment() {
                                                                 d: "M6 18L18 6M6 6l12 12"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 487,
-                                                                columnNumber: 124
+                                                                lineNumber: 415,
+                                                                columnNumber: 128
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 487,
+                                                            lineNumber: 415,
                                                             columnNumber: 45
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 486,
+                                                        lineNumber: 414,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                                className: "text-slate-900 dark:text-white block text-lg",
+                                                                className: "text-slate-900 dark:text-white block text-base leading-tight",
                                                                 children: item.t
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 490,
+                                                                lineNumber: 418,
                                                                 columnNumber: 45
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-slate-500 text-sm mt-1 block",
+                                                                className: "text-slate-500 text-xs mt-0.5 block",
                                                                 children: item.d
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 491,
+                                                                lineNumber: 419,
                                                                 columnNumber: 45
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 489,
+                                                        lineNumber: 417,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, i, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 485,
+                                                lineNumber: 413,
                                                 columnNumber: 37
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 477,
+                                        lineNumber: 405,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 472,
+                                lineNumber: 400,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative p-5 sm:p-8 md:p-12 rounded-2xl sm:rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-xl overflow-hidden",
+                                className: "relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[1.5rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-xl overflow-hidden",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute inset-0 bg-gradient-to-br from-brand-cyan/5 to-transparent pointer-events-none"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 500,
+                                        lineNumber: 428,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold mb-10 text-center",
+                                        className: "text-xl font-bold mb-6 text-center",
                                         children: "Architecture Comparison"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 501,
+                                        lineNumber: 429,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "grid grid-cols-2 gap-4 md:gap-8",
+                                        className: "grid grid-cols-2 gap-3 md:gap-6",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "space-y-6",
+                                                className: "space-y-3 md:space-y-4",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                        className: "text-center font-bold text-slate-400 uppercase tracking-widest text-xs mb-6",
+                                                        className: "text-center font-bold text-slate-400 uppercase tracking-widest text-[10px] md:text-xs mb-4",
                                                         children: "Basic CMS"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 506,
+                                                        lineNumber: 434,
                                                         columnNumber: 37
                                                     }, this),
                                                     [
@@ -3049,45 +2921,45 @@ function AdvancedWebsiteDevelopment() {
                                                             c: "text-slate-500 bg-slate-50 dark:bg-white/5"
                                                         }
                                                     ].map((stat, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "text-center p-4 rounded-2xl border border-slate-100 dark:border-white/5",
+                                                            className: "text-center p-2.5 md:p-3 rounded-xl border border-slate-100 dark:border-white/5",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "block text-[10px] font-bold text-slate-400 mb-1",
+                                                                    className: "block text-[9px] md:text-[10px] font-bold text-slate-400 mb-0.5",
                                                                     children: stat.l
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 514,
+                                                                    lineNumber: 442,
                                                                     columnNumber: 45
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: `block font-bold text-sm md:text-md rounded-lg py-1 ${stat.c}`,
+                                                                    className: `block font-bold text-xs md:text-sm rounded-md py-1 ${stat.c}`,
                                                                     children: stat.s
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 515,
+                                                                    lineNumber: 443,
                                                                     columnNumber: 45
                                                                 }, this)
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 513,
+                                                            lineNumber: 441,
                                                             columnNumber: 41
                                                         }, this))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 505,
+                                                lineNumber: 433,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "space-y-6",
+                                                className: "space-y-3 md:space-y-4",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                        className: "text-center font-bold text-brand-cyan uppercase tracking-widest text-xs mb-6 focus:text-white",
+                                                        className: "text-center font-bold text-brand-cyan uppercase tracking-widest text-[10px] md:text-xs mb-4 focus:text-white",
                                                         children: "Advanced System"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 521,
+                                                        lineNumber: 449,
                                                         columnNumber: 37
                                                     }, this),
                                                     [
@@ -3112,69 +2984,69 @@ function AdvancedWebsiteDevelopment() {
                                                             c: "text-brand-cyan bg-brand-cyan/10"
                                                         }
                                                     ].map((stat, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "text-center p-4 rounded-2xl border border-brand-cyan/20 dark:border-brand-cyan/30 relative overflow-hidden group",
+                                                            className: "text-center p-2.5 md:p-3 rounded-xl border border-brand-cyan/20 dark:border-brand-cyan/30 relative overflow-hidden group",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "absolute inset-0 bg-brand-cyan/5 group-hover:bg-brand-cyan/10 transition-colors"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 529,
+                                                                    lineNumber: 457,
                                                                     columnNumber: 45
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "block text-[10px] font-bold text-slate-500 dark:text-slate-300 mb-1 relative z-10",
+                                                                    className: "block text-[9px] md:text-[10px] font-bold text-slate-500 dark:text-slate-300 mb-0.5 relative z-10",
                                                                     children: stat.l
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 530,
+                                                                    lineNumber: 458,
                                                                     columnNumber: 45
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: `block font-bold text-sm md:text-md rounded-lg py-1 ${stat.c} relative z-10 shadow-[0_0_15px_rgba(16,185,129,0.2)]`,
+                                                                    className: `block font-bold text-xs md:text-sm rounded-md py-1 ${stat.c} relative z-10 shadow-[0_0_15px_rgba(16,185,129,0.2)]`,
                                                                     children: stat.s
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 531,
+                                                                    lineNumber: 459,
                                                                     columnNumber: 45
                                                                 }, this)
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 528,
+                                                            lineNumber: 456,
                                                             columnNumber: 41
                                                         }, this))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 520,
+                                                lineNumber: 448,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 503,
+                                        lineNumber: 431,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 499,
+                                lineNumber: 427,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 471,
+                        lineNumber: 399,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 470,
+                    lineNumber: 398,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 469,
+                lineNumber: 397,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3190,7 +3062,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "The Preet Tech Standard"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 545,
+                                    lineNumber: 473,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3198,13 +3070,13 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Engineered for Dominance."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 546,
+                                    lineNumber: 474,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 544,
+                            lineNumber: 472,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3247,7 +3119,7 @@ function AdvancedWebsiteDevelopment() {
                                             className: "absolute top-0 right-0 w-32 h-32 bg-brand-cyan/0 group-hover:bg-brand-cyan/10 blur-[40px] rounded-full transition-colors duration-500"
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 560,
+                                            lineNumber: 488,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3256,12 +3128,12 @@ function AdvancedWebsiteDevelopment() {
                                                 className: "w-6 h-6 text-brand-cyan"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 563,
+                                                lineNumber: 491,
                                                 columnNumber: 37
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 562,
+                                            lineNumber: 490,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3269,7 +3141,7 @@ function AdvancedWebsiteDevelopment() {
                                             children: feat.t
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 565,
+                                            lineNumber: 493,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3277,29 +3149,29 @@ function AdvancedWebsiteDevelopment() {
                                             children: feat.d
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 566,
+                                            lineNumber: 494,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 558,
+                                    lineNumber: 486,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 549,
+                            lineNumber: 477,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 543,
+                    lineNumber: 471,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 542,
+                lineNumber: 470,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3317,7 +3189,7 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Target Audiences"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 578,
+                                        lineNumber: 506,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3325,18 +3197,18 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Built for Scaling Ventures."
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 579,
+                                        lineNumber: 507,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 577,
+                                lineNumber: 505,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 576,
+                            lineNumber: 504,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3379,7 +3251,7 @@ function AdvancedWebsiteDevelopment() {
                                             className: "w-6 h-6 md:w-8 md:h-8 text-slate-400 group-hover:text-brand-cyan shrink-0 transition-colors"
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 593,
+                                            lineNumber: 521,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3389,7 +3261,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: ind.t
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 595,
+                                                    lineNumber: 523,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3397,35 +3269,35 @@ function AdvancedWebsiteDevelopment() {
                                                     children: ind.d
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 596,
+                                                    lineNumber: 524,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 594,
+                                            lineNumber: 522,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 592,
+                                    lineNumber: 520,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 583,
+                            lineNumber: 511,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 575,
+                    lineNumber: 503,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 574,
+                lineNumber: 502,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3435,7 +3307,7 @@ function AdvancedWebsiteDevelopment() {
                         className: "absolute inset-0 bg-[url('/grid-dark.png')] bg-repeat opacity-20"
                     }, void 0, false, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 606,
+                        lineNumber: 534,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3449,7 +3321,7 @@ function AdvancedWebsiteDevelopment() {
                                         children: "The Differentiator"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 610,
+                                        lineNumber: 538,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3457,13 +3329,13 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Beyond Standard Web Design."
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 611,
+                                        lineNumber: 539,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 609,
+                                lineNumber: 537,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3496,7 +3368,7 @@ function AdvancedWebsiteDevelopment() {
                                                 className: "absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-brand-cyan to-transparent translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 623,
+                                                lineNumber: 551,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3507,7 +3379,7 @@ function AdvancedWebsiteDevelopment() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 624,
+                                                lineNumber: 552,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3515,7 +3387,7 @@ function AdvancedWebsiteDevelopment() {
                                                 children: block.title
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 625,
+                                                lineNumber: 553,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3523,30 +3395,30 @@ function AdvancedWebsiteDevelopment() {
                                                 children: block.desc
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 626,
+                                                lineNumber: 554,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, i, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 622,
+                                        lineNumber: 550,
                                         columnNumber: 29
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 614,
+                                lineNumber: 542,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 608,
+                        lineNumber: 536,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 605,
+                lineNumber: 533,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3563,7 +3435,7 @@ function AdvancedWebsiteDevelopment() {
                                         className: "absolute inset-0 bg-brand-cyan/5 group-hover:bg-brand-cyan/10 transition-colors duration-1000"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 639,
+                                        lineNumber: 567,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3573,7 +3445,7 @@ function AdvancedWebsiteDevelopment() {
                                                 className: "border-4 border-dashed border-slate-300 dark:border-white/20 rounded-2xl absolute inset-0 -rotate-3 scale-95 opacity-50"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 642,
+                                                lineNumber: 570,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3586,7 +3458,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 className: "h-6 w-24 bg-slate-800 dark:bg-white rounded-full"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 646,
+                                                                lineNumber: 574,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3596,26 +3468,26 @@ function AdvancedWebsiteDevelopment() {
                                                                         className: "w-4 h-4 rounded-full bg-slate-200 dark:bg-white/10"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 647,
+                                                                        lineNumber: 575,
                                                                         columnNumber: 69
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                         className: "w-4 h-4 rounded-full bg-slate-200 dark:bg-white/10"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 647,
+                                                                        lineNumber: 575,
                                                                         columnNumber: 139
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 647,
+                                                                lineNumber: 575,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 645,
+                                                        lineNumber: 573,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3625,7 +3497,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 className: "absolute bottom-0 left-0 w-3/4 h-3/4 bg-brand-cyan/20 rounded-tr-full"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 650,
+                                                                lineNumber: 578,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3634,48 +3506,48 @@ function AdvancedWebsiteDevelopment() {
                                                                     className: "w-10 h-10 bg-white rounded-full animate-ping"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 652,
+                                                                    lineNumber: 580,
                                                                     columnNumber: 45
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 651,
+                                                                lineNumber: 579,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 649,
+                                                        lineNumber: 577,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "h-10 w-full bg-brand-cyan rounded-xl mt-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 655,
+                                                        lineNumber: 583,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 644,
+                                                lineNumber: 572,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 640,
+                                        lineNumber: 568,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 638,
+                                lineNumber: 566,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 636,
+                            lineNumber: 564,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3686,7 +3558,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Design Engineering"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 662,
+                                    lineNumber: 590,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3694,7 +3566,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Neurological UI/UX Strategy."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 663,
+                                    lineNumber: 591,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3702,7 +3574,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Design isn't just aesthetics—it's directed geometry. We engineer interface pathways that subconsciously pull users toward conversion actions."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 664,
+                                    lineNumber: 592,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3737,12 +3609,12 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 676,
+                                                        lineNumber: 604,
                                                         columnNumber: 41
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 675,
+                                                    lineNumber: 603,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3750,35 +3622,35 @@ function AdvancedWebsiteDevelopment() {
                                                     children: strat.t
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 678,
+                                                    lineNumber: 606,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 674,
+                                            lineNumber: 602,
                                             columnNumber: 33
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 666,
+                                    lineNumber: 594,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 661,
+                            lineNumber: 589,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 635,
+                    lineNumber: 563,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 634,
+                lineNumber: 562,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3794,7 +3666,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Functional Modules"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 690,
+                                    lineNumber: 618,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3802,13 +3674,13 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Powerful Web Applications."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 691,
+                                    lineNumber: 619,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 689,
+                            lineNumber: 617,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3851,7 +3723,7 @@ function AdvancedWebsiteDevelopment() {
                                             className: "w-10 h-10 text-brand-cyan mb-8"
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 704,
+                                            lineNumber: 632,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3861,7 +3733,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: feat.t
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 706,
+                                                    lineNumber: 634,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3869,35 +3741,35 @@ function AdvancedWebsiteDevelopment() {
                                                     children: feat.d
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 707,
+                                                    lineNumber: 635,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 705,
+                                            lineNumber: 633,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 703,
+                                    lineNumber: 631,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 694,
+                            lineNumber: 622,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 688,
+                    lineNumber: 616,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 687,
+                lineNumber: 615,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3907,14 +3779,14 @@ function AdvancedWebsiteDevelopment() {
                         className: "absolute -top-40 left-1/4 w-[600px] h-[600px] bg-brand-cyan/[0.04] rounded-full blur-[120px] pointer-events-none"
                     }, void 0, false, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 718,
+                        lineNumber: 646,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-500/[0.05] rounded-full blur-[100px] pointer-events-none"
                     }, void 0, false, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 719,
+                        lineNumber: 647,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3933,7 +3805,7 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 726,
+                                                        lineNumber: 654,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3941,13 +3813,13 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Specialized Products"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 727,
+                                                        lineNumber: 655,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 725,
+                                                lineNumber: 653,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3956,7 +3828,7 @@ function AdvancedWebsiteDevelopment() {
                                                     "Heavy-Duty",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 730,
+                                                        lineNumber: 658,
                                                         columnNumber: 43
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3964,19 +3836,19 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Web Platforms."
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 731,
+                                                        lineNumber: 659,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 729,
+                                                lineNumber: 657,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 724,
+                                        lineNumber: 652,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3984,13 +3856,13 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Enterprise-grade platforms engineered for volume, velocity, and vertical scale."
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 734,
+                                        lineNumber: 662,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 723,
+                                lineNumber: 651,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4025,26 +3897,26 @@ function AdvancedWebsiteDevelopment() {
                                                     className: "absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-brand-cyan/40 to-transparent"
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 750,
+                                                    lineNumber: 678,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 749,
+                                                lineNumber: 677,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "absolute inset-0 bg-[linear-gradient(rgba(95,211,230,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(95,211,230,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 758,
+                                                lineNumber: 686,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "absolute top-0 right-0 w-80 h-80 bg-brand-cyan/10 blur-[80px] rounded-full group-hover:bg-brand-cyan/20 transition-colors duration-700 pointer-events-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 761,
+                                                lineNumber: 689,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4073,7 +3945,7 @@ function AdvancedWebsiteDevelopment() {
                                                             className: "absolute inset-0 bg-brand-cyan/20 blur-2xl rounded-full scale-150"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 770,
+                                                            lineNumber: 698,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__["ShoppingCart"], {
@@ -4081,18 +3953,18 @@ function AdvancedWebsiteDevelopment() {
                                                             strokeWidth: 0.8
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 771,
+                                                            lineNumber: 699,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 765,
+                                                    lineNumber: 693,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 764,
+                                                lineNumber: 692,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4107,19 +3979,19 @@ function AdvancedWebsiteDevelopment() {
                                                                     className: "w-1 h-1 rounded-full bg-brand-cyan animate-pulse"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 779,
+                                                                    lineNumber: 707,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 "High-Volume Sales"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 778,
+                                                            lineNumber: 706,
                                                             columnNumber: 37
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 777,
+                                                        lineNumber: 705,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4127,7 +3999,7 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Custom E-Commerce"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 784,
+                                                        lineNumber: 712,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4135,21 +4007,21 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Scaling beyond Shopify limits. We build headless Magento, Next.js Commerce, or fully custom transactional engines with zero-latency checkouts."
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 785,
+                                                        lineNumber: 713,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "mt-auto",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                             href: "#contact",
-                                                            className: "inline-flex items-center gap-2 group/btn",
+                                                            className: "inline-flex px-8 py-3.5 gap-2 group/btn text-xs bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-white font-bold text-sm border-b border-brand-cyan/50 pb-0.5 group-hover/btn:border-brand-cyan group-hover/btn:text-brand-cyan transition-all",
+                                                                    className: "",
                                                                     children: "Start Selling"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 791,
+                                                                    lineNumber: 719,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4166,38 +4038,38 @@ function AdvancedWebsiteDevelopment() {
                                                                         ease: "easeInOut"
                                                                     },
                                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                                        className: "w-4 h-4 text-brand-cyan"
+                                                                        className: "w-4 h-4 text-white"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 798,
+                                                                        lineNumber: 726,
                                                                         columnNumber: 45
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 794,
+                                                                    lineNumber: 722,
                                                                     columnNumber: 41
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 790,
+                                                            lineNumber: 718,
                                                             columnNumber: 37
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 789,
+                                                        lineNumber: 717,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 776,
+                                                lineNumber: 704,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 743,
+                                        lineNumber: 671,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4219,7 +4091,7 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "absolute top-0 right-0 w-40 h-40 bg-brand-cyan/5 blur-[60px] rounded-full group-hover:bg-brand-cyan/15 transition-colors duration-500 pointer-events-none"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 814,
+                                                        lineNumber: 742,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4231,12 +4103,12 @@ function AdvancedWebsiteDevelopment() {
                                                                     className: "w-6 h-6 text-brand-cyan"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 817,
+                                                                    lineNumber: 745,
                                                                     columnNumber: 41
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 816,
+                                                                lineNumber: 744,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4244,7 +4116,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "SaaS Web Apps"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 819,
+                                                                lineNumber: 747,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4252,7 +4124,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "Multi-tenant architecture and subscription logic engines built to scale."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 820,
+                                                                lineNumber: 748,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4266,24 +4138,24 @@ function AdvancedWebsiteDevelopment() {
                                                                         children: t
                                                                     }, t, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 823,
+                                                                        lineNumber: 751,
                                                                         columnNumber: 45
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 821,
+                                                                lineNumber: 749,
                                                                 columnNumber: 37
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 815,
+                                                        lineNumber: 743,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 809,
+                                                lineNumber: 737,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4302,7 +4174,7 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "absolute top-0 right-0 w-40 h-40 bg-indigo-500/5 blur-[60px] rounded-full group-hover:bg-indigo-500/15 transition-colors duration-500 pointer-events-none"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 835,
+                                                        lineNumber: 763,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4314,12 +4186,12 @@ function AdvancedWebsiteDevelopment() {
                                                                     className: "w-6 h-6 text-indigo-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 838,
+                                                                    lineNumber: 766,
                                                                     columnNumber: 41
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 837,
+                                                                lineNumber: 765,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4327,7 +4199,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "CRM / ERP Systems"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 840,
+                                                                lineNumber: 768,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4335,7 +4207,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "Internal tooling built specifically for your operational model and team."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 841,
+                                                                lineNumber: 769,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4349,30 +4221,30 @@ function AdvancedWebsiteDevelopment() {
                                                                         children: t
                                                                     }, t, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 844,
+                                                                        lineNumber: 772,
                                                                         columnNumber: 45
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 842,
+                                                                lineNumber: 770,
                                                                 columnNumber: 37
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 836,
+                                                        lineNumber: 764,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 830,
+                                                lineNumber: 758,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 806,
+                                        lineNumber: 734,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4390,7 +4262,7 @@ function AdvancedWebsiteDevelopment() {
                                                 className: "absolute inset-0 bg-gradient-to-br from-violet-500/0 to-violet-500/0 group-hover:from-violet-500/[0.04] group-hover:to-sky-500/[0.04] transition-all duration-700 pointer-events-none rounded-3xl"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 859,
+                                                lineNumber: 787,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4403,7 +4275,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 className: "w-1 h-4 rounded-full bg-violet-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 862,
+                                                                lineNumber: 790,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4411,13 +4283,13 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "Platform"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 863,
+                                                                lineNumber: 791,
                                                                 columnNumber: 37
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 861,
+                                                        lineNumber: 789,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4425,7 +4297,7 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Multi-Vendor Marketplaces"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 865,
+                                                        lineNumber: 793,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4433,13 +4305,13 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Complex vendor splitting, logistics routing, and multi-channel management."
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 866,
+                                                        lineNumber: 794,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 860,
+                                                lineNumber: 788,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4449,7 +4321,7 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "absolute inset-0 bg-violet-500/10 blur-xl rounded-full group-hover:bg-violet-500/25 transition-colors duration-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 869,
+                                                        lineNumber: 797,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$command$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Command$3e$__["Command"], {
@@ -4457,19 +4329,19 @@ function AdvancedWebsiteDevelopment() {
                                                         strokeWidth: 1
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 870,
+                                                        lineNumber: 798,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 868,
+                                                lineNumber: 796,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 854,
+                                        lineNumber: 782,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4487,7 +4359,7 @@ function AdvancedWebsiteDevelopment() {
                                                 className: "absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-emerald-500/0 group-hover:from-emerald-500/[0.04] group-hover:to-cyan-500/[0.04] transition-all duration-700 pointer-events-none rounded-3xl"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 880,
+                                                lineNumber: 808,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4500,7 +4372,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 className: "w-1 h-4 rounded-full bg-emerald-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 883,
+                                                                lineNumber: 811,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4508,13 +4380,13 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "Recurring Revenue"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 884,
+                                                                lineNumber: 812,
                                                                 columnNumber: 37
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 882,
+                                                        lineNumber: 810,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4522,7 +4394,7 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Subscription Platforms"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 886,
+                                                        lineNumber: 814,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4530,13 +4402,13 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Recurring billing APIs, automated dunning, and gated access control systems."
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 887,
+                                                        lineNumber: 815,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 881,
+                                                lineNumber: 809,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4546,7 +4418,7 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "absolute inset-0 bg-emerald-500/10 blur-xl rounded-full group-hover:bg-emerald-500/25 transition-colors duration-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 890,
+                                                        lineNumber: 818,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4564,42 +4436,42 @@ function AdvancedWebsiteDevelopment() {
                                                             strokeWidth: 1
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 896,
+                                                            lineNumber: 824,
                                                             columnNumber: 37
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 891,
+                                                        lineNumber: 819,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 889,
+                                                lineNumber: 817,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 875,
+                                        lineNumber: 803,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 740,
+                                lineNumber: 668,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 721,
+                        lineNumber: 649,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 716,
+                lineNumber: 644,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4626,7 +4498,7 @@ function AdvancedWebsiteDevelopment() {
                                     fill: "none"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 914,
+                                    lineNumber: 842,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
@@ -4649,12 +4521,12 @@ function AdvancedWebsiteDevelopment() {
                                         strokeDasharray: "2,2"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 920,
+                                        lineNumber: 848,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 915,
+                                    lineNumber: 843,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -4664,7 +4536,7 @@ function AdvancedWebsiteDevelopment() {
                                     y2: "50"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 922,
+                                    lineNumber: 850,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -4674,7 +4546,7 @@ function AdvancedWebsiteDevelopment() {
                                     y2: "90"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 923,
+                                    lineNumber: 851,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -4685,7 +4557,7 @@ function AdvancedWebsiteDevelopment() {
                                     className: "animate-pulse"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 924,
+                                    lineNumber: 852,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -4696,7 +4568,7 @@ function AdvancedWebsiteDevelopment() {
                                     className: "animate-pulse"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 925,
+                                    lineNumber: 853,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -4707,7 +4579,7 @@ function AdvancedWebsiteDevelopment() {
                                     className: "animate-pulse"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 926,
+                                    lineNumber: 854,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -4718,18 +4590,18 @@ function AdvancedWebsiteDevelopment() {
                                     className: "animate-pulse"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 927,
+                                    lineNumber: 855,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 913,
+                            lineNumber: 841,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 908,
+                        lineNumber: 836,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4743,7 +4615,7 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Connectivity Core"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 933,
+                                        lineNumber: 861,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -4751,7 +4623,7 @@ function AdvancedWebsiteDevelopment() {
                                         children: "API & Backend Logic."
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 934,
+                                        lineNumber: 862,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4759,7 +4631,7 @@ function AdvancedWebsiteDevelopment() {
                                         children: "No application operates in isolation. We wire your platform into the global digital ecosystem via robust API orchestrations securely."
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 935,
+                                        lineNumber: 863,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4794,7 +4666,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 className: "w-5 h-5 text-brand-cyan"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 946,
+                                                                lineNumber: 874,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -4802,13 +4674,13 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: item.t
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 947,
+                                                                lineNumber: 875,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 945,
+                                                        lineNumber: 873,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4816,24 +4688,24 @@ function AdvancedWebsiteDevelopment() {
                                                         children: item.d
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 949,
+                                                        lineNumber: 877,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, i, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 944,
+                                                lineNumber: 872,
                                                 columnNumber: 33
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 937,
+                                        lineNumber: 865,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 932,
+                                lineNumber: 860,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4844,7 +4716,7 @@ function AdvancedWebsiteDevelopment() {
                                         children: "System Architecture Live"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 956,
+                                        lineNumber: 884,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4859,7 +4731,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "const"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 960,
+                                                            lineNumber: 888,
                                                             columnNumber: 39
                                                         }, this),
                                                         " ",
@@ -4868,7 +4740,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "PaymentPipeline"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 960,
+                                                            lineNumber: 888,
                                                             columnNumber: 85
                                                         }, this),
                                                         " = ",
@@ -4877,7 +4749,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "async"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 960,
+                                                            lineNumber: 888,
                                                             columnNumber: 143
                                                         }, this),
                                                         " (req) => ",
@@ -4891,7 +4763,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "  try"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 961,
+                                                            lineNumber: 889,
                                                             columnNumber: 39
                                                         }, this),
                                                         " ",
@@ -4905,7 +4777,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "    const"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 962,
+                                                            lineNumber: 890,
                                                             columnNumber: 39
                                                         }, this),
                                                         " ",
@@ -4918,7 +4790,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "body"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 962,
+                                                            lineNumber: 890,
                                                             columnNumber: 120
                                                         }, this),
                                                         ";"
@@ -4933,7 +4805,7 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "    // 1. Authenticate Request"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 964,
+                                                        lineNumber: 892,
                                                         columnNumber: 39
                                                     }, this)
                                                 }, void 0, false),
@@ -4944,7 +4816,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "    await"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 965,
+                                                            lineNumber: 893,
                                                             columnNumber: 39
                                                         }, this),
                                                         " ",
@@ -4953,7 +4825,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "SecurityGuard"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 965,
+                                                            lineNumber: 893,
                                                             columnNumber: 89
                                                         }, this),
                                                         ".",
@@ -4962,7 +4834,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "validate"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 965,
+                                                            lineNumber: 893,
                                                             columnNumber: 143
                                                         }, this),
                                                         "(user.",
@@ -4971,7 +4843,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "token"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 965,
+                                                            lineNumber: 893,
                                                             columnNumber: 197
                                                         }, this),
                                                         ");"
@@ -4986,7 +4858,7 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "    // 2. Cross-check ERP"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 967,
+                                                        lineNumber: 895,
                                                         columnNumber: 39
                                                     }, this)
                                                 }, void 0, false),
@@ -4997,7 +4869,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "    const"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 968,
+                                                            lineNumber: 896,
                                                             columnNumber: 39
                                                         }, this),
                                                         " inventory = ",
@@ -5006,7 +4878,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "await"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 968,
+                                                            lineNumber: 896,
                                                             columnNumber: 101
                                                         }, this),
                                                         " ",
@@ -5015,7 +4887,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "ERP"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 968,
+                                                            lineNumber: 896,
                                                             columnNumber: 147
                                                         }, this),
                                                         ".",
@@ -5024,7 +4896,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "checkStock"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 968,
+                                                            lineNumber: 896,
                                                             columnNumber: 191
                                                         }, this),
                                                         "();"
@@ -5039,7 +4911,7 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "    // 3. Fire Payment API"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 970,
+                                                        lineNumber: 898,
                                                         columnNumber: 39
                                                     }, this)
                                                 }, void 0, false),
@@ -5050,7 +4922,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "    const"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 971,
+                                                            lineNumber: 899,
                                                             columnNumber: 39
                                                         }, this),
                                                         " tx = ",
@@ -5059,7 +4931,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "await"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 971,
+                                                            lineNumber: 899,
                                                             columnNumber: 94
                                                         }, this),
                                                         " ",
@@ -5068,7 +4940,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "Stripe"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 971,
+                                                            lineNumber: 899,
                                                             columnNumber: 140
                                                         }, this),
                                                         ".",
@@ -5077,7 +4949,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "charge"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 971,
+                                                            lineNumber: 899,
                                                             columnNumber: 187
                                                         }, this),
                                                         "(intent);"
@@ -5092,7 +4964,7 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "    // 4. Update internal DB"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 973,
+                                                        lineNumber: 901,
                                                         columnNumber: 39
                                                     }, this)
                                                 }, void 0, false),
@@ -5103,7 +4975,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "    await"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 974,
+                                                            lineNumber: 902,
                                                             columnNumber: 39
                                                         }, this),
                                                         " ",
@@ -5112,7 +4984,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "DB"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 974,
+                                                            lineNumber: 902,
                                                             columnNumber: 89
                                                         }, this),
                                                         ".orders.",
@@ -5121,7 +4993,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "insert"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 974,
+                                                            lineNumber: 902,
                                                             columnNumber: 139
                                                         }, this),
                                                         "(tx.",
@@ -5130,7 +5002,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "receipt"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 974,
+                                                            lineNumber: 902,
                                                             columnNumber: 189
                                                         }, this),
                                                         ");"
@@ -5146,7 +5018,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "    return"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 976,
+                                                            lineNumber: 904,
                                                             columnNumber: 39
                                                         }, this),
                                                         " res.",
@@ -5155,7 +5027,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "status"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 976,
+                                                            lineNumber: 904,
                                                             columnNumber: 94
                                                         }, this),
                                                         "(",
@@ -5164,7 +5036,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "200"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 976,
+                                                            lineNumber: 904,
                                                             columnNumber: 141
                                                         }, this),
                                                         ").",
@@ -5173,7 +5045,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "json"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 976,
+                                                            lineNumber: 904,
                                                             columnNumber: 186
                                                         }, this),
                                                         "(",
@@ -5184,7 +5056,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "true"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 976,
+                                                            lineNumber: 904,
                                                             columnNumber: 246
                                                         }, this),
                                                         " ",
@@ -5203,7 +5075,7 @@ function AdvancedWebsiteDevelopment() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 977,
+                                                            lineNumber: 905,
                                                             columnNumber: 39
                                                         }, this),
                                                         " (error) ",
@@ -5250,35 +5122,35 @@ function AdvancedWebsiteDevelopment() {
                                                     children: line
                                                 }, i, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 980,
+                                                    lineNumber: 908,
                                                     columnNumber: 37
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 958,
+                                            lineNumber: 886,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 957,
+                                        lineNumber: 885,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 955,
+                                lineNumber: 883,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 931,
+                        lineNumber: 859,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 906,
+                lineNumber: 834,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -5304,7 +5176,7 @@ function AdvancedWebsiteDevelopment() {
                                                     className: "jsx-cf348fd4567ae917" + " " + "stroke-slate-200 dark:stroke-slate-800 stroke-[4]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1026,
+                                                    lineNumber: 954,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -5317,13 +5189,13 @@ function AdvancedWebsiteDevelopment() {
                                                     className: "jsx-cf348fd4567ae917" + " " + "stroke-brand-cyan stroke-[4] animate-[dash_3s_ease-out_forwards]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1027,
+                                                    lineNumber: 955,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1025,
+                                            lineNumber: 953,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5338,13 +5210,13 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "%"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1030,
+                                                            lineNumber: 958,
                                                             columnNumber: 89
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1030,
+                                                    lineNumber: 958,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5352,13 +5224,13 @@ function AdvancedWebsiteDevelopment() {
                                                     children: "Performance Score"
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1031,
+                                                    lineNumber: 959,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1029,
+                                            lineNumber: 957,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5372,7 +5244,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: "LCP"
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1036,
+                                                    lineNumber: 964,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5383,7 +5255,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "0.8s"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1037,
+                                                            lineNumber: 965,
                                                             columnNumber: 38
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5391,19 +5263,19 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "Largest Content"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1037,
+                                                            lineNumber: 965,
                                                             columnNumber: 87
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1037,
+                                                    lineNumber: 965,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1035,
+                                            lineNumber: 963,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5418,7 +5290,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: "CLS"
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1040,
+                                                    lineNumber: 968,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5429,7 +5301,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "0.02"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1041,
+                                                            lineNumber: 969,
                                                             columnNumber: 38
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5437,25 +5309,25 @@ function AdvancedWebsiteDevelopment() {
                                                             children: "Layout Shift"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1041,
+                                                            lineNumber: 969,
                                                             columnNumber: 87
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1041,
+                                                    lineNumber: 969,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1039,
+                                            lineNumber: 967,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1023,
+                                    lineNumber: 951,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -5465,7 +5337,7 @@ function AdvancedWebsiteDevelopment() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1021,
+                            lineNumber: 949,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5476,7 +5348,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Velocity Engine"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1048,
+                                    lineNumber: 976,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -5484,7 +5356,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Speed as a Feature."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1049,
+                                    lineNumber: 977,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5492,7 +5364,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Latency equals lost clients. We engineer systems that pass Google's Core Web Vitals natively, delivering lightning-fast rendering globally."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1050,
+                                    lineNumber: 978,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5519,12 +5391,12 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "w-5 h-5 text-brand-cyan"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1059,
+                                                        lineNumber: 987,
                                                         columnNumber: 148
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1059,
+                                                    lineNumber: 987,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5534,7 +5406,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: f.t
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1060,
+                                                            lineNumber: 988,
                                                             columnNumber: 42
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5542,41 +5414,41 @@ function AdvancedWebsiteDevelopment() {
                                                             children: f.d
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1060,
+                                                            lineNumber: 988,
                                                             columnNumber: 86
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1060,
+                                                    lineNumber: 988,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1058,
+                                            lineNumber: 986,
                                             columnNumber: 33
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1052,
+                                    lineNumber: 980,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1047,
+                            lineNumber: 975,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 1020,
+                    lineNumber: 948,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1019,
+                lineNumber: 947,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -5586,7 +5458,7 @@ function AdvancedWebsiteDevelopment() {
                         className: "absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-cyan to-transparent opacity-50"
                     }, void 0, false, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 1070,
+                        lineNumber: 998,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5600,7 +5472,7 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Fortress Protocol"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1074,
+                                        lineNumber: 1002,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -5608,13 +5480,13 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Impenetrable Security. Infinite Scale."
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1075,
+                                        lineNumber: 1003,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 1073,
+                                lineNumber: 1001,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5647,7 +5519,7 @@ function AdvancedWebsiteDevelopment() {
                                                 className: "w-10 h-10 text-brand-cyan group-hover:text-slate-900 mb-6 transition-colors"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1086,
+                                                lineNumber: 1014,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -5655,7 +5527,7 @@ function AdvancedWebsiteDevelopment() {
                                                 children: stat.t
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1087,
+                                                lineNumber: 1015,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5663,30 +5535,30 @@ function AdvancedWebsiteDevelopment() {
                                                 children: stat.d
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1088,
+                                                lineNumber: 1016,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, i, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1085,
+                                        lineNumber: 1013,
                                         columnNumber: 29
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 1078,
+                                lineNumber: 1006,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 1072,
+                        lineNumber: 1000,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1069,
+                lineNumber: 997,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -5702,7 +5574,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Engineering Blueprint"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1099,
+                                    lineNumber: 1027,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -5710,7 +5582,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Tech Stack & Architecture."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1100,
+                                    lineNumber: 1028,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5718,13 +5590,13 @@ function AdvancedWebsiteDevelopment() {
                                     children: "We leverage bleeding-edge technologies to build scalable, secure, and blazing-fast web ecosystems."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1101,
+                                    lineNumber: 1029,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1098,
+                            lineNumber: 1026,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5799,14 +5671,14 @@ function AdvancedWebsiteDevelopment() {
                                             className: `absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${tech.color} opacity-0 group-hover:opacity-100 transition-opacity`
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1123,
+                                            lineNumber: 1051,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(tech.icon, {
                                             className: "w-6 h-6 sm:w-8 sm:h-8 text-slate-400 group-hover:text-brand-cyan transition-colors mb-3 sm:mb-4"
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1124,
+                                            lineNumber: 1052,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -5814,7 +5686,7 @@ function AdvancedWebsiteDevelopment() {
                                             children: tech.name
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1125,
+                                            lineNumber: 1053,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5822,44 +5694,44 @@ function AdvancedWebsiteDevelopment() {
                                             children: tech.desc
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1126,
+                                            lineNumber: 1054,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1115,
+                                    lineNumber: 1043,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1104,
+                            lineNumber: 1032,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mt-10 sm:mt-16 p-4 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 relative overflow-hidden",
+                            className: "mt-10 sm:mt-16 p-8 sm:p-12 md:p-16 rounded-[2rem] bg-white dark:bg-[#0a0a0a] border border-slate-100 dark:border-white/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none relative overflow-hidden",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "absolute inset-0 opacity-[0.02] dark:opacity-[0.04]",
+                                    className: "absolute inset-0 opacity-[0.015] dark:opacity-[0.03]",
                                     style: {
                                         backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
-                                        backgroundSize: '20px 20px'
+                                        backgroundSize: '24px 24px'
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1133,
+                                    lineNumber: 1061,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "text-xl font-bold mb-8 text-center",
+                                    className: "text-lg md:text-xl font-bold mb-10 md:mb-14 text-center text-slate-800 dark:text-white",
                                     children: "System Architecture Overview"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1134,
+                                    lineNumber: 1062,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex flex-col md:flex-row items-stretch justify-between gap-4 sm:gap-6 relative z-10 overflow-x-auto",
+                                    className: "flex flex-col md:flex-row items-center md:items-stretch justify-center gap-4 sm:gap-6 relative z-10 w-full max-w-6xl mx-auto",
                                     children: [
                                         {
                                             label: 'Client Layer',
@@ -5877,9 +5749,7 @@ function AdvancedWebsiteDevelopment() {
                                                     icon: __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__["Smartphone"]
                                                 }
                                             ],
-                                            color: 'border-brand-cyan',
-                                            bg: 'bg-brand-cyan/5',
-                                            text: 'text-brand-cyan'
+                                            color: 'border-brand-cyan/20'
                                         },
                                         {
                                             label: 'API Gateway',
@@ -5897,9 +5767,7 @@ function AdvancedWebsiteDevelopment() {
                                                     icon: __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$key$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Key$3e$__["Key"]
                                                 }
                                             ],
-                                            color: 'border-indigo-500',
-                                            bg: 'bg-indigo-500/5',
-                                            text: 'text-indigo-500'
+                                            color: 'border-indigo-400/20'
                                         },
                                         {
                                             label: 'Business Logic',
@@ -5917,9 +5785,8 @@ function AdvancedWebsiteDevelopment() {
                                                     icon: __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__["Zap"]
                                                 }
                                             ],
-                                            color: 'border-violet-500',
-                                            bg: 'bg-violet-500/5',
-                                            text: 'text-violet-500'
+                                            color: 'border-violet-300 dark:border-violet-500/40 bg-violet-50/30 dark:bg-violet-500/5 shadow-sm shadow-violet-500/5',
+                                            dot: true
                                         },
                                         {
                                             label: 'Data Layer',
@@ -5937,121 +5804,99 @@ function AdvancedWebsiteDevelopment() {
                                                     icon: __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Cloud$3e$__["Cloud"]
                                                 }
                                             ],
-                                            color: 'border-emerald-500',
-                                            bg: 'bg-emerald-500/5',
-                                            text: 'text-emerald-500'
+                                            color: 'border-emerald-400/20'
                                         }
                                     ].map((layer, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].Fragment, {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: `flex-1 w-full p-6 rounded-2xl bg-white dark:bg-slate-800 border-2 ${layer.color} border-opacity-30 text-center space-y-4 relative group`,
+                                                    className: `flex-1 w-full sm:max-w-[240px] p-6 rounded-[1.25rem] bg-white dark:bg-slate-900 border ${layer.color} text-center relative transition-all duration-300 hover:shadow-md dark:hover:shadow-none`,
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: `absolute inset-0 opacity-0 group-hover:opacity-100 ${layer.bg} transition-opacity duration-500 rounded-2xl pointer-events-none`
+                                                        layer.dot && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-violet-500 ring-4 ring-white dark:ring-slate-900"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1144,
-                                                            columnNumber: 41
+                                                            lineNumber: 1073,
+                                                            columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                            className: "font-bold text-sm uppercase tracking-widest text-slate-500 relative z-10",
+                                                            className: "font-bold text-[10px] md:text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-6",
                                                             children: layer.label
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1145,
+                                                            lineNumber: 1075,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "space-y-3 relative z-10",
-                                                            children: layer.items.map((item, j)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                                                    whileHover: {
-                                                                        scale: 1.05
-                                                                    },
-                                                                    className: `flex items-center justify-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-3 hover:border-current hover:${layer.text} transition-all cursor-pointer group/item`,
+                                                            className: "space-y-3",
+                                                            children: layer.items.map((item, j)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "flex items-center justify-center gap-2.5 text-[11px] md:text-xs font-semibold text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-white/5 rounded-xl py-3 px-3 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-slate-200 dark:hover:border-white/10 transition-all cursor-pointer",
                                                                     children: [
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(item.icon, {
-                                                                            className: "w-3.5 h-3.5 opacity-60 group-hover/item:opacity-100 transition-opacity"
+                                                                            className: "w-3.5 h-3.5 md:w-4 md:h-4 text-slate-400",
+                                                                            strokeWidth: 1.5
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                            lineNumber: 1153,
+                                                                            lineNumber: 1082,
                                                                             columnNumber: 53
                                                                         }, this),
                                                                         item.name
                                                                     ]
                                                                 }, j, true, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 1148,
+                                                                    lineNumber: 1078,
                                                                     columnNumber: 49
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1146,
+                                                            lineNumber: 1076,
                                                             columnNumber: 41
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1143,
+                                                    lineNumber: 1071,
                                                     columnNumber: 37
                                                 }, this),
                                                 i < 3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "shrink-0 hidden md:flex items-center justify-center",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                                        animate: {
-                                                            x: [
-                                                                0,
-                                                                5,
-                                                                0
-                                                            ]
-                                                        },
-                                                        transition: {
-                                                            duration: 1.5,
-                                                            repeat: Infinity,
-                                                            ease: "easeInOut"
-                                                        },
-                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                            className: "w-6 h-6 text-slate-300 dark:text-white/20"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1165,
-                                                            columnNumber: 49
-                                                        }, this)
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                                        className: "w-4 h-4 text-slate-300 dark:text-slate-600"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1161,
+                                                        lineNumber: 1090,
                                                         columnNumber: 45
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1160,
+                                                    lineNumber: 1089,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1142,
+                                            lineNumber: 1070,
                                             columnNumber: 33
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1135,
+                                    lineNumber: 1063,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1132,
+                            lineNumber: 1060,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 1097,
+                    lineNumber: 1025,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1096,
+                lineNumber: 1024,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -6067,7 +5912,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Proven Results"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1180,
+                                    lineNumber: 1104,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -6075,7 +5920,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Case Studies & Real Projects."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1181,
+                                    lineNumber: 1105,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6083,13 +5928,13 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Real-world results from businesses that trusted us to build their digital infrastructure."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1182,
+                                    lineNumber: 1106,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1179,
+                            lineNumber: 1103,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6191,7 +6036,7 @@ function AdvancedWebsiteDevelopment() {
                                             className: `h-2 bg-gradient-to-r ${project.gradient}`
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1221,
+                                            lineNumber: 1145,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6204,7 +6049,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: project.client
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1224,
+                                                            lineNumber: 1148,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -6212,7 +6057,7 @@ function AdvancedWebsiteDevelopment() {
                                                             children: project.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1225,
+                                                            lineNumber: 1149,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6220,13 +6065,13 @@ function AdvancedWebsiteDevelopment() {
                                                             children: project.desc
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1226,
+                                                            lineNumber: 1150,
                                                             columnNumber: 41
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1223,
+                                                    lineNumber: 1147,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6239,7 +6084,7 @@ function AdvancedWebsiteDevelopment() {
                                                                     children: m.val
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 1233,
+                                                                    lineNumber: 1157,
                                                                     columnNumber: 49
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -6247,18 +6092,18 @@ function AdvancedWebsiteDevelopment() {
                                                                     children: m.label
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 1234,
+                                                                    lineNumber: 1158,
                                                                     columnNumber: 49
                                                                 }, this)
                                                             ]
                                                         }, j, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1232,
+                                                            lineNumber: 1156,
                                                             columnNumber: 45
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1230,
+                                                    lineNumber: 1154,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6268,40 +6113,40 @@ function AdvancedWebsiteDevelopment() {
                                                             children: tag
                                                         }, j, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1242,
+                                                            lineNumber: 1166,
                                                             columnNumber: 45
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1240,
+                                                    lineNumber: 1164,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1222,
+                                            lineNumber: 1146,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1212,
+                                    lineNumber: 1136,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1185,
+                            lineNumber: 1109,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 1178,
+                    lineNumber: 1102,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1177,
+                lineNumber: 1101,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -6317,7 +6162,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Our Protocol"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1256,
+                                    lineNumber: 1180,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -6325,7 +6170,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "From Discovery to Launch."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1257,
+                                    lineNumber: 1181,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6333,13 +6178,13 @@ function AdvancedWebsiteDevelopment() {
                                     children: "A structured, transparent development process engineered for quality and speed."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1258,
+                                    lineNumber: 1182,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1255,
+                            lineNumber: 1179,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6349,7 +6194,7 @@ function AdvancedWebsiteDevelopment() {
                                     className: "absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-cyan/30 to-transparent hidden lg:block"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1263,
+                                    lineNumber: 1187,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6420,12 +6265,12 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "w-6 h-6 text-slate-400 group-hover:text-brand-cyan transition-colors"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1284,
+                                                        lineNumber: 1208,
                                                         columnNumber: 41
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1283,
+                                                    lineNumber: 1207,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -6433,7 +6278,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: phase.step
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1287,
+                                                    lineNumber: 1211,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -6441,7 +6286,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: phase.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1288,
+                                                    lineNumber: 1212,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6449,7 +6294,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: phase.desc
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1289,
+                                                    lineNumber: 1213,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -6457,35 +6302,35 @@ function AdvancedWebsiteDevelopment() {
                                                     children: phase.duration
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1290,
+                                                    lineNumber: 1214,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1274,
+                                            lineNumber: 1198,
                                             columnNumber: 33
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1265,
+                                    lineNumber: 1189,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1261,
+                            lineNumber: 1185,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 1254,
+                    lineNumber: 1178,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1253,
+                lineNumber: 1177,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -6501,7 +6346,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Post-Launch Care"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1302,
+                                    lineNumber: 1226,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -6509,7 +6354,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Maintenance & Support."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1303,
+                                    lineNumber: 1227,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6517,13 +6362,13 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Your website is a living asset. We ensure it stays optimized, secure, and ahead of the curve."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1304,
+                                    lineNumber: 1228,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1301,
+                            lineNumber: 1225,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6591,14 +6436,14 @@ function AdvancedWebsiteDevelopment() {
                                             className: "absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-cyan to-blue-500"
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1343,
+                                            lineNumber: 1267,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(plan.icon, {
                                             className: `w-10 h-10 mb-6 ${plan.highlight ? 'text-brand-cyan' : 'text-slate-400'}`
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1345,
+                                            lineNumber: 1269,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -6606,7 +6451,7 @@ function AdvancedWebsiteDevelopment() {
                                             children: plan.title
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1346,
+                                            lineNumber: 1270,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6614,7 +6459,7 @@ function AdvancedWebsiteDevelopment() {
                                             children: plan.desc
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1347,
+                                            lineNumber: 1271,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -6626,7 +6471,7 @@ function AdvancedWebsiteDevelopment() {
                                                             className: `w-4 h-4 shrink-0 ${plan.highlight ? 'text-brand-cyan' : 'text-slate-400'}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1351,
+                                                            lineNumber: 1275,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -6634,49 +6479,49 @@ function AdvancedWebsiteDevelopment() {
                                                             children: f
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1352,
+                                                            lineNumber: 1276,
                                                             columnNumber: 45
                                                         }, this)
                                                     ]
                                                 }, j, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1350,
+                                                    lineNumber: 1274,
                                                     columnNumber: 41
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1348,
+                                            lineNumber: 1272,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                             href: "#contact",
-                                            className: `block w-full mt-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider text-center transition-all ${plan.highlight ? 'bg-brand-cyan text-slate-950 hover:bg-white hover:shadow-lg' : 'bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-brand-cyan/50'}`,
+                                            className: `w-full mt-8 py-4 text-sm ${plan.highlight ? "ring-2 ring-brand-cyan ring-offset-2 ring-offset-slate-900" : ""} bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center`,
                                             children: "Get Started"
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1356,
+                                            lineNumber: 1280,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1331,
+                                    lineNumber: 1255,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1307,
+                            lineNumber: 1231,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 1300,
+                    lineNumber: 1224,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1299,
+                lineNumber: 1223,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -6692,7 +6537,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Investment Tiers"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1372,
+                                    lineNumber: 1293,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -6700,7 +6545,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Transparent Pricing."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1373,
+                                    lineNumber: 1294,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6708,13 +6553,13 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Every project is unique. Choose a tier that matches your scale, and we'll tailor the scope to your exact requirements."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1374,
+                                    lineNumber: 1295,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1371,
+                            lineNumber: 1292,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6789,7 +6634,7 @@ function AdvancedWebsiteDevelopment() {
                                             children: "Most Popular"
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1416,
+                                            lineNumber: 1337,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6800,7 +6645,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: plan.tier
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1421,
+                                                    lineNumber: 1342,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6808,7 +6653,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: plan.price
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1422,
+                                                    lineNumber: 1343,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6816,7 +6661,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: plan.desc
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1423,
+                                                    lineNumber: 1344,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6826,7 +6671,7 @@ function AdvancedWebsiteDevelopment() {
                                                             className: "w-4 h-4 text-brand-cyan"
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1426,
+                                                            lineNumber: 1347,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -6834,13 +6679,13 @@ function AdvancedWebsiteDevelopment() {
                                                             children: plan.timeline
                                                         }, void 0, false, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1427,
+                                                            lineNumber: 1348,
                                                             columnNumber: 41
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1425,
+                                                    lineNumber: 1346,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -6852,7 +6697,7 @@ function AdvancedWebsiteDevelopment() {
                                                                     className: "w-4 h-4 text-brand-cyan mt-0.5 shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 1433,
+                                                                    lineNumber: 1354,
                                                                     columnNumber: 49
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -6860,55 +6705,55 @@ function AdvancedWebsiteDevelopment() {
                                                                     children: d
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                    lineNumber: 1434,
+                                                                    lineNumber: 1355,
                                                                     columnNumber: 49
                                                                 }, this)
                                                             ]
                                                         }, j, true, {
                                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                            lineNumber: 1432,
+                                                            lineNumber: 1353,
                                                             columnNumber: 45
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1430,
+                                                    lineNumber: 1351,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                     href: "#contact",
-                                                    className: `block w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wider text-center transition-all ${plan.highlight ? 'bg-brand-cyan text-slate-950 hover:bg-white hover:shadow-lg shadow-brand-cyan/20' : 'bg-slate-900 dark:bg-white/5 text-white border border-slate-800 dark:border-white/10 hover:border-brand-cyan/50'}`,
+                                                    className: `w-full py-4 text-sm ${plan.highlight ? "ring-2 ring-brand-cyan ring-offset-2 ring-offset-slate-900" : ""} bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center`,
                                                     children: plan.highlight ? 'Start Enterprise Project' : 'Get a Quote'
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1439,
+                                                    lineNumber: 1360,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1420,
+                                            lineNumber: 1341,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1404,
+                                    lineNumber: 1325,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1377,
+                            lineNumber: 1298,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 1370,
+                    lineNumber: 1291,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1369,
+                lineNumber: 1290,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -6924,7 +6769,7 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Knowledge Base"
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1456,
+                                    lineNumber: 1374,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -6932,13 +6777,13 @@ function AdvancedWebsiteDevelopment() {
                                     children: "Frequently Asked Questions."
                                 }, void 0, false, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1457,
+                                    lineNumber: 1375,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1455,
+                            lineNumber: 1373,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7002,7 +6847,7 @@ function AdvancedWebsiteDevelopment() {
                                                     children: faq.q
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1483,
+                                                    lineNumber: 1401,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -7017,18 +6862,18 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "w-5 h-5 text-brand-cyan"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1489,
+                                                        lineNumber: 1407,
                                                         columnNumber: 41
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1484,
+                                                    lineNumber: 1402,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1479,
+                                            lineNumber: 1397,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -7055,39 +6900,39 @@ function AdvancedWebsiteDevelopment() {
                                                     children: faq.a
                                                 }, void 0, false, {
                                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                    lineNumber: 1501,
+                                                    lineNumber: 1419,
                                                     columnNumber: 45
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1494,
+                                                lineNumber: 1412,
                                                 columnNumber: 41
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                            lineNumber: 1492,
+                                            lineNumber: 1410,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                    lineNumber: 1471,
+                                    lineNumber: 1389,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                            lineNumber: 1460,
+                            lineNumber: 1378,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 1454,
+                    lineNumber: 1372,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1453,
+                lineNumber: 1371,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -7109,7 +6954,7 @@ function AdvancedWebsiteDevelopment() {
                                                 children: "Let's Talk"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1519,
+                                                lineNumber: 1437,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -7117,7 +6962,7 @@ function AdvancedWebsiteDevelopment() {
                                                 children: "Book Your Free Strategy Call."
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1520,
+                                                lineNumber: 1438,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7125,13 +6970,13 @@ function AdvancedWebsiteDevelopment() {
                                                 children: "Share your vision with us. We'll analyze your requirements and provide a custom strategy blueprint—completely free."
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1521,
+                                                lineNumber: 1439,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1518,
+                                        lineNumber: 1436,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7160,7 +7005,7 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "w-5 h-5 text-brand-cyan"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1532,
+                                                        lineNumber: 1450,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -7168,18 +7013,18 @@ function AdvancedWebsiteDevelopment() {
                                                         children: item.text
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1533,
+                                                        lineNumber: 1451,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, i, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1531,
+                                                lineNumber: 1449,
                                                 columnNumber: 37
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1524,
+                                        lineNumber: 1442,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7190,7 +7035,7 @@ function AdvancedWebsiteDevelopment() {
                                                 children: "Or reach us directly"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1540,
+                                                lineNumber: 1458,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7200,7 +7045,7 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "w-5 h-5 text-brand-cyan"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1542,
+                                                        lineNumber: 1460,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -7208,13 +7053,13 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "hello@preettech.com"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1543,
+                                                        lineNumber: 1461,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1541,
+                                                lineNumber: 1459,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7224,7 +7069,7 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "w-5 h-5 text-brand-cyan"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1546,
+                                                        lineNumber: 1464,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -7232,13 +7077,13 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "+91 98765 43210"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1547,
+                                                        lineNumber: 1465,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1545,
+                                                lineNumber: 1463,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7248,7 +7093,7 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "w-5 h-5 text-brand-cyan"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1550,
+                                                        lineNumber: 1468,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -7256,25 +7101,25 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Mon – Sat, 10AM – 7PM IST"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1551,
+                                                        lineNumber: 1469,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1549,
+                                                lineNumber: 1467,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1539,
+                                        lineNumber: 1457,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 1517,
+                                lineNumber: 1435,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7284,7 +7129,7 @@ function AdvancedWebsiteDevelopment() {
                                         className: "absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-cyan to-blue-500"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1558,
+                                        lineNumber: 1476,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -7292,7 +7137,7 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Request a Consultation"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1559,
+                                        lineNumber: 1477,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -7309,7 +7154,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "Full Name *"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1563,
+                                                                lineNumber: 1481,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7319,7 +7164,7 @@ function AdvancedWebsiteDevelopment() {
                                                                         className: "absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 1565,
+                                                                        lineNumber: 1483,
                                                                         columnNumber: 45
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -7328,19 +7173,19 @@ function AdvancedWebsiteDevelopment() {
                                                                         className: "w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 1566,
+                                                                        lineNumber: 1484,
                                                                         columnNumber: 45
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1564,
+                                                                lineNumber: 1482,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1562,
+                                                        lineNumber: 1480,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7350,7 +7195,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "Email *"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1570,
+                                                                lineNumber: 1488,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7360,7 +7205,7 @@ function AdvancedWebsiteDevelopment() {
                                                                         className: "absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 1572,
+                                                                        lineNumber: 1490,
                                                                         columnNumber: 45
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -7369,25 +7214,25 @@ function AdvancedWebsiteDevelopment() {
                                                                         className: "w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 1573,
+                                                                        lineNumber: 1491,
                                                                         columnNumber: 45
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1571,
+                                                                lineNumber: 1489,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1569,
+                                                        lineNumber: 1487,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1561,
+                                                lineNumber: 1479,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7400,7 +7245,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "Phone"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1579,
+                                                                lineNumber: 1497,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7410,7 +7255,7 @@ function AdvancedWebsiteDevelopment() {
                                                                         className: "absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 1581,
+                                                                        lineNumber: 1499,
                                                                         columnNumber: 45
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -7419,19 +7264,19 @@ function AdvancedWebsiteDevelopment() {
                                                                         className: "w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 1582,
+                                                                        lineNumber: 1500,
                                                                         columnNumber: 45
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1580,
+                                                                lineNumber: 1498,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1578,
+                                                        lineNumber: 1496,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7441,7 +7286,7 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "Company"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1586,
+                                                                lineNumber: 1504,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7451,7 +7296,7 @@ function AdvancedWebsiteDevelopment() {
                                                                         className: "absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 1588,
+                                                                        lineNumber: 1506,
                                                                         columnNumber: 45
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -7460,25 +7305,25 @@ function AdvancedWebsiteDevelopment() {
                                                                         className: "w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                        lineNumber: 1589,
+                                                                        lineNumber: 1507,
                                                                         columnNumber: 45
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1587,
+                                                                lineNumber: 1505,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1585,
+                                                        lineNumber: 1503,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1577,
+                                                lineNumber: 1495,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7488,7 +7333,7 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Project Type"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1594,
+                                                        lineNumber: 1512,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -7498,61 +7343,61 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "Select Project Type"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1596,
+                                                                lineNumber: 1514,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                 children: "Corporate Website"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1597,
+                                                                lineNumber: 1515,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                 children: "E-Commerce Platform"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1598,
+                                                                lineNumber: 1516,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                 children: "SaaS Web Application"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1599,
+                                                                lineNumber: 1517,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                 children: "CRM / Dashboard System"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1600,
+                                                                lineNumber: 1518,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                 children: "Custom Web Application"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1601,
+                                                                lineNumber: 1519,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                 children: "Other"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1602,
+                                                                lineNumber: 1520,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1595,
+                                                        lineNumber: 1513,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1593,
+                                                lineNumber: 1511,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7562,7 +7407,7 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Budget Range"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1606,
+                                                        lineNumber: 1524,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -7572,47 +7417,47 @@ function AdvancedWebsiteDevelopment() {
                                                                 children: "Select Budget Range"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1608,
+                                                                lineNumber: 1526,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                 children: "₹1.5L - 3L"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1609,
+                                                                lineNumber: 1527,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                 children: "₹3L - 5L"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1610,
+                                                                lineNumber: 1528,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                 children: "₹5L - 8L"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1611,
+                                                                lineNumber: 1529,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                 children: "₹8L+"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                                lineNumber: 1612,
+                                                                lineNumber: 1530,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1607,
+                                                        lineNumber: 1525,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1605,
+                                                lineNumber: 1523,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7622,7 +7467,7 @@ function AdvancedWebsiteDevelopment() {
                                                         children: "Tell us about your project *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1616,
+                                                        lineNumber: 1534,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -7631,31 +7476,31 @@ function AdvancedWebsiteDevelopment() {
                                                         className: "w-full px-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all resize-none"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1617,
+                                                        lineNumber: 1535,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1615,
+                                                lineNumber: 1533,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 type: "submit",
-                                                className: "w-full py-5 rounded-xl bg-brand-cyan text-slate-950 font-black uppercase tracking-widest text-sm hover:bg-white hover:shadow-xl transition-all flex items-center justify-center gap-3 shadow-lg shadow-brand-cyan/20",
+                                                className: "w-full py-5 gap-3 text-sm bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                        lineNumber: 1620,
+                                                        lineNumber: 1538,
                                                         columnNumber: 37
                                                     }, this),
                                                     "Submit Consultation Request"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1619,
+                                                lineNumber: 1537,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7663,35 +7508,35 @@ function AdvancedWebsiteDevelopment() {
                                                 children: "We'll respond within 24 hours with a custom strategy proposal."
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1623,
+                                                lineNumber: 1541,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1560,
+                                        lineNumber: 1478,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 1557,
+                                lineNumber: 1475,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 1516,
+                        lineNumber: 1434,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                    lineNumber: 1515,
+                    lineNumber: 1433,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1514,
+                lineNumber: 1432,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -7720,7 +7565,7 @@ function AdvancedWebsiteDevelopment() {
                                 className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-cyan/20 blur-[200px] rounded-full"
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 1634,
+                                lineNumber: 1552,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7731,13 +7576,13 @@ function AdvancedWebsiteDevelopment() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 1639,
+                                lineNumber: 1557,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 1633,
+                        lineNumber: 1551,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7762,7 +7607,7 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Your Move"
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1649,
+                                        lineNumber: 1567,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -7774,13 +7619,13 @@ function AdvancedWebsiteDevelopment() {
                                                 children: "Average Websites."
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1652,
+                                                lineNumber: 1570,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1650,
+                                        lineNumber: 1568,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7788,13 +7633,13 @@ function AdvancedWebsiteDevelopment() {
                                         children: "Every day you delay is revenue lost to competitors with better digital infrastructure. Let's build something extraordinary."
                                     }, void 0, false, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1656,
+                                        lineNumber: 1574,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 1643,
+                                lineNumber: 1561,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -7816,44 +7661,44 @@ function AdvancedWebsiteDevelopment() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "#contact",
-                                        className: "px-8 sm:px-12 py-5 sm:py-6 bg-brand-cyan text-slate-950 rounded-xl sm:rounded-2xl font-black uppercase tracking-widest text-xs sm:text-sm hover:bg-white hover:shadow-[0_0_60px_rgba(95,211,230,0.4)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3",
+                                        className: "px-8 sm:px-12 py-5 sm:py-6 gap-3 text-xs sm:text-sm group bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rocket$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Rocket$3e$__["Rocket"], {
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1669,
+                                                lineNumber: 1587,
                                                 columnNumber: 29
                                             }, this),
                                             "Start Your Project Now"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1668,
+                                        lineNumber: 1586,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "tel:+919876543210",
-                                        className: "px-8 sm:px-12 py-5 sm:py-6 border-2 border-white/10 rounded-xl sm:rounded-2xl font-bold uppercase tracking-widest text-xs sm:text-sm hover:bg-white/5 transition-all flex items-center justify-center gap-3",
+                                        className: "px-8 sm:px-12 py-5 sm:py-6 gap-3 text-xs sm:text-sm bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1673,
+                                                lineNumber: 1591,
                                                 columnNumber: 29
                                             }, this),
                                             "Call Us Directly"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1672,
+                                        lineNumber: 1590,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 1661,
+                                lineNumber: 1579,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -7895,7 +7740,7 @@ function AdvancedWebsiteDevelopment() {
                                                 children: stat.val
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1693,
+                                                lineNumber: 1611,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -7903,49 +7748,45 @@ function AdvancedWebsiteDevelopment() {
                                                 children: stat.label
                                             }, void 0, false, {
                                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                                lineNumber: 1694,
+                                                lineNumber: 1612,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, i, true, {
                                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                        lineNumber: 1692,
+                                        lineNumber: 1610,
                                         columnNumber: 29
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                                lineNumber: 1679,
+                                lineNumber: 1597,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                        lineNumber: 1642,
+                        lineNumber: 1560,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1631,
+                lineNumber: 1549,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$components$2f$Footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-                lineNumber: 1701,
+                lineNumber: 1619,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-        lineNumber: 87,
+        lineNumber: 54,
         columnNumber: 9
     }, this);
 }
-_s(AdvancedWebsiteDevelopment, "jF39wKeIkQnKBKyBIMEP2YWi0YA=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$preet$2d$tech$2d$next$2d$gen$2d$digital$2d$agency__2$2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]
-    ];
-});
+_s(AdvancedWebsiteDevelopment, "fCnUisMexoBx0ZbVxYoOL53TBAw=");
 _c = AdvancedWebsiteDevelopment;
 // Quick Icon Components that were missing from imports
 function UserCheckIcon(props) {
@@ -7961,12 +7802,12 @@ function UserCheckIcon(props) {
             d: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
         }, void 0, false, {
             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-            lineNumber: 1708,
+            lineNumber: 1626,
             columnNumber: 82
         }, this)
     }, void 0, false, {
         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-        lineNumber: 1708,
+        lineNumber: 1626,
         columnNumber: 12
     }, this);
 }
@@ -7984,12 +7825,12 @@ function CursorArrowRaysIcon(props) {
             d: "M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
         }, void 0, false, {
             fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-            lineNumber: 1711,
+            lineNumber: 1629,
             columnNumber: 82
         }, this)
     }, void 0, false, {
         fileName: "[project]/preet-tech-next-gen-digital-agency 2/app/services/website-development/advanced/page.tsx",
-        lineNumber: 1711,
+        lineNumber: 1629,
         columnNumber: 12
     }, this);
 }
