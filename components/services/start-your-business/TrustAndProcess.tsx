@@ -80,9 +80,9 @@ const TrustAndProcess = () => {
             {/* Launch Process (Section 12) */}
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-20">
-                    <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">The Roadmap</span>
+                    <span className="text-brand-medium dark:text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">The Roadmap</span>
                     <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight">
-                        How We <span className="text-brand-cyan italic">Launch You</span>
+                        How We <span className="text-brand-medium dark:text-brand-cyan italic">Launch You</span>
                     </h2>
                 </div>
 
@@ -97,7 +97,7 @@ const TrustAndProcess = () => {
                                 transition={{ delay: i * 0.1 }}
                                 className="flex flex-col items-center group"
                             >
-                                <div className="w-20 h-20 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-brand-cyan/20 flex items-center justify-center mb-6 group-hover:border-brand-cyan group-hover:shadow-[0_0_30px_rgba(95,211,230,0.3)] transition-all bg-glow">
+                                <div className="w-20 h-20 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-brand-cyan/20 flex items-center justify-center mb-6 group-hover:border-brand-medium dark:hover:border-brand-cyan group-hover:shadow-[0_0_30px_rgba(95,211,230,0.3)] transition-all bg-glow">
                                     <step.icon className="w-8 h-8 text-brand-medium dark:text-brand-cyan" />
                                 </div>
                                 <h4 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-tight mb-2 text-center">{step.title}</h4>
@@ -110,13 +110,13 @@ const TrustAndProcess = () => {
 
             {/* Mid CTA (Section 13) */}
             <div className="px-6">
-                <div className="max-w-5xl mx-auto rounded-[4rem] p-12 md:p-20 text-center bg-[#030712] relative overflow-hidden">
+                <div className="max-w-5xl mx-auto rounded-[4rem] p-12 md:p-20 text-center bg-white dark:bg-[#030712] relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/10 to-transparent" />
                     <div className="relative z-10">
-                        <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-10 leading-[0.9]">
-                            Your Business Idea <br /> Deserves The <span className="text-brand-cyan">Right Launch</span>
+                        <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-10 leading-[0.9]">
+                            Your Business Idea <br /> Deserves The <span className="text-brand-medium dark:text-brand-cyan">Right Launch</span>
                         </h2>
-                        <button className="px-10 py-5 bg-brand-cyan text-[#030712] rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl shadow-brand-cyan/20">
+                        <button className="px-10 py-5 bg-brand-medium dark:bg-brand-cyan text-white dark:text-[#030712] rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl shadow-brand-cyan/20">
                             Book Free Strategy Call
                         </button>
                     </div>
@@ -129,9 +129,9 @@ const TrustAndProcess = () => {
                     {/* Left: Industries Section */}
                     <div className="lg:col-span-5 space-y-8">
                         <div>
-                            <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Market Reach</span>
+                            <span className="text-brand-medium dark:text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Market Reach</span>
                             <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-[0.9]">
-                                Industries <br /> <span className="text-brand-cyan italic font-serif">We Ignite.</span>
+                                Industries <br /> <span className="text-brand-medium dark:text-brand-cyan italic font-serif">We Ignite.</span>
                             </h2>
                         </div>
                         <p className="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed max-w-sm">
@@ -142,10 +142,10 @@ const TrustAndProcess = () => {
                                 <motion.div
                                     key={i}
                                     whileHover={{ y: -4, backgroundColor: "rgba(95, 211, 230, 0.15)" }}
-                                    className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 group transition-all cursor-pointer shadow-sm hover:border-brand-cyan/40"
+                                    className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 group transition-all cursor-pointer shadow-sm hover:border-brand-medium/40 dark:hover:border-brand-cyan/40"
                                 >
-                                    <ind.icon className="w-4 h-4 text-brand-cyan group-hover:scale-110 transition-transform" />
-                                    <span className="text-[11px] font-black uppercase tracking-widest text-slate-700 dark:text-slate-300 group-hover:text-brand-cyan transition-colors">{ind.name}</span>
+                                    <ind.icon className="w-4 h-4 text-brand-medium dark:text-brand-cyan group-hover:scale-110 transition-transform" />
+                                    <span className="text-[11px] font-black uppercase tracking-widest text-slate-700 dark:text-slate-300 group-hover:text-brand-medium dark:hover:text-brand-cyan transition-colors">{ind.name}</span>
                                 </motion.div>
                             ))}
                         </div>
@@ -154,12 +154,12 @@ const TrustAndProcess = () => {
                     {/* Right: Tools Section - Dynamic Grid */}
                     <div className="lg:col-span-7">
                         <div className="p-10 md:p-14 rounded-[4rem] bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-white/5 relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-cyan/10 blur-[100px] pointer-events-none group-hover:bg-brand-cyan/20 transition-all duration-700" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-medium/10 dark:bg-brand-cyan/10 blur-[100px] pointer-events-none group-hover:bg-brand-medium/20 dark:hover:bg-brand-cyan/20 transition-all duration-700" />
 
                             <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
                                 <div>
-                                    <span className="text-brand-cyan text-[9px] font-black uppercase tracking-[0.6em] mb-3 block">Power Stack</span>
-                                    <h3 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Tools <span className="text-brand-cyan">&</span> Tech</h3>
+                                    <span className="text-brand-medium dark:text-brand-cyan text-[9px] font-black uppercase tracking-[0.6em] mb-3 block">Power Stack</span>
+                                    <h3 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Tools <span className="text-brand-medium dark:text-brand-cyan">&</span> Tech</h3>
                                 </div>
                                 <div className="px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -174,14 +174,14 @@ const TrustAndProcess = () => {
                                         whileHover={{ scale: 1.05 }}
                                         className="flex flex-col items-center gap-4 group/tool"
                                     >
-                                        <div className="w-20 h-20 rounded-[2rem] bg-white dark:bg-black/40 border border-slate-200 dark:border-white/5 flex items-center justify-center p-5 group-hover/tool:border-brand-cyan/50 group-hover/tool:shadow-2xl group-hover/tool:shadow-brand-cyan/10 transition-all duration-500">
+                                        <div className="w-20 h-20 rounded-[2rem] bg-white dark:bg-black/40 border border-slate-200 dark:border-white/5 flex items-center justify-center p-5 group-hover/tool:border-brand-medium/50 dark:border-brand-cyan/50 group-hover/tool:shadow-2xl group-hover/tool:shadow-brand-cyan/10 transition-all duration-500">
                                             <img
                                                 src={tool.logo}
                                                 alt={tool.name}
                                                 className="w-full h-full object-contain filter grayscale opacity-60 group-hover/tool:grayscale-0 group-hover/tool:opacity-100 transition-all duration-500"
                                             />
                                         </div>
-                                        <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover/tool:text-slate-900 dark:group-hover/tool:text-white transition-colors">
+                                        <span className="text-[9px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 group-hover/tool:text-slate-900 dark:group-hover/tool:text-slate-900 dark:text-white transition-colors">
                                             {tool.name}
                                         </span>
                                     </motion.div>
@@ -195,14 +195,14 @@ const TrustAndProcess = () => {
             {/* Case Studies (Section 16) - Editorial Card Redesign */}
             <div className="py-24 bg-white dark:bg-[#030712]">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                        <div>
-                            <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Proven Performance</span>
-                            <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight">
-                                Success <span className="text-brand-cyan italic">Stories</span>
+                    <div className="flex flex-col items-center text-center mb-16 max-w-2xl mx-auto space-y-4 md:space-y-6">
+                        <div className="flex flex-col items-center w-full">
+                            <span className="text-[#3f8fcc] dark:text-brand-cyan text-[10px] md:text-[11px] font-black uppercase tracking-[0.4em] mb-3 md:mb-4 block">Proven Performance</span>
+                            <h2 className="text-4xl sm:text-[44px] md:text-5xl font-black text-[#0f172a] dark:text-white uppercase tracking-tighter leading-tight">
+                                Success <span className="text-[#3f8fcc] dark:text-brand-cyan italic">Stories</span>
                             </h2>
                         </div>
-                        <p className="max-w-md text-slate-500 font-medium text-sm leading-relaxed">
+                        <p className="max-w-[85%] sm:max-w-md md:max-w-lg text-[#64748B] dark:text-slate-400 font-medium text-[13px] md:text-base leading-relaxed">
                             Deep dives into how we transform startup visions into technical realities and market-leading businesses.
                         </p>
                     </div>
@@ -220,7 +220,7 @@ const TrustAndProcess = () => {
                                     {/* Card Header: Image & Badge */}
                                     <div className="relative h-64 overflow-hidden p-3">
                                         <div className="absolute top-6 left-6 z-20">
-                                            <span className="px-4 py-1.5 rounded-lg bg-emerald-500/90 text-white text-[9px] font-black uppercase tracking-widest backdrop-blur-md">
+                                            <span className="px-4 py-1.5 rounded-lg bg-emerald-500/90 text-slate-900 dark:text-white text-[9px] font-black uppercase tracking-widest backdrop-blur-md">
                                                 {study.industry}
                                             </span>
                                         </div>
@@ -235,19 +235,19 @@ const TrustAndProcess = () => {
                                     {/* Card Content */}
                                     <div className="p-8 space-y-6 flex-1 flex flex-col">
                                         {/* Metadata row */}
-                                        <div className="flex items-center gap-6 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                                        <div className="flex items-center gap-6 text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-widest">
                                             <div className="flex items-center gap-2">
-                                                <Calendar className="w-3.5 h-3.5 text-brand-cyan" />
+                                                <Calendar className="w-3.5 h-3.5 text-brand-medium dark:text-brand-cyan" />
                                                 {study.date}
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <Clock className="w-3.5 h-3.5 text-brand-cyan" />
+                                                <Clock className="w-3.5 h-3.5 text-brand-medium dark:text-brand-cyan" />
                                                 {study.readTime}
                                             </div>
                                         </div>
 
                                         <div className="space-y-4 flex-1">
-                                            <h4 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight group-hover:text-brand-cyan transition-colors leading-tight">
+                                            <h4 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight group-hover:text-brand-medium dark:hover:text-brand-cyan transition-colors leading-tight">
                                                 {study.name}
                                             </h4>
                                             <p className="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3">
@@ -258,7 +258,7 @@ const TrustAndProcess = () => {
                                         {/* Action link */}
                                         <div className="pt-8 border-t border-slate-50 dark:border-white/5 flex items-center justify-between">
                                             <span className="text-[10px] font-black text-slate-900 dark:text-white uppercase tracking-[0.2em]">Read Analysis</span>
-                                            <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-white/5 flex items-center justify-center group-hover:bg-brand-cyan group-hover:text-[#030712] transition-all transform group-hover:translate-x-1">
+                                            <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-white/5 flex items-center justify-center group-hover:bg-brand-medium dark:hover:bg-brand-cyan group-hover:text-slate-900 dark:group-hover:text-[#030712] transition-all transform group-hover:translate-x-1">
                                                 <ArrowUpRight className="w-4 h-4" />
                                             </div>
                                         </div>
@@ -271,15 +271,15 @@ const TrustAndProcess = () => {
             </div>            {/* Testimonials (Section 17) */}
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Founder Feedback</span>
-                    <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Word On <span className="text-brand-cyan italic">The Street</span></h2>
+                    <span className="text-brand-medium dark:text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Founder Feedback</span>
+                    <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Word On <span className="text-brand-medium dark:text-brand-cyan italic">The Street</span></h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {TESTIMONIALS.map((t, i) => (
                         <div key={i} className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-200 dark:border-white/5 relative group">
-                            <Quote className="absolute top-8 right-8 w-10 h-10 text-brand-cyan opacity-10" />
+                            <Quote className="absolute top-8 right-8 w-10 h-10 text-brand-medium dark:text-brand-cyan opacity-10" />
                             <div className="flex items-center gap-4 mb-8">
-                                <img src={t.photo} alt={t.name} className="w-12 h-12 rounded-full ring-2 ring-brand-cyan/20" />
+                                <img src={t.photo} alt={t.name} className="w-12 h-12 rounded-full ring-2 ring-brand-medium/20 dark:ring-brand-cyan/20" />
                                 <span className="font-black text-slate-900 dark:text-white uppercase tracking-tight text-sm">{t.name}</span>
                             </div>
                             <p className="text-slate-600 dark:text-slate-400 text-sm italic font-medium leading-relaxed font-serif">"{t.review}"</p>

@@ -46,7 +46,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
     { name: 'Home', href: '/', desc: 'Preet Tech Home' },
     { name: 'About', href: '/about', desc: 'The Preet Edge' },
     { name: 'Services', href: '/services', desc: 'Strategic Multipliers', hasMegaMenu: true },
-    { name: 'Case Studies', href: '/#case-studies', desc: 'Measurable Outcomes' },
+    { name: 'Business Tools', href: '/services/business-tools', desc: 'Measurable Outcomes' },
     { name: 'Blog', href: '/blog', desc: 'Digital Logic' },
     { name: 'Contact', href: '/contact', desc: 'Start a Journey' },
   ];
@@ -69,6 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
         { name: 'Performance Marketing', icon: TrendingUp, href: '/services/performance-marketing', detail: 'Profit-focused campaigns', longDesc: 'Scientific approach to advertisement. We optimize for conversion and ROI across all major digital ad platforms.' },
         { name: 'Social Media Handling', icon: Share2, href: '/services/social-media-handling', detail: 'Community & Content management', longDesc: 'Engineering your social presence to build high-conversion communities and maintain consistent brand authority.' },
         { name: 'Partnership Marketing', icon: Target, href: '/services/partnership-marketing', detail: 'Strategic brand collaborations', longDesc: 'We connect you with key partners to amplify reach and build mutual authority through strategic digital alliances.' },
+        { name: 'Content Creation', icon: Palette, href: '/services/content-creation', detail: 'High-fidelity narrative design', longDesc: 'Premium visual and written content that commands attention and communicates your brand story with precision.' },
       ]
     },
     ventures: {
@@ -76,7 +77,6 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
       desc: 'Everything you need to successfully enter the market.',
       items: [
         { name: 'Start Your Business', icon: Rocket, href: '/services/start-your-business', detail: 'End-to-end setup protocol', longDesc: 'From company registration to digital infrastructure. We handle the technical and strategic complexity of launching your new venture.' },
-        { name: 'Content Creation', icon: Palette, href: '/services/content-creation', detail: 'High-fidelity narrative design', longDesc: 'Premium visual and written content that commands attention and communicates your brand story with precision.' },
       ]
     }
   };
@@ -100,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
           {/* Logo & Brand */}
           <Link href="/" className="flex items-center group relative z-[210]" onClick={() => setIsOpen(false)}>
             <img
-              src={isDark ? '/logo-black.png' : '/logo-white.png'}
+              src={isDark ? '/logo-black.png' : '/logo-preet-tech.png'}
               alt="Preet Tech Logo"
               className={`h-10 md:h-12 w-auto object-contain transition-all duration-500 group-hover:scale-105`}
             />
@@ -186,6 +186,16 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                           <ChevronRight className={`w-4 h-4 transition-all ${activeTab === tab ? 'opacity-100' : 'opacity-0 -translate-x-2'}`} />
                         </button>
                       ))}
+                    </div>
+
+                    <div className="pt-8 mt-auto">
+                      <Link
+                        href="/contact"
+                        onClick={() => setShowMegaMenu(false)}
+                        className="group flex items-center justify-center gap-2 w-full py-4 bg-brand-medium/10 border border-brand-medium/20 text-brand-medium hover:bg-brand-medium hover:text-white font-black text-[9px] md:text-[10px] uppercase tracking-widest rounded-xl transition-all hover:shadow-lg hover:shadow-brand-medium/20 hover:-translate-y-0.5 active:scale-95"
+                      >
+                        Book Strategy Call <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      </Link>
                     </div>
                   </div>
                   {/* Content Area */}
@@ -273,7 +283,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                       <div className="h-0.5 w-12 bg-brand-medium" />
                     </div>
 
-                    <div className="flex flex-col gap-6 mb-auto">
+                    <div className="flex flex-col gap-4 mb-auto">
                       {links.map((link, i) => (
                         <motion.div
                           key={link.name}
@@ -283,17 +293,17 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                         >
                           {link.hasMegaMenu ? (
                             <button onClick={() => setIsMobileSubMenuOpen(true)} className="group w-full text-left">
-                              <div className="flex items-center justify-between py-2">
-                                <span className="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">{link.name}</span>
-                                <ChevronRight className="w-6 h-6 text-brand-medium" />
+                              <div className="flex items-center justify-between py-1.5">
+                                <span className="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">{link.name}</span>
+                                <ChevronRight className="w-5 h-5 text-brand-medium" />
                               </div>
                               <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest mt-1">{link.desc}</p>
                             </button>
                           ) : (
                             <Link href={link.href} onClick={() => setIsOpen(false)} className="group block">
-                              <div className="flex items-center justify-between py-2">
-                                <span className="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">{link.name}</span>
-                                <ArrowUpRight className="w-6 h-6 text-slate-200 dark:text-white/10 group-hover:text-brand-medium transition-colors" />
+                              <div className="flex items-center justify-between py-1.5">
+                                <span className="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">{link.name}</span>
+                                <ArrowUpRight className="w-5 h-5 text-slate-200 dark:text-white/10 group-hover:text-brand-medium transition-colors" />
                               </div>
                               <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest mt-1">{link.desc}</p>
                             </Link>
@@ -302,21 +312,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                       ))}
                     </div>
 
-                    <div className="mt-12 pt-12 border-t border-slate-100 dark:border-white/5 grid grid-cols-2 gap-8">
-                      <div>
-                        <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Pulse</p>
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                          <span className="text-xs font-bold text-slate-900 dark:text-white">Active</span>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Connect</p>
-                        <div className="flex justify-end gap-3 text-brand-medium font-bold text-xs underline underline-offset-4">
-                          Mail Us
-                        </div>
-                      </div>
-                    </div>
+
                   </motion.div>
                 ) : (
                   <motion.div

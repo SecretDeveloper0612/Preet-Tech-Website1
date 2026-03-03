@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Calendar, Clock, Tag } from 'lucide-react';
+import { ArrowRight, ArrowLeft, BookOpen, Calendar, Clock, Tag } from 'lucide-react';
 
 const INSIGHTS = [
     {
@@ -46,8 +46,10 @@ const Insights: React.FC = () => {
     const [scrollLeft, setScrollLeft] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Triple the data for seamless looping
-    const SLIDER_INSIGHTS = [...INSIGHTS, ...INSIGHTS, ...INSIGHTS];
+    // Create a base set that is wide enough to exceed ultra-wide screens
+    const BASE_SET = [...INSIGHTS, ...INSIGHTS, ...INSIGHTS, ...INSIGHTS, ...INSIGHTS];
+    // Triple the data for seamless looping (Left Buffer, Center View, Right Buffer)
+    const SLIDER_INSIGHTS = [...BASE_SET, ...BASE_SET, ...BASE_SET];
 
     useEffect(() => {
         const container = scrollContainerRef.current;
@@ -144,18 +146,20 @@ const Insights: React.FC = () => {
                         </h2>
                     </div>
 
-                    <div className="hidden md:flex items-center gap-4">
+                    <div className="hidden md:flex items-center gap-4 mt-2 md:mt-0">
                         <button
                             onClick={() => scroll('left')}
-                            className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group"
+                            className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full flex items-center justify-center border-2 border-[#E9EEF4] dark:border-white/10 text-[#8C9FAF] hover:bg-[#3f8fcc] dark:hover:bg-[#3f8fcc] hover:text-white dark:hover:text-white hover:border-[#3f8fcc] dark:hover:border-[#3f8fcc] shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
+                            aria-label="Scroll left"
                         >
-                            <ArrowRight className="w-5 h-5 text-slate-400 rotate-180 group-hover:text-brand-medium transition-colors" />
+                            <ArrowLeft className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
                         </button>
                         <button
                             onClick={() => scroll('right')}
-                            className="w-12 h-12 rounded-full bg-brand-medium text-white shadow-lg shadow-brand-medium/20 flex items-center justify-center hover:bg-brand-medium/90 hover:-translate-y-0.5 transition-all"
+                            className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full flex items-center justify-center border-2 border-[#E9EEF4] dark:border-white/10 text-[#8C9FAF] hover:bg-[#3f8fcc] dark:hover:bg-[#3f8fcc] hover:text-white dark:hover:text-white hover:border-[#3f8fcc] dark:hover:border-[#3f8fcc] shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
+                            aria-label="Scroll right"
                         >
-                            <ArrowRight className="w-5 h-5" />
+                            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
                         </button>
                     </div>
                 </div>
@@ -172,13 +176,13 @@ const Insights: React.FC = () => {
                     onMouseMove={handleMouseMove}
                     onMouseUp={handleMouseUp}
                     onMouseLeave={handleMouseUp}
-                    className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory cursor-grab active:cursor-grabbing px-6 md:pl-[max(1.5rem,calc((100vw-1280px+3rem)/2))] md:pr-6"
+                    className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory cursor-grab active:cursor-grabbing px-6 md:pl-[max(1.5rem,calc((100%-1280px+3rem)/2))] md:pr-[max(1.5rem,calc((100%-1280px+3rem)/2))]"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {SLIDER_INSIGHTS.map((post, index) => (
                         <motion.div
                             key={`${post.id}-${index}`}
-                            className="insight-card group flex flex-col w-[calc(100vw-48px)] md:w-[320px] bg-white dark:bg-[#111624] rounded-[2rem] overflow-hidden border border-slate-200 dark:border-white/5 hover:border-brand-medium/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(99,102,241,0.2)] snap-center snap-always flex-shrink-0"
+                            className="insight-card group flex flex-col w-[calc(100%-48px)] md:w-[320px] bg-white dark:bg-[#111624] rounded-[2rem] overflow-hidden border border-slate-200 dark:border-white/5 hover:border-brand-medium/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(99,102,241,0.2)] snap-center snap-always flex-shrink-0"
                         >
                             {/* Image Visual */}
                             <div className="relative h-44 md:h-48 overflow-hidden">

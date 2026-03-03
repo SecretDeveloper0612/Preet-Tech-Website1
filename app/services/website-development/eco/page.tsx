@@ -8,112 +8,100 @@ import {
     Sparkles, Code2, Settings, MessageSquare, Building2,
     Database, BarChart3, Clock, CreditCard, PenTool, Star,
     Monitor, Lock, Image as ImageIcon, Menu, X, ChevronDown, Check, ExternalLink,
-    Home, Heart, Coffee, Camera, Calendar, FileCode, Cloud, MessageCircle, Share2, Play
+    Home, Heart, Coffee, Camera, Calendar, FileCode, Cloud, MessageCircle, Share2, Play,
+    Atom, Server, HardDrive, ShoppingCart, Store, Users
 } from 'lucide-react';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ThreeSphereScene from '@/components/ThreeSphere';
 // GSAP removed for performance
 
-// --- 🛰️ Background Animation Components ---
+// --- 🛰️ Lightweight Static Background (CSS-only, no JS animations) ---
 
-const TechnicalBackground = ({ isDarkMode }: { isDarkMode: boolean }) => {
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
-
-    return (
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 focus:outline-none">
-            {/* 🌟 Galaxy/Star Field */}
-            {mounted && (
-                <div className={`absolute inset-0 transition-opacity duration-1000 ${isDarkMode ? 'opacity-100' : 'opacity-20'}`}>
-                    {[...Array(30)].map((_, i) => (
-                        <motion.div
-                            key={`star-${i}`}
-
-                            animate={{
-                                opacity: [0.1, 0.6, 0.1],
-                                scale: [1, 1.4, 1],
-                            }}
-                            transition={{
-                                duration: 4 + Math.random() * 5,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                                delay: Math.random() * 5
-                            }}
-                            className="absolute bg-brand-cyan/30 rounded-full"
-                            style={{
-                                width: isDarkMode ? `${Math.random() * 1.5 + 1}px` : '1px',
-                                height: isDarkMode ? `${Math.random() * 1.5 + 1}px` : '1px',
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                            }}
-                        />
-                    ))}
-                </div>
-            )}
-
-            {/* 🌌 Nebula/Cosmic Glows */}
-            <motion.div
-                animate={{
-                    scale: [1, 1.1, 1],
-                    x: [0, 30, 0],
-                    y: [0, 20, 0],
-                }}
-                transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-                className={`absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-brand-cyan/5 blur-[150px] rounded-full ${!isDarkMode && 'opacity-0'}`}
-            />
-            <motion.div
-                animate={{
-                    scale: [1.1, 1, 1.1],
-                    x: [0, -20, 0],
-                    y: [0, -10, 0],
-                }}
-                transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-                className={`absolute bottom-[-10%] left-[-10%] w-[700px] h-[700px] bg-brand-medium/5 blur-[180px] rounded-full ${!isDarkMode && 'opacity-0'}`}
-            />
-
-            {/* Mesh Grid */}
-            <div
-                className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
-                style={{
-                    backgroundImage: `linear-gradient(to right, ${isDarkMode ? '#5FD3E6' : '#3F8FCC'} 1px, transparent 1px), linear-gradient(to bottom, ${isDarkMode ? '#5FD3E6' : '#3F8FCC'} 1px, transparent 1px)`,
-                    backgroundSize: '40px 40px'
-                }}
-            />
-
-            {/* Floating Binary Strings */}
-            {mounted && [...Array(3)].map((_, i) => (
-                <motion.div
-                    key={i}
-
-                    animate={{
-                        opacity: [0, 0.3, 0],
-                        y: "-100%"
-                    }}
-                    transition={{
-                        duration: 20 + i * 5,
-                        repeat: Infinity,
-                        ease: "linear",
-                        delay: i * 4
-                    }}
-                    className="absolute text-[8px] font-mono text-brand-cyan/20 whitespace-nowrap tracking-widest hidden lg:block"
-                    style={{ left: `${20 + i * 30}%` }}
-                >
-                    {Array(15).fill(0).map(() => Math.round(Math.random())).join('')}
-                </motion.div>
-            ))}
-        </div>
-    );
-};
+const TechnicalBackground = ({ isDarkMode }: { isDarkMode: boolean }) => (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+        {/* Static mesh grid — CSS background-image, zero JS cost */}
+        <div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+                backgroundImage: `linear-gradient(to right, #3F8FCC 1px, transparent 1px), linear-gradient(to bottom, #3F8FCC 1px, transparent 1px)`,
+                backgroundSize: '40px 40px',
+            }}
+        />
+        {/* Two static ambient glows — no animation, GPU-composited */}
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3f8fcc]/5 blur-[100px] rounded-full opacity-60" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3f8fcc]/5 blur-[100px] rounded-full opacity-40" />
+    </div>
+);
 
 export default function EcoWebsiteDevelopment() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-    const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
     const [isVideoOpen, setIsVideoOpen] = useState(false);
     const [isHovering, setIsHovering] = useState(false);
+    const [portfolioIndex, setPortfolioIndex] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
     const targetAudienceRef = useRef<HTMLDivElement>(null);
+    const portfolioSliderRef = useRef<HTMLDivElement>(null);
+
+    // Form State
+    const [formData, setFormData] = useState({
+        name: '',
+        businessName: '',
+        email: '',
+        phone: '',
+        budget: '₹5k - ₹10k', // default from options
+    });
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+    const handleFormSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setSubmitStatus('loading');
+        try {
+            const res = await fetch('/api/leads', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            if (res.ok) {
+                setSubmitStatus('success');
+                setFormData({ name: '', businessName: '', email: '', phone: '', budget: '₹5k - ₹10k' });
+                setTimeout(() => setSubmitStatus('idle'), 5000);
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error("Form submission error:", error);
+            setSubmitStatus('error');
+        }
+    };
+
+
+    const portfolioItems = [
+        { title: "Invest Nest Fintech", category: "Fintech", image: "/portfolio/investnest.png", link: "https://www.investnestfintech.com/" },
+        { title: "Modern E-Commerce", category: "Retail", image: "/portfolio/ecommerce.png", link: "#" },
+        { title: "Creative Agency", category: "Portfolio", image: "/portfolio/agency.png", link: "#" },
+    ];
+
+    const scrollPortfolio = (dir: 'left' | 'right') => {
+        const newIndex = dir === 'left'
+            ? Math.max(0, portfolioIndex - 1)
+            : Math.min(portfolioItems.length - 1, portfolioIndex + 1);
+        setPortfolioIndex(newIndex);
+        if (portfolioSliderRef.current) {
+            const cardWidth = portfolioSliderRef.current.clientWidth;
+            portfolioSliderRef.current.scrollTo({ left: newIndex * cardWidth, behavior: 'smooth' });
+        }
+    };
+
+    const goToPortfolioSlide = (index: number) => {
+        setPortfolioIndex(index);
+        if (portfolioSliderRef.current) {
+            const cardWidth = portfolioSliderRef.current.clientWidth;
+            portfolioSliderRef.current.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+        }
+    };
 
     const scrollAudience = (dir: 'left' | 'right') => {
         if (targetAudienceRef.current) {
@@ -122,36 +110,20 @@ export default function EcoWebsiteDevelopment() {
         }
     };
 
-    // Track mouse for spotlight
-    useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            setMousePos({ x: e.clientX, y: e.clientY });
-        };
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, []);
-
-    // Auto-scroll loop for the Audience Carousel
+    // Auto-scroll loop for the Audience Carousel — throttled with setInterval (16ms ≈ 60fps max, no layout thrashing)
     useEffect(() => {
         if (isHovering || !targetAudienceRef.current) return;
 
-        let animationFrameId: number;
-
-        const scrollLoop = () => {
-            if (targetAudienceRef.current) {
-                targetAudienceRef.current.scrollLeft += 1;
-
-                // Infinite loop detection
-                if (targetAudienceRef.current.scrollLeft >= targetAudienceRef.current.scrollWidth - targetAudienceRef.current.clientWidth - 5) {
-                    targetAudienceRef.current.scrollLeft = 0;
-                }
+        const intervalId = setInterval(() => {
+            const el = targetAudienceRef.current;
+            if (!el) return;
+            el.scrollLeft += 1;
+            if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 5) {
+                el.scrollLeft = 0;
             }
-            animationFrameId = requestAnimationFrame(scrollLoop);
-        };
+        }, 16);
 
-        animationFrameId = requestAnimationFrame(scrollLoop);
-
-        return () => cancelAnimationFrame(animationFrameId);
+        return () => clearInterval(intervalId);
     }, [isHovering]);
 
     // Initial theme setup
@@ -176,7 +148,90 @@ export default function EcoWebsiteDevelopment() {
     };
 
     return (
-        <main ref={containerRef} className="relative z-10 selection:bg-brand-cyan/30 overflow-x-hidden bg-white text-slate-900 dark:bg-[#020617] dark:text-white transition-colors duration-500 font-sans">
+        <main ref={containerRef} className="relative z-10 selection:bg-[#3f8fcc]/30 overflow-x-hidden bg-white text-slate-900 dark:bg-[#020617] dark:text-white transition-colors duration-500 font-sans" style={{ willChange: 'scroll-position' }}>
+
+            {/* JSON-LD Structured Data for Rich Snippets */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Service",
+                            "name": "Eco Website Development",
+                            "provider": {
+                                "@type": "Organization",
+                                "name": "Preet Tech",
+                                "url": "https://preettech.com",
+                                "logo": "https://preettech.com/logo.png",
+                                "contactPoint": {
+                                    "@type": "ContactPoint",
+                                    "contactType": "Customer Service",
+                                    "availableLanguage": ["English", "Hindi"]
+                                }
+                            },
+                            "description": "Professional, mobile-responsive, and SEO-ready websites built in 3–7 days starting at ₹3,999. Includes domain setup, contact form, WhatsApp chat integration, social media links, and basic SEO for small businesses, startups, and freelancers across India.",
+                            "areaServed": "India",
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "3999",
+                                "priceCurrency": "INR",
+                                "priceValidUntil": "2026-12-31",
+                                "availability": "https://schema.org/InStock",
+                                "description": "Eco-Budget Website Plan: 3–5 page responsive website with SEO setup, contact form, WhatsApp chat, hosting guidance, and domain setup."
+                            },
+                            "serviceType": "Website Development",
+                            "category": "Web Design & Development"
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            "mainEntity": [
+                                {
+                                    "@type": "Question",
+                                    "name": "How long does it take to build an eco website?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Typically 3–7 working days depending on content and feedback availability. Our rapid launch process ensures your business is live quickly without compromising quality."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "Is domain registration included in the eco website plan?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "We provide complete domain setup assistance and guide you through the purchase. The domain registration cost is separate from the plan, but we make the process seamless."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "Can I upgrade from the eco plan to a premium plan later?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Absolutely! You can upgrade to our advanced or enterprise website plans at any time. Your eco website serves as a strong foundation to build upon."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "Do you provide post-launch support?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Yes, we offer post-launch support and maintenance to ensure your website runs smoothly. Optional maintenance plans are also available for ongoing updates."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "How many revision rounds are included?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "We include one revision round during the design phase to incorporate your feedback and ensure the final website aligns perfectly with your brand vision."
+                                    }
+                                }
+                            ]
+                        }
+                    ])
+                }}
+            />
             <Navbar isDark={isDarkMode} toggleTheme={toggleTheme} />
 
             {/* 1️⃣ Hero Section */}
@@ -184,32 +239,21 @@ export default function EcoWebsiteDevelopment() {
                 <TechnicalBackground isDarkMode={isDarkMode} />
                 <ThreeSphereScene />
 
-                {/* Spotlight */}
-                <div
-                    className="absolute w-[600px] h-[600px] bg-brand-cyan/5 blur-[100px] rounded-full transition-opacity duration-1000 z-0"
-                    style={{
-                        left: mousePos.x,
-                        top: mousePos.y,
-                        transform: 'translate(-50%, -50%)',
-                        opacity: 0.6
-                    }}
-                />
-
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
                     <div className="space-y-6 lg:space-y-8 hero-content text-center lg:text-left">
-                        <span className="inline-block px-4 py-1 rounded-full bg-brand-cyan/10 dark:bg-brand-cyan/10 text-brand-cyan dark:text-brand-cyan text-[10px] md:text-xs font-bold uppercase tracking-widest border border-brand-cyan/20 dark:border-brand-cyan/20">
-                            Eco Website Development
+                        <span className="inline-block px-4 py-1 rounded-full bg-[#3f8fcc]/10 dark:bg-[#3f8fcc]/10 text-[#3f8fcc] dark:text-[#3f8fcc] text-[10px] md:text-xs font-bold uppercase tracking-widest border border-[#3f8fcc]/20 dark:border-[#3f8fcc]/20">
+                            Affordable Website Development in India
                         </span>
                         <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-[1.1] text-slate-900 dark:text-white">
-                            Affordable Websites <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-medium">That Work.</span>
+                            Professional Websites <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3f8fcc] to-brand-medium">Starting ₹3,999.</span>
                         </h1>
                         <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium">
-                            Get a professional, responsive website for your business — fast, reliable, and budget-friendly.
+                            Get a fully responsive, SEO-ready, and mobile-optimized website for your small business or startup — delivered in just <strong>3–7 working days</strong>. No hidden charges, no technical headaches.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <button onClick={() => setIsVideoOpen(true)} className="px-6 sm:px-8 py-3.5 sm:py-4 bg-brand-cyan hover:bg-brand-medium text-slate-950 rounded-full font-bold transition-all transform hover:-translate-y-1 shadow-lg shadow-brand-cyan/25 flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer">
-                                Watch Demo <Play className="w-4 h-4 fill-slate-950" />
+                            <button onClick={() => setIsVideoOpen(true)} className="px-6 sm:px-8 py-3.5 sm:py-4 bg-[#3f8fcc] hover:bg-[#3f8fcc]/90 text-white rounded-full font-bold transition-all transform hover:-translate-y-1 shadow-lg shadow-[#3f8fcc]/25 flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer">
+                                Watch Demo <Play className="w-4 h-4 fill-white" />
                             </button>
                             <a href="#pricing" className="px-6 sm:px-8 py-3.5 sm:py-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-full font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center justify-center text-sm sm:text-base">
                                 View Pricing
@@ -219,60 +263,66 @@ export default function EcoWebsiteDevelopment() {
 
                     <div className="relative hero-content mt-8 lg:mt-0 w-full max-w-lg mx-auto lg:max-w-none">
                         <div className="bg-white dark:bg-slate-900 p-6 sm:p-10 rounded-[2.5rem] shadow-2xl relative z-10 border border-slate-200 dark:border-slate-800">
-                            <form className="space-y-6">
+                            <form onSubmit={handleFormSubmit} className="space-y-6">
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Full Name</label>
                                     <div className="relative group">
-                                        <User strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-brand-cyan transition-colors" />
-                                        <input type="text" placeholder="John Doe" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all text-sm text-slate-700 dark:text-slate-200" />
+                                        <User strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#3f8fcc] transition-colors" />
+                                        <input required type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="John Doe" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-[#3f8fcc] focus:ring-1 focus:ring-[#3f8fcc]/20 transition-all text-sm text-slate-700 dark:text-slate-200" />
                                     </div>
                                 </div>
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Business Name</label>
                                     <div className="relative group">
-                                        <Building2 strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-brand-cyan transition-colors" />
-                                        <input type="text" placeholder="Your Company Ltd." className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all text-sm text-slate-700 dark:text-slate-200" />
+                                        <Building2 strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#3f8fcc] transition-colors" />
+                                        <input required type="text" value={formData.businessName} onChange={(e) => setFormData({ ...formData, businessName: e.target.value })} placeholder="Your Company Ltd." className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-[#3f8fcc] focus:ring-1 focus:ring-[#3f8fcc]/20 transition-all text-sm text-slate-700 dark:text-slate-200" />
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div className="space-y-1.5">
                                         <label className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Email</label>
                                         <div className="relative group">
-                                            <Mail strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-brand-cyan transition-colors" />
-                                            <input type="email" placeholder="john@example.com" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all text-sm text-slate-700 dark:text-slate-200" />
+                                            <Mail strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#3f8fcc] transition-colors" />
+                                            <input required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="john@example.com" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-[#3f8fcc] focus:ring-1 focus:ring-[#3f8fcc]/20 transition-all text-sm text-slate-700 dark:text-slate-200" />
                                         </div>
                                     </div>
                                     <div className="space-y-1.5">
                                         <label className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Phone</label>
                                         <div className="relative group">
-                                            <Phone strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-brand-cyan transition-colors" />
-                                            <input type="tel" placeholder="+91 98765 43210" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all text-sm text-slate-700 dark:text-slate-200" />
+                                            <Phone strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#3f8fcc] transition-colors" />
+                                            <input required type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} placeholder="+91 98765 43210" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-4 outline-none focus:border-[#3f8fcc] focus:ring-1 focus:ring-[#3f8fcc]/20 transition-all text-sm text-slate-700 dark:text-slate-200" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Budget Range</label>
                                     <div className="relative group">
-                                        <CreditCard strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-brand-cyan transition-colors pointer-events-none" />
-                                        <select className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-10 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all appearance-none text-slate-700 dark:text-slate-200 text-sm">
-                                            <option>₹5k - ₹10k</option>
-                                            <option>₹10k - ₹25k</option>
-                                            <option>₹25k - ₹50k</option>
-                                            <option>₹50k+</option>
+                                        <CreditCard strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[#3f8fcc] transition-colors pointer-events-none" />
+                                        <select required value={formData.budget} onChange={(e) => setFormData({ ...formData, budget: e.target.value })} className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-2xl py-4 pl-12 pr-10 outline-none focus:border-[#3f8fcc] focus:ring-1 focus:ring-[#3f8fcc]/20 transition-all appearance-none text-slate-700 dark:text-slate-200 text-sm">
+                                            <option value="₹5k - ₹10k">₹5k - ₹10k</option>
+                                            <option value="₹10k - ₹25k">₹10k - ₹25k</option>
+                                            <option value="₹25k - ₹50k">₹25k - ₹50k</option>
+                                            <option value="₹50k+">₹50k+</option>
                                         </select>
                                         <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
                                     </div>
                                 </div>
                                 <div className="pt-2">
-                                    <button type="button" className="w-full py-4 bg-brand-cyan hover:bg-brand-medium text-slate-950 font-black rounded-2xl transition-all shadow-[0_0_20px_rgba(95,211,230,0.2)] hover:shadow-[0_0_30px_rgba(95,211,230,0.4)] text-[13px] uppercase tracking-widest flex items-center justify-center gap-2">
-                                        Get Free Consultation <ArrowRight strokeWidth={2.5} className="w-4 h-4 ml-1" />
+                                    <button disabled={submitStatus === "loading"} type="submit" className="w-full py-4 bg-[#3f8fcc] hover:bg-[#3f8fcc]/90 text-white font-black rounded-2xl transition-all shadow-[0_0_20px_rgba(63,143,204,0.2)] hover:shadow-[0_0_30px_rgba(63,143,204,0.4)] text-[13px] uppercase tracking-widest flex items-center justify-center gap-2">
+                                        {submitStatus === "loading" ? "Submitting..." : "Get Free Consultation"} <ArrowRight strokeWidth={2.5} className="w-4 h-4 ml-1" />
                                     </button>
                                 </div>
+                                {submitStatus === 'success' && (
+                                    <p className="text-emerald-500 text-xs font-bold text-center mt-2">Success! We will be in touch shortly.</p>
+                                )}
+                                {submitStatus === 'error' && (
+                                    <p className="text-red-500 text-xs font-bold text-center mt-2">Something went wrong. Please try again.</p>
+                                )}
                             </form>
                         </div>
 
                         {/* Blob Background Details */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-brand-cyan/20 to-brand-medium/20 rounded-full blur-[100px] -z-10 animate-pulse" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3f8fcc]/20 to-brand-medium/20 rounded-full blur-[100px] -z-10 animate-pulse" />
                     </div>
                 </div>
             </section>
@@ -281,30 +331,10 @@ export default function EcoWebsiteDevelopment() {
             <section className="py-16 md:py-24 px-6 bg-slate-50 dark:bg-slate-900/40 reveal-section relative overflow-hidden">
                 <TechnicalBackground isDarkMode={isDarkMode} />
 
-                {/* 🌌 Section-Specific Animated Background Elements */}
-                <div className="absolute inset-0 pointer-events-none z-0">
-                    {[...Array(6)].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            animate={{
-                                y: [0, -40, 0],
-                                x: [0, 30, 0],
-                                scale: [1, 1.2, 1],
-                                opacity: [0.1, 0.3, 0.1]
-                            }}
-                            transition={{
-                                duration: 8 + i * 2,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                                delay: i * 1.5
-                            }}
-                            className="absolute w-32 h-32 bg-brand-cyan/10 blur-[60px] rounded-full"
-                            style={{
-                                left: `${15 + i * 15}%`,
-                                top: `${20 + (i % 3) * 20}%`,
-                            }}
-                        />
-                    ))}
+                {/* Static ambient blobs — no JS animation cost */}
+                <div className="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
+                    <div className="absolute w-64 h-64 bg-[#3f8fcc]/8 blur-[80px] rounded-full" style={{ left: '10%', top: '20%' }} />
+                    <div className="absolute w-64 h-64 bg-[#3f8fcc]/6 blur-[80px] rounded-full" style={{ left: '55%', top: '50%' }} />
                 </div>
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
@@ -313,7 +343,7 @@ export default function EcoWebsiteDevelopment() {
                             <motion.span
 
 
-                                className="text-brand-cyan font-bold uppercase tracking-widest text-[10px] md:text-xs"
+                                className="text-[#3f8fcc] font-bold uppercase tracking-widest text-[10px] md:text-xs"
                             >
                                 The Digital Necessity
                             </motion.span>
@@ -322,16 +352,16 @@ export default function EcoWebsiteDevelopment() {
 
                                 className="text-3xl md:text-4xl lg:text-5xl font-black mt-4 mb-6 text-slate-900 dark:text-white leading-[1.2]"
                             >
-                                Why Your Business <br className="hidden sm:block" /> Needs This.
+                                Why Every Small Business <br className="hidden sm:block" />Needs a Website in 2025.
                             </motion.h2>
                         </div>
                         <ul className="space-y-6">
                             {[
-                                { title: "Online presence 24/7", desc: "Never miss a customer, day or night." },
-                                { title: "Builds trust & credibility", desc: "A professional image that wins clients." },
-                                { title: "Generates leads automatically", desc: "Turn visitors into customers while you sleep." },
-                                { title: "Showcases services professionally", desc: "Display your work in the best light." },
-                                { title: "Affordable digital growth", desc: "Scale your business without breaking the bank." }
+                                { title: "Online visibility 24/7, 365 days", desc: "97% of consumers search online before buying. Be discoverable round the clock, even while you sleep." },
+                                { title: "Builds instant trust & credibility", desc: "A professional website signals legitimacy. Customers trust businesses with an online presence 3x more." },
+                                { title: "Generates and captures leads automatically", desc: "Built-in contact forms and WhatsApp chat turn visitors into paying customers on autopilot." },
+                                { title: "Showcases your products & services professionally", desc: "Present your offerings in the best light with a clean, modern design that converts browsers into buyers." },
+                                { title: "Affordable entry into digital growth", desc: "Start your digital journey without breaking the bank. Scale up anytime as your business grows." }
                             ].map((item, i) => (
                                 <motion.li
                                     key={i}
@@ -340,11 +370,11 @@ export default function EcoWebsiteDevelopment() {
                                     transition={{ delay: i * 0.1 }}
                                     className="flex items-start gap-4 group"
                                 >
-                                    <div className="w-8 h-8 rounded-full bg-brand-cyan/20 flex items-center justify-center shrink-0 group-hover:bg-brand-cyan group-hover:scale-110 transition-all duration-300">
-                                        <Check className="w-4 h-4 text-brand-cyan group-hover:text-slate-950 transition-colors" />
+                                    <div className="w-8 h-8 rounded-full bg-[#3f8fcc]/20 flex items-center justify-center shrink-0 group-hover:bg-[#3f8fcc] group-hover:scale-110 transition-all duration-300">
+                                        <Check className="w-4 h-4 text-[#3f8fcc] group-hover:text-slate-950 transition-colors" />
                                     </div>
                                     <div className="space-y-1">
-                                        <h4 className="font-bold text-slate-900 dark:text-white leading-none group-hover:text-brand-cyan transition-colors">{item.title}</h4>
+                                        <h4 className="font-bold text-slate-900 dark:text-white leading-none group-hover:text-[#3f8fcc] transition-colors">{item.title}</h4>
                                         <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">{item.desc}</p>
                                     </div>
                                 </motion.li>
@@ -353,14 +383,14 @@ export default function EcoWebsiteDevelopment() {
                     </div>
 
                     <div className="relative">
-                        <div className="absolute -inset-10 bg-brand-cyan/10 blur-[100px] rounded-full opacity-30" />
+                        <div className="absolute -inset-10 bg-[#3f8fcc]/10 blur-[100px] rounded-full opacity-30" />
                         <div className="relative bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl rounded-[2rem] sm:rounded-[2.5rem] p-4 sm:p-8 shadow-2xl border border-white/20 dark:border-white/5">
                             <div className="grid grid-cols-2 gap-3 sm:gap-6">
                                 {[
-                                    { icon: Globe, color: "text-brand-cyan", bg: "bg-brand-cyan/10", glow: "hover:shadow-brand-cyan/20", progress: "85%", label: "99.9% Uptime", sub: "Global Availability" },
-                                    { icon: BarChart3, color: "text-blue-500", bg: "bg-blue-500/10", glow: "hover:shadow-blue-500/20", progress: "70%", label: "3.5x Growth", sub: "Performance KPI", shift: true },
-                                    { icon: User, color: "text-orange-500", bg: "bg-orange-500/10", glow: "hover:shadow-orange-500/20", progress: "0%", label: "10k+ Trust", sub: "User Credibility", dot: "bg-indigo-500" },
-                                    { icon: ShieldCheck, color: "text-purple-500", bg: "bg-purple-500/10", glow: "hover:shadow-purple-500/20", progress: "90%", label: "SSL Secure", sub: "Data Protection", shift: true }
+                                    { icon: Globe, color: "text-[#3f8fcc]", bg: "bg-[#3f8fcc]/10", barBg: "bg-[#3f8fcc]", glow: "hover:shadow-[#3f8fcc]/20", progress: "85%", label: "99.9% Uptime", sub: "Global Availability" },
+                                    { icon: BarChart3, color: "text-blue-500", bg: "bg-blue-500/10", barBg: "bg-blue-500", glow: "hover:shadow-blue-500/20", progress: "70%", label: "3.5x Growth", sub: "Performance KPI", shift: true },
+                                    { icon: User, color: "text-orange-500", bg: "bg-orange-500/10", barBg: "bg-orange-500", glow: "hover:shadow-orange-500/20", progress: "78%", label: "10k+ Trust", sub: "User Credibility", dot: "bg-indigo-500" },
+                                    { icon: ShieldCheck, color: "text-purple-500", bg: "bg-purple-500/10", barBg: "bg-purple-500", glow: "hover:shadow-purple-500/20", progress: "90%", label: "SSL Secure", sub: "Data Protection", shift: true }
                                 ].map((stat: any, i) => (
                                     <motion.div
                                         key={i}
@@ -393,18 +423,17 @@ export default function EcoWebsiteDevelopment() {
                                         {/* Animated Progress Bar */}
                                         <div className="mt-4 sm:mt-5 h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden relative">
                                             <motion.div
-
-
+                                                initial={{ width: '0%' }}
+                                                whileInView={{ width: stat.progress }}
+                                                viewport={{ once: true }}
                                                 transition={{ duration: 1.5, delay: 0.5 + (i * 0.1), ease: "easeOut" }}
-                                                className={`h-full relative overflow-hidden ${stat.color.replace('text', 'bg')}`}
+                                                className={`h-full relative overflow-hidden ${stat.barBg}`}
                                             >
-                                                {stat.progress !== "0%" && (
-                                                    <motion.div
-                                                        animate={{ x: ['-100%', '200%'] }}
-                                                        transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1 }}
-                                                        className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/50 dark:via-white/30 to-transparent"
-                                                    />
-                                                )}
+                                                <motion.div
+                                                    animate={{ x: ['-100%', '200%'] }}
+                                                    transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1 }}
+                                                    className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/50 dark:via-white/30 to-transparent"
+                                                />
                                             </motion.div>
                                         </div>
 
@@ -422,21 +451,22 @@ export default function EcoWebsiteDevelopment() {
             <section className="py-24 px-6 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12 md:mb-16">
-                        <span className="text-brand-cyan font-bold uppercase tracking-widest text-[10px] md:text-xs">Our Promise</span>
-                        <h2 className="text-2xl md:text-3xl lg:text-5xl font-black mt-4 text-slate-900 dark:text-white leading-tight">Why Choose Preet Tech?</h2>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-widest text-[10px] md:text-xs">Why Preet Tech</span>
+                        <h2 className="text-2xl md:text-3xl lg:text-5xl font-black mt-4 text-slate-900 dark:text-white leading-tight">The Best Affordable Website Development Partner in India</h2>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-2xl mx-auto mt-4 leading-relaxed">Trusted by 150+ startups, freelancers, and SMEs across India for delivering polished websites fast and within budget.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
-                            { title: "Fast Delivery", subtitle: "3–7 Days", icon: Rocket },
-                            { title: "Affordable Pricing", subtitle: "Budget Friendly", icon: CreditCard },
-                            { title: "Professional Design", subtitle: "Modern UI/UX", icon: PenTool },
-                            { title: "SEO-Ready Structure", subtitle: "Google Friendly", icon: Search },
-                            { title: "Mobile Optimized", subtitle: "Works Everywehre", icon: Smartphone },
-                            { title: "Support After Launch", subtitle: "We're Here For You", icon: User }
+                            { title: "Rapid 3–7 Day Delivery", subtitle: "Concept to Live Site, Fast", icon: Rocket },
+                            { title: "Budget-Friendly Pricing", subtitle: "Starting at Just ₹3,999", icon: CreditCard },
+                            { title: "Premium UI/UX Design", subtitle: "Modern, Clean & Conversion-Focused", icon: PenTool },
+                            { title: "SEO-Ready Website Structure", subtitle: "Built for Google Rankings", icon: Search },
+                            { title: "100% Mobile Optimized", subtitle: "Flawless on All Devices", icon: Smartphone },
+                            { title: "Dedicated Post-Launch Support", subtitle: "We Don't Disappear After Launch", icon: User }
                         ].map((item, i) => (
-                            <div key={i} className="group p-8 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 hover:border-brand-cyan/50 hover:shadow-xl hover:shadow-brand-cyan/10 transition-all duration-300">
-                                <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-6 group-hover:bg-brand-cyan group-hover:text-slate-950 transition-colors">
-                                    <item.icon className="w-7 h-7 text-slate-700 dark:text-slate-300 group-hover:text-slate-950" />
+                            <div key={i} className="group p-8 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 hover:border-[#3f8fcc]/50 hover:shadow-xl hover:shadow-[#3f8fcc]/10 transition-all duration-300">
+                                <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-6 group-hover:bg-[#3f8fcc] group-hover:text-white transition-colors">
+                                    <item.icon className="w-7 h-7 text-slate-700 dark:text-slate-300 group-hover:text-white" />
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
                                 <p className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">{item.subtitle}</p>
@@ -447,12 +477,13 @@ export default function EcoWebsiteDevelopment() {
             </section>
 
             {/* 4️⃣ Who Is This For? */}
-            <section className="py-16 md:py-24 bg-slate-900 text-white reveal-section relative overflow-hidden">
+            <section className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900 reveal-section relative overflow-hidden">
                 <TechnicalBackground isDarkMode={isDarkMode} />
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-12 md:mb-16">
-                        <span className="text-brand-cyan font-bold uppercase tracking-widest text-xs">Target Audience</span>
-                        <h2 className="text-3xl md:text-5xl font-black mt-4">Who Is This For?</h2>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-widest text-xs">Perfect For</span>
+                        <h2 className="text-3xl md:text-5xl font-black mt-4 text-slate-900 dark:text-white">Who Needs an Eco Website?</h2>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-xl mx-auto mt-4 leading-relaxed">Whether you&apos;re a local shop owner, a freelancer, or a growing startup — our eco plan is designed to get <em>your</em> business online affordably.</p>
                     </div>
                 </div>
 
@@ -463,19 +494,19 @@ export default function EcoWebsiteDevelopment() {
                     onMouseLeave={() => setIsHovering(false)}
                 >
                     {/* Fade Masks */}
-                    <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
-                    <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-slate-50 dark:from-slate-900 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-slate-50 dark:from-slate-900 to-transparent z-10 pointer-events-none" />
 
                     {/* Navigation Buttons */}
                     <button
                         onClick={() => scrollAudience('left')}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 border border-slate-700 text-white flex items-center justify-center hover:bg-brand-cyan hover:border-brand-cyan hover:text-slate-950 transition-all shadow-xl opacity-0 md:group-hover/carousel:opacity-100 focus:opacity-100 pointer-events-auto cursor-pointer translate-x-4 md:group-hover/carousel:translate-x-0"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white flex items-center justify-center hover:bg-[#3f8fcc] hover:border-[#3f8fcc] hover:text-slate-950 dark:hover:bg-[#3f8fcc] dark:hover:border-[#3f8fcc] dark:hover:text-slate-950 transition-all shadow-xl opacity-0 md:group-hover/carousel:opacity-100 focus:opacity-100 pointer-events-auto cursor-pointer translate-x-4 md:group-hover/carousel:translate-x-0"
                     >
                         <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                     </button>
                     <button
                         onClick={() => scrollAudience('right')}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 border border-slate-700 text-white flex items-center justify-center hover:bg-brand-cyan hover:border-brand-cyan hover:text-slate-950 transition-all shadow-xl opacity-0 md:group-hover/carousel:opacity-100 focus:opacity-100 pointer-events-auto cursor-pointer -translate-x-4 md:group-hover/carousel:translate-x-0"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white flex items-center justify-center hover:bg-[#3f8fcc] hover:border-[#3f8fcc] hover:text-slate-950 dark:hover:bg-[#3f8fcc] dark:hover:border-[#3f8fcc] dark:hover:text-slate-950 transition-all shadow-xl opacity-0 md:group-hover/carousel:opacity-100 focus:opacity-100 pointer-events-auto cursor-pointer -translate-x-4 md:group-hover/carousel:translate-x-0"
                     >
                         <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                     </button>
@@ -525,47 +556,152 @@ export default function EcoWebsiteDevelopment() {
                         ].map((item, i) => (
                             <div
                                 key={i}
-                                className="shrink-0 w-[140px] md:w-[200px] flex flex-col items-center justify-center p-6 md:p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all text-center group"
+                                className="shrink-0 w-[140px] md:w-[200px] flex flex-col items-center justify-center p-6 md:p-8 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/10 shadow-sm hover:shadow-md transition-all text-center group z-10"
                             >
-                                <item.icon className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan mb-3 md:mb-4 group-hover:scale-110 transition-transform" />
-                                <span className="font-bold text-[11px] md:text-sm whitespace-nowrap tracking-wide">{item.label}</span>
+                                <item.icon className="w-8 h-8 md:w-10 md:h-10 text-[#3f8fcc] mb-3 md:mb-4 group-hover:scale-110 transition-transform" />
+                                <span className="font-bold text-slate-900 dark:text-white text-[11px] md:text-sm whitespace-nowrap tracking-wide">{item.label}</span>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* 5️⃣ What You Get in Eco-Budget Plan */}
-            <section className="py-16 md:py-24 px-4 sm:px-6 reveal-section">
-                <div className="max-w-7xl mx-auto">
-                    <div className="bg-slate-50 dark:bg-slate-900/40 rounded-[2rem] md:rounded-[3rem] p-5 sm:p-10 md:p-16 border border-slate-100 dark:border-slate-800 relative overflow-hidden">
-                        {/* Decorative Background Glow */}
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/5 blur-3xl rounded-full" />
+            {/* 4.5️⃣ Technologies We Use */}
+            <section className="py-24 px-6 reveal-section bg-slate-50 dark:bg-slate-950/30 border-y border-slate-100 dark:border-white/5 relative overflow-hidden">
+                <TechnicalBackground isDarkMode={isDarkMode} />
 
-                        <div className="text-center mb-10 md:mb-16 relative z-10">
-                            <span className="text-brand-cyan font-black uppercase tracking-[0.2em] text-[10px] md:text-xs">Package Inclusions</span>
-                            <h2 className="text-2xl xs:text-3xl md:text-5xl font-black mt-4 text-slate-900 dark:text-white leading-tight">What You Get in <br />Eco-Budget Plan</h2>
-                        </div>
+                {/* Premium Glow Effects */}
+                <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-[#3f8fcc]/5 dark:bg-[#3f8fcc]/5 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#3f8fcc]/5 dark:bg-[#3f8fcc]/5 blur-[100px] rounded-full pointer-events-none" />
 
-                        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 relative z-10">
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="text-center mb-16 md:mb-20">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 text-[10px] md:text-xs font-black uppercase tracking-widest text-[#3f8fcc] mb-6 shadow-sm">
+                            <span className="w-2 h-2 rounded-full bg-[#3f8fcc] animate-pulse" />
+                            Tech Stack
+                        </span>
+                        <h2 className="text-3xl md:text-5xl font-black mt-2 mb-6 text-slate-900 dark:text-white leading-[1.1] tracking-tight">
+                            Technologies We Use
+                        </h2>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-lg max-w-2xl mx-auto font-medium leading-relaxed">
+                            We leverage modern, scalable technologies to deliver secure, high-performing digital experiences.
+                        </p>
+                    </div>
+
+                    <style jsx>{`
+                        @keyframes scroll-left {
+                            0% { transform: translate3d(0, 0, 0); }
+                            100% { transform: translate3d(-50%, 0, 0); }
+                        }
+                        .animate-scroll-left {
+                            animation: scroll-left 40s linear infinite;
+                            will-change: transform;
+                            backface-visibility: hidden;
+                            perspective: 1000px;
+                        }
+                        .animate-scroll-left:hover {
+                            animation-play-state: paused;
+                        }
+
+                        @keyframes scroll-right {
+                            0% { transform: translate3d(-50%, 0, 0); }
+                            100% { transform: translate3d(0, 0, 0); }
+                        }
+                        .animate-scroll-right {
+                            animation: scroll-right 40s linear infinite;
+                            will-change: transform;
+                            backface-visibility: hidden;
+                            perspective: 1000px;
+                        }
+                        .animate-scroll-right:hover {
+                            animation-play-state: paused;
+                        }
+
+                        /* Isolate carousel rows from page scroll compositing */
+                        .carousel-track-wrapper {
+                            contain: layout style;
+                            transform: translateZ(0);
+                        }
+                    `}</style>
+
+                    <div className="carousel-track-wrapper relative flex flex-col gap-4 overflow-hidden py-2 max-w-[100vw] -mx-6 md:-mx-12 px-6 md:px-12">
+                        {/* Fade Masks */}
+                        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-r from-slate-50 dark:from-slate-950/30 z-10 pointer-events-none" />
+                        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-l from-slate-50 dark:from-slate-950/30 z-10 pointer-events-none" />
+
+                        {/* Row 1: Scroll Left */}
+                        <div className="flex animate-scroll-left w-max gap-4">
                             {[
-                                { label: "3–5 Page Website", icon: FileCode },
-                                { label: "Contact Form", icon: Mail },
-                                { label: "Basic SEO Setup", icon: Search },
-                                { label: "Mobile Responsive", icon: Smartphone },
-                                { label: "Hosting Guidance", icon: Cloud },
-                                { label: "WhatsApp Chat", icon: MessageCircle },
-                                { label: "Social Media Links", icon: Share2 },
-                                { label: "Domain Setup", icon: Globe }
-                            ].map((feature, i) => (
+                                { name: "React", category: "Frontend", icon: Code2 },
+                                { name: "Vercel", category: "Deployment", icon: Cloud },
+                                { name: "GoDaddy", category: "Hosting", icon: Globe },
+                                { name: "Appwrite", category: "Backend", icon: Settings },
+                                { name: "WordPress", category: "CMS", icon: FileCode },
+                                { name: "Magento", category: "E-commerce", icon: ShoppingCart },
+                                { name: "HubSpot", category: "CRM", icon: Users },
+                                // Duplicated for infinite loop
+                                { name: "React", category: "Frontend", icon: Code2 },
+                                { name: "Vercel", category: "Deployment", icon: Cloud },
+                                { name: "GoDaddy", category: "Hosting", icon: Globe },
+                                { name: "Appwrite", category: "Backend", icon: Settings },
+                                { name: "WordPress", category: "CMS", icon: FileCode },
+                                { name: "Magento", category: "E-commerce", icon: ShoppingCart },
+                                { name: "HubSpot", category: "CRM", icon: Users },
+                            ].map((tech, i) => (
                                 <div
                                     key={i}
-                                    className="bg-white dark:bg-slate-900/50 backdrop-blur-sm p-4 md:p-6 rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/5 flex flex-col xs:items-center xs:text-center lg:items-start lg:text-left gap-3 md:gap-4 group hover:border-brand-cyan/30 transition-all"
+                                    className="group flex flex-col w-[160px] md:w-[180px] shrink-0 items-center justify-center p-4 md:p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-[#3f8fcc]/40 dark:hover:border-[#3f8fcc]/40 shadow-sm hover:shadow-[0_10px_40px_rgba(63,143,204,0.15)] dark:hover:shadow-[0_0_30px_rgba(63,143,204,0.2)] transition-all duration-500 relative overflow-hidden cursor-default"
                                 >
-                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-brand-cyan/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                                        <feature.icon className="w-4 h-4 md:w-5 md:h-5 text-brand-cyan" />
-                                    </div>
-                                    <span className="font-bold text-[11px] md:text-sm text-slate-700 dark:text-slate-200 uppercase tracking-tight">{feature.label}</span>
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[#3f8fcc]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                                    <tech.icon className="w-6 h-6 md:w-8 md:h-8 text-slate-800 dark:text-white mb-3 group-hover:scale-110 group-hover:text-[#3f8fcc] transition-all duration-300" strokeWidth={1.5} />
+
+                                    <span className="font-black text-sm md:text-base text-slate-800 dark:text-white tracking-tight relative z-10 group-hover:text-[#3f8fcc] transition-colors duration-300">
+                                        {tech.name}
+                                    </span>
+                                    <span className="text-[9px] md:text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mt-1 relative z-10 group-hover:text-slate-500 dark:group-hover:text-slate-400 transition-colors duration-300">
+                                        {tech.category}
+                                    </span>
+
+                                    {/* Subtle corner glow on hover */}
+                                    <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#3f8fcc]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Row 2: Scroll Right */}
+                        <div className="flex animate-scroll-right w-max gap-4">
+                            {[
+                                { name: "Next.js", category: "Framework", icon: Layout },
+                                { name: "Hostinger", category: "Hosting", icon: Server },
+                                { name: "BigRock", category: "Hosting", icon: HardDrive },
+                                { name: "Hygraph", category: "Database", icon: Database },
+                                { name: "Shopify", category: "E-commerce", icon: Store },
+                                { name: "Mailchimp", category: "Marketing", icon: Mail },
+                                // Duplicated for infinite loop
+                                { name: "Next.js", category: "Framework", icon: Layout },
+                                { name: "Hostinger", category: "Hosting", icon: Server },
+                                { name: "BigRock", category: "Hosting", icon: HardDrive },
+                                { name: "Hygraph", category: "Database", icon: Database },
+                                { name: "Shopify", category: "E-commerce", icon: Store },
+                                { name: "Mailchimp", category: "Marketing", icon: Mail },
+                            ].map((tech, i) => (
+                                <div
+                                    key={`row2-${i}`}
+                                    className="group flex flex-col w-[160px] md:w-[180px] shrink-0 items-center justify-center p-4 md:p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-[#3f8fcc]/40 dark:hover:border-[#3f8fcc]/40 shadow-sm hover:shadow-[0_10px_40px_rgba(63,143,204,0.15)] dark:hover:shadow-[0_0_30px_rgba(63,143,204,0.2)] transition-all duration-500 relative overflow-hidden cursor-default"
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-[#3f8fcc]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                                    <tech.icon className="w-6 h-6 md:w-8 md:h-8 text-slate-800 dark:text-white mb-3 group-hover:scale-110 group-hover:text-[#3f8fcc] transition-all duration-300" strokeWidth={1.5} />
+
+                                    <span className="font-black text-sm md:text-base text-slate-800 dark:text-white tracking-tight relative z-10 group-hover:text-[#3f8fcc] transition-colors duration-300">
+                                        {tech.name}
+                                    </span>
+                                    <span className="text-[9px] md:text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mt-1 relative z-10 group-hover:text-slate-500 dark:group-hover:text-slate-400 transition-colors duration-300">
+                                        {tech.category}
+                                    </span>
+
+                                    <div className="absolute top-0 left-0 w-16 h-16 bg-[#3f8fcc]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 </div>
                             ))}
                         </div>
@@ -573,202 +709,287 @@ export default function EcoWebsiteDevelopment() {
                 </div>
             </section>
 
-            {/* 6️⃣ Key Features List */}
-            <section className="py-24 px-6 bg-white dark:bg-[#020617] reveal-section">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {[
-                            { title: "Responsive Layout", desc: "Looks great on phones, tablets, and desktops.", icon: Layout },
-                            { title: "Fast Loading Speed", desc: "Optimized for quick access and better SEO.", icon: Zap },
-                            { title: "Clean UI Design", desc: "Modern, professional, and clutter-free.", icon: Sparkles },
-                            { title: "Secure Hosting Setup", desc: "We guide you to secure, reliable hosting.", icon: Lock },
-                            { title: "Easy Navigation", desc: "User-friendly menu and site structure.", icon: Menu },
-                            { title: "Lead Capture Form", desc: "Collect inquiries directly to your email.", icon: Mail },
-                        ].map((item, i) => (
-                            <div key={i} className="flex gap-5">
-                                <div className="w-12 h-12 rounded-full bg-brand-cyan/10 dark:bg-brand-cyan/10 flex items-center justify-center shrink-0">
-                                    <item.icon className="w-6 h-6 text-brand-cyan" />
+            {/* 5️⃣ What You Get in Eco-Budget Plan */}
+            <section className="py-12 md:py-16 px-4 sm:px-6 relative overflow-hidden">
+                <TechnicalBackground isDarkMode={isDarkMode} />
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="bg-slate-50 dark:bg-[#030712]/50 rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 border border-slate-200 dark:border-white/5 shadow-xl relative overflow-hidden">
+
+                        {/* High-end aesthetic backgrounds */}
+                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-medium/5 blur-[120px] rounded-full pointer-events-none" />
+                        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#3f8fcc]/5 blur-[120px] rounded-full pointer-events-none" />
+                        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-medium/50 to-transparent" />
+
+                        <div className="text-center mb-10 md:mb-16 relative z-10">
+                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-[10px] font-black uppercase tracking-widest text-[#3f8fcc] mb-4">
+                                <span className="w-2 h-2 rounded-full bg-[#3f8fcc] animate-pulse" />
+                                Package Inclusions
+                            </span>
+                            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tighter">
+                                Everything Included in Your <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3f8fcc] to-brand-medium italic">₹3,999 Eco-Website Package.</span>
+                            </h2>
+                            <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-2xl mx-auto mt-4 leading-relaxed">No surprise charges. No add-on traps. One transparent price — everything your business needs to launch online, built right the first time.</p>
+                        </div>
+
+                        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                            {[
+                                { label: "3–5 Custom Pages", icon: FileCode },
+                                { label: "Lead Capture Contact Form", icon: Mail },
+                                { label: "Basic On-Page SEO Setup", icon: Search },
+                                { label: "100% Mobile Responsive", icon: Smartphone },
+                                { label: "Domain & Hosting Guidance", icon: Cloud },
+                                { label: "WhatsApp Live Chat Button", icon: MessageCircle },
+                                { label: "Social Media Integration", icon: Share2 },
+                                { label: "Domain Registration Setup", icon: Globe }
+                            ].map((feature, i) => (
+                                <div
+                                    key={i}
+                                    className="group bg-white dark:bg-white/[0.02] p-5 md:p-6 rounded-2xl md:rounded-[1.5rem] border border-slate-200 dark:border-white/5 flex flex-col items-center text-center gap-3 hover:border-[#3f8fcc]/30 hover:shadow-xl hover:shadow-[#3f8fcc]/5 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
+                                >
+                                    {/* Hover gradient bleed */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[#3f8fcc]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                                    <div className="relative z-10 w-10 h-10 md:w-14 md:h-14 rounded-xl bg-slate-50 dark:bg-white/5 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#3f8fcc] transition-all duration-300">
+                                        <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-[#3f8fcc] group-hover:text-white transition-colors duration-300" />
+                                    </div>
+                                    <span className="relative z-10 font-bold text-xs md:text-sm text-slate-900 dark:text-white tracking-tight">{feature.label}</span>
                                 </div>
-                                <div>
-                                    <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h4>
-                                    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-                                </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* 7️⃣ Design Style Examples */}
+
+
+            {/* 7️⃣ Design Style Examples — Horizontal Slider */}
             <section className="py-24 px-6 reveal-section bg-slate-50 dark:bg-slate-900/30">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <span className="text-brand-cyan font-bold uppercase tracking-widest text-xs">Portfolio</span>
-                        <h2 className="text-3xl md:text-5xl font-black mt-4 text-slate-900 dark:text-white">Design Examples</h2>
-                    </div>
-                    <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 pb-12 sm:pb-0 px-6 sm:px-0 -mx-6 sm:mx-0 snap-x snap-mandatory hide-scrollbar">
-                        {[
-                            {
-                                title: "Invest Nest Fintech",
-                                category: "Fintech",
-                                image: "/portfolio/investnest.png",
-                                link: "https://www.investnestfintech.com/"
-                            },
-                            {
-                                title: "Modern E-Commerce",
-                                category: "Retail",
-                                image: "/portfolio/ecommerce.png",
-                                link: "#"
-                            },
-                            {
-                                title: "Creative Agency",
-                                category: "Portfolio",
-                                image: "/portfolio/agency.png",
-                                link: "#"
-                            }
-                        ].map((item, i) => (
-                            <a
-                                key={i}
-                                href={item.link}
-                                target={item.link !== '#' ? "_blank" : "_self"}
-                                rel="noopener noreferrer"
-                                className="group relative aspect-[4/5] bg-slate-900 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-brand-cyan/10 transition-all duration-500 block border border-slate-200 dark:border-slate-800 shrink-0 w-[280px] xs:w-[320px] sm:w-auto snap-center"
+                    {/* Header + Controls */}
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-10">
+                        <div>
+                            <span className="text-[#3f8fcc] font-bold uppercase tracking-widest text-xs">Portfolio</span>
+                            <h2 className="text-3xl md:text-5xl font-black mt-2 text-slate-900 dark:text-white">Design Examples</h2>
+                        </div>
+                        {/* Arrow Controls */}
+                        <div className="flex items-center gap-3">
+                            <button
+                                onClick={() => scrollPortfolio('left')}
+                                disabled={portfolioIndex === 0}
+                                className="w-11 h-11 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 hover:text-[#3f8fcc] hover:border-[#3f8fcc]/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-sm"
                             >
-                                {/* Image Container */}
-                                <div className="absolute inset-0 bg-slate-800">
-                                    <img
-                                        src={item.image}
-                                        alt={item.title}
-                                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                                        onError={(e) => {
-                                            e.currentTarget.style.display = 'none';
-                                            e.currentTarget.parentElement?.classList.add('bg-gradient-to-br', 'from-brand-deep', 'to-slate-950');
-                                        }}
-                                    />
-                                    {/* Fallback Overlay if image is missing */}
-                                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center pointer-events-none z-0">
-                                        <ImageIcon className="w-10 h-10 text-slate-700 mb-2" />
-                                        <span className="text-slate-600 text-[9px] font-bold uppercase tracking-widest">Image Placeholder</span>
-                                    </div>
-                                </div>
+                                <ChevronLeft className="w-5 h-5" />
+                            </button>
+                            <button
+                                onClick={() => scrollPortfolio('right')}
+                                disabled={portfolioIndex === portfolioItems.length - 1}
+                                className="w-11 h-11 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 hover:text-[#3f8fcc] hover:border-[#3f8fcc]/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-sm"
+                            >
+                                <ChevronRight className="w-5 h-5" />
+                            </button>
+                        </div>
+                    </div>
 
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90 transition-opacity z-10" />
-
-                                <div className="absolute bottom-0 left-0 p-6 md:p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 z-20 w-full">
-                                    <span className="text-brand-cyan text-[10px] font-black uppercase tracking-widest mb-2 block">{item.category}</span>
-                                    <h3 className="text-xl md:text-2xl font-black text-white mb-3 md:mb-4 leading-tight">{item.title}</h3>
-                                    <div className="flex items-center gap-2 text-white font-bold text-[10px] md:text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
-                                        View Live <ExternalLink className="w-4 h-4 text-brand-cyan" />
+                    {/* Slider Track */}
+                    <div className="relative overflow-hidden rounded-2xl">
+                        <div
+                            ref={portfolioSliderRef}
+                            className="flex overflow-x-hidden snap-x snap-mandatory"
+                            style={{ scrollBehavior: 'smooth' }}
+                        >
+                            {portfolioItems.map((item, i) => (
+                                <a
+                                    key={i}
+                                    href={item.link}
+                                    target={item.link !== '#' ? "_blank" : "_self"}
+                                    rel="noopener noreferrer"
+                                    className="group relative w-full shrink-0 aspect-video bg-slate-900 snap-start block border border-slate-200 dark:border-slate-800 overflow-hidden"
+                                >
+                                    {/* Image */}
+                                    <div className="absolute inset-0 bg-slate-800">
+                                        <img
+                                            src={item.image}
+                                            alt={item.title}
+                                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                                            onError={(e) => {
+                                                e.currentTarget.style.display = 'none';
+                                                e.currentTarget.parentElement?.classList.add('bg-gradient-to-br', 'from-brand-deep', 'to-slate-950');
+                                            }}
+                                        />
+                                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center pointer-events-none z-0">
+                                            <ImageIcon className="w-10 h-10 text-slate-700 mb-2" />
+                                            <span className="text-slate-600 text-[9px] font-bold uppercase tracking-widest">Image Placeholder</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                    {/* Gradient overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-90 z-10" />
+                                    {/* Content */}
+                                    <div className="absolute bottom-0 left-0 p-6 md:p-10 z-20 w-full flex items-end justify-between">
+                                        <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                            <span className="text-[#3f8fcc] text-[10px] font-black uppercase tracking-widest mb-1 block">{item.category}</span>
+                                            <h3 className="text-2xl md:text-3xl font-black text-white leading-tight">{item.title}</h3>
+                                        </div>
+                                        <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white font-bold text-[10px] uppercase tracking-wider group-hover:bg-[#3f8fcc] group-hover:border-[#3f8fcc] transition-all duration-300">
+                                            View Live <ExternalLink className="w-3.5 h-3.5" />
+                                        </div>
+                                    </div>
+                                    {/* Slide counter badge */}
+                                    <div className="absolute top-5 right-5 z-20 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full text-white text-[10px] font-black">
+                                        {i + 1} / {portfolioItems.length}
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Dot Indicators */}
+                    <div className="flex justify-center gap-2 mt-6">
+                        {portfolioItems.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => goToPortfolioSlide(i)}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${portfolioIndex === i
+                                    ? 'w-8 bg-[#3f8fcc]'
+                                    : 'w-4 bg-slate-300 dark:bg-slate-600 hover:bg-slate-400'
+                                    }`}
+                            />
                         ))}
                     </div>
                 </div>
             </section>
 
             {/* 8️⃣ Performance & Speed Optimization */}
-            <section className="py-24 px-6 reveal-section relative overflow-hidden bg-slate-50 dark:bg-slate-950/20">
+            <section className="py-24 px-6 reveal-section relative overflow-hidden bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-white/5">
                 <TechnicalBackground isDarkMode={isDarkMode} />
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
-                    <div>
-                        <span className="text-brand-cyan font-bold uppercase tracking-widest text-[10px] md:text-xs">Lightning Fast</span>
-                        <h2 className="text-3xl md:text-5xl font-black mt-4 mb-8 text-slate-900 dark:text-white leading-[1.1]">Performance & <br /> Speed Optimization</h2>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10">
+                {/* Premium Glow Effects */}
+                <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#3f8fcc]/5 dark:bg-[#3f8fcc]/10 blur-[100px] rounded-full pointer-events-none" />
+                <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#3f8fcc]/5 dark:bg-[#3f8fcc]/5 blur-[100px] rounded-full pointer-events-none" />
+
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center relative z-10">
+                    <div>
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 text-[10px] md:text-xs font-black uppercase tracking-widest text-[#3f8fcc] mb-6 shadow-sm">
+                            <span className="w-2 h-2 rounded-full bg-[#3f8fcc] animate-pulse" />
+                            Lightning Fast
+                        </span>
+
+                        <h2 className="text-3xl md:text-5xl lg:text-5xl font-black mt-2 mb-8 text-slate-900 dark:text-white leading-[1.1] tracking-tight">
+                            Performance & <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3f8fcc] to-slate-500 dark:to-slate-400">Speed Optimization</span>
+                        </h2>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-10">
                             {[
                                 { text: "Optimized Images for fast load", icon: Sparkles },
                                 { text: "Lightweight clean code", icon: Code2 },
                                 { text: "Fast loading pages", icon: Zap },
                                 { text: "Core Web Vitals Ready", icon: CheckCircle2 }
                             ].map((item, i) => (
-                                <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm transition-all hover:border-brand-cyan/30">
-                                    <div className="w-8 h-8 rounded-lg bg-brand-cyan/10 flex items-center justify-center shrink-0">
-                                        <item.icon className="w-4 h-4 text-brand-cyan" />
+                                <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-white/5 shadow-sm hover:shadow-md transition-all group hover:-translate-y-0.5 hover:border-[#3f8fcc]/30 dark:hover:border-[#3f8fcc]/30 cursor-default">
+                                    <div className="w-10 h-10 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                                        <item.icon className="w-5 h-5 text-[#3f8fcc]" />
                                     </div>
-                                    <span className="font-bold text-[13px] md:text-sm text-slate-700 dark:text-slate-300 leading-tight">{item.text}</span>
+                                    <span className="font-bold text-[13px] md:text-sm text-slate-700 dark:text-slate-200 leading-tight">{item.text}</span>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="p-6 bg-brand-cyan/5 border border-brand-cyan/10 rounded-2xl relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
-                                <Rocket className="w-12 h-12 text-brand-cyan" />
+                        <div className="p-6 md:p-8 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800/50 dark:to-slate-900/50 border border-slate-200 dark:border-white/10 rounded-2xl relative overflow-hidden group shadow-lg shadow-slate-200/50 dark:shadow-none">
+                            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500">
+                                <Rocket className="w-24 h-24 text-[#3f8fcc]" />
                             </div>
-                            <p className="text-sm font-bold text-brand-cyan mb-2">Google Loves Speed.</p>
-                            <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm leading-relaxed">
-                                Our websites are engineered to be lightweight, ensuring high conversion rates and better search rankings from day one.
-                            </p>
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#3f8fcc]/5 to-transparent dark:from-[#3f8fcc]/10" />
+                            <div className="relative z-10">
+                                <p className="text-lg md:text-xl font-black text-[#3f8fcc] mb-3">Google Loves Speed.</p>
+                                <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed max-w-sm">
+                                    Our websites are engineered to be hyper-lightweight, ensuring incredibly high conversion rates and climbing search rankings from day one.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Advanced Speed Gauge Graphic */}
+                    {/* Advanced Premium Speed Gauge Graphic */}
                     <div className="relative flex justify-center items-center py-12 md:py-0">
-                        <div className="relative w-72 h-72 md:w-96 md:h-96">
-                            {/* Outer Glow Ring */}
-                            <div className="absolute inset-0 rounded-full border border-brand-cyan/20 animate-pulse" />
-                            <div className="absolute inset-4 rounded-full border border-brand-cyan/10" />
+                        <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px]">
+                            {/* Detailed Outer Glow Rings */}
+                            <div className="absolute inset-0 rounded-full border-[1px] border-[#3f8fcc]/20 dark:border-[#3f8fcc]/30 shadow-[0_0_50px_rgba(63,143,204,0.1)] dark:shadow-[0_0_50px_rgba(63,143,204,0.15)] animate-pulse" />
+                            <div className="absolute inset-4 rounded-full border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 shadow-inner" />
+                            <div className="absolute inset-8 rounded-full border border-[#3f8fcc]/10" />
 
                             {/* Main Gauge SVG */}
-                            <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
-                                <circle
-                                    cx="50" cy="50" r="45"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    className="text-slate-100 dark:text-slate-800"
-                                />
-                                <motion.circle
-                                    cx="50" cy="50" r="45"
-                                    fill="none"
-                                    stroke="url(#speedGradient)"
-                                    strokeWidth="3"
-                                    strokeDasharray="283"
+                            <div className="absolute inset-6">
+                                <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
+                                    <circle
+                                        cx="50" cy="50" r="42"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                        strokeLinecap="round"
+                                        className="text-slate-100 dark:text-slate-800"
+                                        strokeDasharray="263"
+                                        strokeDashoffset="60"
+                                    />
+                                    <motion.circle
+                                        cx="50" cy="50" r="42"
+                                        fill="none"
+                                        stroke="url(#speedGradientPremium)"
+                                        strokeWidth="4"
+                                        strokeDasharray="263"
+                                        initial={{ strokeDashoffset: 263 }}
+                                        whileInView={{ strokeDashoffset: 80 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 2.5, ease: "easeOut", delay: 0.2 }}
+                                        strokeLinecap="round"
+                                    />
+                                    <defs>
+                                        <linearGradient id="speedGradientPremium" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stopColor="#3F8FCC" />
+                                            <stop offset="100%" stopColor="#2563eb" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
 
-
-                                    transition={{ duration: 2, ease: "easeOut" }}
-                                    strokeLinecap="round"
-                                />
-                                <defs>
-                                    <linearGradient id="speedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stopColor="#5FD3E6" />
-                                        <stop offset="100%" stopColor="#3F8FCC" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-
-                            {/* Center Metrics */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                            {/* Center Metrics (Elevated Glassmorphism) */}
+                            <div className="absolute inset-[15%] rounded-full bg-slate-50/90 dark:bg-slate-900/90 border border-slate-200/50 dark:border-white/5 shadow-xl flex flex-col items-center justify-center text-center">
                                 <motion.span
-
-
-                                    className="text-6xl md:text-8xl font-black text-slate-900 dark:text-white tracking-widest"
+                                    initial={{ opacity: 0, scale: 0.5 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.8, delay: 0.5 }}
+                                    className="text-7xl md:text-[100px] font-black text-slate-900 dark:text-white tracking-widest leading-none drop-shadow-sm"
                                 >
                                     99
                                 </motion.span>
-                                <span className="text-brand-cyan text-xs md:text-sm font-black uppercase tracking-[0.3em]">Mobile Score</span>
+                                <span className="text-[#3f8fcc] text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mt-2 md:mt-4">Mobile Score</span>
                             </div>
 
-                            {/* Floating Tech Chips */}
+                            {/* Floating Premium Tech Chips */}
                             <motion.div
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute -top-4 -right-4 bg-white dark:bg-slate-900 border border-brand-cyan/30 px-4 py-2 rounded-lg shadow-xl"
+                                animate={{ y: [0, -12, 0] }}
+                                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute -top-4 right-4 md:-top-6 md:right-8 bg-white/95 dark:bg-slate-800/95 border border-slate-200 dark:border-white/10 px-5 py-3 rounded-xl shadow-xl z-20"
                             >
-                                <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-green-500 animate-ping" />
-                                    <span className="text-xs font-black dark:text-white uppercase tracking-tighter">0.5s Load</span>
+                                <div className="flex items-center gap-3">
+                                    <div className="relative flex h-3 w-3">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                    </div>
+                                    <span className="text-xs md:text-sm font-black text-slate-800 dark:text-white uppercase tracking-tighter">0.5s Load</span>
                                 </div>
                             </motion.div>
 
                             <motion.div
-                                animate={{ y: [0, 10, 0] }}
-                                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                className="absolute top-1/2 -left-8 bg-white dark:bg-slate-900 border border-brand-cyan/30 px-4 py-2 rounded-lg shadow-xl transform -translate-y-1/2"
+                                animate={{ y: [0, 12, 0] }}
+                                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                                className="absolute bottom-1/4 -left-6 md:-left-12 bg-white/95 dark:bg-slate-800/95 border border-slate-200 dark:border-white/10 px-5 py-3 rounded-xl shadow-xl z-20"
                             >
-                                <div className="flex items-center gap-2">
-                                    <Check className="w-4 h-4 text-brand-cyan" />
-                                    <span className="text-xs font-black dark:text-white uppercase tracking-tighter">Next.js 14</span>
+                                <div className="flex items-center gap-2.5">
+                                    <div className="w-6 h-6 rounded-full bg-[#3f8fcc]/10 flex items-center justify-center">
+                                        <Check className="w-3.5 h-3.5 text-[#3f8fcc]" />
+                                    </div>
+                                    <span className="text-xs md:text-sm font-black text-slate-800 dark:text-white uppercase tracking-tighter">Next.js 14</span>
                                 </div>
                             </motion.div>
                         </div>
@@ -777,7 +998,7 @@ export default function EcoWebsiteDevelopment() {
             </section>
 
             {/* 9️⃣ Basic SEO Setup */}
-            <section className="py-24 px-6 bg-slate-900 text-white reveal-section relative overflow-hidden">
+            <section className="py-24 px-6 bg-white dark:bg-slate-900 text-slate-900 dark:text-white reveal-section relative overflow-hidden">
                 <TechnicalBackground isDarkMode={isDarkMode} />
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div className="relative order-2 lg:order-1">
@@ -785,7 +1006,7 @@ export default function EcoWebsiteDevelopment() {
                         <motion.div
 
 
-                            className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-6 md:p-8 max-w-xl mx-auto lg:ml-0 overflow-hidden border border-white/10"
+                            className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-6 md:p-8 max-w-xl mx-auto lg:ml-0 overflow-hidden border border-slate-200 dark:border-white/10"
                         >
                             <div className="flex items-center gap-2 mb-6 border-b border-slate-100 dark:border-slate-700 pb-4">
                                 <div className="w-3 h-3 rounded-full bg-red-400" />
@@ -831,23 +1052,24 @@ export default function EcoWebsiteDevelopment() {
                     </div>
 
                     <div className="order-1 lg:order-2">
-                        <span className="text-brand-cyan font-bold uppercase tracking-widest text-[10px] md:text-xs">Found on Google</span>
-                        <h2 className="text-3xl md:text-5xl font-black mt-4 mb-10">Basic SEO Setup <br />Included.</h2>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-widest text-[10px] md:text-xs">Built for Google Rankings</span>
+                        <h2 className="text-3xl md:text-5xl font-black mt-4 mb-4 text-slate-900 dark:text-white">SEO-Ready Website<br />Structure Included.</h2>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base mb-10 leading-relaxed max-w-md">Every eco website we build is engineered to rank on Google from day one — no costly SEO agency needed to get started.</p>
 
                         <div className="space-y-6">
                             {[
-                                { title: "Meta Tags Setup", desc: "Optimized titles and descriptions for every page." },
-                                { title: "Google Sitemap", desc: "We submit your site to Google for faster indexing." },
-                                { title: "Mobile Ready", desc: "Google prioritizes mobile-friendly sites; you're covered." },
-                                { title: "SSL Security", desc: "Green padlock included to boost trust and rankings." }
+                                { title: "SEO Meta Tags & Title Optimization", desc: "Carefully crafted title tags, meta descriptions, and heading structures for every page to target the right keywords." },
+                                { title: "Google Search Console & Sitemap Submission", desc: "We submit your sitemap directly to Google Search Console for rapid crawling and faster indexing." },
+                                { title: "Mobile-First Design (Google's Priority)", desc: "Google uses mobile-first indexing. Every eco website is pixel-perfect on smartphones, tablets, and desktops." },
+                                { title: "SSL Certificate & HTTPS Security", desc: "SSL-secured HTTPS connection included — a confirmed Google ranking signal that also builds visitor trust." }
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-5 group">
-                                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-brand-cyan/50 transition-colors">
-                                        <div className="text-brand-cyan font-black text-xs md:text-sm">0{i + 1}</div>
+                                    <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#3f8fcc]/50 transition-colors">
+                                        <div className="text-[#3f8fcc] font-black text-xs md:text-sm">0{i + 1}</div>
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-slate-100 mb-1">{item.title}</h4>
-                                        <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                                        <h4 className="font-bold text-slate-800 dark:text-slate-100 mb-1">{item.title}</h4>
+                                        <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -858,74 +1080,54 @@ export default function EcoWebsiteDevelopment() {
 
             {/* 🔟 Mobile Responsive Guarantee */}
             <section className="py-16 md:py-24 px-4 sm:px-6 reveal-section">
-                <div className="max-w-7xl mx-auto bg-slate-900 border border-white/5 rounded-[2rem] md:rounded-[3rem] p-6 sm:p-12 md:p-24 relative overflow-hidden group">
-                    {/* Mesh Gradient Background */}
-                    <div className="absolute inset-0 opacity-40">
-                        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-cyan/20 blur-[120px] rounded-full" />
-                        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand-medium/20 blur-[120px] rounded-full" />
+                <div className="max-w-7xl mx-auto bg-white dark:bg-slate-900 border border-slate-100 dark:border-white/5 rounded-[2rem] md:rounded-[3rem] p-6 sm:p-12 md:p-24 relative overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none">
+                    {/* Abstract Shapes & Gradients for Premium Feel */}
+                    <div className="absolute inset-0 pointer-events-none z-0">
+                        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-br from-[#3f8fcc]/20 to-transparent dark:from-[#3f8fcc]/20 blur-[120px] rounded-full" />
+                        <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-gradient-to-tr from-[#3f8fcc]/10 to-transparent dark:from-[#3f8fcc]/20 blur-[120px] rounded-full" />
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center relative z-10">
                         <div className="text-center lg:text-left">
-                            <span className="text-brand-cyan font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4 block">Perfect on Every Screen</span>
-                            <h2 className="text-3xl md:text-6xl font-black text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">The Multi-Device <br />Guarantee.</h2>
-                            <p className="text-sm md:text-lg font-medium text-slate-400 mb-8 md:mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                                We don't just "scale" your site. We architect every element to ensure your business looks stunning on smartphones, tablets, and desktops alike.
+                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 text-[10px] md:text-xs font-black uppercase tracking-widest text-[#3f8fcc] mb-6 shadow-sm">
+                                <span className="w-2 h-2 rounded-full bg-[#3f8fcc] animate-pulse" />
+                                Perfect on Every Screen
+                            </span>
+                            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
+                                The Multi-Device <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3f8fcc] to-brand-medium pr-2">Guarantee.</span>
+                            </h2>
+                            <p className="text-sm md:text-lg font-medium text-slate-500 dark:text-slate-400 mb-8 md:mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
+                                We don't just "scale" your site. We architect every element to ensure your business looks stunning on smartphones, tablets, and desktops alike with pixel-perfect precision.
                             </p>
 
                             <div className="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4">
                                 {["Fluid Layouts", "Retina Ready", "Adaptive UI", "Touch Optimized"].map((tag, i) => (
-                                    <div key={i} className="px-3 md:px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white text-[9px] md:text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                                        <Check className="w-3 h-3 text-brand-cyan" /> {tag}
+                                    <div key={i} className="px-4 md:px-5 py-2.5 bg-slate-50 hover:bg-[#3f8fcc]/5 dark:bg-white/5 dark:hover:bg-[#3f8fcc]/10 border border-slate-200 hover:border-[#3f8fcc]/30 dark:border-[#3f8fcc]/30 rounded-full text-slate-700 dark:text-white text-[10px] md:text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all cursor-default shadow-sm dark:shadow-none">
+                                        <Check className="w-3.5 h-3.5 text-[#3f8fcc]" /> {tag}
                                     </div>
                                 ))}
                             </div>
                         </div>
 
-                        {/* Device Stack Visual */}
-                        <div className="relative flex justify-center items-center h-[280px] xs:h-[350px] md:h-[450px] lg:h-[400px]">
-                            {/* Tablet Frame */}
+                        {/* Device Stack Visual (Image Driven) */}
+                        <div className="relative flex justify-center items-center w-full max-w-lg mx-auto lg:mx-0">
                             <motion.div
-
-
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="absolute w-[200px] xs:w-[260px] md:w-[320px] aspect-[4/3] bg-slate-800 rounded-xl md:rounded-2xl border-[4px] md:border-[8px] border-slate-700 shadow-2xl overflow-hidden z-10"
+                                className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square drop-shadow-2xl"
                             >
-                                <div className="w-full h-3 md:h-5 bg-slate-700 flex items-center px-2 md:px-3 gap-1 md:gap-1.5">
-                                    <div className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-slate-600" />
-                                    <div className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-slate-600" />
-                                </div>
-                                <div className="p-3 md:p-5 bg-slate-900 h-full">
-                                    <div className="w-full h-1.5 md:h-2 bg-slate-800 rounded-full mb-2" />
-                                    <div className="w-3/4 h-1.5 md:h-2 bg-slate-800 rounded-full mb-4" />
-                                    <div className="grid grid-cols-2 gap-2 md:gap-3">
-                                        <div className="aspect-video bg-brand-cyan/10 rounded-lg border border-brand-cyan/20 animate-pulse" />
-                                        <div className="aspect-video bg-brand-cyan/10 rounded-lg border border-brand-cyan/20" />
-                                    </div>
-                                    <div className="w-full h-24 md:h-32 bg-slate-800/50 rounded-xl mt-4 md:mt-6 border border-white/5" />
-                                </div>
-                            </motion.div>
-
-                            {/* Phone Frame */}
-                            <motion.div
-
-
-                                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                                className="absolute w-[100px] xs:w-[130px] md:w-[160px] aspect-[9/19] bg-slate-800 rounded-[1.5rem] md:rounded-[2.5rem] border-[4px] md:border-[8px] border-slate-700 shadow-2xl overflow-hidden z-20 -translate-x-[60px] xs:-translate-x-[90px] md:-translate-x-[110px] translate-y-12 xs:translate-y-20 md:translate-y-28 shadow-brand-cyan/5"
-                            >
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 xs:w-14 md:w-20 h-3 xs:h-4 md:h-6 bg-slate-700 rounded-b-lg md:rounded-b-xl flex items-center justify-center">
-                                    <div className="w-4 xs:w-6 md:w-8 h-1 bg-slate-600 rounded-full" />
-                                </div>
-                                <div className="p-2 xs:p-3 md:p-4 pt-6 xs:pt-8 md:pt-10 bg-slate-900 h-full flex flex-col gap-2 md:gap-3">
-                                    <div className="w-8 xs:w-10 md:w-12 h-8 xs:h-10 md:h-12 rounded-full bg-brand-cyan/20 mx-auto" />
-                                    <div className="w-full h-1.5 md:h-2 bg-slate-800 rounded-full" />
-                                    <div className="w-2/3 h-1.5 md:h-2 bg-slate-800 rounded-full mx-auto" />
-                                    <div className="w-full h-20 xs:h-28 md:h-36 bg-brand-cyan/10 rounded-lg md:rounded-xl border border-brand-cyan/20 mt-2 md:mt-4" />
-                                    <div className="grid grid-cols-2 gap-1.5 md:gap-2">
-                                        <div className="h-8 md:h-12 bg-slate-800 rounded-md" />
-                                        <div className="h-8 md:h-12 bg-slate-800 rounded-md" />
-                                    </div>
-                                </div>
+                                <Image
+                                    src="/images/responsive-devices.png"
+                                    alt="Multi-Device Responsive Web Design"
+                                    fill
+                                    className="object-contain"
+                                    priority
+                                />
+                                {/* Overlay Glow for Depth */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-50/20 to-transparent dark:from-slate-900/50 mix-blend-overlay pointer-events-none" />
                             </motion.div>
                         </div>
                     </div>
@@ -936,16 +1138,17 @@ export default function EcoWebsiteDevelopment() {
             <section className="py-24 px-6 reveal-section bg-slate-50 dark:bg-slate-900/40 relative overflow-hidden">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16 md:mb-24">
-                        <span className="text-brand-cyan font-bold uppercase tracking-widest text-[10px] md:text-xs">Rapid Launch</span>
-                        <h2 className="text-3xl md:text-5xl font-black mt-4 text-slate-900 dark:text-white leading-tight">Your Roadmap to <br className="md:hidden" />3–7 Day Delivery</h2>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-widest text-[10px] md:text-xs">Fastest Website Launch in India</span>
+                        <h2 className="text-3xl md:text-5xl font-black mt-4 text-slate-900 dark:text-white leading-tight">From Brief to Live Website <br className="md:hidden" />in Just 3–7 Days</h2>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-xl mx-auto mt-4 leading-relaxed">Our streamlined 4-phase process eliminates delays. You fill in the brief — we handle everything else until your website is live on the internet.</p>
                     </div>
 
                     <div className="relative">
                         {/* Horizontal Connecting Line (Desktop) */}
-                        <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-cyan/30 to-transparent -z-10 hidden lg:block transform -translate-y-1/2" />
+                        <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#3f8fcc]/30 to-transparent -z-10 hidden lg:block transform -translate-y-1/2" />
 
                         {/* Vertical Connecting Line (Mobile) */}
-                        <div className="absolute left-8 top-0 h-full w-[2px] bg-gradient-to-b from-brand-cyan/30 via-brand-cyan to-brand-cyan/30 lg:hidden -z-10" />
+                        <div className="absolute left-8 top-0 h-full w-[2px] bg-gradient-to-b from-[#3f8fcc]/30 via-[#3f8fcc] to-[#3f8fcc]/30 lg:hidden -z-10" />
 
                         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12 pl-16 lg:pl-0">
                             {[
@@ -980,13 +1183,13 @@ export default function EcoWebsiteDevelopment() {
                                     className="relative flex flex-col items-start lg:items-center text-left lg:text-center"
                                 >
                                     {/* Pulse Marker */}
-                                    <div className="absolute -left-[54px] lg:left-1/2 top-4 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 w-4 h-4 bg-brand-cyan rounded-full shadow-[0_0_20px_rgba(95,211,230,0.6)] animate-pulse lg:hidden" />
+                                    <div className="absolute -left-[54px] lg:left-1/2 top-4 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 w-4 h-4 bg-[#3f8fcc] rounded-full shadow-[0_0_20px_rgba(63,143,204,0.6)] animate-pulse lg:hidden" />
 
-                                    <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-6 md:p-8 rounded-[2rem] w-full shadow-xl shadow-slate-200/50 dark:shadow-none group transition-all hover:border-brand-cyan/50">
-                                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-brand-cyan text-slate-950 flex items-center justify-center font-black text-xl mb-6 shadow-lg shadow-brand-cyan/20 transform group-hover:scale-110 transition-transform mx-auto lg:mx-auto">
+                                    <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-6 md:p-8 rounded-[2rem] w-full shadow-xl shadow-slate-200/50 dark:shadow-none group transition-all hover:border-[#3f8fcc]/50">
+                                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#3f8fcc] text-white flex items-center justify-center font-black text-xl mb-6 shadow-lg shadow-[#3f8fcc]/20 transform group-hover:scale-110 transition-transform mx-auto lg:mx-auto">
                                             <item.icon className="w-6 h-6" />
                                         </div>
-                                        <span className="px-3 py-1 bg-brand-cyan/10 text-brand-cyan text-[10px] font-black rounded-full uppercase tracking-tighter mb-3 inline-block">
+                                        <span className="px-3 py-1 bg-[#3f8fcc]/10 text-[#3f8fcc] text-[10px] font-black rounded-full uppercase tracking-tighter mb-3 inline-block">
                                             {item.days}
                                         </span>
                                         <h4 className="text-lg md:text-xl font-black text-slate-900 dark:text-white mb-2 uppercase tracking-tight">{item.step}</h4>
@@ -996,7 +1199,7 @@ export default function EcoWebsiteDevelopment() {
                                     </div>
 
                                     {/* Desktop Marker */}
-                                    <div className="hidden lg:block w-4 h-4 bg-brand-cyan rounded-full border-4 border-white dark:border-slate-900 shadow-lg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 translate-y-[140px]" />
+                                    <div className="hidden lg:block w-4 h-4 bg-[#3f8fcc] rounded-full border-4 border-white dark:border-slate-900 shadow-lg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 translate-y-[140px]" />
                                 </motion.div>
                             ))}
                         </div>
@@ -1005,8 +1208,8 @@ export default function EcoWebsiteDevelopment() {
             </section>
 
             {/* 1️⃣2️⃣ Pricing Packages */}
-            <section id="pricing" className="py-24 px-6 reveal-section relative overflow-hidden backdrop-blur-sm">
-                {/* 🛰️ Enhanced Background Architecture */}
+            <section id="pricing" className="py-24 px-6 reveal-section relative overflow-hidden bg-slate-50 dark:bg-slate-900/40">
+                {/* 🛰️ Enhanced Background Structure */}
                 <div className="absolute inset-0 pointer-events-none">
                     {/* Perspective Grid */}
                     <div
@@ -1031,7 +1234,7 @@ export default function EcoWebsiteDevelopment() {
                                     ease: "linear",
                                     delay: i * 2
                                 }}
-                                className="absolute w-[1px] h-64 bg-gradient-to-b from-transparent via-brand-cyan/40 to-transparent"
+                                className="absolute w-[1px] h-64 bg-gradient-to-b from-transparent via-[#3f8fcc]/40 to-transparent"
                             />
                         ))}
                     </div>
@@ -1039,14 +1242,14 @@ export default function EcoWebsiteDevelopment() {
                     {/* Atmospheric Glow Modules */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
                         <motion.div
-                            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-                            transition={{ duration: 15, repeat: Infinity }}
-                            className="absolute top-[10%] left-[5%] w-[40%] h-[30%] bg-brand-cyan/10 blur-[130px] rounded-full rotate-12"
+                            animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+                            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute top-[10%] left-[5%] w-[40%] h-[30%] bg-[#3f8fcc]/10 blur-[130px] rounded-full rotate-12"
                         />
                         <motion.div
-                            animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
-                            transition={{ duration: 20, repeat: Infinity, delay: 2 }}
-                            className="absolute bottom-[10%] right-[5%] w-[40%] h-[30%] bg-brand-medium/10 blur-[130px] rounded-full -rotate-12"
+                            animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+                            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                            className="absolute bottom-[10%] right-[5%] w-[40%] h-[30%] bg-[#3f8fcc]/10 blur-[130px] rounded-full -rotate-12"
                         />
                     </div>
                 </div>
@@ -1056,9 +1259,9 @@ export default function EcoWebsiteDevelopment() {
                     <div className="hidden xl:block">
                         {/* Piece 1: Performance */}
                         <motion.div
-                            animate={{ y: [0, -15, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute left-[-15%] top-[10%] w-56 p-6 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[-5deg]"
+                            animate={{ y: [-10, 10, -10], rotate: [-5, -3, -5] }}
+                            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute left-[-15%] top-[10%] w-56 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[-5deg]"
                         >
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
@@ -1078,13 +1281,13 @@ export default function EcoWebsiteDevelopment() {
 
                         {/* Piece 2: Rapid Delivery */}
                         <motion.div
-                            animate={{ y: [0, 20, 0] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                            className="absolute left-[-12%] bottom-[10%] w-60 p-6 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[5deg]"
+                            animate={{ y: [10, -10, 10], rotate: [5, 8, 5] }}
+                            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                            className="absolute left-[-12%] bottom-[10%] w-60 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[5deg]"
                         >
                             <div className="flex items-center gap-4 mb-3">
-                                <div className="w-10 h-10 rounded-xl bg-brand-cyan/10 flex items-center justify-center">
-                                    <Rocket className="w-5 h-5 text-brand-cyan" />
+                                <div className="w-10 h-10 rounded-xl bg-[#3f8fcc]/10 flex items-center justify-center">
+                                    <Rocket className="w-5 h-5 text-[#3f8fcc]" />
                                 </div>
                                 <span className="text-[11px] font-black uppercase tracking-widest text-slate-500">Rapid Launch</span>
                             </div>
@@ -1094,9 +1297,9 @@ export default function EcoWebsiteDevelopment() {
 
                         {/* Piece 3: Global Infra */}
                         <motion.div
-                            animate={{ y: [0, -20, 0] }}
-                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                            className="absolute right-[-15%] top-[15%] w-56 p-6 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[8deg]"
+                            animate={{ y: [-15, 5, -15], rotate: [8, 10, 8] }}
+                            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                            className="absolute right-[-15%] top-[15%] w-56 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[8deg]"
                         >
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
@@ -1109,9 +1312,9 @@ export default function EcoWebsiteDevelopment() {
 
                         {/* Piece 4: Satisfaction */}
                         <motion.div
-                            animate={{ y: [0, 15, 0] }}
-                            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                            className="absolute right-[-12%] bottom-[15%] w-64 p-6 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[-8deg]"
+                            animate={{ y: [15, -5, 15], rotate: [-8, -5, -8] }}
+                            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+                            className="absolute right-[-12%] bottom-[15%] w-64 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[-8deg]"
                         >
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center">
@@ -1128,7 +1331,7 @@ export default function EcoWebsiteDevelopment() {
 
                     <div className="max-w-4xl mx-auto relative z-10">
                         {/* Animated Border Background */}
-                        <div className="absolute -inset-[2px] bg-gradient-to-r from-brand-cyan via-brand-medium to-brand-cyan bg-[length:200%_auto] rounded-[3rem] opacity-70 blur-sm animate-border-flow" />
+                        <div className="absolute -inset-[2px] bg-gradient-to-r from-[#3f8fcc] via-brand-medium to-[#3f8fcc] bg-[length:200%_auto] rounded-[3rem] opacity-70 blur-sm animate-border-flow" />
 
                         {/* Main Card - Landscape Transition (Compact) */}
                         <motion.div
@@ -1139,7 +1342,7 @@ export default function EcoWebsiteDevelopment() {
                                 {/* Left Column: Pricing & Offer */}
                                 <div className="p-8 md:p-12 lg:p-14 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-100 dark:border-slate-800/50 relative">
                                     {/* Decorative background elements */}
-                                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-cyan/5 to-transparent pointer-events-none" />
+                                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#3f8fcc]/5 to-transparent pointer-events-none" />
 
                                     {/* Status Badge */}
                                     <div className="inline-flex items-center gap-2 mb-6 sm:mb-8 bg-red-500/10 text-red-500 px-4 md:px-5 py-1.5 md:py-2 rounded-full border border-red-500/20 relative z-10">
@@ -1158,7 +1361,7 @@ export default function EcoWebsiteDevelopment() {
                                             ₹3,999
                                         </span>
                                     </div>
-                                    <p className="text-[10px] font-bold text-brand-cyan uppercase tracking-widest bg-brand-cyan/10 px-3 py-1 rounded-lg">No Hidden Charges.</p>
+                                    <p className="text-[10px] font-bold text-[#3f8fcc] uppercase tracking-widest bg-[#3f8fcc]/10 px-3 py-1 rounded-lg">No Hidden Charges.</p>
                                     <p className="text-[10px] text-slate-400 font-medium relative z-10 italic">Trusted by 150+ startups</p>
                                 </div>
 
@@ -1179,7 +1382,7 @@ export default function EcoWebsiteDevelopment() {
                                                 transition={{ delay: i * 0.1 }}
                                                 className="flex items-center gap-3 sm:gap-4 group/item"
                                             >
-                                                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-cyan/20 flex items-center justify-center shrink-0 group-hover/item:bg-brand-cyan group-hover/item:text-slate-900 transition-all">
+                                                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#3f8fcc]/20 flex items-center justify-center shrink-0 group-hover/item:bg-[#3f8fcc] group-hover/item:text-slate-900 transition-all">
                                                     <Check className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
                                                 </div>
                                                 <span className={`text-sm sm:text-base ${item.bold ? 'font-bold text-slate-800 dark:text-slate-200' : 'text-slate-500 dark:text-slate-400'}`}>
@@ -1191,7 +1394,7 @@ export default function EcoWebsiteDevelopment() {
 
                                     <a
                                         href="#contact"
-                                        className="group relative w-full inline-flex items-center justify-center py-4 sm:py-5 bg-brand-cyan hover:bg-brand-medium text-slate-950 rounded-[1.2rem] sm:rounded-[1.5rem] font-black uppercase tracking-[0.1em] text-[12px] sm:text-sm transition-all duration-300 shadow-xl shadow-brand-cyan/20 overflow-hidden"
+                                        className="group relative w-full inline-flex items-center justify-center py-4 sm:py-5 bg-[#3f8fcc] hover:bg-[#3f8fcc]/90 text-white rounded-[1.2rem] sm:rounded-[1.5rem] font-black uppercase tracking-[0.1em] text-[12px] sm:text-sm transition-all duration-300 shadow-xl shadow-[#3f8fcc]/20 overflow-hidden"
                                     >
                                         <span className="relative z-10 flex items-center gap-2 sm:gap-3">
                                             Start Your Project Now <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -1211,20 +1414,22 @@ export default function EcoWebsiteDevelopment() {
                 <TechnicalBackground isDarkMode={isDarkMode} />
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <span className="text-brand-cyan font-bold uppercase tracking-widest text-xs">Extensions</span>
-                        <h2 className="text-3xl md:text-5xl font-black mt-4 text-slate-900 dark:text-white">Optional Add-Ons</h2>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-widest text-xs">Grow Further</span>
+                        <h2 className="text-3xl md:text-5xl font-black mt-4 text-slate-900 dark:text-white">Power-Up Your Website with Add-Ons</h2>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-xl mx-auto mt-4 leading-relaxed">Start with the essentials and scale as you grow. Add advanced features to your eco website at any time, without rebuilding from scratch.</p>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                         {[
-                            "Extra Pages",
-                            "Advanced SEO",
-                            "Blog Setup",
-                            "E-Commerce Add-On",
-                            "Custom Design Upgrade",
-                            "Maintenance Plan"
+                            { label: "Extra Pages", icon: FileCode },
+                            { label: "Advanced SEO", icon: Search },
+                            { label: "Blog Setup", icon: PenTool },
+                            { label: "E-Commerce Add-On", icon: CreditCard },
+                            { label: "Custom Design Upgrade", icon: Sparkles },
+                            { label: "Maintenance Plan", icon: Settings }
                         ].map((item, i) => (
-                            <div key={i} className="bg-white dark:bg-slate-900 p-5 md:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center text-center font-bold text-sm md:text-base text-slate-700 dark:text-slate-200 hover:border-brand-cyan hover:text-brand-cyan transition-colors cursor-pointer">
-                                {item}
+                            <div key={i} className="group bg-white dark:bg-slate-900 p-5 md:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center gap-3 text-center font-bold text-sm md:text-base text-slate-700 dark:text-slate-200 hover:border-[#3f8fcc] hover:text-[#3f8fcc] transition-colors cursor-pointer">
+                                <item.icon className="w-5 h-5 text-slate-400 group-hover:text-[#3f8fcc] transition-colors" />
+                                <span>{item.label}</span>
                             </div>
                         ))}
                     </div>
@@ -1232,26 +1437,51 @@ export default function EcoWebsiteDevelopment() {
             </section>
 
             {/* 1️⃣4️⃣ Our Simple 4-Step Process */}
-            <section className="py-24 px-6 reveal-section">
-                <div className="max-w-7xl mx-auto">
-                    <h2 className="text-3xl md:text-5xl font-black text-center mb-16 uppercase text-slate-900 dark:text-white">Simple 4-Step Process</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        {[
-                            { title: "Consultation", icon: MessageSquare },
-                            { title: "Design", icon: PenTool },
-                            { title: "Development", icon: Code2 },
-                            { title: "Launch", icon: Rocket }
-                        ].map((item, i) => (
-                            <div key={i} className="relative group">
-                                <div className="h-48 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 p-8 flex flex-col items-center justify-center group-hover:bg-brand-cyan group-hover:border-brand-cyan transition-all duration-300">
-                                    <item.icon className="w-10 h-10 text-slate-400 group-hover:text-slate-950 mb-4 transition-colors" />
-                                    <h4 className="text-lg font-black uppercase text-slate-900 dark:text-white group-hover:text-slate-950">{item.title}</h4>
-                                    <div className="absolute top-4 right-4 text-4xl font-black text-slate-100 dark:text-slate-800 group-hover:text-brand-cyan/20">
-                                        0{i + 1}
+            <section className="py-24 px-6 reveal-section relative overflow-hidden bg-transparent">
+                <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#3f8fcc]/5 blur-[120px] rounded-full pointer-events-none" />
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="text-center mb-20 md:mb-28">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 text-[10px] md:text-xs font-black uppercase tracking-widest text-[#3f8fcc] mb-6">
+                            <span className="w-2 h-2 rounded-full bg-[#3f8fcc] animate-pulse" />
+                            How It Works
+                        </span>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tighter">
+                            Simple <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3f8fcc] to-brand-medium italic pr-2">4-Step Process</span>
+                        </h2>
+                    </div>
+
+                    <div className="relative">
+                        {/* Connecting Line (Desktop) */}
+                        <div className="hidden md:block absolute top-[40%] left-[10%] w-[80%] h-[2px] bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent -z-10" />
+
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative z-10">
+                            {[
+                                { title: "Consultation", icon: MessageSquare, desc: "We discuss your brand identity and set precise goals." },
+                                { title: "Design", icon: PenTool, desc: "Crafting a beautiful and high-converting modern layout." },
+                                { title: "Development", icon: Code2, desc: "Building your website fast, responsive, and secure." },
+                                { title: "Launch", icon: Rocket, desc: "Review the final product, easily deploy, and go live!" }
+                            ].map((item, i) => (
+                                <div key={i} className="group relative">
+                                    {/* Hover glow */}
+                                    <div className="absolute -inset-2 bg-gradient-to-br from-[#3f8fcc]/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+
+                                    <div className="relative h-full bg-white dark:bg-[#030712]/50 backdrop-blur-2xl border border-slate-200 dark:border-white/5 p-8 md:p-10 rounded-[2rem] flex flex-col items-center text-center group-hover:-translate-y-3 transition-transform duration-500 hover:shadow-2xl hover:shadow-[#3f8fcc]/5">
+                                        <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center border-4 border-white dark:border-[#020617] text-xs font-black text-[#3f8fcc] shadow-sm tracking-widest">
+                                            0{i + 1}
+                                        </div>
+
+                                        <div className="w-20 h-20 rounded-2xl bg-slate-50 dark:bg-white/5 flex items-center justify-center mb-6 shadow-sm border border-slate-100 dark:border-white/5 group-hover:scale-110 group-hover:bg-[#3f8fcc] transition-all duration-500">
+                                            <item.icon className="w-8 h-8 text-slate-400 group-hover:text-white transition-colors duration-500" />
+                                        </div>
+
+                                        <h4 className="text-xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-[#3f8fcc] transition-colors">{item.title}</h4>
+                                        <p className="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px] mx-auto">
+                                            {item.desc}
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1259,14 +1489,19 @@ export default function EcoWebsiteDevelopment() {
             {/* 1️⃣5️⃣ FAQs */}
             <section className="py-16 md:py-24 px-6 bg-slate-50 dark:bg-slate-900/50 reveal-section">
                 <div className="max-w-3xl mx-auto">
-                    <h2 className="text-3xl md:text-5xl font-black text-center mb-16 text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+                    <div className="text-center mb-16">
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-widest text-xs">Got Questions?</span>
+                        <h2 className="text-3xl md:text-5xl font-black mt-4 text-slate-900 dark:text-white">Frequently Asked Questions About Our Eco Website Plan</h2>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-xl mx-auto mt-4 leading-relaxed">Everything you need to know before launching your business website with Preet Tech.</p>
+                    </div>
                     <div className="space-y-4 px-2 sm:px-0">
                         {[
-                            { q: "How long does it take?", a: "Typically 3-7 working days depending on content availability." },
-                            { q: "Is domain included?", a: "We provide assistance in purchasing, but the domain cost is separate." },
-                            { q: "Can I upgrade later?", a: "Absolutely! You can upgrade to our advanced plans anytime." },
-                            { q: "Do you provide support?", a: "Yes, we offer post-launch support to ensure everything runs smoothly." },
-                            { q: "Can I request changes?", a: "We provide a revision round during the design phase." }
+                            { q: "How long does it take to build my eco website?", a: "Typically 3–7 working days from the date we receive your content and brief. Our streamlined process means most clients are live within a week — often faster. The exact timeline depends on how quickly feedback and content are shared." },
+                            { q: "Is domain registration included in the ₹3,999 plan?", a: "Domain registration cost is separate (typically ₹800–₹1,500/year for a .com domain), but we handle the entire setup process for you. We guide you through domain purchase and connect it to your website completely free of charge." },
+                            { q: "Can I upgrade from the eco plan to a premium website later?", a: "Absolutely! Your eco website is built on a scalable foundation. You can upgrade to our advanced website plans — including e-commerce, custom animations, or CMS integration — at any time without starting from scratch." },
+                            { q: "Do you provide support after my website goes live?", a: "Yes! We offer post-launch support to fix any issues that arise after going live. We also offer optional monthly maintenance plans for ongoing updates, security patches, and performance monitoring." },
+                            { q: "How many revision rounds are included?", a: "We include one comprehensive revision round during the design phase where you can request changes to layout, colors, content, and structure. Additional revision rounds can be added as a paid upgrade if needed." },
+                            { q: "Will my website rank on Google?", a: "Your eco website is built with on-page SEO best practices — optimized meta tags, heading structure, mobile-first design, fast load times, and sitemap submission to Google Search Console. While rankings depend on your niche and competition, you'll have a solid SEO foundation from day one." }
                         ].map((item, i) => (
                             <div key={i} className="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
                                 <button
@@ -1274,7 +1509,7 @@ export default function EcoWebsiteDevelopment() {
                                     className="w-full flex items-center justify-between p-5 md:p-6 text-left font-bold text-sm md:text-base text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                                 >
                                     {item.q}
-                                    <ChevronDown className={`w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 ${openFAQ === i ? "rotate-180 text-brand-cyan" : "text-slate-400"}`} />
+                                    <ChevronDown className={`w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 ${openFAQ === i ? "rotate-180 text-[#3f8fcc]" : "text-slate-400"}`} />
                                 </button>
                                 <div
                                     className={`overflow-hidden transition-all duration-300 ${openFAQ === i ? "max-h-48" : "max-h-0"}`}
@@ -1289,77 +1524,20 @@ export default function EcoWebsiteDevelopment() {
                 </div>
             </section>
 
-            {/* 1️⃣6️⃣ Inquiry / Get Started Form */}
-            <section id="contact" className="py-24 px-6 reveal-section">
-                <div className="max-w-3xl mx-auto relative">
-                    <div className="absolute -inset-4 bg-brand-cyan/10 blur-3xl rounded-[3rem] -z-10" />
-                    <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-5 sm:p-8 md:p-12 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-2xl">
-                        <div className="text-center mb-8 md:mb-10">
-                            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-2 uppercase tracking-tight">Start My Website</h2>
-                            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Fill in the details below to get started in minutes.</p>
-                        </div>
-                        <form className="space-y-4 sm:space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                                <div className="relative group">
-                                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-brand-cyan transition-colors" />
-                                    <input type="text" placeholder="Full Name" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl py-3.5 sm:py-4 pl-11 pr-4 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all text-sm" />
-                                </div>
-                                <div className="relative group">
-                                    <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-brand-cyan transition-colors" />
-                                    <input type="text" placeholder="Business Name" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl py-3.5 sm:py-4 pl-11 pr-4 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all text-sm" />
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                                <div className="relative group">
-                                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-brand-cyan transition-colors" />
-                                    <input type="email" placeholder="Email Address" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl py-3.5 sm:py-4 pl-11 pr-4 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all text-sm" />
-                                </div>
-                                <div className="relative group">
-                                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-brand-cyan transition-colors" />
-                                    <input type="tel" placeholder="Phone Number" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl py-3.5 sm:py-4 pl-11 pr-4 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all text-sm" />
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                                <div className="relative group">
-                                    <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-brand-cyan transition-colors pointer-events-none" />
-                                    <select className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl py-3.5 sm:py-4 pl-11 pr-10 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all appearance-none text-slate-500 text-sm">
-                                        <option>Business Type</option>
-                                        <option>Startup</option>
-                                        <option>Shop</option>
-                                        <option>Freelancer</option>
-                                        <option>Other</option>
-                                    </select>
-                                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
-                                </div>
-                                <div className="relative group">
-                                    <CreditCard className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-brand-cyan transition-colors pointer-events-none" />
-                                    <select className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl py-3.5 sm:py-4 pl-11 pr-10 outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all appearance-none text-slate-500 text-sm">
-                                        <option>Budget Range</option>
-                                        <option>₹5k - ₹10k</option>
-                                        <option>₹10k - ₹25k</option>
-                                        <option>₹25k+</option>
-                                    </select>
-                                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
-                                </div>
-                            </div>
-                            <button className="w-full py-4 sm:py-5 bg-brand-cyan hover:bg-brand-medium text-slate-950 font-black rounded-xl transition-all shadow-lg shadow-brand-cyan/20 text-sm sm:text-base uppercase tracking-widest mt-2">
-                                Start My Website Now
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </section>
 
             {/* 1️⃣7️⃣ Final CTA Section */}
-            <section className="py-16 sm:py-24 px-6 bg-slate-900 text-white text-center relative overflow-hidden reveal-section">
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-deep/20 to-brand-medium/20" />
+            <section className="py-16 sm:py-24 px-6 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-center relative overflow-hidden reveal-section">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#3f8fcc]/5 to-brand-medium/10 dark:from-brand-deep/20 dark:to-brand-medium/20" />
                 <div className="relative z-10 max-w-4xl mx-auto">
-                    <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-black mb-8 leading-[1.2] sm:leading-tight">
-                        Get Your Business Online in <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-medium">Just 3–7 Days</span>
+                    <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-black mb-4 leading-[1.2] sm:leading-tight text-slate-900 dark:text-white">
+                        Launch Your Business Website <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-[#3f8fcc]">in 3–7 Days for ₹3,999</span>
                     </h2>
-                    <a href="#contact" className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-white text-slate-900 rounded-full font-black text-sm sm:text-lg uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] inline-block">
-                        Book My Eco Website Now
+                    <p className="text-slate-500 dark:text-slate-400 text-sm md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+                        Join 150+ businesses, freelancers, and startups across India who trusted Preet Tech to get them online — professionally, affordably, and fast.
+                    </p>
+                    <a href="#contact" className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-[#3f8fcc] hover:bg-[#3f8fcc]/90 text-white rounded-full font-black text-sm sm:text-lg uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(63,143,204,0.3)] inline-block">
+                        Get My Free Consultation Now →
                     </a>
                 </div>
             </section>
@@ -1368,31 +1546,34 @@ export default function EcoWebsiteDevelopment() {
             <AnimatePresence>
                 {isVideoOpen && (
                     <motion.div
-
+                        initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95"
                         onClick={() => setIsVideoOpen(false)}
                     >
                         <motion.div
-
+                            initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.95, opacity: 0 }}
-                            className="relative w-full aspect-video max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center"
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            className="relative w-full aspect-video max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center will-change-transform"
                             onClick={e => e.stopPropagation()}
                         >
                             <button
                                 onClick={() => setIsVideoOpen(false)}
-                                className="absolute top-4 right-4 z-[110] w-10 h-10 bg-black/50 hover:bg-black/70 border border-white/20 rounded-full flex items-center justify-center backdrop-blur text-white transition-colors"
+                                className="absolute top-4 right-4 z-[110] w-10 h-10 bg-black/60 hover:bg-black/80 border border-white/20 rounded-full flex items-center justify-center text-white transition-colors"
                             >
                                 <X className="w-5 h-5" />
                             </button>
 
                             {/* YouTube Embed */}
-                            <div className="absolute inset-0 w-full h-full">
+                            <div className="absolute inset-0 w-full h-full bg-black">
                                 <iframe
                                     src="https://www.youtube.com/embed/CBYfXlP7ppQ?autoplay=1"
                                     className="w-full h-full border-0"
+                                    loading="lazy"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
                                     title="Preet Tech Video"

@@ -93,18 +93,11 @@ const Services: React.FC = () => {
   // Triple the data for infinite feeling
   const LOOPED_SERVICES = [...SERVICES, ...SERVICES, ...SERVICES];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const handleInfiniteScroll = () => {
     if (!scrollContainerRef.current) return;
 
     const { scrollLeft, scrollWidth } = scrollContainerRef.current;
     const singleSetWidth = scrollWidth / 3;
-
-    // Update current index for dots
-    const relativeScroll = scrollLeft % singleSetWidth;
-    const index = Math.round(relativeScroll / (scrollWidth / LOOPED_SERVICES.length));
-    setCurrentIndex(index % SERVICES.length);
 
     // If we've scrolled into the third set, jump back to the middle
     if (scrollLeft >= singleSetWidth * 2) {
@@ -216,14 +209,14 @@ const Services: React.FC = () => {
           <div className="hidden md:flex items-center gap-4 mt-2 md:mt-0">
             <button
               onClick={() => scroll('left')}
-              className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full flex items-center justify-center border-2 border-[#E9EEF4] dark:border-white/10 text-[#8C9FAF] hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 hover:border-slate-900 dark:hover:border-white shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
+              className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full flex items-center justify-center border-2 border-[#E9EEF4] dark:border-white/10 text-[#8C9FAF] hover:bg-[#3f8fcc] dark:hover:bg-[#3f8fcc] hover:text-white dark:hover:text-white hover:border-[#3f8fcc] dark:hover:border-[#3f8fcc] shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
               aria-label="Scroll left"
             >
               <ArrowLeft className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full flex items-center justify-center border-2 border-[#E9EEF4] dark:border-white/10 text-[#8C9FAF] hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 hover:border-slate-900 dark:hover:border-white shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
+              className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full flex items-center justify-center border-2 border-[#E9EEF4] dark:border-white/10 text-[#8C9FAF] hover:bg-[#3f8fcc] dark:hover:bg-[#3f8fcc] hover:text-white dark:hover:text-white hover:border-[#3f8fcc] dark:hover:border-[#3f8fcc] shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
               aria-label="Scroll right"
             >
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
@@ -241,7 +234,7 @@ const Services: React.FC = () => {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
-          className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-6 md:pl-[max(1.5rem,calc((100vw-1280px+3rem)/2))] md:pr-6 pb-8 cursor-grab active:cursor-grabbing"
+          className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-6 md:pl-[max(1.5rem,calc((100%-1280px+3rem)/2))] md:pr-[max(1.5rem,calc((100%-1280px+3rem)/2))] pb-8 cursor-grab active:cursor-grabbing"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', overscrollBehaviorX: 'contain' }}
         >
           {LOOPED_SERVICES.map((service, idx) => (
@@ -259,9 +252,6 @@ const Services: React.FC = () => {
                     <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-100 dark:bg-white/5 flex items-center justify-center ${service.accent} group-hover:bg-brand-medium group-hover:text-white transition-all duration-500`}>
                       <service.icon className="w-5 h-5 md:w-6 md:h-6" />
                     </div>
-                    <span className="font-mono text-[8px] md:text-[9px] font-black text-slate-400 dark:text-white/10 uppercase tracking-[0.3em]">
-                      ID_{(idx % SERVICES.length) + 1}
-                    </span>
                   </div>
 
                   <div className="space-y-3 md:space-y-4">
@@ -288,18 +278,14 @@ const Services: React.FC = () => {
                   </Link>
                 </div>
 
-                {/* Corner Accent */}
-                <div className="absolute top-0 right-0 w-12 md:w-16 h-12 md:h-16 pointer-events-none overflow-hidden">
-                  <Binary className="absolute -top-2 -right-2 w-10 md:w-12 h-10 md:h-12 text-slate-50 dark:text-white/[0.02] -rotate-12" />
-                </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Desktop-only Side Gradients */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none hidden md:block" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none hidden md:block" />
+        <div className="absolute left-0 top-0 bottom-0 w-8 md:w-[max(1.5rem,calc((100%-1280px+3rem)/2))] bg-gradient-to-r from-background to-transparent z-10 pointer-events-none hidden md:block" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 md:w-[max(1.5rem,calc((100%-1280px+3rem)/2))] bg-gradient-to-l from-background to-transparent z-10 pointer-events-none hidden md:block" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

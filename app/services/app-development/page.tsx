@@ -86,11 +86,11 @@ const SolutionsCarousel = () => {
     return (
         <div className="relative w-full">
             <div className="flex justify-end gap-3 mb-8 relative z-20 px-4 md:px-8 max-w-7xl mx-auto">
-                <button onClick={slideLeft} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors backdrop-blur-sm shadow-xl shadow-black/20 group">
-                    <ChevronRight className="w-5 h-5 text-white rotate-180 group-hover:-translate-x-1 transition-transform" />
+                <button onClick={slideLeft} className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/20 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-white/10 transition-colors backdrop-blur-sm shadow-xl shadow-slate-200/50 dark:shadow-black/20 group">
+                    <ChevronRight className="w-5 h-5 text-slate-600 dark:text-white rotate-180 group-hover:-translate-x-1 transition-transform" />
                 </button>
-                <button onClick={slideRight} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors backdrop-blur-sm shadow-xl shadow-black/20 group">
-                    <ChevronRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
+                <button onClick={slideRight} className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/20 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-white/10 transition-colors backdrop-blur-sm shadow-xl shadow-slate-200/50 dark:shadow-black/20 group">
+                    <ChevronRight className="w-5 h-5 text-slate-600 dark:text-white group-hover:translate-x-1 transition-transform" />
                 </button>
             </div>
 
@@ -108,17 +108,17 @@ const SolutionsCarousel = () => {
                     <motion.div
                         key={i}
                         whileHover={{ y: -8 }}
-                        className="group relative p-8 rounded-[2rem] bg-white/5 border border-white/10 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/20 shadow-lg shrink-0 w-[85vw] md:w-[400px] snap-center md:snap-start"
+                        className="group relative p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:bg-slate-50 dark:hover:bg-white/10 hover:border-[#3f8fcc]/30 dark:hover:border-[#3f8fcc]/30 shadow-xl shadow-slate-200/50 dark:shadow-lg shrink-0 w-[85vw] md:w-[400px] snap-center md:snap-start"
                     >
                         <div className={`absolute inset-0 bg-gradient-to-br ${sol.color} opacity-0 group-hover:opacity-[0.05] transition-opacity duration-500 pointer-events-none`} />
-                        <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${sol.color} opacity-0 group-hover:opacity-20 blur-[30px] rounded-full transition-opacity duration-500 pointer-events-none`} />
+                        <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${sol.color} opacity-0 group-hover:opacity-10 dark:group-hover:opacity-20 blur-[30px] rounded-full transition-opacity duration-500 pointer-events-none`} />
                         <div className="relative z-10 flex flex-col h-full pointer-events-none select-none">
-                            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 transition-transform duration-500 relative overflow-hidden">
-                                <div className={`absolute inset-0 bg-gradient-to-br ${sol.color} opacity-20`} />
-                                <sol.icon className="w-6 h-6 text-white relative z-10" />
+                            <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center mb-6 transition-transform duration-500 relative overflow-hidden group-hover:border-[#3f8fcc]/30">
+                                <div className={`absolute inset-0 bg-gradient-to-br ${sol.color} opacity-10 dark:opacity-20`} />
+                                <sol.icon className="w-6 h-6 text-slate-700 dark:text-white relative z-10" />
                             </div>
-                            <h3 className="text-xl font-bold mb-3 text-white transition-all">{sol.t}</h3>
-                            <p className="text-sm text-slate-400 leading-relaxed flex-grow transition-colors">{sol.d}</p>
+                            <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white transition-all">{sol.t}</h3>
+                            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow transition-colors">{sol.d}</p>
                         </div>
                     </motion.div>
                 ))}
@@ -278,6 +278,62 @@ export default function AppDevelopmentPage() {
                     </div>
                 </div>
             )
+        },
+        {
+            id: 'social-app',
+            label: 'Social Platform',
+            platform: 'React Native',
+            bg: '',
+            bgStyle: { background: 'linear-gradient(135deg, #f43f5e 0%, #be123c 100%)' },
+            content: (
+                <div className="absolute inset-0 p-6 flex flex-col">
+                    <div className="flex items-center gap-3 mb-6">
+                        <Users className="w-5 h-5 text-white" />
+                        <span className="text-white text-xs font-bold uppercase tracking-widest">Community App</span>
+                    </div>
+                    <div className="flex-1 flex flex-col items-center justify-center">
+                        <div className="text-center">
+                            <h3 className="text-4xl font-black text-white mb-2">Connectr</h3>
+                            <p className="text-white/70 text-sm">Building communities worldwide.</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center justify-between mt-6 bg-white/10 rounded-xl p-4 border border-white/10">
+                        <div className="space-y-1">
+                            <div className="text-white font-black text-sm">Active Users</div>
+                            <div className="text-white/70 text-xs">500K+ Monthly</div>
+                        </div>
+                        <Activity className="w-6 h-6 text-white" />
+                    </div>
+                </div>
+            )
+        },
+        {
+            id: 'fitness-app',
+            label: 'Fitness Tracker',
+            platform: 'Native Android',
+            bg: '',
+            bgStyle: { background: 'linear-gradient(135deg, #f59e0b 0%, #b45309 100%)' },
+            content: (
+                <div className="absolute inset-0 p-6 flex flex-col">
+                    <div className="flex items-center gap-3 mb-6">
+                        <Zap className="w-5 h-5 text-white" />
+                        <span className="text-white text-xs font-bold uppercase tracking-widest">Health & Fitness</span>
+                    </div>
+                    <div className="flex-1 flex flex-col items-center justify-center">
+                        <div className="text-center">
+                            <h3 className="text-4xl font-black text-white mb-2">FitPeak</h3>
+                            <p className="text-white/70 text-sm">Personalized workouts & diet.</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center justify-between mt-6 bg-white/10 rounded-xl p-4 border border-white/10">
+                        <div className="space-y-1">
+                            <div className="text-white font-black text-sm">Engagement Rate</div>
+                            <div className="text-white/70 text-xs">Increased by 85%</div>
+                        </div>
+                        <TrendingUp className="w-6 h-6 text-white" />
+                    </div>
+                </div>
+            )
         }
     ];
 
@@ -294,6 +350,7 @@ export default function AppDevelopmentPage() {
 
             {/* 1️⃣ Hero Section + Form */}
             <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 lg:pt-32 lg:pb-32 px-4 md:px-6 overflow-hidden min-h-screen flex items-center">
+                <div className="absolute top-0 right-0 w-full h-full bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-[0.03] dark:opacity-[0.15] pointer-events-none" />
                 <div className="absolute inset-0 pointer-events-none -z-10">
                     <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.3, 0.15] }} transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }} className="absolute top-[10%] -right-[10%] w-[500px] md:w-[800px] h-[500px] md:h-[800px] bg-gradient-to-br from-brand-medium/20 via-brand-cyan/20 to-brand-sky/20 blur-[150px] rounded-full" />
                     <motion.div animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.25, 0.1] }} transition={{ duration: 16, repeat: Infinity, delay: 3 }} className="absolute -bottom-[15%] -left-[15%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-brand-deep/15 blur-[130px] rounded-full" />
@@ -392,7 +449,7 @@ export default function AppDevelopmentPage() {
 
                                 <textarea placeholder="Short Project Description..." rows={3} className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-white/5 rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all resize-none placeholder:text-slate-400" />
 
-                                <button type="submit" className="w-full group mt-2 relative bg-gradient-to-r from-brand-medium to-brand-cyan hover:to-brand-sky text-white rounded-xl py-4 font-black text-sm uppercase tracking-widest transition-all overflow-hidden shadow-lg shadow-brand-cyan/20 flex items-center justify-center gap-2">
+                                <button type="submit" className="w-full group mt-2 relative bg-[#3f8fcc] hover:bg-[#3f8fcc]/90 text-white rounded-xl py-4 font-black text-sm uppercase tracking-widest transition-all overflow-hidden shadow-lg shadow-[#3f8fcc]/20 flex items-center justify-center gap-2">
                                     Get Free Strategy Call <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </form>
@@ -416,9 +473,9 @@ export default function AppDevelopmentPage() {
                         { t: 'Push Notifications', d: 'Instant messaging capabilities for retention and marketing.', i: Zap },
                         { t: 'Increased Revenue', d: 'New channels for sales, in-app purchases, and upgrades.', i: TrendingUp },
                         { t: 'Competitive Advantage', d: 'Gain a severe edge in your market by adapting to mobile-first trends.', i: Target }].map((item, i) => (
-                            <motion.div key={i} whileHover={{ y: -5 }} className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 group hover:border-brand-cyan/30 transition-all text-center hover:shadow-2xl hover:shadow-brand-cyan/5">
-                                <div className="w-14 h-14 rounded-2xl bg-brand-cyan/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-cyan transition-colors">
-                                    <item.i className="w-6 h-6 text-brand-cyan group-hover:text-white transition-colors" />
+                            <motion.div key={i} whileHover={{ y: -5 }} className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 group hover:border-[#3f8fcc]/30 transition-all text-center hover:shadow-2xl hover:shadow-[#3f8fcc]/5">
+                                <div className="w-14 h-14 rounded-2xl bg-[#3f8fcc]/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-[#3f8fcc] transition-colors">
+                                    <item.i className="w-6 h-6 text-[#3f8fcc] group-hover:text-white transition-colors" />
                                 </div>
                                 <h3 className="text-sm font-bold mb-2">{item.t}</h3>
                                 <p className="text-xs text-slate-500 leading-relaxed">{item.d}</p>
@@ -440,7 +497,7 @@ export default function AppDevelopmentPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[{ t: 'Strategy-First Approach', d: 'We validate your idea and plan an architecture that aligns perfectly with your business goals.', i: BarChart3 },
                         { t: 'Experienced Development Team', d: 'Senior-level engineers writing clean, maintainable, and high-performance code.', i: Code2 },
-                        { t: 'Scalable Architecture', d: 'Cloud-native solutions designed to handle millions of requests without breaking a sweat.', i: Layers },
+                        { t: 'Scalable Infrastructure', d: 'Cloud-native solutions designed to handle millions of requests without breaking a sweat.', i: Layers },
                         { t: 'Transparent Communication', d: 'Dedicated project managers, weekly sprints, and crystal-clear reporting.', i: Settings },
                         { t: 'Post-Launch Support', d: 'Continuous monitoring, updates, and optimization to ensure your app stays fast and secure.', i: Headphones }].map((f, i) => (
                             <motion.div key={i} whileHover={{ y: -5, scale: 1.02 }} className="p-8 rounded-2xl bg-white dark:bg-[#080B10] border border-slate-200 dark:border-white/5 group hover:border-brand-medium/30 transition-all shadow-sm">
@@ -472,8 +529,8 @@ export default function AppDevelopmentPage() {
                         { t: 'Booking Platforms', d: 'Seamless scheduling.', i: Target },
                         { t: 'Enterprises', d: 'Internal tooling & ops.', i: Building2 },
                         { t: 'Local Businesses', d: 'Digital transformation.', i: Globe }].map((ind, i) => (
-                            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex flex-col items-center p-6 text-center rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 hover:border-brand-cyan/40 hover:bg-slate-50 dark:hover:bg-white/5 transition-all group cursor-pointer shadow-sm">
-                                <ind.i className="w-8 h-8 text-slate-400 group-hover:text-brand-cyan transition-colors mb-4" />
+                            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex flex-col items-center p-6 text-center rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 hover:border-[#3f8fcc]/40 hover:bg-slate-50 dark:hover:bg-white/5 transition-all group cursor-pointer shadow-sm">
+                                <ind.i className="w-8 h-8 text-slate-400 group-hover:text-[#3f8fcc] transition-colors mb-4" />
                                 <h4 className="font-bold text-sm mb-1">{ind.t}</h4>
                                 <p className="text-[11px] text-slate-500">{ind.d}</p>
                             </motion.div>
@@ -484,11 +541,11 @@ export default function AppDevelopmentPage() {
 
             {/* 5️⃣ Our App Development Solutions Overview */}
             {/* 5️⃣ Our App Development Solutions Overview */}
-            <section className="py-20 md:py-32 bg-[#030712] text-white reveal-section relative overflow-hidden w-full max-w-[100vw]">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-deep/20 via-transparent to-transparent opacity-50 pointer-events-none" />
+            <section className="py-20 md:py-32 bg-[#fafafa] dark:bg-[#030712] text-slate-900 dark:text-white reveal-section relative overflow-hidden w-full max-w-[100vw]">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-200/50 dark:from-brand-deep/20 via-transparent to-transparent opacity-50 pointer-events-none" />
                 <div className="relative z-10 w-full pt-4">
                     <div className="text-center mb-16 space-y-4 px-4 md:px-6">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Comprehensive Solutions</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Comprehensive Solutions</span>
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Development Solutions.</h2>
                     </div>
 
@@ -516,12 +573,12 @@ export default function AppDevelopmentPage() {
                             { s: 'Launch', d: 'App store deployment', i: Rocket },
                             { s: 'Optimization', d: 'Post-launch scaling', i: TrendingUp }].map((step, i) => (
                                 <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="flex flex-col items-center text-center group">
-                                    <div className="w-24 h-24 rounded-full bg-white dark:bg-[#030712] border-2 border-slate-200 dark:border-white/10 group-hover:border-brand-cyan flex items-center justify-center mb-6 shadow-xl transition-all duration-300 relative z-10">
-                                        <step.i className="w-8 h-8 text-slate-400 group-hover:text-brand-cyan transition-colors" />
+                                    <div className="w-24 h-24 rounded-full bg-white dark:bg-[#030712] border-2 border-slate-200 dark:border-white/10 group-hover:border-[#3f8fcc] flex items-center justify-center mb-6 shadow-xl transition-all duration-300 relative z-10">
+                                        <step.i className="w-8 h-8 text-slate-400 group-hover:text-[#3f8fcc] transition-colors" />
                                     </div>
                                     <h4 className="font-bold text-sm mb-2">{step.s}</h4>
                                     <p className="text-[11px] text-slate-500 uppercase font-black tracking-wider">{step.d}</p>
-                                    <div className="mt-4 text-[10px] font-black text-brand-cyan opacity-40">Step 0{i + 1}</div>
+                                    <div className="mt-4 text-[10px] font-black text-[#3f8fcc] opacity-40">Step 0{i + 1}</div>
                                 </motion.div>
                             ))}
                         </div>
@@ -556,13 +613,7 @@ export default function AppDevelopmentPage() {
             </section>
 
             {/* 8️⃣ Case Studies / Portfolio Showcase */}
-            <section className="py-20 md:py-32 px-4 md:px-6 bg-[#030712] text-white reveal-section overflow-hidden">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Our Work</span>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Case Studies.</h2>
-                    </div>
-                </div>
+            <section className="bg-[#fafafa] dark:bg-[#060911] reveal-section overflow-hidden">
                 {/* Use the standalone PortfolioCarousel component which matches standard site styling */}
                 <PortfolioCarousel cards={portfolioCards} />
             </section>
@@ -599,42 +650,27 @@ export default function AppDevelopmentPage() {
                 </div>
             </section>
 
-            {/* 🔟 Free Strategy Consultation Section */}
-            <section className="py-20 md:py-32 px-4 md:px-6 border-t border-slate-200/50 dark:border-white/5 reveal-section">
-                <div className="max-w-5xl mx-auto bg-slate-50 dark:bg-[#080B10] rounded-[3rem] p-10 md:p-16 text-center border border-slate-200 dark:border-white/5 relative overflow-hidden shadow-2xl">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-cyan/10 blur-[80px] -z-10 rounded-full" />
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-sky/10 blur-[80px] -z-10 rounded-full" />
-
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Let’s Turn Your App Idea Into Reality</h2>
-                    <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-                        Don't let your app idea sit on the shelf. Partner with Preet Tech to strategize, design, and develop a premium mobile application tailored for success.
-                    </p>
-                    <a href="#consultation" className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-brand-medium to-brand-cyan text-white rounded-xl font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl shadow-brand-cyan/20">
-                        Book Free Consultation <ArrowRight className="w-5 h-5" />
-                    </a>
-                </div>
-            </section>
 
             {/* Final High-Impact CTA Section */}
-            <section className="py-24 md:py-36 px-4 md:px-6 bg-[#030712] text-white reveal-section relative overflow-hidden text-center">
+            <section className="py-24 md:py-36 px-4 md:px-6 bg-[#fafafa] dark:bg-[#030712] text-slate-900 dark:text-white reveal-section relative overflow-hidden text-center">
                 <div className="absolute inset-0 z-0">
-                    <motion.div animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }} className="absolute -top-[50%] -left-[10%] w-[800px] h-[800px] bg-brand-cyan/20 blur-[150px] rounded-full" />
-                    <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }} transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut', delay: 2 }} className="absolute -bottom-[50%] -right-[10%] w-[600px] h-[600px] bg-brand-medium/20 blur-[150px] rounded-full" />
+                    <motion.div animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }} className="absolute -top-[50%] -left-[10%] w-[800px] h-[800px] bg-[#3f8fcc]/10 dark:bg-[#3f8fcc]/20 blur-[150px] rounded-full pointer-events-none" />
+                    <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }} transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut', delay: 2 }} className="absolute -bottom-[50%] -right-[10%] w-[600px] h-[600px] bg-[#3f8fcc]/10 dark:bg-brand-medium/20 blur-[150px] rounded-full pointer-events-none" />
                 </div>
 
                 <div className="max-w-4xl mx-auto relative z-10 space-y-10">
                     <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight">
                         Ready to Build an App That <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-medium to-brand-sky">Drives Real Growth?</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#3f8fcc] dark:to-cyan-400">Drives Real Growth?</span>
                     </h2>
-                    <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
+                    <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
                         Join modern startups and enterprise leaders who trust Preet Tech for robust, scalable, and long-term mobile success.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-                        <a href="#consultation" className="w-full sm:w-auto px-12 py-6 bg-gradient-to-r from-brand-medium to-brand-cyan text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl shadow-brand-cyan/25 flex items-center justify-center gap-3">
+                        <a href="#consultation" className="w-full sm:w-auto px-12 py-6 bg-[#3f8fcc] hover:bg-[#3f8fcc]/90 text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl shadow-[#3f8fcc]/25 flex items-center justify-center gap-3">
                             Start Your Project Today <Rocket className="w-5 h-5" />
                         </a>
-                        <a href="#consultation" className="w-full sm:w-auto px-12 py-6 border border-white/20 hover:bg-white/5 rounded-2xl font-bold uppercase tracking-widest text-sm transition-all flex items-center justify-center gap-3 active:scale-95">
+                        <a href="#consultation" className="w-full sm:w-auto px-12 py-6 border border-slate-300 dark:border-white/20 hover:bg-slate-100 dark:hover:bg-white/5 text-slate-900 dark:text-white rounded-2xl font-bold uppercase tracking-widest text-sm transition-all flex items-center justify-center gap-3 active:scale-95">
                             Schedule Free Call <Phone className="w-5 h-5" />
                         </a>
                     </div>

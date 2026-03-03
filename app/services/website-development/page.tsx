@@ -643,7 +643,7 @@ export default function WebsiteDevelopment() {
                             { title: "Custom-Built Solutions", icon: Laptop, desc: "Bespoke architectures designed specifically for your unique business needs and user journeys." },
                             { title: "Conversion-Focused Design", icon: Rocket, desc: "Every pixel is placed with intent, guiding users toward your primary business objectives." },
                             { title: "Fast & Secure Development", icon: ShieldCheck, desc: "Performance-first approach ensuring lightning speeds and enterprise-grade security." },
-                            { title: "Scalable Architecture", icon: Layers, desc: "Future-proof tech stacks that grow seamlessly alongside your business expansion." },
+                            { title: "Scalable Infrastructure", icon: Layers, desc: "Future-proof tech stacks that grow seamlessly alongside your business expansion." },
                             { title: "SEO-Optimized Structure", icon: Search, desc: "Search engine friendly codebase ensuring high visibility and organic search dominance." },
                             { title: "Ongoing Support", icon: HeartHandshake, desc: "A dedicated partnership providing continuous optimization and technical excellence." }
                         ].map((item, i) => (
@@ -771,7 +771,7 @@ export default function WebsiteDevelopment() {
 
                                 {/* Floating Info */}
                                 <div className="absolute bottom-8 right-8 bg-brand-cyan/10 backdrop-blur-md border border-brand-cyan/20 px-4 py-2 rounded-xl hidden md:block">
-                                    <p className="text-[8px] font-black uppercase tracking-widest text-brand-cyan">Architecture</p>
+                                    <p className="text-[8px] font-black uppercase tracking-widest text-brand-cyan">Infrastructure</p>
                                     <p className="text-xs font-bold text-white">v2.4.0 Optimized</p>
                                 </div>
                             </div>
@@ -866,7 +866,7 @@ export default function WebsiteDevelopment() {
                                     <div className="space-y-12 relative z-10">
                                         <div className="space-y-4">
                                             <div className="flex justify-between items-end">
-                                                <p className="text-[10px] font-black uppercase tracking-widest text-brand-cyan">Architecture status</p>
+                                                <p className="text-[10px] font-black uppercase tracking-widest text-brand-cyan">System status</p>
                                                 <motion.span
                                                     animate={{ opacity: [1, 0.5, 1] }}
                                                     transition={{ duration: 2, repeat: Infinity }}
@@ -1183,7 +1183,7 @@ export default function WebsiteDevelopment() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
                             {[
                                 { title: "Mobile-First Design", icon: Smartphone, desc: "Seamless navigation across any screen size." },
-                                { title: "Clean UI Architecture", icon: Palette, desc: "Aesthetic layouts that reduce cognitive load." },
+                                { title: "Clean UI Structure", icon: Palette, desc: "Aesthetic layouts that reduce cognitive load." },
                                 { title: "Web Vitals Optimization", icon: Gauge, desc: "Scoring 99+ on Google's core performance metrics." },
                                 { title: "Accessibility (WCAG)", icon: Accessibility, desc: "Digital experiences inclusive to all users." },
                                 { title: "Conversion Layouts", icon: Layout, desc: "Strategically placed CTAs to maximize ROI." },
@@ -1306,7 +1306,7 @@ export default function WebsiteDevelopment() {
                             },
                             {
                                 cat: "Corporate",
-                                title: "Zenith Architecture",
+                                title: "Zenith Framework",
                                 img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
                                 desc: "Modern architectural showcase with GSAP."
                             }

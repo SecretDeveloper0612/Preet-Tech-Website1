@@ -1,7 +1,6 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { ArrowUpRight, TrendingUp, Target, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, TrendingUp, Target, ArrowLeft, ArrowRight } from 'lucide-react';
 
 const ORIGINAL_CASE_STUDIES = [
     {
@@ -58,8 +57,10 @@ const ORIGINAL_CASE_STUDIES = [
     }
 ];
 
-// Create a tripled list for seamless looping [Clone, Real, Clone]
-const CASE_STUDIES = [...ORIGINAL_CASE_STUDIES, ...ORIGINAL_CASE_STUDIES, ...ORIGINAL_CASE_STUDIES];
+// Create a base set that is wide enough to exceed ultra-wide screens
+const BASE_SET = [...ORIGINAL_CASE_STUDIES, ...ORIGINAL_CASE_STUDIES, ...ORIGINAL_CASE_STUDIES, ...ORIGINAL_CASE_STUDIES, ...ORIGINAL_CASE_STUDIES];
+// Create a tripled list for seamless looping (Left Buffer, Center View, Right Buffer)
+const CASE_STUDIES = [...BASE_SET, ...BASE_SET, ...BASE_SET];
 
 const CaseStudies: React.FC = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -160,22 +161,6 @@ const CaseStudies: React.FC = () => {
                     <p className="text-sm md:text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-sm mb-10">
                         Browse our archive of digital breakthroughs. Every metric represents a milestone in our partners' growth success.
                     </p>
-
-                    {/* Navigation Buttons */}
-                    <div className="flex items-center justify-center xl:justify-start gap-3 mb-4">
-                        <button
-                            onClick={() => scroll('left')}
-                            className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group"
-                        >
-                            <ChevronLeft className="w-5 h-5 text-slate-400 group-hover:text-brand-medium transition-colors" />
-                        </button>
-                        <button
-                            onClick={() => scroll('right')}
-                            className="w-12 h-12 rounded-full bg-brand-medium text-white shadow-lg shadow-brand-medium/20 flex items-center justify-center hover:bg-brand-medium/90 hover:-translate-y-0.5 transition-all"
-                        >
-                            <ChevronRight className="w-5 h-5" />
-                        </button>
-                    </div>
                 </div>
 
                 {/* Infinite Carousel Track */}
@@ -199,7 +184,7 @@ const CaseStudies: React.FC = () => {
                         {CASE_STUDIES.map((study, index) => (
                             <div
                                 key={`${study.id}-${index}`}
-                                className="case-study-card flex-shrink-0 w-[calc(100vw-64px)] md:w-[350px] rounded-[2rem] bg-slate-50 dark:bg-[#0b0f1a] border border-slate-200 dark:border-white/5 p-5 md:p-6 flex flex-col justify-between hover:border-brand-medium/30 transition-colors group snap-center snap-always"
+                                className="case-study-card flex-shrink-0 w-[calc(100%-64px)] md:w-[350px] rounded-[2rem] bg-slate-50 dark:bg-[#0b0f1a] border border-slate-200 dark:border-white/5 p-5 md:p-6 flex flex-col justify-between hover:border-brand-medium/30 transition-colors group snap-center snap-always"
                             >
                                 <div>
                                     <div className="flex justify-between items-start mb-5 md:mb-6">

@@ -275,7 +275,7 @@ const ProductCard = memo(({{ tool, handleBuy }}: {{ tool: Tool; handleBuy: (t: T
 
                 {{/* Custom WhatsApp Button to match product data */}}
                 <button
-                    onClick={() => handleBuy(tool)}
+                    onClick={{() => handleBuy(tool)}}
                     className={{`w-full group/btn relative overflow-hidden py-3.5 md:py-4 rounded-xl font-black text-[10px] md:text-xs uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] ${{
                         is3D ? "bg-brand-medium text-white shadow-lg shadow-brand-medium/20" : "bg-[#0a0a0a] dark:bg-white text-white dark:text-black shadow-xl"
                     }}`}}

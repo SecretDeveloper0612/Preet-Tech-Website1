@@ -92,7 +92,7 @@ const whyNeedCustomSoftware = [
 
 const whyPreetTech = [
     { title: "Business-First Strategy", desc: "We align software architecture with your revenue goals and operational KPIs.", icon: Briefcase },
-    { title: "Scalable Architecture", desc: "Building modular systems that handle millions of requests with zero downtime.", icon: Boxes },
+    { title: "Scalable Infrastructure", desc: "Building modular systems that handle millions of requests with zero downtime.", icon: Boxes },
     { title: "Transparent Process", desc: "Complete visibility into the codebase and sprint progress through our client portal.", icon: Search },
     { title: "Agile Methodology", desc: "Rapid 2-week sprint cycles ensuring fast time-to-market and iterative growth.", icon: RefreshCw },
     { title: "Post-Launch Support", desc: "24/7 technical monitoring and proactive performance optimization beyond launch.", icon: Headphones },
@@ -173,6 +173,7 @@ const SoftwareDevelopmentPage = () => {
     const [expandedSolution, setExpandedSolution] = useState<number | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
+    const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
     const x = useMotionValue(0);
     const containerRef = useRef<HTMLDivElement>(null);
     const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -274,15 +275,15 @@ const SoftwareDevelopmentPage = () => {
             <Navbar isDark={theme === Theme.DARK} toggleTheme={toggleTheme} />
 
             {/* 1️⃣ Hero Section */}
-            <section className="relative min-h-screen flex items-center pt-32 pb-20 px-6 overflow-hidden">
+            <section className="relative min-h-[85vh] flex items-center pt-24 pb-12 px-6 overflow-hidden">
                 {/* Background Decor */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
-                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-medium/5 dark:bg-brand-medium/10 blur-[150px] rounded-full animate-pulse" />
-                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-cyan/5 dark:bg-brand-cyan/10 blur-[130px] rounded-full animate-pulse delay-700" />
+                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-medium/5 dark:bg-brand-medium/10 blur-[150px] rounded-full animate-pulse" />
+                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-cyan/5 dark:bg-brand-cyan/10 blur-[130px] rounded-full animate-pulse delay-700" />
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.2] dark:opacity-[0.1] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]" />
                 </div>
 
-                <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+                <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
                     {/* Hero Left */}
                     <div className="lg:col-span-7 hero-text-content">
                         <motion.div
@@ -294,12 +295,12 @@ const SoftwareDevelopmentPage = () => {
                             Enterprise Engineering
                         </motion.div>
 
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-outfit font-black tracking-tighter uppercase leading-[0.9] mb-8 text-slate-900 dark:text-white">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-black tracking-tighter uppercase leading-[0.9] mb-6 text-slate-900 dark:text-white">
                             Custom Software <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-medium to-brand-deep italic">Built for Growth.</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-medium to-brand-deep italic pr-4">Built for Growth.</span>
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-slate-900 dark:text-white font-bold mb-4">
+                        <p className="text-lg md:text-xl text-slate-900 dark:text-white font-bold mb-3">
                             “Custom Software Built for Growth & Efficiency”
                         </p>
 
@@ -307,9 +308,21 @@ const SoftwareDevelopmentPage = () => {
                             We design and develop scalable, secure, and performance-driven software solutions tailored to your business operations.
                         </p>
 
-                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed mb-10">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed mb-8">
                             At Preet Tech, we don't just build code; we architect solutions. We position ourselves as your long-term technology partner, ensuring your systems are ready for future market shifts and internal scaling.
                         </p>
+
+                        <div className="flex flex-wrap items-center gap-4 mb-10">
+                            <button
+                                onClick={() => setIsVideoModalOpen(true)}
+                                className="flex items-center gap-2 px-8 py-3.5 bg-[#3f8fcc] hover:bg-[#3f8fcc]/90 text-white font-bold rounded-full transition-all shadow-lg shadow-[#3f8fcc]/30 group text-sm md:text-base"
+                            >
+                                Watch Demo
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                                    <path fillRule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
 
                         <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-slate-200 dark:border-white/5">
                             <div className="flex -space-x-3">
@@ -328,9 +341,9 @@ const SoftwareDevelopmentPage = () => {
 
                     {/* Hero Right: Strategy Form */}
                     <div className="lg:col-span-5 hero-form-box">
-                        <div className="glass-morphism rounded-[3rem] p-8 md:p-10 border border-slate-200 dark:border-white/10 shadow-2xl relative z-10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl">
-                            <div className="mb-8">
-                                <h3 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-2">Request Strategy Call</h3>
+                        <div className="glass-morphism rounded-[2.5rem] p-6 md:p-8 border border-slate-200 dark:border-white/10 shadow-xl relative z-10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl">
+                            <div className="mb-6">
+                                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-2">Request Strategy Call</h3>
                                 <p className="text-[10px] font-black text-brand-cyan uppercase tracking-widest">Free Consultation • Zero Obligation</p>
                             </div>
 
@@ -470,12 +483,12 @@ const SoftwareDevelopmentPage = () => {
                                 whileHover={{ scale: 1.02 }}
                                 className="p-10 rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/30 flex flex-col items-start shadow-sm"
                             >
-                                <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 flex items-center justify-center mb-8 text-brand-cyan">
+                                <div className="w-12 h-12 rounded-xl bg-[#3f8fcc]/10 flex items-center justify-center mb-8 text-[#3f8fcc]">
                                     <item.icon className="w-6 h-6" />
                                 </div>
                                 <h4 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-4">{item.type}</h4>
                                 <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-medium">{item.benefit}</p>
-                                <div className="mt-8 pt-6 border-t border-slate-100 dark:border-white/5 w-full flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan">
+                                <div className="mt-8 pt-6 border-t border-slate-100 dark:border-white/5 w-full flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#3f8fcc]">
                                     Strategic Growth Solution <ArrowRight className="w-3 h-3 ml-2" />
                                 </div>
                             </motion.div>
@@ -624,7 +637,7 @@ const SoftwareDevelopmentPage = () => {
                 </div>
             </section>
 
-            {/* 7️⃣ Technology Stack & Architecture */}
+            {/* 7️⃣ Technology Stack & Infrastructure */}
             <section className="py-40 px-6 bg-[#020617] text-white reveal-section relative overflow-hidden">
                 {/* Background Grid & Glows */}
                 <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
@@ -643,7 +656,7 @@ const SoftwareDevelopmentPage = () => {
                             The Engine Room
                         </motion.span>
                         <h2 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none mb-8 opacity-10 absolute left-1/2 -translate-x-1/2 top-20 w-full select-none">
-                            Architecture
+                            Infrastructure
                         </h2>
                         <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tight text-white relative z-10">
                             Powering <span className="text-brand-cyan">Performance.</span>
@@ -711,7 +724,7 @@ const SoftwareDevelopmentPage = () => {
                 <div className="max-w-7xl mx-auto">
                     <SectionHeader
                         badge="Proven Performance"
-                        title="Success Architecture"
+                        title="Success Blueprint"
                         subtitle="See how we've solved complex business challenges through strategic engineering."
                     />
 
@@ -830,6 +843,45 @@ const SoftwareDevelopmentPage = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Video Modal */}
+            <AnimatePresence>
+                {isVideoModalOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-10"
+                        onClick={() => setIsVideoModalOpen(false)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.95, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.95, opacity: 0 }}
+                            className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/20"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                onClick={() => setIsVideoModalOpen(false)}
+                                className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/40 hover:bg-black/80 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all border border-white/20"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <video
+                                className="w-full h-full object-cover"
+                                autoPlay
+                                controls
+                                playsInline
+                            >
+                                <source src="/videos/hero-mobile.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <Footer />
         </main>

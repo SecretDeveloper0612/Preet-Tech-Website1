@@ -4,6 +4,12 @@ import React, { useState, useEffect, useMemo, memo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Search,
+    Filter,
+    ArrowUpDown,
+    ArrowRight,
+    CheckCircle2,
+    Shield,
+    Zap,
     ChevronDown,
     MessageCircle,
     ShoppingBag,
@@ -11,14 +17,1045 @@ import {
     Box,
     Sparkles,
     Clock,
-    Layers,
-    ArrowRight
+    Tag,
+    Layers
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-// Use the newly generated data
-import { TOOLS, Tool } from './data';
+// --- Types ---
+export interface Tool {
+    id: string;
+    name: string;
+    variant: string;
+    duration: string;
+    category: string;
+    description: string;
+    originalPrice: string;
+    discountPrice: string;
+    discountBadge: string;
+    badge: string;
+    status: string;
+}
+
+// --- Data ---
+export const TOOLS: Tool[] = [
+  {
+    id: "1",
+    name: "CodeRabbit",
+    variant: "CodeRabbit Pro",
+    duration: "1M",
+    category: "🔥 New & Premium",
+    description: "Get CodeRabbit Pro for 1M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "2",
+    name: "CodeRabbit",
+    variant: "CodeRabbit Pro",
+    duration: "2M",
+    category: "🔥 New & Premium",
+    description: "Get CodeRabbit Pro for 2M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "3",
+    name: "Loom Business + AI",
+    variant: "Business + AI",
+    duration: "1Y",
+    category: "🔥 New & Premium",
+    description: "Get Loom Business + AI for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "4",
+    name: "Wispr Flow",
+    variant: "Wispr Flow Pro",
+    duration: "1Y",
+    category: "🔥 New & Premium",
+    description: "Get Wispr Flow Pro for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "5",
+    name: "Willow Voice",
+    variant: "Willow Voice Pro",
+    duration: "1Y",
+    category: "🔥 New & Premium",
+    description: "Get Willow Voice Pro for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "6",
+    name: "PromptDrive.ai",
+    variant: "PromptDrive.ai Teams",
+    duration: "1Y",
+    category: "🔥 New & Premium",
+    description: "Get PromptDrive.ai Teams for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "7",
+    name: "PromptDrive.ai Business (50 Seats)",
+    variant: "Standard",
+    duration: "1Y",
+    category: "🔥 New & Premium",
+    description: "Get PromptDrive.ai Business (50 Seats) for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "8",
+    name: "PostHog",
+    variant: "PostHog Scale",
+    duration: "1Y",
+    category: "🔥 New & Premium",
+    description: "Get PostHog Scale for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "9",
+    name: "Firecrawl",
+    variant: "Firecrawl AI",
+    duration: "50K Credits (1Y)",
+    category: "🔥 New & Premium",
+    description: "Get Firecrawl AI for 50K Credits (1Y). Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "10",
+    name: "Vapi",
+    variant: "Standard",
+    duration: "$200 Credits (12M)",
+    category: "🔥 New & Premium",
+    description: "Get Vapi for $200 Credits (12M). Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "11",
+    name: "Emergent Standard",
+    variant: "Standard",
+    duration: "1Y",
+    category: "🔥 New & Premium",
+    description: "Get Emergent Standard for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "12",
+    name: "Manus AI Pro (6000 Credits)",
+    variant: "Standard",
+    duration: "1M",
+    category: "🔥 New & Premium",
+    description: "Get Manus AI Pro (6000 Credits) for 1M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "13",
+    name: "Reforge AI Build",
+    variant: "Standard",
+    duration: "1M",
+    category: "🔥 New & Premium",
+    description: "Get Reforge AI Build for 1M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "14",
+    name: "Sentry.io",
+    variant: "Sentry.io Teams",
+    duration: "1Y",
+    category: "🔥 New & Premium",
+    description: "Get Sentry.io Teams for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "15",
+    name: "Sentry.io",
+    variant: "Sentry.io Business",
+    duration: "1Y",
+    category: "🔥 New & Premium",
+    description: "Get Sentry.io Business for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Trending",
+    status: "Active",
+  },
+  {
+    id: "16",
+    name: "Beautiful.ai",
+    variant: "Beautiful.ai Pro",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Beautiful.ai Pro for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "17",
+    name: "Mobbin",
+    variant: "Mobbin Pro",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Mobbin Pro for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "18",
+    name: "ChatPRD",
+    variant: "ChatPRD Pro",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get ChatPRD Pro for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "19",
+    name: "Perplexity",
+    variant: "Perplexity Pro",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Perplexity Pro for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "20",
+    name: "Raycast",
+    variant: "Raycast Pro",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Raycast Pro for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "21",
+    name: "Superhuman",
+    variant: "Superhuman Starter",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Superhuman Starter for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "22",
+    name: "Linear",
+    variant: "Linear Business",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Linear Business for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "23",
+    name: "Granola",
+    variant: "Granola Business",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Granola Business for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "24",
+    name: "Magic Patterns Hobby",
+    variant: "Standard",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Magic Patterns Hobby for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "25",
+    name: "Webflow CMS",
+    variant: "Standard",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Webflow CMS for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "26",
+    name: "Webflow",
+    variant: "Webflow Business",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Webflow Business for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "27",
+    name: "Webflow",
+    variant: "Webflow Growth",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Webflow Growth for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "28",
+    name: "n8n",
+    variant: "n8n Starter",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get n8n Starter for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "29",
+    name: "Replit",
+    variant: "Replit Core",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Replit Core for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "30",
+    name: "Lovable Pro (100 Credits / Month)",
+    variant: "Standard",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Lovable Pro (100 Credits / Month) for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "31",
+    name: "ClickUp",
+    variant: "ClickUp Enterprise",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get ClickUp Enterprise for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "32",
+    name: "Cal.com",
+    variant: "Cal.com Teams",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Cal.com Teams for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "33",
+    name: "Cal.com",
+    variant: "Cal.com Organization",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Cal.com Organization for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "34",
+    name: "GitLab",
+    variant: "GitLab Ultimate",
+    duration: "12M",
+    category: "⭐ Top Selling",
+    description: "Get GitLab Ultimate for 12M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "35",
+    name: "Postman",
+    variant: "Postman Basic",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Postman Basic for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "36",
+    name: "Zeplin",
+    variant: "Zeplin Advanced",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Zeplin Advanced for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "37",
+    name: "Backblaze Cloud",
+    variant: "Backblaze Cloud Unlimited",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Backblaze Cloud Unlimited for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "38",
+    name: "Bitwarden Premium +",
+    variant: "Bitwarden Premium + Family",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Bitwarden Premium + Family for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "39",
+    name: "Termly.io",
+    variant: "Termly.io Starter",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Termly.io Starter for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "40",
+    name: "Termly.io",
+    variant: "Termly.io Pro+",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Termly.io Pro+ for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "41",
+    name: "Hostinger Cloud",
+    variant: "Hostinger Cloud Startup",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Hostinger Cloud Startup for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "42",
+    name: "Pica",
+    variant: "Pica Starter",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Pica Starter for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "43",
+    name: "Framer",
+    variant: "Framer Basic",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Framer Basic for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "44",
+    name: "Framer",
+    variant: "Framer Pro",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Framer Pro for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "45",
+    name: "Figma",
+    variant: "Figma Professional",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Figma Professional for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "46",
+    name: "Intercom",
+    variant: "Intercom Advanced",
+    duration: "1Y",
+    category: "⭐ Top Selling",
+    description: "Get Intercom Advanced for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "47",
+    name: "Rezi",
+    variant: "Rezi AI",
+    duration: "Lifetime",
+    category: "🎓 Career / Education",
+    description: "Get Rezi AI for Lifetime. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "48",
+    name: "PNGTree Premium",
+    variant: "Standard",
+    duration: "Lifetime",
+    category: "🎓 Career / Education",
+    description: "Get PNGTree Premium for Lifetime. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "49",
+    name: "Enginemailer Free Forever (10K / Month)",
+    variant: "Standard",
+    duration: "Lifetime",
+    category: "🎓 Career / Education",
+    description: "Get Enginemailer Free Forever (10K / Month) for Lifetime. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "50",
+    name: "LinkedIn Career Premium",
+    variant: "Standard",
+    duration: "3M",
+    category: "🎓 Career / Education",
+    description: "Get LinkedIn Career Premium for 3M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "51",
+    name: "LinkedIn Business Premium",
+    variant: "Standard",
+    duration: "3M",
+    category: "🎓 Career / Education",
+    description: "Get LinkedIn Business Premium for 3M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "52",
+    name: "Scrimba",
+    variant: "Scrimba Pro",
+    duration: "1Y",
+    category: "🎓 Career / Education",
+    description: "Get Scrimba Pro for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "53",
+    name: "No Code MBA",
+    variant: "No Code MBA Unlimited",
+    duration: "1M",
+    category: "🎓 Career / Education",
+    description: "Get No Code MBA Unlimited for 1M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "54",
+    name: "Whizlabs Premium",
+    variant: "Standard",
+    duration: "1M",
+    category: "🎓 Career / Education",
+    description: "Get Whizlabs Premium for 1M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "55",
+    name: "Whizlabs Premium",
+    variant: "Standard",
+    duration: "1Y",
+    category: "🎓 Career / Education",
+    description: "Get Whizlabs Premium for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "56",
+    name: "AhaSlides Essentials",
+    variant: "Standard",
+    duration: "12M",
+    category: "🎓 Career / Education",
+    description: "Get AhaSlides Essentials for 12M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "57",
+    name: "AhaSlides",
+    variant: "AhaSlides Pro",
+    duration: "12M",
+    category: "🎓 Career / Education",
+    description: "Get AhaSlides Pro for 12M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "58",
+    name: "Kickresume Premium",
+    variant: "Standard",
+    duration: "1M",
+    category: "🎓 Career / Education",
+    description: "Get Kickresume Premium for 1M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "59",
+    name: "Mangoosh GRE Premium",
+    variant: "Standard",
+    duration: "1M",
+    category: "🎓 Career / Education",
+    description: "Get Mangoosh GRE Premium for 1M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "60",
+    name: "UFC FightPass",
+    variant: "Standard",
+    duration: "2M",
+    category: "🎓 Career / Education",
+    description: "Get UFC FightPass for 2M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "61",
+    name: "Gemini AI Pro + 2TB Storage",
+    variant: "Standard",
+    duration: "18M",
+    category: "🎓 Career / Education",
+    description: "Get Gemini AI Pro + 2TB Storage for 18M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "62",
+    name: "Adobe Creative Cloud",
+    variant: "Adobe Creative Cloud Max",
+    duration: "1Y",
+    category: "🎨 AI & Design Tools",
+    description: "Get Adobe Creative Cloud Max for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "63",
+    name: "Midjourney",
+    variant: "Midjourney Pro",
+    duration: "1M",
+    category: "🎨 AI & Design Tools",
+    description: "Get Midjourney Pro for 1M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "64",
+    name: "Canva",
+    variant: "Canva Creator",
+    duration: "Lifetime",
+    category: "🎨 AI & Design Tools",
+    description: "Get Canva Creator for Lifetime. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "65",
+    name: "HubSpot",
+    variant: "HubSpot Growth",
+    duration: "1Y",
+    category: "📈 Business & Marketing",
+    description: "Get HubSpot Growth for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "66",
+    name: "Mailchimp Advanced (100K Credits)",
+    variant: "Standard",
+    duration: "1M",
+    category: "📈 Business & Marketing",
+    description: "Get Mailchimp Advanced (100K Credits) for 1M. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "67",
+    name: "SEMrush Guru Plan",
+    variant: "Standard",
+    duration: "1Y",
+    category: "📈 Business & Marketing",
+    description: "Get SEMrush Guru Plan for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "68",
+    name: "Google Drive 2TB Storage",
+    variant: "Standard",
+    duration: "1Y",
+    category: "☁️ Cloud & Storage",
+    description: "Get Google Drive 2TB Storage for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "69",
+    name: "Dropbox Professional 3TB Storage",
+    variant: "Standard",
+    duration: "1Y",
+    category: "☁️ Cloud & Storage",
+    description: "Get Dropbox Professional 3TB Storage for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "70",
+    name: "iCloud+ 2TB",
+    variant: "Standard",
+    duration: "1Y",
+    category: "☁️ Cloud & Storage",
+    description: "Get iCloud+ 2TB for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "71",
+    name: "Jira Premium (Per Seat)",
+    variant: "Standard",
+    duration: "1Y",
+    category: "🧩 Dev & Team Tools",
+    description: "Get Jira Premium (Per Seat) for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "72",
+    name: "GitHub Enterprise (Per Seat)",
+    variant: "Standard",
+    duration: "1Y",
+    category: "🧩 Dev & Team Tools",
+    description: "Get GitHub Enterprise (Per Seat) for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "73",
+    name: "Slack Enterprise",
+    variant: "Slack Enterprise Grid",
+    duration: "1Y",
+    category: "🧩 Dev & Team Tools",
+    description: "Get Slack Enterprise Grid for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "74",
+    name: "AutoCAD 2024",
+    variant: "AutoCAD 2024 Professional",
+    duration: "1Y",
+    category: "🛠 3D / CAD Engineering",
+    description: "Get AutoCAD 2024 Professional for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "75",
+    name: "SolidWorks Premium",
+    variant: "Standard",
+    duration: "1Y",
+    category: "🛠 3D / CAD Engineering",
+    description: "Get SolidWorks Premium for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "76",
+    name: "SketchUp",
+    variant: "SketchUp Pro",
+    duration: "1Y",
+    category: "🛠 3D / CAD Engineering",
+    description: "Get SketchUp Pro for 1Y. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "",
+    status: "Active",
+  },
+  {
+    id: "77",
+    name: "Windows 10",
+    variant: "Windows 10 Pro",
+    duration: "Lifetime",
+    category: "🔐 Software Keys",
+    description: "Get Windows 10 Pro for Lifetime. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Lifetime License",
+    status: "Active",
+  },
+  {
+    id: "78",
+    name: "Windows 11",
+    variant: "Windows 11 Pro",
+    duration: "Lifetime",
+    category: "🔐 Software Keys",
+    description: "Get Windows 11 Pro for Lifetime. Perfect for scaling businesses and professionals.",
+    originalPrice: "199",
+    discountPrice: "29",
+    discountBadge: "85% OFF",
+    badge: "Lifetime License",
+    status: "Active",
+  },
+];
+
 
 export const CATEGORIES = [
     "🔥 New & Premium",
@@ -59,111 +1096,100 @@ const FAQS = [
 const ProductCard = memo(({ tool, handleBuy }: { tool: Tool; handleBuy: (t: Tool) => void }) => {
     const is3D = tool.category === "🛠 3D / CAD Engineering";
     const isLifetime = tool.duration.toLowerCase() === 'lifetime';
-
-    // Remove emojis from category to look clean on the glass badge
-    const cleanCategory = tool.category.replace(/[^\w\s&]/gi, '').trim().split(' ')[0] || "PREMIUM";
-
+    
     return (
         <motion.div
             layout
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.3 }}
-            className={`group flex flex-col relative rounded-3xl border transition-all duration-300 shadow-sm hover:shadow-xl overflow-hidden ${is3D ? "bg-gradient-to-br from-slate-900 via-[#111] to-slate-900 border-slate-700/50 hover:border-brand-medium text-white shadow-brand-medium/10"
-                : "bg-white dark:bg-[#0a0a0a] border-slate-200/80 dark:border-white/10 hover:border-brand-medium/30"
-                }`}
+            initial={ opacity: 0, scale: 0.95 }
+            animate={ opacity: 1, scale: 1 }
+            exit={ opacity: 0, scale: 0.95 }
+            transition={ duration: 0.3 }
+            className={`group relative flex flex-col justify-between p-6 rounded-[2rem] border transition-all duration-300 shadow-sm hover:shadow-2xl ${
+                is3D ? "bg-gradient-to-br from-slate-900 via-[#111] to-slate-900 border-slate-700/50 hover:border-brand-medium text-white" 
+                     : "bg-white dark:bg-[#0a0a0a] border-slate-200 dark:border-white/10 hover:border-brand-medium/50"
+            }`}
         >
-            {/* Top Image Banner Section */}
-            <div className={`relative h-44 md:h-48 w-full flex items-center justify-center overflow-hidden bg-gradient-to-b ${is3D ? 'from-slate-800 to-slate-900' : 'from-slate-50 to-slate-100/50 dark:from-slate-800/80 dark:to-slate-900'}`}>
-
-                {/* Custom Product Image properly fitted */}
-                {tool.image ? (
-                    <div className="w-full h-full p-8 flex items-center justify-center z-0">
-                        <img
-                            src={tool.image}
-                            alt={`${tool.name} preview`}
-                            className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-sm"
-                        />
-                    </div>
-                ) : (
-                    <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center border-b border-black/5 dark:border-white/5 opacity-60">
-                        <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-500">
-                            <span className="text-xl font-black text-slate-300 dark:text-slate-600">{tool.name.charAt(0)}</span>
-                        </div>
-                        <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Image missing</span>
-                    </div>
-                )}
-
-                {/* Top slight gradient to blend badges visibility */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent pointer-events-none z-10" />
-
-                {/* Badges Overlay */}
-                <div className="absolute top-3 left-3 z-20 flex gap-1.5 flex-wrap">
-                    <span className="px-3 py-1.5 rounded-xl bg-black/40 dark:bg-black/60 backdrop-blur-md text-white border border-white/20 text-[9px] font-black uppercase tracking-widest shadow-sm">
-                        {cleanCategory}
-                    </span>
-                    {tool.badge && (
-                        <span className="px-2.5 py-1.5 rounded-xl bg-white/20 dark:bg-white/10 backdrop-blur-md text-white border border-white/20 text-[9px] font-bold uppercase tracking-widest items-center gap-1 hidden sm:flex">
-                            <Sparkles className="w-2.5 h-2.5 text-brand-medium dark:text-brand-cyan" /> {tool.badge}
+            <div className="space-y-4">
+                {/* Header Badges */}
+                <div className="flex items-start justify-between gap-2">
+                    <div className="flex flex-wrap gap-2">
+                        <span className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-widest rounded-full ${
+                            is3D ? "bg-white/10 text-white" : "bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300"
+                        }`}>
+                            {tool.category.split(' ')[0]} {tool.category.substring(tool.category.indexOf(' ') + 1)}
                         </span>
-                    )}
+                        {tool.badge && (
+                            <span className="px-2.5 py-1 text-[10px] font-black uppercase tracking-widest rounded-full bg-brand-medium/10 text-brand-medium border border-brand-medium/20 flex items-center gap-1">
+                                <Sparkles className="w-3 h-3" /> {tool.badge}
+                            </span>
+                        )}
+                    </div>
                 </div>
 
-                {tool.discountBadge && (
-                    <div className="absolute top-3 right-3 z-20">
-                        <span className="px-3 py-1.5 rounded-xl bg-brand-medium text-white text-[9px] font-black uppercase tracking-widest shadow-md">
-                            {tool.discountBadge}
-                        </span>
-                    </div>
-                )}
-
-                <div className="absolute bottom-3 left-3 z-20">
-                    <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#064e3b]/90 backdrop-blur-md text-[#34d399] border border-emerald-500/30 text-[9px] font-bold uppercase tracking-widest shadow-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        VERIFIED {tool.status}
-                    </span>
-                </div>
-            </div>
-
-            {/* Bottom Content Area */}
-            <div className="p-5 md:p-6 flex flex-col flex-grow relative z-10 bg-white dark:bg-transparent">
-                {/* Title & Info */}
-                <div className="pt-1">
-                    <h3 className={`text-[20px] md:text-2xl font-black tracking-tight leading-tight mb-3 group-hover:text-brand-medium transition-colors ${is3D ? "text-white" : "text-slate-900 dark:text-white"}`}>
+                {/* Title & Variant */}
+                <div>
+                    <h3 className={`text-xl md:text-2xl font-black tracking-tight leading-tight mb-2 group-hover:text-brand-medium transition-colors ${is3D ? "text-white" : ""}`}>
                         {tool.name}
                     </h3>
                     <div className="flex flex-wrap items-center gap-2 mb-3">
-                        <span className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold ${is3D ? "bg-white/5 text-slate-300" : "bg-slate-50 dark:bg-slate-800/80 border border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-400"
-                            }`}>
-                            <Layers className="w-3.5 h-3.5 text-slate-400" /> {tool.variant}
+                        <span className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold ${
+                            is3D ? "bg-white/5 text-slate-300" : "bg-slate-50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400"
+                        }`}>
+                            <Layers className="w-3.5 h-3.5" /> {tool.variant}
                         </span>
-                        <span className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold ${isLifetime
-                            ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20"
-                            : is3D ? "bg-white/5 text-slate-300" : "bg-slate-50 dark:bg-slate-800/80 border border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-400"
-                            }`}>
-                            <Clock className="w-3.5 h-3.5 text-slate-400" /> {tool.duration}
+                        <span className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold ${
+                            isLifetime 
+                            ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20" 
+                            : is3D ? "bg-white/5 text-slate-300" : "bg-slate-50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400"
+                        }`}>
+                            <Clock className="w-3.5 h-3.5" /> {tool.duration}
                         </span>
                     </div>
-                    <p className={`text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-3 font-medium mb-6 ${is3D ? "text-slate-400/90" : "text-slate-500 dark:text-slate-400"}`}>
+                    <p className={`text-sm leading-relaxed line-clamp-2 md:line-clamp-3 font-medium ${is3D ? "text-slate-400" : "text-slate-500 dark:text-slate-400"}`}>
                         {tool.description}
                     </p>
                 </div>
-
-                {/* Sub Action */}
-                <div className="mt-auto pt-5 border-t border-slate-100 dark:border-white/5">
-                    <button
-                        onClick={() => handleBuy(tool)}
-                        className="w-full group/btn relative overflow-hidden py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 bg-brand-medium hover:bg-brand-medium/90 text-white shadow-lg shadow-brand-medium/20"
-                    >
-                        <MessageCircle className="w-4 h-4 transition-transform group-hover/btn:-rotate-12" />
-                        <span>Buy via WhatsApp</span>
-                    </button>
-                </div>
             </div>
 
-            {/* Subtle Hover Glow */}
-            <div className="absolute -inset-px rounded-3xl border border-transparent bg-gradient-to-b from-brand-medium/0 to-brand-medium/0 opacity-0 group-hover:opacity-5 pointer-events-none transition-opacity duration-500 z-20" />
+            {/* Pricing & Action */}
+            <div className="pt-6 mt-6 border-t border-slate-100 dark:border-white/5">
+                <div className="flex items-end justify-between mb-4">
+                    <div>
+                        <div className="flex items-center gap-2 mb-1">
+                            <span className="text-xs font-bold text-slate-400 line-through">${tool.originalPrice}</span>
+                            <span className="px-1.5 py-0.5 rounded text-[9px] font-black bg-emerald-500/10 text-emerald-500 uppercase">
+                                {tool.discountBadge}
+                            </span>
+                        </div>
+                        <div className="flex items-end gap-1">
+                            <span className="text-sm font-black text-slate-400 mb-1">$</span>
+                            <span className={`text-3xl font-black tracking-tighter leading-none ${is3D ? "text-white" : "text-slate-900 dark:text-white"}`}>
+                                {tool.discountPrice}
+                            </span>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span className="text-[9px] font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">
+                            {tool.status}
+                        </span>
+                    </div>
+                </div>
+
+                {/* Custom WhatsApp Button to match product data */}
+                <button
+                    onClick={() => handleBuy(tool)}
+                    className={`w-full group/btn relative overflow-hidden py-3.5 md:py-4 rounded-xl font-black text-[10px] md:text-xs uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] ${
+                        is3D ? "bg-brand-medium text-white shadow-lg shadow-brand-medium/20" : "bg-[#0a0a0a] dark:bg-white text-white dark:text-black shadow-xl"
+                    }`}
+                >
+                    <MessageCircle className="w-4 h-4 transition-transform group-hover/btn:-rotate-12" />
+                    <span>Buy via WhatsApp</span>
+                </button>
+            </div>
+            
+            {/* Magic Hover Glow */}
+            <div className="absolute -inset-px rounded-[2rem] border border-transparent bg-gradient-to-b from-brand-medium/0 to-brand-medium/0 opacity-0 group-hover:opacity-10 pointer-events-none transition-opacity duration-500" />
         </motion.div>
     );
 });
@@ -176,7 +1202,7 @@ export default function ToolsMarketplace() {
     const [visibleCount, setVisibleCount] = useState(12);
     const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
-    const whatsappNumber = "917900310428"; // Keep valid whatsapp number
+    const whatsappNumber = "917900310428"; // You can change this if needed
 
     useEffect(() => {
         const storedTheme = localStorage.getItem('theme');
@@ -207,15 +1233,15 @@ export default function ToolsMarketplace() {
     // --- Memoized Filtering Logic ---
     const filteredTools = useMemo(() => {
         return TOOLS.filter(tool => {
-            const matchesSearch = tool.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                tool.variant.toLowerCase().includes(searchTerm.toLowerCase());
+            const matchesSearch = tool.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  tool.variant.toLowerCase().includes(searchTerm.toLowerCase());
             const matchesCategory = selectedCategory === 'All' || tool.category === selectedCategory;
             return matchesSearch && matchesCategory;
         });
     }, [searchTerm, selectedCategory]);
 
     const displayedTools = filteredTools.slice(0, visibleCount);
-
+    
     // Reset visible count when filters change
     useEffect(() => {
         setVisibleCount(12);
@@ -230,83 +1256,51 @@ export default function ToolsMarketplace() {
             <Navbar isDark={isDarkMode} toggleTheme={toggleTheme} />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-16 md:pt-48 md:pb-24 px-4 md:px-6 overflow-hidden">
+            <section className="relative pt-32 pb-12 md:pt-48 md:pb-20 px-4 md:px-6 overflow-hidden">
                 <div className="absolute inset-0 pointer-events-none -z-10">
                     <motion.div
-                        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
-                        transition={{ duration: 15, repeat: Infinity }}
+                        animate={ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }
+                        transition={ duration: 15, repeat: Infinity }
                         className="absolute -top-[10%] -left-[5%] w-[600px] h-[600px] bg-brand-medium/20 blur-[120px] rounded-full"
                     />
                 </div>
 
-                <div className="max-w-5xl mx-auto text-center space-y-8 relative">
+                <div className="max-w-7xl mx-auto text-center space-y-8 relative">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-medium/10 dark:bg-brand-medium/10 border border-brand-medium/20 dark:border-brand-medium/20 text-brand-medium dark:text-brand-cyan text-xs font-bold uppercase tracking-wider"
+                        initial={ opacity: 0, y: 20 }
+                        animate={ opacity: 1, y: 0 }
+                        className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-medium/10 border border-brand-medium/20 text-brand-medium dark:text-brand-cyan text-xs font-black uppercase tracking-[0.3em]"
                     >
-                        <Sparkles className="w-3.5 h-3.5" />
-                        <span>LIMITED TIME MARKETPLACE</span>
+                        <Sparkles className="w-4 h-4" />
+                        <span>Huge Inventory Restock</span>
                     </motion.div>
 
                     <div className="space-y-6">
                         <motion.h1
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-[-0.02em] leading-[1.05] text-slate-900 dark:text-white uppercase"
+                            initial={ opacity: 0, y: 30 }
+                            animate={ opacity: 1, y: 0 }
+                            transition={ delay: 0.1 }
+                            className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase"
                         >
-                            GET UP TO <span className="text-brand-medium italic font-black">95% OFF</span><br />
-                            PREMIUM BUSINESS <span className="text-brand-medium">TOOLS.</span>
+                            The Ultimate <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-sky via-brand-medium to-brand-cyan">Tools Marketplace.</span>
                         </motion.h1>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed relative"
+                        <motion.p
+                            initial={ opacity: 0, y: 20 }
+                            animate={ opacity: 1, y: 0 }
+                            transition={ delay: 0.2 }
+                            className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed"
                         >
-                            Access high-value business software, templates, and<br className="hidden md:block" /> digital tools at unbeatable discounted prices. All tools are<br className="hidden md:block" /> verified, ready-to-use, and delivered quickly.
-                            <div className="absolute left-[10%] md:left-[15%] bottom-2 md:bottom-4 w-1.5 h-1.5 rounded-full bg-brand-medium hidden md:block" />
-                        </motion.div>
+                            Explore hundreds of highly sought-after digital tools, premium memberships, and software keys for startups and professionals.
+                        </motion.p>
                     </div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8"
-                    >
-                        <button
-                            onClick={() => document.getElementById('marketplace-grid')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="w-full sm:w-auto bg-brand-medium hover:bg-brand-medium/90 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wide text-sm flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-medium/25 hover:shadow-xl hover:-translate-y-0.5"
-                        >
-                            BROWSE TOOLS <ArrowRight className="w-4 h-4" />
-                        </button>
-
-                        <div className="flex items-center gap-4">
-                            <div className="flex -space-x-3">
-                                <img src="https://i.pravatar.cc/100?img=1" alt="User" className="w-10 h-10 rounded-full border-2 border-white dark:border-[#050608] object-cover shadow-sm" />
-                                <img src="https://i.pravatar.cc/100?img=2" alt="User" className="w-10 h-10 rounded-full border-2 border-white dark:border-[#050608] object-cover shadow-sm" />
-                                <img src="https://i.pravatar.cc/100?img=3" alt="User" className="w-10 h-10 rounded-full border-2 border-white dark:border-[#050608] object-cover shadow-sm" />
-                                <img src="https://i.pravatar.cc/100?img=4" alt="User" className="w-10 h-10 rounded-full border-2 border-white dark:border-[#050608] object-cover shadow-sm" />
-                            </div>
-                            <div className="text-left flex flex-col justify-center">
-                                <div className="flex items-center gap-1 text-[11px] font-black uppercase tracking-wider text-slate-900 dark:text-white">
-                                    Trusted by 500+
-                                </div>
-                                <div className="text-[10px] font-medium text-slate-500 dark:text-slate-400">
-                                    Scaling Businesses Globally
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
                 </div>
             </section>
 
             {/* Horizontal Category Tabs */}
             <section className="sticky top-20 z-40 px-4 md:px-6 mb-8" id="marketplace-grid">
                 <div className="max-w-7xl mx-auto glass-morphism p-3 md:p-4 rounded-[2rem] border border-slate-200 dark:border-white/10 shadow-xl backdrop-blur-xl dark:bg-black/60 bg-white/80 overflow-hidden">
-
+                    
                     {/* Search Bar inside sticky header */}
                     <div className="relative mb-4 group">
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-brand-medium transition-colors" />
@@ -320,34 +1314,30 @@ export default function ToolsMarketplace() {
                     </div>
 
                     {/* Scrollable Category Tabs */}
-                    <div className="flex overflow-x-auto custom-scrollbar gap-2 pb-2">
+                    <div className="flex overflow-x-auto hide-scrollbar gap-2 pb-2">
                         <button
                             onClick={() => setSelectedCategory('All')}
-                            className={`flex-shrink-0 px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${selectedCategory === 'All'
-                                ? "bg-[#1f2937] text-white shadow-lg relative overflow-hidden"
+                            className={`flex-shrink-0 px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                                selectedCategory === 'All' 
+                                ? "bg-slate-900 text-white dark:bg-white dark:text-black shadow-lg" 
                                 : "bg-slate-100 text-slate-500 hover:bg-slate-200 dark:bg-white/5 dark:text-slate-400 dark:hover:bg-white/10"
-                                }`}
+                            }`}
                         >
-                            {selectedCategory === 'All' && (
-                                <div className="absolute inset-0 bg-[#3b82f6]/20 w-16 h-16 rounded-full blur-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-                            )}
-                            <span className="relative z-10 flex items-center gap-2">🌍 All Tools</span>
+                            🌍 All Tools
                         </button>
                         {CATEGORIES.map(cat => (
                             <button
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
-                                className={`flex-shrink-0 px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${selectedCategory === cat
-                                    ? "bg-[#1f2937] text-white shadow-lg relative overflow-hidden"
+                                className={`flex-shrink-0 px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                                    selectedCategory === cat 
+                                    ? "bg-slate-900 text-white dark:bg-white dark:text-black shadow-lg" 
                                     : "bg-slate-100 text-slate-500 hover:bg-slate-200 dark:bg-white/5 dark:text-slate-400 dark:hover:bg-white/10"
-                                    }`}
+                                }`}
                             >
-                                {selectedCategory === cat && (
-                                    <div className="absolute inset-0 bg-[#3b82f6]/20 w-16 h-16 rounded-full blur-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-                                )}
-                                <span className="relative z-10">{cat}</span>
+                                {cat}
                             </button>
-                        ))}
+                        )))}
                     </div>
                 </div>
             </section>
@@ -357,17 +1347,17 @@ export default function ToolsMarketplace() {
                 <div className="max-w-7xl mx-auto">
                     {displayedTools.length > 0 ? (
                         <>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                                 <AnimatePresence mode="popLayout">
                                     {displayedTools.map((tool) => (
                                         <ProductCard key={tool.id} tool={tool} handleBuy={handleBuyViaWhatsApp} />
                                     ))}
                                 </AnimatePresence>
                             </div>
-
+                            
                             {filteredTools.length > visibleCount && (
                                 <div className="mt-16 text-center">
-                                    <button
+                                    <button 
                                         onClick={loadMore}
                                         className="px-8 py-4 bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 rounded-2xl text-sm font-black uppercase tracking-widest transition-all text-slate-900 dark:text-white inline-flex items-center gap-2"
                                     >
@@ -410,16 +1400,16 @@ export default function ToolsMarketplace() {
                                     className="w-full p-8 flex items-center justify-between text-left group"
                                 >
                                     <span className="font-bold text-lg uppercase tracking-tight group-hover:text-brand-medium transition-colors">{faq.q}</span>
-                                    <motion.div animate={{ rotate: openFAQ === i ? 180 : 0 }}>
+                                    <motion.div animate={ rotate: openFAQ === i ? 180 : 0 }>
                                         <ChevronDown className="w-6 h-6 text-brand-medium" />
                                     </motion.div>
                                 </button>
                                 <AnimatePresence>
                                     {openFAQ === i && (
                                         <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: 'auto', opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
+                                            initial={ height: 0, opacity: 0 }
+                                            animate={ height: 'auto', opacity: 1 }
+                                            exit={ height: 0, opacity: 0 }
                                             className="overflow-hidden"
                                         >
                                             <div className="p-8 pt-0 text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">
@@ -438,10 +1428,10 @@ export default function ToolsMarketplace() {
             <Footer />
 
             <motion.a
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                initial={ scale: 0, opacity: 0 }
+                animate={ scale: 1, opacity: 1 }
+                whileHover={ scale: 1.1 }
+                whileTap={ scale: 0.9 }
                 href={`https://wa.me/${whatsappNumber}?text=Hi Preet Tech, I have a question about the Business Tools Marketplace.`}
                 target="_blank"
                 className="fixed bottom-8 right-8 z-[100] w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center group"

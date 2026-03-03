@@ -577,7 +577,7 @@ export default function PartnershipMarketing() {
                             <span className="text-brand-medium dark:text-brand-cyan text-[11px] font-black uppercase tracking-[0.4em] mb-4 block">Target Industries</span>
                             <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-none text-slate-900 dark:text-white">
                                 Built for <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-medium italic">Leaders.</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-medium italic pr-4">Leaders.</span>
                             </h2>
                         </div>
                         <p className="text-slate-500 dark:text-slate-400 max-w-sm text-lg font-medium">

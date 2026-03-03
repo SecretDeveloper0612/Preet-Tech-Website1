@@ -27,7 +27,7 @@ const QUICK_ACTIONS = [
 export default function ChatWidget() {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
-        { role: 'assistant', content: "Welcome to Preet Tech. I am your Digital Architect assistant. How can I help you build the future today?" }
+        { role: 'assistant', content: "Welcome to Preet Tech. I am your Digital Assistant. How can I help you build the future today?" }
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);

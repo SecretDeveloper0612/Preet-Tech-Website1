@@ -128,7 +128,7 @@ export const BLOG_POSTS: BlogPost[] = [
         slug: "scalable-backend-systems-startups",
         excerpt: "Architecting for success: How startups can build backend infrastructures that grow with their user base without breaking the bank.",
         content: `
-      <h2>Architecture for Growth</h2>
+      <h2>Infrastructure for Growth</h2>
       <p>Many startups fail not because of a lack of users, but because their infrastructure can't handle the growth. Building for scalability from day one is essential.</p>
 
       <h3>1. Microservices vs. Monoliths</h3>
@@ -149,7 +149,7 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "Feb 15, 2026",
         readTime: "8 min read",
         featuredImage: "https://images.unsplash.com/photo-1558494949-ef8b5655d939?q=80&w=2340&auto=format&fit=crop",
-        tags: ["Backend", "Architecture", "Scaling"],
+        tags: ["Backend", "Infrastructure", "Scaling"],
         seo: {
             title: "Building Scalable Backend Systems for Startups",
             description: "Learn the principles of scalable backend architecture. Microservices, database optimization, and cloud strategies for startups.",

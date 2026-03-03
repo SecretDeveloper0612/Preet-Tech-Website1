@@ -25,26 +25,26 @@ import Link from 'next/link';
 
 const SERVICE_CATEGORIES = [
     {
-        name: "Digital Engineering",
+        name: "Development",
         tag: "TECH_CORE",
         services: [
             {
-                title: "Web Development",
-                description: "Strategic digital headquarters architected for sub-100ms speeds. We build the foundation of your digital authority using React, Next.js, and modern stacks.",
+                title: "Eco Website",
+                description: "Cost-effective, high-performance web presence designed for efficiency. Perfect for startups and small businesses establishing their digital footprint without compromising quality.",
                 icon: Globe,
-                tag: "WEB_01",
+                tag: "WEB_ECO_01",
                 color: "from-blue-500 to-cyan-400",
-                href: "/services/website-development",
+                href: "/services/eco-website",
                 image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
             },
             {
-                title: "App Development",
-                description: "Native and cross-platform mobility solutions built for performance, retaining users through frictionless UX logic and high-performance native bridges.",
-                icon: Smartphone,
-                tag: "APP_02",
+                title: "Advance Website",
+                description: "Strategic digital headquarters architected for sub-100ms speeds. We build the foundation of your digital authority using React, Next.js, and modern stacks.",
+                icon: Code2,
+                tag: "WEB_ADV_02",
                 color: "from-cyan-500 to-blue-500",
-                href: "/services/app-development",
-                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800"
+                href: "/services/advance-website",
+                image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=800"
             },
             {
                 title: "Software Development",
@@ -56,27 +56,18 @@ const SERVICE_CATEGORIES = [
                 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
             },
             {
-                title: "Cloud Solutions",
-                description: "Cloud-native architectures and DevOps strategies for hyper-scale. We optimize your infrastructure for reliability, security, and cost-efficiency.",
-                icon: Cloud,
-                tag: "CLOUD_04",
+                title: "App Development",
+                description: "Native and cross-platform mobility solutions built for performance, retaining users through frictionless UX logic and high-performance native bridges.",
+                icon: Smartphone,
+                tag: "APP_04",
                 color: "from-blue-400 to-indigo-500",
-                href: "/services/cloud-solutions",
-                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
-            },
-            {
-                title: "Premium Tools Marketplace",
-                description: "Access high-value enterprise software licenses, templates, and digital tools at up to 95% off. Verified premium access delivered via WhatsApp confirmation.",
-                icon: Cpu,
-                tag: "DEALS_05",
-                color: "from-indigo-600 to-cyan-500",
-                href: "/services/business-tools",
-                image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+                href: "/services/app-development",
+                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800"
             }
         ]
     },
     {
-        name: "Marketing & Growth",
+        name: "Marketing",
         tag: "ROI_MATRIX",
         services: [
             {
@@ -105,6 +96,15 @@ const SERVICE_CATEGORIES = [
                 color: "from-emerald-600 to-teal-500",
                 href: "/services/partnership-marketing",
                 image: "https://images.unsplash.com/photo-1556761175-5973bcad58bc?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                title: "Content Creation",
+                description: "High-fidelity cinematic and digital content engineered to capture attention and communicate complex brand narratives with precision.",
+                icon: Binary,
+                tag: "MEDIA_11",
+                color: "from-rose-600 to-orange-500",
+                href: "/services/content-creation",
+                image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&q=80&w=800"
             }
         ]
     },
@@ -122,31 +122,13 @@ const SERVICE_CATEGORIES = [
                 image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=800"
             },
             {
-                title: "UI/UX Design",
-                description: "Visual excellence met with psychological precision. We create intuitive digital journeys that delight users and drive measurable business value.",
-                icon: Palette,
-                tag: "VISUAL_10",
-                color: "from-red-500 to-rose-600",
-                href: "/services/ui-ux-design",
-                image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=800"
-            },
-            {
-                title: "Content Creation",
-                description: "High-fidelity cinematic and digital content engineered to capture attention and communicate complex brand narratives with precision.",
-                icon: Binary,
-                tag: "MEDIA_11",
-                color: "from-rose-600 to-orange-500",
-                href: "/services/content-creation",
-                image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&q=80&w=800"
-            },
-            {
-                title: "IT Consulting",
-                description: "Strategic technology roadmapping and architectural auditing. We help you navigate the complex tech landscape to achieve long-term goals.",
+                title: "Premium Tools",
+                description: "Access high-value enterprise software licenses, templates, and digital tools at up to 95% off. Verified premium access delivered via WhatsApp confirmation.",
                 icon: Cpu,
-                tag: "STRATEGY_12",
-                color: "from-orange-400 to-red-500",
-                href: "/services/it-consulting",
-                image: "https://images.unsplash.com/photo-1454165833767-151671e548d1?auto=format&fit=crop&q=80&w=800"
+                tag: "DEALS_05",
+                color: "from-indigo-600 to-cyan-500",
+                href: "/services/business-tools",
+                image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
             }
         ]
     }
@@ -175,77 +157,123 @@ export default function ServicesPage() {
             <Navbar isDark={theme === 'dark'} toggleTheme={toggleTheme} />
 
             {/* Hero Section */}
-            <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden py-24">
+            <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden pt-32 pb-24 bg-gradient-to-b from-transparent to-slate-50/50 dark:from-transparent dark:to-slate-900/50">
                 {/* Immersive Background */}
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-medium/10 rounded-full blur-[120px] animate-pulse" />
-                    <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-brand-cyan/10 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '3s' }} />
+                    <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-brand-medium/10 rounded-full blur-[100px] animate-pulse" />
+                    <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-cyan/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
 
                     {/* Grid Pattern */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+                </div>
+
+                {/* Floating Elements Background */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                    <motion.div
+                        animate={{ y: [-20, 20, -20], x: [-10, 10, -10], rotate: [0, 10, 0] }}
+                        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute top-[20%] left-[10%] xl:left-[15%] w-16 h-16 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-2xl flex items-center justify-center text-brand-medium shadow-2xl"
+                    >
+                        <Code2 size={24} />
+                    </motion.div>
+
+                    <motion.div
+                        animate={{ y: [20, -20, 20], x: [10, -10, 10], rotate: [0, -10, 0] }}
+                        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                        className="absolute top-[25%] right-[10%] xl:right-[15%] w-20 h-20 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-full flex items-center justify-center text-brand-cyan shadow-2xl"
+                    >
+                        <Rocket size={32} />
+                    </motion.div>
+
+                    <motion.div
+                        animate={{ y: [-15, 15, -15], rotate: [0, 15, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                        className="absolute bottom-[20%] left-[15%] xl:left-[20%] w-14 h-14 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-xl flex items-center justify-center text-rose-500 shadow-2xl hidden md:flex"
+                    >
+                        <Palette size={20} />
+                    </motion.div>
+
+                    <motion.div
+                        animate={{ y: [15, -15, 15], rotate: [0, -15, 0] }}
+                        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                        className="absolute bottom-[25%] right-[15%] xl:right-[20%] w-16 h-16 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-2xl flex items-center justify-center text-emerald-500 shadow-2xl hidden md:flex"
+                    >
+                        <BarChart3 size={24} />
+                    </motion.div>
                 </div>
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10 w-full text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="inline-flex items-center gap-3 mb-10 px-4 py-2 bg-brand-medium/5 border border-brand-medium/10 rounded-full"
-                    >
-                        <div className="w-2 h-2 rounded-full bg-brand-medium animate-ping" />
-                        <span className="text-brand-medium font-mono text-[10px] font-black uppercase tracking-[0.4em]">Capabilities_Library_v.2.0</span>
-                    </motion.div>
 
-                    <div className="relative inline-block">
+
+                    <div className="relative inline-block w-full">
                         <motion.h1
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-[15vw] md:text-[12rem] font-black text-foreground uppercase tracking-tighter leading-[0.8] mb-12 select-none"
+                            className="text-[14vw] md:text-[10rem] lg:text-[11rem] font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-[0.85] mb-8 select-none flex flex-col items-center justify-center"
                         >
-                            Our <br />
-                            <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-medium via-brand-cyan to-brand-medium italic font-black">
-                                Services.
-                                {/* Floating Accent */}
-                                <motion.div
-                                    animate={{ y: [0, -10, 0] }}
-                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                    className="absolute -top-4 -right-8 w-12 h-12 bg-brand-medium/20 rounded-xl blur-xl hidden md:block"
-                                />
-                            </span>
+                            <motion.span
+                                initial={{ opacity: 0, y: 40 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                className="inline-block"
+                            >
+                                OUR
+                            </motion.span>
+                            <motion.span
+                                initial={{ opacity: 0, y: 40 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                                className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-medium via-cyan-400 to-blue-600 dark:from-brand-medium dark:via-cyan-300 dark:to-blue-500 p-2 md:p-4"
+                            >
+                                SERVICES.
+                            </motion.span>
                         </motion.h1>
                     </div>
 
-                    <div className="max-w-2xl mx-auto">
+                    <div className="max-w-3xl mx-auto relative cursor-default">
+                        {/* Decorative blur behind text */}
+                        <div className="absolute inset-0 bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl rounded-full -z-10" />
+
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.3 }}
-                            className="text-lg md:text-xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-12"
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="text-lg md:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-12 relative z-10 px-4"
                         >
-                            Architecting digital excellence through precision engineering and cinematic design.
-                            Explore our multi-disciplinary approach to solving complex digital challenges.
+                            We architect digital excellence through <span className="text-brand-medium font-semibold">precision engineering</span> and <span className="text-brand-cyan font-semibold">cinematic design</span>. Seamlessly blending logic with visual flair to solve complex challenges.
                         </motion.p>
 
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 1 }}
-                            className="flex items-center justify-center gap-8"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.6, duration: 0.5 }}
+                            className="flex flex-col items-center justify-center gap-8"
                         >
-                            <div className="h-[1px] w-12 bg-slate-200 dark:bg-white/10" />
-                            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-[0.3em] font-black">Scroll_to_Initialize</span>
-                            <div className="h-[1px] w-12 bg-slate-200 dark:bg-white/10" />
+                            <Link href="#services-grid" className="group flex items-center gap-3 px-8 py-4 bg-[#3f8fcc] text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-brand-medium/20 text-center">
+                                Explore Capabilities
+                                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                                    <ArrowRight size={16} />
+                                </div>
+                            </Link>
+
+                            <div className="flex items-center gap-6 opacity-60">
+                                <div className="h-[1px] w-8 md:w-16 bg-gradient-to-r from-transparent to-slate-400 dark:to-slate-500" />
+                                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                                    <motion.div
+                                        animate={{ y: [0, 5, 0] }}
+                                        transition={{ repeat: Infinity, duration: 1.5 }}
+                                    >
+                                        Scroll Down
+                                    </motion.div>
+                                </span>
+                                <div className="h-[1px] w-8 md:w-16 bg-gradient-to-l from-transparent to-slate-400 dark:to-slate-500" />
+                            </div>
                         </motion.div>
                     </div>
                 </div>
 
-                {/* Subtle Technical Accents */}
-                <div className="absolute bottom-10 left-10 hidden xl:block opacity-20">
-                    <pre className="text-brand-medium font-mono text-[8px] leading-tight">
-                        {`INTERFACE_SECURE: TRUE\nNODE_SYNC: 100%\nLATENCY: 12ms\nPROTOCOL: GENESIS_OS`}
-                    </pre>
-                </div>
+
+
+                {/* ID anchor for scrolling */}
+                <div id="services-grid" className="absolute bottom-0" />
             </section>
 
             {/* Services Sections by Category */}

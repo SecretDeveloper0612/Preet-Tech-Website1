@@ -8,7 +8,7 @@ import {
     ShieldCheck, Zap, ArrowRight, CheckCircle2, ArrowUpRight, Check,
     Building2, BarChart3, Activity, Command, Hexagon, Component, Key, Lock, Network, Maximize,
     Users, ShoppingCart, Home, GraduationCap, HeartPulse, PieChart, Focus, Map, Layers, Fingerprint, Eye, Sliders, Shield, Cloud, CreditCard, Plug, Workflow, RefreshCw, Bot, FileCode2,
-    Gauge, Target, Send, Phone, Mail, User, Briefcase, Calendar, Star, IndianRupee, Plus, Minus, HelpCircle, Palette, Clock, MessageSquare, Wrench, LifeBuoy, BadgePercent, TrendingUp, ExternalLink, ChevronRight, GitBranch, TestTube2, Figma, Container
+    Gauge, Target, Send, Phone, Mail, User, Briefcase, Calendar, Star, IndianRupee, Plus, Minus, HelpCircle, Palette, Clock, MessageSquare, Wrench, LifeBuoy, BadgePercent, TrendingUp, ExternalLink, ChevronRight, GitBranch, TestTube2, Figma, Container, Play, X
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -24,6 +24,7 @@ export default function AdvancedWebsiteDevelopment() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isVideoOpen, setIsVideoOpen] = useState(false);
 
     useEffect(() => {
         setMounted(true);
@@ -51,7 +52,7 @@ export default function AdvancedWebsiteDevelopment() {
 
 
     return (
-        <main ref={containerRef} className="relative z-10 selection:bg-brand-cyan/20 overflow-x-hidden bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-500 font-sans">
+        <main ref={containerRef} className="relative z-10 selection:bg-[#3f8fcc]/20 overflow-x-hidden bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-500 font-sans">
             <Navbar isDark={isDarkMode} toggleTheme={toggleTheme} />
 
             {/* Global Ambient Tech Grid */}
@@ -73,7 +74,7 @@ export default function AdvancedWebsiteDevelopment() {
                             opacity: [0.15, 0.3, 0.15]
                         }}
                         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-[10%] -right-[10%] w-[700px] h-[700px] bg-brand-cyan/20 dark:bg-brand-cyan/30 blur-[180px] rounded-full"
+                        className="absolute top-[10%] -right-[10%] w-[700px] h-[700px] bg-[#3f8fcc]/20 dark:bg-[#3f8fcc]/30 blur-[180px] rounded-full"
                     />
                     <motion.div
                         animate={{
@@ -100,7 +101,7 @@ export default function AdvancedWebsiteDevelopment() {
                     <motion.div
                         animate={{ opacity: [0.1, 0.3, 0.1] }}
                         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(95,211,230,0.1)_0%,transparent_60%)] will-change-opacity"
+                        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(63,143,204,0.1)_0%,transparent_60%)] will-change-opacity"
                     />
 
                     {/* Floating Particle Stars */}
@@ -118,13 +119,13 @@ export default function AdvancedWebsiteDevelopment() {
                                 ease: "easeInOut",
                                 delay: Math.random() * 5
                             }}
-                            className="absolute rounded-full bg-brand-cyan/50"
+                            className="absolute rounded-full bg-[#3f8fcc]/50"
                             style={{
                                 width: `${Math.random() * 3 + 1}px`,
                                 height: `${Math.random() * 3 + 1}px`,
                                 left: `${Math.random() * 100}%`,
                                 top: `${Math.random() * 100}%`,
-                                boxShadow: isDarkMode ? '0 0 8px rgba(95,211,230,0.4)' : 'none'
+                                boxShadow: isDarkMode ? '0 0 8px rgba(63,143,204,0.4)' : 'none'
                             }}
                         />
                     ))}
@@ -141,7 +142,7 @@ export default function AdvancedWebsiteDevelopment() {
                                 ease: "linear",
                                 delay: i * 4
                             }}
-                            className="absolute text-[9px] font-mono text-brand-cyan/20 whitespace-nowrap tracking-[0.3em] hidden lg:block"
+                            className="absolute text-[9px] font-mono text-[#3f8fcc]/20 whitespace-nowrap tracking-[0.3em] hidden lg:block"
                             style={{ left: `${15 + i * 22}%` }}
                         >
                             {Array(25).fill(0).map(() => Math.round(Math.random())).join('')}
@@ -152,12 +153,12 @@ export default function AdvancedWebsiteDevelopment() {
                     <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-brand-cyan/5 rounded-full hidden lg:block will-change-transform"
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-[#3f8fcc]/5 rounded-full hidden lg:block will-change-transform"
                     />
                     <motion.div
                         animate={{ rotate: -360 }}
                         transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] border border-dashed border-brand-cyan/[0.03] rounded-full hidden lg:block will-change-transform"
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] border border-dashed border-[#3f8fcc]/[0.03] rounded-full hidden lg:block will-change-transform"
                     />
                 </div>
 
@@ -167,16 +168,16 @@ export default function AdvancedWebsiteDevelopment() {
 
                         {/* Status Badge */}
                         <motion.div
-                            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-                            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-xl shadow-lg"
                         >
                             <span className="relative flex h-2.5 w-2.5">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75" />
-                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-cyan" />
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3f8fcc] opacity-75" />
+                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#3f8fcc]" />
                             </span>
-                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-slate-300">Advanced Development Framework</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-slate-300">Advanced Development</span>
                         </motion.div>
 
                         {/* Title with Staggered Word Animation */}
@@ -186,24 +187,24 @@ export default function AdvancedWebsiteDevelopment() {
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-[4.5rem] font-bold tracking-tight leading-[1.05]"
                         >
                             <motion.span
-                                initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
-                                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                                initial={{ opacity: 0, y: 40 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-                                className="block"
+                                className="block whitespace-nowrap"
                             >
                                 High-Performance
                             </motion.span>
                             <motion.span
-                                initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
-                                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                                initial={{ opacity: 0, y: 40 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                                className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-blue-500 animate-gradient-x"
+                                className="block text-transparent bg-clip-text bg-gradient-to-r from-[#3f8fcc] to-blue-500 animate-gradient-x"
                             >
                                 Custom Websites
                             </motion.span>
                             <motion.span
-                                initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
-                                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                                initial={{ opacity: 0, y: 40 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
                                 className="block"
                             >
@@ -213,8 +214,8 @@ export default function AdvancedWebsiteDevelopment() {
 
                         {/* Description */}
                         <motion.p
-                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
-                            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                             className="text-base md:text-xl text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed"
                         >
@@ -223,18 +224,16 @@ export default function AdvancedWebsiteDevelopment() {
 
                         {/* CTA Buttons */}
                         <motion.div
-                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
-                            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.75, ease: "easeOut" }}
                             className="flex flex-col sm:flex-row gap-5"
                         >
-                            <a href="#contact" className="px-6 sm:px-10 py-4 sm:py-5 overflow-hidden gap-3 text-xs sm:text-sm group bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
-                                {/* Shimmer effect on hover */}
-                                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                                <span className="relative z-10 flex items-center gap-2">Book Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
-                            </a>
-                            <a href="#portfolio" className="px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
-                                View Our Work
+                            <button onClick={(e) => { e.preventDefault(); setIsVideoOpen(true); }} className="px-8 sm:px-10 py-4 sm:py-4 gap-2.5 text-base sm:text-lg group bg-[#3f8fcc] text-white hover:bg-[#3f8fcc]/90 font-bold rounded-[2rem] transition-transform hover:-translate-y-0.5 shadow-[0_8px_30px_rgb(63,143,204,0.3)] flex items-center justify-center relative overflow-hidden focus:outline-none">
+                                <span className="relative z-10 flex items-center gap-2">Watch Demo <Play className="w-5 h-5 fill-current" strokeWidth={0} /></span>
+                            </button>
+                            <a href="#pricing" className="px-8 sm:px-10 py-4 sm:py-4 text-base sm:text-lg bg-white dark:bg-[#050608] border border-slate-200 dark:border-white/10 text-[#1a2b4b] dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 font-bold rounded-[2rem] transition-transform hover:-translate-y-0.5 shadow-sm flex items-center justify-center">
+                                View Pricing
                             </a>
                         </motion.div>
 
@@ -251,7 +250,7 @@ export default function AdvancedWebsiteDevelopment() {
                                     initial={{ opacity: 0, scale: 0.5, y: 20 }}
                                     animate={{ opacity: 1, scale: 1, y: 0 }}
                                     transition={{ delay: 1.3 + i * 0.1, type: 'spring', stiffness: 200 }}
-                                    className="px-4 py-2 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:border-brand-cyan/50 hover:text-brand-cyan transition-colors cursor-default"
+                                    className="px-4 py-2 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:border-[#3f8fcc]/50 hover:text-[#3f8fcc] transition-colors cursor-default"
                                 >
                                     {tech}
                                 </motion.span>
@@ -265,7 +264,7 @@ export default function AdvancedWebsiteDevelopment() {
                         <motion.div
                             animate={{ opacity: [0.2, 0.4, 0.2] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute -inset-8 bg-gradient-to-br from-brand-cyan/20 via-indigo-500/10 to-brand-cyan/20 blur-[60px] rounded-[3rem] -z-10 will-change-opacity"
+                            className="absolute -inset-8 bg-gradient-to-br from-[#3f8fcc]/20 via-indigo-500/10 to-[#3f8fcc]/20 blur-[60px] rounded-[3rem] -z-10 will-change-opacity"
                         />
 
                         {/* Custom Lead Form */}
@@ -273,10 +272,10 @@ export default function AdvancedWebsiteDevelopment() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                            className="relative z-10 w-full bg-white dark:bg-[#0a0f18] border border-slate-200  dark:border-white/10 rounded-[2.5rem] p-8 sm:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_60px_-15px_rgba(95,211,230,0.05)] overflow-hidden group"
+                            className="relative z-10 w-full bg-white dark:bg-[#0a0f18] border border-slate-200  dark:border-white/10 rounded-[2.5rem] p-8 sm:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_60px_-15px_rgba(63,143,204,0.05)] overflow-hidden group"
                         >
                             {/* Decorative background gradients */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-cyan/5 dark:bg-brand-cyan/10 blur-[60px] rounded-full pointer-events-none transition-colors duration-1000 group-hover:bg-brand-cyan/10 dark:group-hover:bg-brand-cyan/20" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#3f8fcc]/5 dark:bg-[#3f8fcc]/10 blur-[60px] rounded-full pointer-events-none transition-colors duration-1000 group-hover:bg-[#3f8fcc]/10 dark:group-hover:bg-[#3f8fcc]/20" />
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/5 dark:bg-indigo-500/10 blur-[60px] rounded-full pointer-events-none transition-colors duration-1000 group-hover:bg-indigo-500/10 dark:group-hover:bg-indigo-500/20" />
 
                             <div className="relative z-10">
@@ -305,10 +304,10 @@ export default function AdvancedWebsiteDevelopment() {
                                         <div className="space-y-2">
                                             <label className="text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">Full Name</label>
                                             <div className="relative group/field">
-                                                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan">
-                                                    <User className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors" strokeWidth={1.5} />
+                                                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-[#3f8fcc]">
+                                                    <User className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-[#3f8fcc] transition-colors" strokeWidth={1.5} />
                                                 </div>
-                                                <input required type="text" className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-4 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium placeholder:text-slate-300 dark:placeholder:text-slate-600 hover:border-slate-300 dark:hover:border-white/20" placeholder="John Doe" />
+                                                <input required type="text" className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-4 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-[#3f8fcc]/50 focus:border-[#3f8fcc]/50 transition-all font-medium placeholder:text-slate-300 dark:placeholder:text-slate-600 hover:border-slate-300 dark:hover:border-white/20" placeholder="John Doe" />
                                             </div>
                                         </div>
 
@@ -316,10 +315,10 @@ export default function AdvancedWebsiteDevelopment() {
                                         <div className="space-y-2">
                                             <label className="text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">Business Name</label>
                                             <div className="relative group/field">
-                                                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan">
-                                                    <Building2 className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors" strokeWidth={1.5} />
+                                                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-[#3f8fcc]">
+                                                    <Building2 className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-[#3f8fcc] transition-colors" strokeWidth={1.5} />
                                                 </div>
-                                                <input type="text" className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-4 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium placeholder:text-slate-300 dark:placeholder:text-slate-600 hover:border-slate-300 dark:hover:border-white/20" placeholder="Your Company Ltd." />
+                                                <input type="text" className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-4 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-[#3f8fcc]/50 focus:border-[#3f8fcc]/50 transition-all font-medium placeholder:text-slate-300 dark:placeholder:text-slate-600 hover:border-slate-300 dark:hover:border-white/20" placeholder="Your Company Ltd." />
                                             </div>
                                         </div>
 
@@ -328,23 +327,23 @@ export default function AdvancedWebsiteDevelopment() {
                                             <div className="space-y-2">
                                                 <label className="text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">Email</label>
                                                 <div className="relative group/field">
-                                                    <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan">
-                                                        <Mail className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors" strokeWidth={1.5} />
+                                                    <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-[#3f8fcc]">
+                                                        <Mail className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-[#3f8fcc] transition-colors" strokeWidth={1.5} />
                                                     </div>
-                                                    <input required type="email" className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-4 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium placeholder:text-slate-300 dark:placeholder:text-slate-600 hover:border-slate-300 dark:hover:border-white/20" placeholder="john@example.com" />
+                                                    <input required type="email" className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-4 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-[#3f8fcc]/50 focus:border-[#3f8fcc]/50 transition-all font-medium placeholder:text-slate-300 dark:placeholder:text-slate-600 hover:border-slate-300 dark:hover:border-white/20" placeholder="john@example.com" />
                                                 </div>
                                             </div>
                                             {/* Phone */}
                                             <div className="space-y-2">
                                                 <label className="text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">Phone</label>
                                                 <div className="relative group/field">
-                                                    <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan">
+                                                    <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-[#3f8fcc]">
                                                         <div className="relative">
-                                                            <Phone className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors" strokeWidth={1.5} />
+                                                            <Phone className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-[#3f8fcc] transition-colors" strokeWidth={1.5} />
                                                             <div className="absolute -top-1 -right-1 w-2 h-2 bg-indigo-500 rounded-full border-[1.5px] border-white dark:border-slate-900" />
                                                         </div>
                                                     </div>
-                                                    <input required type="tel" className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-4 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium placeholder:text-slate-300 dark:placeholder:text-slate-600 hover:border-slate-300 dark:hover:border-white/20" placeholder="+91 98765 43210" />
+                                                    <input required type="tel" className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-4 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-[#3f8fcc]/50 focus:border-[#3f8fcc]/50 transition-all font-medium placeholder:text-slate-300 dark:placeholder:text-slate-600 hover:border-slate-300 dark:hover:border-white/20" placeholder="+91 98765 43210" />
                                                 </div>
                                             </div>
                                         </div>
@@ -353,16 +352,16 @@ export default function AdvancedWebsiteDevelopment() {
                                         <div className="space-y-2">
                                             <label className="text-[11px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">Budget Range</label>
                                             <div className="relative group/field">
-                                                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-brand-cyan">
-                                                    <CreditCard className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-brand-cyan transition-colors" strokeWidth={1.5} />
+                                                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors group-focus-within/field:text-[#3f8fcc]">
+                                                    <CreditCard className="w-[18px] h-[18px] text-slate-400 group-focus-within/field:text-[#3f8fcc] transition-colors" strokeWidth={1.5} />
                                                 </div>
-                                                <select className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-10 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-brand-cyan/50 transition-all font-medium appearance-none shadow-sm text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer">
+                                                <select className="w-full bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-2xl pl-11 pr-10 py-3.5 text-[0.95rem] focus:outline-none focus:ring-2 focus:ring-[#3f8fcc]/50 focus:border-[#3f8fcc]/50 transition-all font-medium appearance-none shadow-sm text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer">
                                                     <option value="5k-10k">₹5k - ₹10k</option>
                                                     <option value="10k-25k">₹10k - ₹25k</option>
                                                     <option value="25k-50k">₹25k - ₹50k</option>
                                                     <option value="50k+">₹50k+</option>
                                                 </select>
-                                                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400 transition-colors group-focus-within/field:text-brand-cyan">
+                                                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400 transition-colors group-focus-within/field:text-[#3f8fcc]">
                                                     <ChevronRight className="w-4 h-4 rotate-90" />
                                                 </div>
                                             </div>
@@ -398,7 +397,7 @@ export default function AdvancedWebsiteDevelopment() {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                         <div className="space-y-6">
-                            <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">The Problem Matrix</span>
+                            <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">The Problem Matrix</span>
                             <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Why Template Websites Fail Scaling Businesses.</h2>
                             <p className="text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed">Basic setups crack under pressure. As your traffic grows, limitations quickly turn into lost revenue.</p>
 
@@ -425,8 +424,8 @@ export default function AdvancedWebsiteDevelopment() {
 
                         {/* Comparison Infographic */}
                         <div className="relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[1.5rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-xl overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/5 to-transparent pointer-events-none" />
-                            <h3 className="text-xl font-bold mb-6 text-center">Architecture Comparison</h3>
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#3f8fcc]/5 to-transparent pointer-events-none" />
+                            <h3 className="text-xl font-bold mb-6 text-center">Framework Comparison</h3>
 
                             <div className="grid grid-cols-2 gap-3 md:gap-6">
                                 {/* Basic */}
@@ -446,15 +445,15 @@ export default function AdvancedWebsiteDevelopment() {
                                 </div>
                                 {/* Advanced */}
                                 <div className="space-y-3 md:space-y-4">
-                                    <h4 className="text-center font-bold text-brand-cyan uppercase tracking-widest text-[10px] md:text-xs mb-4 focus:text-white">Advanced System</h4>
+                                    <h4 className="text-center font-bold text-[#3f8fcc] uppercase tracking-widest text-[10px] md:text-xs mb-4 focus:text-white">Advanced System</h4>
                                     {[
                                         { l: "Speed", s: "Sub-Second", c: "text-emerald-500 bg-emerald-50 dark:bg-emerald-500/10" },
                                         { l: "Security", s: "Bank-Grade", c: "text-emerald-500 bg-emerald-50 dark:bg-emerald-500/10" },
-                                        { l: "Scale", s: "Infinite", c: "text-brand-cyan bg-brand-cyan/10" },
-                                        { l: "UI/UX", s: "Custom Built", c: "text-brand-cyan bg-brand-cyan/10" }
+                                        { l: "Scale", s: "Infinite", c: "text-[#3f8fcc] bg-[#3f8fcc]/10" },
+                                        { l: "UI/UX", s: "Custom Built", c: "text-[#3f8fcc] bg-[#3f8fcc]/10" }
                                     ].map((stat, i) => (
-                                        <div key={i} className="text-center p-2.5 md:p-3 rounded-xl border border-brand-cyan/20 dark:border-brand-cyan/30 relative overflow-hidden group">
-                                            <div className="absolute inset-0 bg-brand-cyan/5 group-hover:bg-brand-cyan/10 transition-colors" />
+                                        <div key={i} className="text-center p-2.5 md:p-3 rounded-xl border border-[#3f8fcc]/20 dark:border-[#3f8fcc]/30 relative overflow-hidden group">
+                                            <div className="absolute inset-0 bg-[#3f8fcc]/5 group-hover:bg-[#3f8fcc]/10 transition-colors" />
                                             <span className="block text-[9px] md:text-[10px] font-bold text-slate-500 dark:text-slate-300 mb-0.5 relative z-10">{stat.l}</span>
                                             <span className={`block font-bold text-xs md:text-sm rounded-md py-1 ${stat.c} relative z-10 shadow-[0_0_15px_rgba(16,185,129,0.2)]`}>{stat.s}</span>
                                         </div>
@@ -470,13 +469,13 @@ export default function AdvancedWebsiteDevelopment() {
             <section className="py-16 md:py-32 px-4 md:px-6 bg-slate-50 dark:bg-slate-900/50 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">The Preet Tech Standard</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">The Preet Tech Standard</span>
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Engineered for Dominance.</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
-                            { t: "Custom Architecture", i: Layers, d: "Zero templates. Built-from-scratch ecosystems utilizing React, Next.js, and Node.js for absolute control." },
+                            { t: "Custom Framework", i: Layers, d: "Zero templates. Built-from-scratch ecosystems utilizing React, Next.js, and Node.js for absolute control." },
                             { t: "Scalable Backend Systems", i: Server, d: "Serverless architectures and robust microservices designed to handle extreme data loads seamlessly." },
                             { t: "Conversion-Focused Design", i: Target, d: "Neurological UI principles that map to user intent, converting passing traffic into retained revenue." },
                             { t: "Enterprise-Level Security", i: ShieldCheck, d: "Multi-layered encryption, SSL hardening, and active firewall nodes shielding your core data." },
@@ -485,10 +484,10 @@ export default function AdvancedWebsiteDevelopment() {
                         ].map((feat, i) => (
                             <div key={i} className="p-6 md:p-10 rounded-2xl md:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
                                 {/* Hover Glow */}
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/0 group-hover:bg-brand-cyan/10 blur-[40px] rounded-full transition-colors duration-500" />
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#3f8fcc]/0 group-hover:bg-[#3f8fcc]/10 blur-[40px] rounded-full transition-colors duration-500" />
 
-                                <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-8 border border-slate-100 dark:border-white/10 group-hover:border-brand-cyan/50 transition-colors">
-                                    <feat.i className="w-6 h-6 text-brand-cyan" />
+                                <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-8 border border-slate-100 dark:border-white/10 group-hover:border-[#3f8fcc]/50 transition-colors">
+                                    <feat.i className="w-6 h-6 text-[#3f8fcc]" />
                                 </div>
                                 <h3 className="text-xl font-bold mb-4">{feat.t}</h3>
                                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{feat.d}</p>
@@ -503,7 +502,7 @@ export default function AdvancedWebsiteDevelopment() {
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                         <div className="max-w-2xl space-y-4">
-                            <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Target Audiences</span>
+                            <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Target Audiences</span>
                             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Built for Scaling Ventures.</h2>
                         </div>
                     </div>
@@ -517,8 +516,8 @@ export default function AdvancedWebsiteDevelopment() {
                             { t: "Healthcare Systems", i: Activity, d: "HIPAA compliant patient portal architectures." },
                             { t: "Corporate Enterprises", i: Building2, d: "Global conglomerates requiring extreme scale." }
                         ].map((ind, i) => (
-                            <div key={i} className="flex gap-4 md:gap-6 items-start p-5 md:p-8 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 hover:border-brand-cyan transition-colors group">
-                                <ind.i className="w-6 h-6 md:w-8 md:h-8 text-slate-400 group-hover:text-brand-cyan shrink-0 transition-colors" />
+                            <div key={i} className="flex gap-4 md:gap-6 items-start p-5 md:p-8 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 hover:border-[#3f8fcc] transition-colors group">
+                                <ind.i className="w-6 h-6 md:w-8 md:h-8 text-slate-400 group-hover:text-[#3f8fcc] shrink-0 transition-colors" />
                                 <div>
                                     <h4 className="font-bold text-base md:text-lg mb-1 md:mb-2">{ind.t}</h4>
                                     <p className="text-xs text-slate-500 font-medium">{ind.d}</p>
@@ -530,28 +529,56 @@ export default function AdvancedWebsiteDevelopment() {
             </section>
 
             {/* 5️⃣ What Makes Advance Development Different */}
-            <section className="py-16 md:py-32 px-4 md:px-6 bg-[#080B10] text-white reveal-section border-y border-white/5 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/grid-dark.png')] bg-repeat opacity-20" />
+            <section className="py-20 md:py-32 px-4 md:px-6 bg-slate-50 dark:bg-[#030508] text-slate-900 dark:text-white reveal-section border-y border-slate-200 dark:border-white/5 relative overflow-hidden transition-colors duration-500">
+                <div className="absolute inset-0 bg-[url('/grid-dark.png')] bg-repeat opacity-[0.03] dark:opacity-20" />
 
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <div className="text-center mb-20 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">The Differentiator</span>
+                {/* Decorative glows */}
+                <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#3f8fcc]/10 blur-[150px] rounded-full pointer-events-none" />
+                <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-indigo-500/10 blur-[150px] rounded-full pointer-events-none" />
+
+                <div className="max-w-[1400px] mx-auto relative z-10 flex flex-col items-center">
+                    <div className="text-center mb-16 space-y-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3f8fcc]/10 border border-[#3f8fcc]/20 mb-2">
+                            <span className="w-2 h-2 rounded-full bg-[#3f8fcc] animate-pulse" />
+                            <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">The Differentiator</span>
+                        </div>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Beyond Standard Web Design.</h2>
+                        <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-medium text-sm md:text-base leading-relaxed">
+                            We don't just build websites. We engineer high-performance platforms designed to scale your business, optimize user journeys, and dominate your industry.
+                        </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 w-full">
                         {[
-                            { title: "Fully Custom-Coded", desc: "No restrictive themes. Proprietary code designed exclusively for your workflows." },
-                            { title: "Performance-First", desc: "Every asset is measured. If it doesn't serve the speed index, it's eliminated from core." },
-                            { title: "Tailored User Experience", desc: "Bespoke user journeys driven by A/B testing and competitive cognitive mapping." },
-                            { title: "Integration-Ready", desc: "Headless CMS architecture ready to couple with any API or third-party CRM seamlessly." },
-                            { title: "Long-Term Scaling", desc: "Codebases built cleanly to allow dev teams to expand features years down the line effortlessly." }
+                            { title: "Custom Framework", desc: "No restrictive themes. Proprietary code designed exclusively for your workflows.", icon: Code2, num: "01" },
+                            { title: "Merciless Optimization", desc: "Aggressive auditing and global CDNs guarantee sub-second load times.", icon: Zap, num: "02" },
+                            { title: "Neurological UI/UX", desc: "Bespoke user journeys driven by cognitive principles to maximize conversions.", icon: Layout, num: "03" },
+                            { title: "Headless Integration", desc: "Seamlessly couple with any API, CRM, or external tool natively.", icon: Network, num: "04" },
+                            { title: "Infinite Scalability", desc: "Microservices ensure your platform can handle explosive traffic spikes effortlessly.", icon: Activity, num: "05" }
                         ].map((block, i) => (
-                            <div key={i} className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm relative overflow-hidden group">
-                                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-brand-cyan to-transparent translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-500" />
-                                <div className="text-4xl font-black text-white/5 mb-6 absolute top-4 right-6 group-hover:text-brand-cyan/10 transition-colors">0{i + 1}</div>
-                                <h3 className="text-lg font-bold mb-4 relative z-10 text-brand-cyan">{block.title}</h3>
-                                <p className="text-sm text-slate-400 leading-relaxed font-medium relative z-10">{block.desc}</p>
+                            <div key={i} className="group relative bg-white dark:bg-[#0a0f16] rounded-[2rem] p-6 lg:p-8 border border-slate-200 dark:border-white/[0.05] hover:border-[#3f8fcc]/30 dark:hover:border-[#3f8fcc]/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(63,143,204,0.15)] overflow-hidden flex flex-col h-full">
+                                {/* Hover Gradient Sweep */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-[#3f8fcc]/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                                {/* Top Highlight Line */}
+                                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#3f8fcc] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                {/* Background Number */}
+                                <div className="absolute -bottom-2 -right-2 text-[6rem] font-black text-slate-900/[0.03] dark:text-white/[0.02] group-hover:text-slate-900/[0.06] dark:group-hover:text-white/[0.05] group-hover:-translate-x-2 transition-all duration-500 pointer-events-none leading-none">
+                                    {block.num}
+                                </div>
+
+                                <div className="relative z-10 flex flex-col flex-grow">
+                                    <div className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05] flex items-center justify-center mb-6 group-hover:bg-[#3f8fcc]/10 group-hover:border-[#3f8fcc]/30 transition-all duration-500">
+                                        <block.icon className="w-6 h-6 text-slate-400 group-hover:text-[#3f8fcc] transition-colors duration-500" strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-3 text-slate-800 dark:text-white group-hover:text-[#3f8fcc] transition-colors duration-300">
+                                        {block.title}
+                                    </h3>
+                                    <p className="text-slate-600 dark:text-slate-400 font-medium text-sm leading-relaxed max-w-[95%]">
+                                        {block.desc}
+                                    </p>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -564,30 +591,26 @@ export default function AdvancedWebsiteDevelopment() {
                     <div className="order-2 lg:order-1 relative">
                         {/* Animated UI Mockup */}
                         <div className="bg-slate-100 dark:bg-slate-800 p-4 sm:p-8 rounded-2xl sm:rounded-[3rem] border border-slate-200 dark:border-white/10 relative shadow-2xl overflow-hidden group">
-                            <div className="absolute inset-0 bg-brand-cyan/5 group-hover:bg-brand-cyan/10 transition-colors duration-1000" />
+                            <div className="absolute inset-0 bg-[#3f8fcc]/5 group-hover:bg-[#3f8fcc]/10 transition-colors duration-1000" />
                             <div className="relative z-10">
                                 {/* Wireframe layer */}
                                 <div className="border-4 border-dashed border-slate-300 dark:border-white/20 rounded-2xl absolute inset-0 -rotate-3 scale-95 opacity-50" />
                                 {/* High Fidelity layer */}
                                 <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg border border-slate-200 dark:border-white/5 p-6 space-y-6 relative rotate-2 group-hover:rotate-0 transition-transform duration-700">
-                                    <div className="flex justify-between items-center mb-8 border-b pb-4 dark:border-white/10">
+                                    <div className="flex justify-between items-center mb-6 border-b pb-4 dark:border-white/10">
                                         <div className="h-6 w-24 bg-slate-800 dark:bg-white rounded-full" />
                                         <div className="flex gap-2"><div className="w-4 h-4 rounded-full bg-slate-200 dark:bg-white/10" /><div className="w-4 h-4 rounded-full bg-slate-200 dark:bg-white/10" /></div>
                                     </div>
-                                    <div className="h-48 w-full bg-slate-50 dark:bg-slate-800 rounded-xl relative overflow-hidden">
-                                        <div className="absolute bottom-0 left-0 w-3/4 h-3/4 bg-brand-cyan/20 rounded-tr-full" />
-                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-brand-cyan/40 backdrop-blur-xl rounded-full flex items-center justify-center">
-                                            <div className="w-10 h-10 bg-white rounded-full animate-ping" />
-                                        </div>
+                                    <div className="w-full bg-slate-50 dark:bg-slate-800 rounded-xl relative overflow-hidden border border-slate-200 dark:border-white/10">
+                                        <img src="/neurological_ui_design.png" alt="Neurological UI/UX Design Demonstration" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                                     </div>
-                                    <div className="h-10 w-full bg-brand-cyan rounded-xl mt-4" />
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="order-1 lg:order-2 space-y-10">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Design Engineering</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Design Engineering</span>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Neurological UI/UX Strategy.</h2>
                         <p className="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">Design isn't just aesthetics—it's directed geometry. We engineer interface pathways that subconsciously pull users toward conversion actions.</p>
 
@@ -600,7 +623,7 @@ export default function AdvancedWebsiteDevelopment() {
                                 { t: "Interactive Micro-Animations", i: Sliders }
                             ].map((strat, i) => (
                                 <div key={i} className="flex gap-3 items-center">
-                                    <div className="w-8 h-8 rounded-lg bg-brand-cyan/10 flex items-center justify-center text-brand-cyan">
+                                    <div className="w-8 h-8 rounded-lg bg-[#3f8fcc]/10 flex items-center justify-center text-[#3f8fcc]">
                                         <strat.i className="w-4 h-4" />
                                     </div>
                                     <span className="font-bold text-sm">{strat.t}</span>
@@ -612,10 +635,10 @@ export default function AdvancedWebsiteDevelopment() {
             </section>
 
             {/* 7️⃣ Web Applications & Custom Features */}
-            <section className="py-16 md:py-32 px-4 md:px-6 bg-[#030405] text-white reveal-section">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-slate-50 dark:bg-[#030405] text-slate-900 dark:text-white reveal-section border-y border-slate-200/50 dark:border-white/5">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-24 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Functional Modules</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Functional Modules</span>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Powerful Web Applications.</h2>
                     </div>
 
@@ -628,11 +651,11 @@ export default function AdvancedWebsiteDevelopment() {
                             { t: "Role-Based Access", d: "Deep permission matrices for enterprise teams.", i: Lock },
                             { t: "Custom Modules", d: "Any proprietary logic your business requires.", i: Code2 }
                         ].map((feat, i) => (
-                            <div key={i} className="p-8 rounded-2xl bg-[#0a0f16] border border-white/5 hover:border-brand-cyan/30 transition-all flex flex-col justify-between h-full shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                                <feat.i className="w-10 h-10 text-brand-cyan mb-8" />
+                            <div key={i} className="p-8 rounded-2xl bg-white dark:bg-[#0a0f16] border border-slate-200 dark:border-white/5 hover:border-[#3f8fcc]/50 dark:hover:border-[#3f8fcc]/30 transition-all flex flex-col justify-between h-full shadow-sm dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] hover:shadow-md">
+                                <feat.i className="w-10 h-10 text-[#3f8fcc] mb-8" />
                                 <div>
                                     <h3 className="text-xl font-bold mb-3">{feat.t}</h3>
-                                    <p className="text-slate-500 font-medium text-sm">{feat.d}</p>
+                                    <p className="text-slate-500 dark:text-slate-400 font-medium text-sm">{feat.d}</p>
                                 </div>
                             </div>
                         ))}
@@ -640,189 +663,138 @@ export default function AdvancedWebsiteDevelopment() {
                 </div>
             </section>
 
-            {/* 8️⃣ E-Commerce / SaaS / Dashboard Development */}
+            {/* 8️⃣ Heavy-Duty Web Platforms */}
             <section className="py-16 md:py-32 px-4 md:px-6 reveal-section relative overflow-hidden">
-                {/* Ambient background glows */}
-                <div className="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-brand-cyan/[0.04] rounded-full blur-[120px] pointer-events-none" />
-                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-500/[0.05] rounded-full blur-[100px] pointer-events-none" />
-
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Header */}
-                    <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
-                        <div className="max-w-3xl space-y-3">
-                            <div className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse" />
-                                <span className="text-brand-cyan font-bold uppercase tracking-[0.25em] text-[11px]">Specialized Products</span>
-                            </div>
-                            <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white">
+                    {/* Breathtaking Asymmetric Grid Layout */}
+                    <div className="mb-10 text-center lg:text-left flex flex-col lg:flex-row justify-between items-end gap-6">
+                        <div className="max-w-3xl">
+                            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-4">
                                 Heavy-Duty<br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-sky-400 to-indigo-400">Web Platforms.</span>
+                                <span className="text-[#3f8fcc]">Web Platforms.</span>
                             </h2>
+                            <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
+                                Enterprise-grade infrastructures engineered for volume, velocity, and vertical scale. We build systems to dominate your industry.
+                            </p>
                         </div>
-                        <p className="max-w-sm text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed md:text-right">
-                            Enterprise-grade platforms engineered for volume, velocity, and vertical scale.
-                        </p>
+                        <div className="hidden lg:flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/5 mb-4">
+                            <span className="relative flex h-2.5 w-2.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3f8fcc] opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#3f8fcc]"></span>
+                            </span>
+                            <span className="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-300">Live System</span>
+                        </div>
                     </div>
 
-                    {/* Bento Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 auto-rows-[minmax(260px,auto)]">
 
-                        {/* ── HERO CARD: Custom E-Commerce (spans 7 cols) ── */}
+                        {/* Huge Main Panel - Custom E-Commerce */}
                         <motion.div
-                            whileHover={{ y: -4 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="lg:col-span-7 relative rounded-3xl overflow-hidden group bg-[#060d18] border border-white/[0.07] shadow-[0_0_80px_-20px_rgba(95,211,230,0.15)]"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="lg:col-span-2 lg:row-span-2 relative rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 bg-[#080d14] dark:bg-[#060A10] border border-slate-800 dark:border-white/5 overflow-hidden group shadow-2xl flex flex-col justify-between"
                         >
-                            {/* Animated scan-line */}
-                            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                                <motion.div
-                                    animate={{ y: ["-100%", "200%"] }}
-                                    transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 2 }}
-                                    className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-brand-cyan/40 to-transparent"
-                                />
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#3f8fcc]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                            {/* Dotted background */}
+                            <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: 'radial-gradient(circle, #3f8fcc 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+
+                            <div className="relative z-10 flex justify-between items-start mb-6 lg:mb-10">
+                                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center">
+                                    <ShoppingCart className="w-6 h-6 md:w-7 md:h-7 text-[#3f8fcc]" />
+                                </div>
+                                <span className="px-4 py-1.5 rounded-full border border-[#3f8fcc]/30 text-[#3f8fcc] text-[9px] md:text-[10px] font-black uppercase tracking-widest bg-[#3f8fcc]/5 shadow-[0_0_15px_rgba(63,143,204,0.2)]">Flagship</span>
                             </div>
 
-                            {/* Grid pattern overlay */}
-                            <div className="absolute inset-0 bg-[linear-gradient(rgba(95,211,230,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(95,211,230,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+                            <div className="relative z-10 w-full lg:w-[65%] mb-8 lg:mb-0">
+                                <h3 className="text-2xl md:text-4xl font-black text-white tracking-tight mb-4 leading-tight">Custom E-Commerce <br className="hidden md:block" /> Engines.</h3>
+                                <p className="text-slate-400 text-sm md:text-base font-medium leading-relaxed mb-6">Scaling beyond Shopify limits. We build headless Magento, Next.js Commerce, or fully custom transactional engines with zero-latency checkouts.</p>
 
-                            {/* Glow blob */}
-                            <div className="absolute top-0 right-0 w-80 h-80 bg-brand-cyan/10 blur-[80px] rounded-full group-hover:bg-brand-cyan/20 transition-colors duration-700 pointer-events-none" />
-
-                            {/* Floating icon */}
-                            <div className="absolute top-6 right-6 lg:top-10 lg:right-10 pointer-events-none">
-                                <motion.div
-                                    animate={{ y: [0, -12, 0], rotate: [0, 3, 0] }}
-                                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                                    className="relative"
-                                >
-                                    <div className="absolute inset-0 bg-brand-cyan/20 blur-2xl rounded-full scale-150" />
-                                    <ShoppingCart className="w-24 h-24 md:w-40 md:h-40 text-brand-cyan/20 group-hover:text-brand-cyan/35 transition-colors duration-500 relative z-10" strokeWidth={0.8} />
-                                </motion.div>
+                                <div className="flex flex-wrap gap-2">
+                                    {['Headless CMS', 'High-Volume', 'Zero Latency'].map(tag => (
+                                        <span key={tag} className="px-3 py-1.5 rounded-xl bg-white/5 text-slate-300 text-[9px] md:text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm border border-white/5">{tag}</span>
+                                    ))}
+                                </div>
                             </div>
 
-                            {/* Content */}
-                            <div className="relative z-10 p-8 md:p-12 flex flex-col h-full min-h-[340px]">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan font-bold text-[10px] uppercase tracking-widest">
-                                        <span className="w-1 h-1 rounded-full bg-brand-cyan animate-pulse" />
-                                        High-Volume Sales
-                                    </span>
-                                </div>
-
-                                <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">Custom E-Commerce</h3>
-                                <p className="text-slate-400 font-medium mb-10 max-w-md leading-relaxed">
-                                    Scaling beyond Shopify limits. We build headless Magento, Next.js Commerce, or fully custom transactional engines with zero-latency checkouts.
-                                </p>
-
-                                <div className="mt-auto">
-                                    <a href="#contact" className="inline-flex px-8 py-3.5 gap-2 group/btn text-xs bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
-                                        <span className="">
-                                            Start Selling
-                                        </span>
-                                        <motion.div
-                                            animate={{ x: [0, 4, 0] }}
-                                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                                        >
-                                            <ArrowRight className="w-4 h-4 text-white" />
-                                        </motion.div>
-                                    </a>
-                                </div>
+                            {/* Absolute image overlaying right side on desktop */}
+                            <div className="hidden lg:block absolute -right-20 -bottom-20 w-[55%] lg:w-[45%] h-auto rounded-xl shadow-2xl border border-white/10 group-hover:scale-[1.03] group-hover:-translate-y-2 group-hover:-translate-x-2 transition-all duration-700 ease-out z-10 rotate-[-2deg] group-hover:rotate-0 overflow-hidden bg-[#0a0f18] p-1.5">
+                                <img src="/advanced_ecommerce_dashboard.png" alt="E-Commerce Interface" className="w-full h-auto rounded-lg rounded-br-none" />
+                            </div>
+                            <div className="lg:hidden w-full h-[220px] mt-4 rounded-xl shadow-2xl border border-white/10 z-10 overflow-hidden relative bg-[#0a0f18] flex-shrink-0">
+                                <img src="/advanced_ecommerce_dashboard.png" alt="E-Commerce Interface" className="absolute top-1.5 left-1.5 w-full h-auto rounded-tl-lg" />
                             </div>
                         </motion.div>
 
-                        {/* ── RIGHT COLUMN (spans 5 cols): SaaS + CRM stacked ── */}
-                        <div className="lg:col-span-5 flex flex-col gap-5">
-
-                            {/* SaaS Web Apps */}
-                            <motion.div
-                                whileHover={{ y: -4, x: 2 }}
-                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                className="flex-1 relative rounded-3xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-white/[0.08] p-8 group overflow-hidden"
-                            >
-                                <div className="absolute top-0 right-0 w-40 h-40 bg-brand-cyan/5 blur-[60px] rounded-full group-hover:bg-brand-cyan/15 transition-colors duration-500 pointer-events-none" />
-                                <div className="relative z-10">
-                                    <div className="w-12 h-12 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-brand-cyan/50 transition-all">
-                                        <Layers className="w-6 h-6 text-brand-cyan" />
-                                    </div>
-                                    <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white group-hover:text-brand-cyan transition-colors">SaaS Web Apps</h3>
-                                    <p className="text-sm text-slate-500 font-medium leading-relaxed">Multi-tenant architecture and subscription logic engines built to scale.</p>
-                                    <div className="flex flex-wrap gap-2 mt-5">
-                                        {['Multi-Tenant', 'Subscriptions', 'SaaS Auth'].map(t => (
-                                            <span key={t} className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border border-brand-cyan/20 text-brand-cyan/70 bg-brand-cyan/5">{t}</span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            {/* CRM / ERP */}
-                            <motion.div
-                                whileHover={{ y: -4, x: 2 }}
-                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                className="flex-1 relative rounded-3xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-white/[0.08] p-8 group overflow-hidden"
-                            >
-                                <div className="absolute top-0 right-0 w-40 h-40 bg-indigo-500/5 blur-[60px] rounded-full group-hover:bg-indigo-500/15 transition-colors duration-500 pointer-events-none" />
-                                <div className="relative z-10">
-                                    <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-indigo-500/50 transition-all">
-                                        <Database className="w-6 h-6 text-indigo-500" />
-                                    </div>
-                                    <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white group-hover:text-indigo-400 transition-colors">CRM / ERP Systems</h3>
-                                    <p className="text-sm text-slate-500 font-medium leading-relaxed">Internal tooling built specifically for your operational model and team.</p>
-                                    <div className="flex flex-wrap gap-2 mt-5">
-                                        {['Custom Workflows', 'Role Access', 'Reporting'].map(t => (
-                                            <span key={t} className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border border-indigo-500/20 text-indigo-400/70 bg-indigo-500/5">{t}</span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
-
-                        {/* ── BOTTOM ROW ── */}
-
-                        {/* Multi-Vendor Marketplaces */}
+                        {/* Top Right - SaaS */}
                         <motion.div
-                            whileHover={{ y: -4 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="lg:col-span-6 relative rounded-3xl bg-white dark:bg-[#080d14] border border-slate-200 dark:border-white/[0.07] p-8 flex items-center justify-between gap-6 group overflow-hidden"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="relative rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 hover:border-violet-500/30 transition-colors group overflow-hidden shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-center"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/0 to-violet-500/0 group-hover:from-violet-500/[0.04] group-hover:to-sky-500/[0.04] transition-all duration-700 pointer-events-none rounded-3xl" />
-                            <div className="relative z-10">
-                                <div className="flex items-center gap-2 mb-3">
-                                    <div className="w-1 h-4 rounded-full bg-violet-500" />
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-violet-500">Platform</span>
-                                </div>
-                                <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">Multi-Vendor Marketplaces</h3>
-                                <p className="text-sm text-slate-500 font-medium max-w-xs">Complex vendor splitting, logistics routing, and multi-channel management.</p>
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-violet-500/10 blur-[40px] rounded-full group-hover:bg-violet-500/20 transition-colors" />
+                            <div className="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center mb-5 text-violet-500 relative z-10 shrink-0">
+                                <Layers className="w-5 h-5" />
                             </div>
-                            <div className="shrink-0 relative">
-                                <div className="absolute inset-0 bg-violet-500/10 blur-xl rounded-full group-hover:bg-violet-500/25 transition-colors duration-500" />
-                                <Command className="w-14 h-14 text-slate-200 dark:text-white/10 group-hover:text-violet-400 transition-colors relative z-10" strokeWidth={1} />
+                            <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-3 relative z-10 shrink-0">SaaS Web Apps</h3>
+                            <p className="text-slate-500 dark:text-slate-400 text-[13px] font-medium leading-relaxed mb-5 relative z-10">Multi-tenant architecture and subscription logic engines built to scale securely.</p>
+                            <div className="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-violet-500 group-hover:translate-x-2 transition-transform relative z-10 mt-auto">
+                                View Capabilities <ArrowRight className="w-3.5 h-3.5 ml-2" />
                             </div>
                         </motion.div>
 
-                        {/* Subscription Platforms */}
+                        {/* Bottom Right - CRM */}
                         <motion.div
-                            whileHover={{ y: -4 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="lg:col-span-6 relative rounded-3xl bg-white dark:bg-[#080d14] border border-slate-200 dark:border-white/[0.07] p-8 flex items-center justify-between gap-6 group overflow-hidden"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="relative rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 hover:border-emerald-500/30 transition-colors group overflow-hidden shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-center"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-emerald-500/0 group-hover:from-emerald-500/[0.04] group-hover:to-cyan-500/[0.04] transition-all duration-700 pointer-events-none rounded-3xl" />
-                            <div className="relative z-10">
-                                <div className="flex items-center gap-2 mb-3">
-                                    <div className="w-1 h-4 rounded-full bg-emerald-500" />
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-500">Recurring Revenue</span>
-                                </div>
-                                <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">Subscription Platforms</h3>
-                                <p className="text-sm text-slate-500 font-medium max-w-xs">Recurring billing APIs, automated dunning, and gated access control systems.</p>
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 blur-[40px] rounded-full group-hover:bg-emerald-500/20 transition-colors" />
+                            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5 text-emerald-500 relative z-10 shrink-0">
+                                <Database className="w-5 h-5" />
                             </div>
-                            <div className="shrink-0 relative">
-                                <div className="absolute inset-0 bg-emerald-500/10 blur-xl rounded-full group-hover:bg-emerald-500/25 transition-colors duration-500" />
-                                <motion.div
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                                    className="group-hover:[animation-play-state:running] [animation-play-state:paused]"
-                                >
-                                    <RefreshCw className="w-14 h-14 text-slate-200 dark:text-white/10 group-hover:text-emerald-400 transition-colors relative z-10" strokeWidth={1} />
-                                </motion.div>
+                            <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-3 relative z-10 shrink-0">CRM / ERP Systems</h3>
+                            <p className="text-slate-500 dark:text-slate-400 text-[13px] font-medium leading-relaxed mb-5 relative z-10">Internal tooling built specifically for your operational model and team productivity.</p>
+                            <div className="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-emerald-500 group-hover:translate-x-2 transition-transform relative z-10 mt-auto">
+                                View Capabilities <ArrowRight className="w-3.5 h-3.5 ml-2" />
+                            </div>
+                        </motion.div>
+
+                        {/* Row 3 - Marketplaces & Subscriptions */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="lg:col-span-1 relative rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 bg-white dark:bg-[#0c111a] border border-slate-200 dark:border-white/5 hover:border-orange-500/30 transition-colors group overflow-hidden shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col justify-center"
+                        >
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-orange-500/10 blur-[40px] rounded-full group-hover:bg-orange-500/20 transition-colors" />
+                            <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center mb-5 text-orange-500 relative z-10 shrink-0">
+                                <Command className="w-5 h-5" />
+                            </div>
+                            <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-3 relative z-10 shrink-0">Multi-Vendor Markets</h3>
+                            <p className="text-slate-500 dark:text-slate-400 text-[13px] font-medium leading-relaxed relative z-10 mt-auto">Complex vendor splitting, logistics routing, and multi-channel management platforms.</p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                            className="lg:col-span-2 relative rounded-[1.5rem] md:rounded-[2rem] p-6 lg:p-8 bg-gradient-to-br from-[#f8fafc] to-white dark:from-[#080d14] dark:to-[#050608] border border-slate-200 dark:border-white/5 hover:border-indigo-500/30 transition-colors group overflow-hidden shadow-lg shadow-slate-200/50 dark:shadow-none flex flex-col sm:flex-row gap-6 items-center"
+                        >
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-indigo-500/5 blur-[60px] rounded-full group-hover:bg-indigo-500/10 transition-colors" />
+                            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-indigo-500/10 flex items-center justify-center shrink-0 text-indigo-500 relative z-10 shadow-[inset_0_0_20px_rgba(99,102,241,0.1)]">
+                                <RefreshCw className="w-7 h-7 sm:w-8 sm:h-8" />
+                            </div>
+                            <div className="relative z-10 text-center sm:text-left">
+                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-3">Subscription Logic Engines</h3>
+                                <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed text-[13px] md:text-sm max-w-xl">Recurring billing APIs, automated dunning, robust tax calculations, and gated access control systems flawlessly integrated into your product.</p>
                             </div>
                         </motion.div>
 
@@ -831,14 +803,14 @@ export default function AdvancedWebsiteDevelopment() {
             </section>
 
             {/* 9️⃣ API & Backend Integration */}
-            <section className="py-16 md:py-40 px-4 md:px-6 bg-slate-900 text-white reveal-section overflow-hidden relative">
+            <section className="py-16 md:py-40 px-4 md:px-6 bg-white dark:bg-slate-900 text-slate-900 dark:text-white reveal-section overflow-hidden relative border-y border-slate-200 dark:border-transparent">
                 {/* Node architecture background wrapper */}
                 <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-                    className="absolute top-[-200px] right-[-200px] w-[800px] h-[800px] opacity-10 pointer-events-none"
+                    className="absolute top-[-200px] right-[-200px] w-[800px] h-[800px] opacity-[0.03] dark:opacity-10 pointer-events-none"
                 >
-                    <svg viewBox="0 0 100 100" className="w-full h-full text-brand-cyan stroke-current stroke-[0.2]">
+                    <svg viewBox="0 0 100 100" className="w-full h-full text-[#3f8fcc] stroke-current stroke-[0.2]">
                         <circle cx="50" cy="50" r="40" fill="none" />
                         <motion.g
                             animate={{ rotate: -360 }}
@@ -858,11 +830,11 @@ export default function AdvancedWebsiteDevelopment() {
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center relative z-10">
                     <div className="space-y-10">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Connectivity Core</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Connectivity Core</span>
                         <h2 className="text-3xl md:text-6xl font-bold tracking-tight">API & Backend Logic.</h2>
-                        <p className="text-xl text-slate-400 font-medium leading-relaxed">No application operates in isolation. We wire your platform into the global digital ecosystem via robust API orchestrations securely.</p>
+                        <p className="text-xl text-slate-600 dark:text-slate-400 font-medium leading-relaxed">No application operates in isolation. We wire your platform into the global digital ecosystem via robust API orchestrations securely.</p>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-white/10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-slate-200 dark:border-white/10">
                             {[
                                 { t: "Payment Gateways", i: CreditCard, d: "Stripe, Razorpay, PayPal integrations" },
                                 { t: "CRM & ERP Sync", i: Database, d: "Salesforce, HubSpot bidirectional sync" },
@@ -870,8 +842,8 @@ export default function AdvancedWebsiteDevelopment() {
                                 { t: "Automation Systems", i: Workflow, d: "Zapier, Make, custom scripts" }
                             ].map((item, i) => (
                                 <div key={i}>
-                                    <div className="flex items-center gap-3 mb-2 text-white">
-                                        <item.i className="w-5 h-5 text-brand-cyan" />
+                                    <div className="flex items-center gap-3 mb-2 text-slate-900 dark:text-white">
+                                        <item.i className="w-5 h-5 text-[#3f8fcc]" />
                                         <h4 className="font-bold text-md">{item.t}</h4>
                                     </div>
                                     <p className="text-xs text-slate-500 font-semibold">{item.d}</p>
@@ -880,8 +852,8 @@ export default function AdvancedWebsiteDevelopment() {
                         </div>
                     </div>
 
-                    <div className="bg-[#050608] border border-white/10 p-4 sm:p-10 rounded-2xl sm:rounded-3xl shadow-2xl relative">
-                        <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 bg-brand-cyan/20 px-3 sm:px-4 py-1 text-brand-cyan text-[8px] sm:text-[10px] uppercase font-bold tracking-widest rounded shadow-[0_0_20px_rgba(95,211,230,0.4)]">System Architecture Live</div>
+                    <div className="bg-[#050608] border border-slate-800 dark:border-white/10 p-4 sm:p-10 rounded-2xl sm:rounded-3xl shadow-2xl relative">
+                        <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 bg-[#3f8fcc]/20 px-3 sm:px-4 py-1 text-[#3f8fcc] text-[8px] sm:text-[10px] uppercase font-bold tracking-widest rounded shadow-[0_0_20px_rgba(63,143,204,0.4)]">System Infrastructure Live</div>
                         <div className="font-mono text-[10px] sm:text-sm text-slate-300 leading-relaxed overflow-x-auto">
                             <div className="min-w-max">
                                 {[
@@ -918,7 +890,7 @@ export default function AdvancedWebsiteDevelopment() {
                                                 "inset(0% 100% 0% 0%)"
                                             ]
                                         }}
-                                        viewport={{ once: true, margin: "-50px" }}
+                                        viewport={{ once: true }}
                                         transition={{
                                             duration: 10,
                                             repeat: Infinity,
@@ -952,7 +924,7 @@ export default function AdvancedWebsiteDevelopment() {
                             {/* Main Circle Gauge */}
                             <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                                 <circle cx="50" cy="50" r="45" fill="none" className="stroke-slate-200 dark:stroke-slate-800 stroke-[4]" />
-                                <circle cx="50" cy="50" r="45" fill="none" className="stroke-brand-cyan stroke-[4] animate-[dash_3s_ease-out_forwards]" strokeDasharray="283" strokeDashoffset="283" />
+                                <circle cx="50" cy="50" r="45" fill="none" className="stroke-[#3f8fcc] stroke-[4] animate-[dash_3s_ease-out_forwards]" strokeDasharray="283" strokeDashoffset="283" />
                             </svg>
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                                 <span className="text-7xl font-bold tracking-tighter">98<span className="text-2xl text-slate-400 font-normal">%</span></span>
@@ -973,7 +945,7 @@ export default function AdvancedWebsiteDevelopment() {
                     </div>
 
                     <div className="lg:w-1/2 space-y-10 order-1 lg:order-2">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Velocity Engine</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Velocity Engine</span>
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Speed as a Feature.</h2>
                         <p className="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">Latency equals lost clients. We engineer systems that pass Google's Core Web Vitals natively, delivering lightning-fast rendering globally.</p>
 
@@ -983,8 +955,8 @@ export default function AdvancedWebsiteDevelopment() {
                                 { t: "Lazy Loading & Next-Gen Formats", d: "Images in WebP/AVIF loaded asynchronously to prioritize first paint." },
                                 { t: "Global CDN & Server Optimization", d: "Deployments via Vercel Edge networks to put data physically closer to users." }
                             ].map((f, i) => (
-                                <div key={i} className="flex gap-4 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-white/5 hover:border-brand-cyan transition-colors">
-                                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center shrink-0"><Gauge className="w-5 h-5 text-brand-cyan" /></div>
+                                <div key={i} className="flex gap-4 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-white/5 hover:border-[#3f8fcc] transition-colors">
+                                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center shrink-0"><Gauge className="w-5 h-5 text-[#3f8fcc]" /></div>
                                     <div><h4 className="font-bold text-lg">{f.t}</h4><p className="text-sm text-slate-500 mt-1">{f.d}</p></div>
                                 </div>
                             ))}
@@ -994,12 +966,12 @@ export default function AdvancedWebsiteDevelopment() {
             </section>
 
             {/* 1️⃣1️⃣ Security & Scalability */}
-            <section className="py-16 md:py-32 px-4 md:px-6 bg-[#040914] text-white reveal-section border-y border-white/10 relative overflow-hidden">
-                <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-cyan to-transparent opacity-50" />
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white dark:bg-[#040914] text-slate-900 dark:text-white reveal-section border-y border-slate-200 dark:border-white/10 relative overflow-hidden">
+                <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#3f8fcc] to-transparent opacity-50" />
 
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-24 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Fortress Protocol</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Fortress Protocol</span>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Impenetrable Security. Infinite Scale.</h2>
                     </div>
 
@@ -1010,181 +982,144 @@ export default function AdvancedWebsiteDevelopment() {
                             { t: "Cloud Infrastructure", i: Cloud, d: "Load-balanced clusters on AWS, GCP, or Vercel." },
                             { t: "Scalable Scaling", i: Maximize, d: "Auto-scaling server setups for unlimited traffic." }
                         ].map((stat, i) => (
-                            <div key={i} className="p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-brand-cyan hover:text-slate-900 transition-all duration-300 group">
-                                <stat.i className="w-10 h-10 text-brand-cyan group-hover:text-slate-900 mb-6 transition-colors" />
+                            <div key={i} className="p-8 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl hover:bg-[#3f8fcc] hover:text-slate-900 transition-all duration-300 group">
+                                <stat.i className="w-10 h-10 text-[#3f8fcc] group-hover:text-slate-900 mb-6 transition-colors" />
                                 <h3 className="font-bold text-xl mb-3">{stat.t}</h3>
-                                <p className="text-sm text-slate-400 group-hover:text-slate-800 font-medium">{stat.d}</p>
+                                <p className="text-sm text-slate-500 dark:text-slate-400 group-hover:text-slate-800 font-medium">{stat.d}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* 1️⃣2️⃣ Tech Stack & Architecture */}
+            {/* 1️⃣2️⃣ Tech Stack & Infrastructure */}
             <section className="py-16 md:py-32 px-4 md:px-6 reveal-section relative">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Engineering Blueprint</span>
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Tech Stack & Architecture.</h2>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Development Blueprint</span>
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Tech Stack</h2>
                         <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-medium">We leverage bleeding-edge technologies to build scalable, secure, and blazing-fast web ecosystems.</p>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
-                        {[
-                            { name: 'React / Next.js', desc: 'Frontend Framework', icon: Code2, color: 'from-cyan-500 to-blue-500' },
-                            { name: 'Node.js', desc: 'Backend Runtime', icon: Server, color: 'from-emerald-500 to-green-600' },
-                            { name: 'TypeScript', desc: 'Type Safety', icon: FileCode2, color: 'from-blue-500 to-indigo-500' },
-                            { name: 'PostgreSQL', desc: 'Database Layer', icon: Database, color: 'from-indigo-500 to-violet-500' },
-                            { name: 'AWS / GCP', desc: 'Cloud Infra', icon: Cloud, color: 'from-amber-500 to-orange-500' },
-                            { name: 'Docker', desc: 'Containerization', icon: Container, color: 'from-sky-500 to-blue-600' },
-                            { name: 'CI/CD Pipeline', desc: 'Auto Deployment', icon: GitBranch, color: 'from-rose-500 to-pink-600' },
-                            { name: 'Testing Suite', desc: 'Quality Assurance', icon: TestTube2, color: 'from-violet-500 to-purple-600' }
-                        ].map((tech, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.08 }}
-                                className="group p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 hover:border-brand-cyan/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
-                            >
-                                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${tech.color} opacity-0 group-hover:opacity-100 transition-opacity`} />
-                                <tech.icon className="w-6 h-6 sm:w-8 sm:h-8 text-slate-400 group-hover:text-brand-cyan transition-colors mb-3 sm:mb-4" />
-                                <h4 className="font-bold text-sm mb-1">{tech.name}</h4>
-                                <p className="text-[11px] text-slate-500 font-medium">{tech.desc}</p>
-                            </motion.div>
-                        ))}
-                    </div>
 
-                    {/* Architecture Diagram */}
-                    <div className="mt-10 sm:mt-16 p-8 sm:p-12 md:p-16 rounded-[2rem] bg-white dark:bg-[#0a0a0a] border border-slate-100 dark:border-white/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none relative overflow-hidden">
-                        <div className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-                        <h3 className="text-lg md:text-xl font-bold mb-10 md:mb-14 text-center text-slate-800 dark:text-white">System Architecture Overview</h3>
-                        <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-4 sm:gap-6 relative z-10 w-full max-w-6xl mx-auto">
-                            {[
-                                { label: 'Client Layer', items: [{ name: 'React SPA', icon: Monitor }, { name: 'Next.js SSR', icon: Globe }, { name: 'PWA Support', icon: Smartphone }], color: 'border-brand-cyan/20' },
-                                { label: 'API Gateway', items: [{ name: 'REST / GraphQL', icon: Network }, { name: 'Rate Limiting', icon: ShieldCheck }, { name: 'Auth Middleware', icon: Key }], color: 'border-indigo-400/20' },
-                                { label: 'Business Logic', items: [{ name: 'Microservices', icon: Component }, { name: 'Event Queue', icon: GitBranch }, { name: 'Cache Layer', icon: Zap }], color: 'border-violet-300 dark:border-violet-500/40 bg-violet-50/30 dark:bg-violet-500/5 shadow-sm shadow-violet-500/5', dot: true },
-                                { label: 'Data Layer', items: [{ name: 'PostgreSQL', icon: Database }, { name: 'Redis Cache', icon: RefreshCw }, { name: 'S3 Storage', icon: Cloud }], color: 'border-emerald-400/20' }
-                            ].map((layer, i) => (
-                                <React.Fragment key={i}>
-                                    <div className={`flex-1 w-full sm:max-w-[240px] p-6 rounded-[1.25rem] bg-white dark:bg-slate-900 border ${layer.color} text-center relative transition-all duration-300 hover:shadow-md dark:hover:shadow-none`}>
-                                        {layer.dot && (
-                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-violet-500 ring-4 ring-white dark:ring-slate-900" />
-                                        )}
-                                        <h4 className="font-bold text-[10px] md:text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-6">{layer.label}</h4>
-                                        <div className="space-y-3">
-                                            {layer.items.map((item, j) => (
-                                                <div
-                                                    key={j}
-                                                    className="flex items-center justify-center gap-2.5 text-[11px] md:text-xs font-semibold text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-white/5 rounded-xl py-3 px-3 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-slate-200 dark:hover:border-white/10 transition-all cursor-pointer"
-                                                >
-                                                    <item.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-400" strokeWidth={1.5} />
-                                                    {item.name}
-                                                </div>
-                                            ))}
+                    <div className="mt-12 sm:mt-16 w-full overflow-hidden relative py-6">
+                        {/* Gradient fades for smooth edges */}
+                        <div className="absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-[#fafafa] dark:from-[#050608] to-transparent z-10 pointer-events-none" />
+                        <div className="absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-[#fafafa] dark:from-[#050608] to-transparent z-10 pointer-events-none" />
+
+                        <div className="flex w-max animate-carousel hover:[animation-play-state:paused] gap-4 sm:gap-6 px-4 sm:px-6">
+                            {[...Array(3)].map((_, arrayIndex) => (
+                                <React.Fragment key={arrayIndex}>
+                                    {[
+                                        "React", "Next.js", "Node.js", "PHP", "AWS", "Vercel", "Appwrite", "Firebase", "Supabase", "Mailchimp", "Hubspot", "Hostinger", "GoDaddy", "BigRock", "Hygraph"
+                                    ].map((tech, i) => (
+                                        <div key={i} className="flex items-center gap-2 sm:gap-3 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0a0f18] shadow-sm shrink-0 transition-colors hover:border-[#3f8fcc]/50">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[#3f8fcc] shadow-[0_0_8px_rgba(63,143,204,0.8)]" />
+                                            <span className="font-bold text-xs sm:text-sm text-slate-700 dark:text-slate-300 whitespace-nowrap">{tech}</span>
                                         </div>
-                                    </div>
-                                    {i < 3 && (
-                                        <div className="shrink-0 hidden md:flex items-center justify-center">
-                                            <ArrowRight className="w-4 h-4 text-slate-300 dark:text-slate-600" />
-                                        </div>
-                                    )}
+                                    ))}
                                 </React.Fragment>
                             ))}
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 1️⃣3️⃣ Case Studies / Real Projects */}
-            <section className="py-16 md:py-32 px-4 md:px-6 bg-[#030405] text-white reveal-section">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-20 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Proven Results</span>
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Case Studies & Real Projects.</h2>
-                        <p className="text-slate-400 max-w-2xl mx-auto font-medium">Real-world results from businesses that trusted us to build their digital infrastructure.</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                        {[
-                            {
-                                title: 'E-Commerce Platform',
-                                client: 'Fashion Retail Brand',
-                                desc: 'Built a headless e-commerce platform handling 50K+ monthly transactions with sub-second page loads.',
-                                metrics: [{ label: 'Revenue Increase', val: '+340%' }, { label: 'Page Speed', val: '0.8s' }, { label: 'Conversion Rate', val: '4.7%' }],
-                                tags: ['Next.js', 'Stripe', 'Headless CMS'],
-                                gradient: 'from-brand-cyan/20 to-blue-500/20'
-                            },
-                            {
-                                title: 'SaaS Dashboard',
-                                client: 'FinTech Startup',
-                                desc: 'Engineered a real-time analytics dashboard processing 2M+ data points with live WebSocket feeds.',
-                                metrics: [{ label: 'Data Processed', val: '2M+/day' }, { label: 'Uptime', val: '99.99%' }, { label: 'User Retention', val: '89%' }],
-                                tags: ['React', 'Node.js', 'WebSocket'],
-                                gradient: 'from-violet-500/20 to-purple-500/20'
-                            },
-                            {
-                                title: 'Corporate Website',
-                                client: 'Enterprise Conglomerate',
-                                desc: 'Delivered a multi-language, fully accessible enterprise website with CMS integration and advanced SEO.',
-                                metrics: [{ label: 'Organic Traffic', val: '+520%' }, { label: 'Lighthouse Score', val: '98/100' }, { label: 'Lead Gen', val: '+210%' }],
-                                tags: ['Next.js', 'Sanity CMS', 'i18n'],
-                                gradient: 'from-emerald-500/20 to-green-500/20'
+                        <style jsx>{`
+                            @keyframes carousel {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-33.333333%); }
                             }
-                        ].map((project, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.15 }}
-                                className="group rounded-3xl bg-white/5 border border-white/10 overflow-hidden hover:border-brand-cyan/30 transition-all duration-300"
-                            >
-                                {/* Gradient Header Bar */}
-                                <div className={`h-2 bg-gradient-to-r ${project.gradient}`} />
-                                <div className="p-5 sm:p-8 space-y-5 sm:space-y-6">
-                                    <div>
-                                        <span className="text-[10px] font-bold uppercase tracking-widest text-brand-cyan">{project.client}</span>
-                                        <h3 className="text-2xl font-bold mt-2">{project.title}</h3>
-                                        <p className="text-sm text-slate-400 mt-3 leading-relaxed">{project.desc}</p>
-                                    </div>
+                            .animate-carousel {
+                                animation: carousel 35s linear infinite;
+                            }
+                        `}</style>
+                    </div>
 
-                                    {/* Metrics */}
-                                    <div className="grid grid-cols-3 gap-2 sm:gap-3">
-                                        {project.metrics.map((m, j) => (
-                                            <div key={j} className="text-center p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/5">
-                                                <span className="block text-sm sm:text-lg font-black text-brand-cyan">{m.val}</span>
-                                                <span className="text-[7px] sm:text-[9px] font-bold uppercase text-slate-500">{m.label}</span>
+                    {/* Infrastructure Diagram */}
+                    <div className="mt-16 sm:mt-24 max-w-6xl mx-auto px-4 sm:px-0">
+                        <div className="text-center mb-12 sm:mb-16">
+                            <h3 className="text-2xl md:text-4xl font-black text-slate-800 dark:text-white tracking-tight">System Infrastructure Flow</h3>
+                            <p className="text-sm md:text-base text-slate-500 dark:text-slate-400 mt-3 font-medium">A modular, decoupled infrastructure designed for maximum velocity and scale.</p>
+                        </div>
+
+                        <div className="relative">
+                            {/* Desktop Horizontal Track Container */}
+                            <div className="hidden lg:block absolute top-[26px] left-[5%] right-[5%] h-1 bg-slate-200 dark:bg-slate-800/50 rounded-full overflow-hidden">
+                                <div className="absolute top-0 h-full w-[40%] bg-gradient-to-r from-transparent via-[#3f8fcc] to-transparent animate-flow-x" />
+                            </div>
+
+                            {/* Mobile Vertical Track Container */}
+                            <div className="lg:hidden absolute top-14 bottom-14 left-[26px] w-1 bg-slate-200 dark:bg-slate-800/50 rounded-full overflow-hidden z-0">
+                                <div className="absolute left-0 w-full h-[40%] bg-gradient-to-b from-transparent via-[#3f8fcc] to-transparent animate-flow-y" />
+                            </div>
+
+                            <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 relative z-10 w-full">
+                                {[
+                                    { label: 'Client Layer', mainIcon: Smartphone, colorClass: 'bg-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.4)]', textClass: 'text-cyan-500', glowClass: 'via-cyan-500', items: [{ name: 'React SPA', icon: Monitor }, { name: 'Next.js SSR', icon: Globe }, { name: 'PWA Support', icon: Smartphone }] },
+                                    { label: 'API Gateway', mainIcon: Network, colorClass: 'bg-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.4)]', textClass: 'text-indigo-500', glowClass: 'via-indigo-500', items: [{ name: 'REST / GraphQL', icon: Network }, { name: 'Rate Limiting', icon: ShieldCheck }, { name: 'Auth Middleware', icon: Key }] },
+                                    { label: 'Business Logic', mainIcon: Component, colorClass: 'bg-violet-500 shadow-[0_0_15px_rgba(139,92,246,0.4)]', textClass: 'text-violet-500', glowClass: 'via-violet-500', items: [{ name: 'Microservices', icon: Component }, { name: 'Event Queue', icon: GitBranch }, { name: 'Cache Layer', icon: Zap }] },
+                                    { label: 'Data Layer', mainIcon: Database, colorClass: 'bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.4)]', textClass: 'text-emerald-500', glowClass: 'via-emerald-500', items: [{ name: 'PostgreSQL', icon: Database }, { name: 'Redis Cache', icon: RefreshCw }, { name: 'S3 Storage', icon: Cloud }] }
+                                ].map((layer, i) => (
+                                    <div key={i} className="flex lg:flex-col items-center gap-6 lg:gap-8 w-full group">
+
+                                        {/* Node Marker */}
+                                        <div className="shrink-0 w-14 h-14 rounded-full bg-slate-50 dark:bg-slate-900 border-[3px] border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:border-[#3f8fcc] transition-colors shadow-xl relative z-10">
+                                            <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-800 group-hover:bg-[#3f8fcc]/20 flex items-center justify-center text-slate-500 group-hover:text-[#3f8fcc] transition-colors">
+                                                <layer.mainIcon className="w-3.5 h-3.5" />
                                             </div>
-                                        ))}
-                                    </div>
+                                        </div>
 
-                                    {/* Tags */}
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.tags.map((tag, j) => (
-                                            <span key={j} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-slate-400">{tag}</span>
-                                        ))}
+                                        {/* Content Card */}
+                                        <div className="flex-1 w-full bg-white dark:bg-[#0a0f16] p-6 lg:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 dark:border-white/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none group-hover:-translate-y-1 group-hover:border-[#3f8fcc]/30 transition-all duration-300 relative overflow-hidden">
+                                            {/* Glowing Top Line */}
+                                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent opacity-100 group-hover:opacity-0 transition-opacity" />
+                                            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent ${layer.glowClass} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
+
+                                            <div className="inline-flex items-center gap-2 mb-6">
+                                                <span className={`w-2 h-2 rounded-full ${layer.colorClass}`} />
+                                                <span className="text-xs font-black uppercase tracking-widest text-slate-800 dark:text-white">{layer.label}</span>
+                                            </div>
+
+                                            <div className="space-y-3">
+                                                {layer.items.map((item, j) => (
+                                                    <div key={j} className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-100 dark:border-white/5 group-hover:border-slate-300 dark:group-hover:border-white/10 transition-colors">
+                                                        <item.icon className={`w-4 h-4 ${layer.textClass}`} strokeWidth={2} />
+                                                        <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{item.name}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                ))}
+                            </div>
+                        </div>
+
+                        <style jsx>{`
+                            @keyframes flow-x {
+                                0% { left: -40%; }
+                                100% { left: 100%; }
+                            }
+                            @keyframes flow-y {
+                                0% { top: -40%; }
+                                100% { top: 100%; }
+                            }
+                            .animate-flow-x { animation: flow-x 2.5s ease-in-out infinite; }
+                            .animate-flow-y { animation: flow-y 2.5s ease-in-out infinite; }
+                        `}</style>
                     </div>
                 </div>
             </section>
+
 
             {/* 1️⃣4️⃣ Development Process (Discovery → Launch) */}
             <section className="py-16 md:py-32 px-4 md:px-6 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Our Protocol</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Our Protocol</span>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">From Discovery to Launch.</h2>
                         <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-medium">A structured, transparent development process engineered for quality and speed.</p>
                     </div>
 
                     <div className="relative">
                         {/* Connection Line */}
-                        <div className="absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-cyan/30 to-transparent hidden lg:block" />
+                        <div className="absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3f8fcc]/30 to-transparent hidden lg:block" />
 
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
                             {[
@@ -1204,14 +1139,14 @@ export default function AdvancedWebsiteDevelopment() {
                                     className="relative text-center group"
                                 >
                                     {/* Step Circle */}
-                                    <div className="relative z-10 w-14 h-14 mx-auto mb-6 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-white/10 group-hover:border-brand-cyan flex items-center justify-center transition-colors shadow-lg">
-                                        <phase.icon className="w-6 h-6 text-slate-400 group-hover:text-brand-cyan transition-colors" />
+                                    <div className="relative z-10 w-14 h-14 mx-auto mb-6 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-white/10 group-hover:border-[#3f8fcc] flex items-center justify-center transition-colors shadow-lg">
+                                        <phase.icon className="w-6 h-6 text-slate-400 group-hover:text-[#3f8fcc] transition-colors" />
                                     </div>
 
                                     <span className="text-3xl font-black text-slate-100 dark:text-white/5 block mb-2">{phase.step}</span>
                                     <h4 className="font-bold text-lg mb-2">{phase.title}</h4>
                                     <p className="text-xs text-slate-500 font-medium leading-relaxed mb-3">{phase.desc}</p>
-                                    <span className="inline-block px-3 py-1 rounded-full bg-brand-cyan/10 text-brand-cyan text-[10px] font-bold">{phase.duration}</span>
+                                    <span className="inline-block px-3 py-1 rounded-full bg-[#3f8fcc]/10 text-[#3f8fcc] text-[10px] font-bold">{phase.duration}</span>
                                 </motion.div>
                             ))}
                         </div>
@@ -1223,7 +1158,7 @@ export default function AdvancedWebsiteDevelopment() {
             <section className="py-16 md:py-32 px-4 md:px-6 bg-slate-50 dark:bg-slate-900/30 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Post-Launch Care</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Post-Launch Care</span>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Maintenance & Support.</h2>
                         <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-medium">Your website is a living asset. We ensure it stays optimized, secure, and ahead of the curve.</p>
                     </div>
@@ -1258,26 +1193,28 @@ export default function AdvancedWebsiteDevelopment() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.15 }}
-                                className={`p-8 rounded-3xl border relative overflow-hidden ${plan.highlight
-                                    ? 'bg-white dark:bg-slate-900 border-brand-cyan shadow-xl shadow-brand-cyan/10'
+                                className={`p-8 rounded-3xl border relative flex flex-col h-full overflow-hidden ${plan.highlight
+                                    ? 'bg-white dark:bg-slate-900 border-[#3f8fcc] shadow-xl shadow-[#3f8fcc]/10'
                                     : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-white/10'
                                     }`}
                             >
                                 {plan.highlight && (
-                                    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-cyan to-blue-500" />
+                                    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#3f8fcc] to-blue-500" />
                                 )}
-                                <plan.icon className={`w-10 h-10 mb-6 ${plan.highlight ? 'text-brand-cyan' : 'text-slate-400'}`} />
-                                <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
-                                <p className="text-sm text-slate-500 mb-8">{plan.desc}</p>
-                                <ul className="space-y-3">
-                                    {plan.features.map((f, j) => (
-                                        <li key={j} className="flex items-center gap-3 text-sm">
-                                            <CheckCircle2 className={`w-4 h-4 shrink-0 ${plan.highlight ? 'text-brand-cyan' : 'text-slate-400'}`} />
-                                            <span className="font-medium">{f}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <a href="#contact" className={`w-full mt-8 py-4 text-sm ${plan.highlight ? "ring-2 ring-brand-cyan ring-offset-2 ring-offset-slate-900" : ""} bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center`}>
+                                <div className="flex-1">
+                                    <plan.icon className={`w-10 h-10 mb-6 ${plan.highlight ? 'text-[#3f8fcc]' : 'text-slate-400'}`} />
+                                    <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
+                                    <p className="text-sm text-slate-500 mb-8">{plan.desc}</p>
+                                    <ul className="space-y-3">
+                                        {plan.features.map((f, j) => (
+                                            <li key={j} className="flex items-start gap-3 text-sm">
+                                                <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 ${plan.highlight ? 'text-[#3f8fcc]' : 'text-slate-400'}`} />
+                                                <span className="font-medium">{f}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <a href="#contact" className={`w-full mt-8 py-4 text-sm ${plan.highlight ? "ring-2 ring-[#3f8fcc] ring-offset-2 ring-offset-slate-900" : ""} bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center`}>
                                     Get Started
                                 </a>
                             </motion.div>
@@ -1290,7 +1227,7 @@ export default function AdvancedWebsiteDevelopment() {
             <section className="py-16 md:py-32 px-4 md:px-6 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Investment Tiers</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Investment Tiers</span>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Transparent Pricing.</h2>
                         <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-medium">Every project is unique. Choose a tier that matches your scale, and we'll tailor the scope to your exact requirements.</p>
                     </div>
@@ -1317,7 +1254,7 @@ export default function AdvancedWebsiteDevelopment() {
                                 tier: 'Custom',
                                 price: 'Let\'s Talk',
                                 desc: 'For enterprises requiring fully bespoke architectures and ongoing development.',
-                                deliverables: ['Unlimited Pages & Modules', 'Full Custom Architecture', 'Microservices / Headless CMS', 'Multi-Language Support', 'Enterprise Security', 'Dedicated Dev Team', 'Ongoing Technical Partnership'],
+                                deliverables: ['Unlimited Pages & Modules', 'Full Custom Framework', 'Microservices / Headless CMS', 'Multi-Language Support', 'Enterprise Security', 'Dedicated Dev Team', 'Ongoing Technical Partnership'],
                                 timeline: 'Scoped per project',
                                 highlight: false
                             }
@@ -1328,36 +1265,38 @@ export default function AdvancedWebsiteDevelopment() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.15 }}
-                                className={`rounded-3xl overflow-hidden relative ${plan.highlight
-                                    ? 'bg-gradient-to-b from-brand-cyan/10 to-transparent border-2 border-brand-cyan shadow-2xl shadow-brand-cyan/10'
+                                className={`rounded-3xl flex flex-col h-full overflow-hidden relative ${plan.highlight
+                                    ? 'bg-gradient-to-b from-[#3f8fcc]/10 to-transparent border-2 border-[#3f8fcc] shadow-2xl shadow-[#3f8fcc]/10'
                                     : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10'
                                     }`}
                             >
                                 {plan.highlight && (
-                                    <div className="bg-brand-cyan text-slate-950 text-center py-2 text-[10px] font-black uppercase tracking-[0.3em]">
+                                    <div className="bg-[#3f8fcc] text-slate-950 text-center py-2 text-[10px] font-black uppercase tracking-[0.3em]">
                                         Most Popular
                                     </div>
                                 )}
-                                <div className="p-8 md:p-10">
-                                    <h3 className="text-xl font-bold mb-1">{plan.tier}</h3>
-                                    <div className="text-3xl md:text-4xl font-black text-brand-cyan mb-3">{plan.price}</div>
-                                    <p className="text-sm text-slate-500 mb-8 font-medium">{plan.desc}</p>
+                                <div className="p-8 md:p-10 flex flex-col flex-1">
+                                    <div className="flex-1">
+                                        <h3 className="text-xl font-bold mb-1">{plan.tier}</h3>
+                                        <div className="text-3xl md:text-4xl font-black text-[#3f8fcc] mb-3">{plan.price}</div>
+                                        <p className="text-sm text-slate-500 mb-8 font-medium">{plan.desc}</p>
 
-                                    <div className="flex items-center gap-2 mb-6 text-sm">
-                                        <Clock className="w-4 h-4 text-brand-cyan" />
-                                        <span className="font-bold text-slate-600 dark:text-slate-300">{plan.timeline}</span>
+                                        <div className="flex items-center gap-2 mb-6 text-sm">
+                                            <Clock className="w-4 h-4 text-[#3f8fcc]" />
+                                            <span className="font-bold text-slate-600 dark:text-slate-300">{plan.timeline}</span>
+                                        </div>
+
+                                        <ul className="space-y-3 mb-8">
+                                            {plan.deliverables.map((d, j) => (
+                                                <li key={j} className="flex items-start gap-3 text-sm">
+                                                    <Check className="w-4 h-4 text-[#3f8fcc] mt-0.5 shrink-0" />
+                                                    <span className="font-medium">{d}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
 
-                                    <ul className="space-y-3 mb-8">
-                                        {plan.deliverables.map((d, j) => (
-                                            <li key={j} className="flex items-start gap-3 text-sm">
-                                                <Check className="w-4 h-4 text-brand-cyan mt-0.5 shrink-0" />
-                                                <span className="font-medium">{d}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-
-                                    <a href="#contact" className={`w-full py-4 text-sm ${plan.highlight ? "ring-2 ring-brand-cyan ring-offset-2 ring-offset-slate-900" : ""} bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center`}>
+                                    <a href="#contact" className={`w-full py-4 mt-auto text-sm ${plan.highlight ? "ring-2 ring-[#3f8fcc] ring-offset-2 ring-offset-slate-900" : ""} bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center`}>
                                         {plan.highlight ? 'Start Enterprise Project' : 'Get a Quote'}
                                     </a>
                                 </div>
@@ -1371,7 +1310,7 @@ export default function AdvancedWebsiteDevelopment() {
             <section className="py-16 md:py-32 px-4 md:px-6 bg-slate-50 dark:bg-slate-900/30 reveal-section">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-20 space-y-4">
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Knowledge Base</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.2em] text-xs">Knowledge Base</span>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Frequently Asked Questions.</h2>
                     </div>
 
@@ -1404,7 +1343,7 @@ export default function AdvancedWebsiteDevelopment() {
                                         transition={{ duration: 0.2 }}
                                         className="shrink-0"
                                     >
-                                        <Plus className="w-5 h-5 text-brand-cyan" />
+                                        <Plus className="w-5 h-5 text-[#3f8fcc]" />
                                     </motion.div>
                                 </button>
                                 <AnimatePresence>
@@ -1428,133 +1367,17 @@ export default function AdvancedWebsiteDevelopment() {
                 </div>
             </section>
 
-            {/* 1️⃣8️⃣ Strategy Call / Consultation Form */}
-            <section id="contact" className="py-16 md:py-32 px-4 md:px-6 reveal-section">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-                        <div className="space-y-10">
-                            <div className="space-y-4">
-                                <span className="text-brand-cyan font-bold uppercase tracking-[0.2em] text-xs">Let's Talk</span>
-                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Book Your Free Strategy Call.</h2>
-                                <p className="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">Share your vision with us. We'll analyze your requirements and provide a custom strategy blueprint—completely free.</p>
-                            </div>
-
-                            <div className="space-y-6">
-                                {[
-                                    { icon: CheckCircle2, text: '30-minute deep-dive into your business goals' },
-                                    { icon: CheckCircle2, text: 'Custom technical architecture recommendation' },
-                                    { icon: CheckCircle2, text: 'Transparent pricing and timeline estimate' },
-                                    { icon: CheckCircle2, text: 'No commitment, no pressure—just clarity' }
-                                ].map((item, i) => (
-                                    <div key={i} className="flex items-center gap-4">
-                                        <item.icon className="w-5 h-5 text-brand-cyan" />
-                                        <span className="font-medium text-sm">{item.text}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Contact Info */}
-                            <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 space-y-4">
-                                <h4 className="font-bold text-sm uppercase tracking-widest text-slate-400 mb-4">Or reach us directly</h4>
-                                <div className="flex items-center gap-4">
-                                    <Mail className="w-5 h-5 text-brand-cyan" />
-                                    <span className="font-medium text-sm">hello@preettech.com</span>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <Phone className="w-5 h-5 text-brand-cyan" />
-                                    <span className="font-medium text-sm">+91 98765 43210</span>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <Calendar className="w-5 h-5 text-brand-cyan" />
-                                    <span className="font-medium text-sm">Mon – Sat, 10AM – 7PM IST</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Form */}
-                        <div className="bg-white dark:bg-slate-900 p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden">
-                            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-cyan to-blue-500" />
-                            <h3 className="text-2xl font-bold mb-8">Request a Consultation</h3>
-                            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                    <div>
-                                        <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Full Name *</label>
-                                        <div className="relative">
-                                            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                            <input type="text" placeholder="John Doe" className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Email *</label>
-                                        <div className="relative">
-                                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                            <input type="email" placeholder="john@company.com" className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                    <div>
-                                        <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Phone</label>
-                                        <div className="relative">
-                                            <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                            <input type="tel" placeholder="+91 98765 43210" className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Company</label>
-                                        <div className="relative">
-                                            <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                            <input type="text" placeholder="Company Name" className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Project Type</label>
-                                    <select className="w-full px-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all appearance-none">
-                                        <option>Select Project Type</option>
-                                        <option>Corporate Website</option>
-                                        <option>E-Commerce Platform</option>
-                                        <option>SaaS Web Application</option>
-                                        <option>CRM / Dashboard System</option>
-                                        <option>Custom Web Application</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Budget Range</label>
-                                    <select className="w-full px-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all appearance-none">
-                                        <option>Select Budget Range</option>
-                                        <option>₹1.5L - 3L</option>
-                                        <option>₹3L - 5L</option>
-                                        <option>₹5L - 8L</option>
-                                        <option>₹8L+</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Tell us about your project *</label>
-                                    <textarea rows={4} placeholder="Describe your business, goals, and what you're looking to build..." className="w-full px-4 py-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm font-medium focus:ring-2 focus:ring-brand-cyan focus:border-transparent outline-none transition-all resize-none" />
-                                </div>
-                                <button type="submit" className="w-full py-5 gap-3 text-sm bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
-                                    <Send className="w-5 h-5" />
-                                    Submit Consultation Request
-                                </button>
-                                <p className="text-center text-[11px] text-slate-400 font-medium">We'll respond within 24 hours with a custom strategy proposal.</p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* 1️⃣9️⃣ Final High-Impact CTA */}
-            <section className="py-16 md:py-32 px-4 md:px-6 bg-[#020617] text-white relative overflow-hidden">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-white relative overflow-hidden border-t border-slate-200 dark:border-transparent">
                 {/* Background Effects */}
                 <div className="absolute inset-0 pointer-events-none">
                     <motion.div
                         animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
                         transition={{ duration: 10, repeat: Infinity }}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-cyan/20 blur-[200px] rounded-full"
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#3f8fcc]/10 dark:bg-[#3f8fcc]/20 blur-[200px] rounded-full"
                     />
-                    <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(to right, #5FD3E6 1px, transparent 1px), linear-gradient(to bottom, #5FD3E6 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+                    <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(to right, #3f8fcc 1px, transparent 1px), linear-gradient(to bottom, #3f8fcc 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
                 </div>
 
                 <div className="max-w-4xl mx-auto text-center relative z-10 space-y-10">
@@ -1564,14 +1387,14 @@ export default function AdvancedWebsiteDevelopment() {
                         viewport={{ once: true }}
                         className="space-y-6"
                     >
-                        <span className="text-brand-cyan font-bold uppercase tracking-[0.3em] text-xs">Your Move</span>
+                        <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.3em] text-xs">Your Move</span>
                         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
                             Stop Settling for
-                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-blue-500">
+                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#3f8fcc] to-blue-500 pb-2">
                                 Average Websites.
                             </span>
                         </h2>
-                        <p className="text-lg md:text-xl text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed">
                             Every day you delay is revenue lost to competitors with better digital infrastructure. Let's build something extraordinary.
                         </p>
                     </motion.div>
@@ -1584,39 +1407,63 @@ export default function AdvancedWebsiteDevelopment() {
                         className="flex flex-col sm:flex-row items-center justify-center gap-6"
                     >
                         <a href="#contact" className="px-8 sm:px-12 py-5 sm:py-6 gap-3 text-xs sm:text-sm group bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
-                            <Rocket className="w-5 h-5" />
+                            <Rocket className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             Start Your Project Now
                         </a>
                         <a href="tel:+919876543210" className="px-8 sm:px-12 py-5 sm:py-6 gap-3 text-xs sm:text-sm bg-brand-medium text-white hover:bg-brand-medium/90 font-bold rounded-full transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg hover:shadow-brand-medium/20 text-center uppercase tracking-[0.1em] flex items-center justify-center">
-                            <Phone className="w-5 h-5" />
+                            <Phone className="w-5 h-5 group-hover:hidden" />
+                            <Phone className="w-5 h-5 hidden group-hover:block animate-bounce" />
                             Call Us Directly
                         </a>
                     </motion.div>
 
-                    {/* Trust Badges */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
-                        className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 pt-8 sm:pt-10 border-t border-white/10"
-                    >
-                        {[
-                            { val: '150+', label: 'Projects Delivered' },
-                            { val: '98%', label: 'Client Satisfaction' },
-                            { val: '4.9/5', label: 'Average Rating' },
-                            { val: '24/7', label: 'Support Available' }
-                        ].map((stat, i) => (
-                            <div key={i} className="text-center">
-                                <span className="block text-2xl font-black text-brand-cyan">{stat.val}</span>
-                                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">{stat.label}</span>
-                            </div>
-                        ))}
-                    </motion.div>
+
                 </div>
             </section>
 
             <Footer />
+
+            {/* Video Modal */}
+            <AnimatePresence>
+                {isVideoOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95"
+                        onClick={() => setIsVideoOpen(false)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.95, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.95, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            className="relative w-full aspect-video max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center will-change-transform"
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <button
+                                onClick={() => setIsVideoOpen(false)}
+                                className="absolute top-4 right-4 z-[110] w-10 h-10 bg-black/60 hover:bg-black/80 border border-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
+                            {/* YouTube Embed */}
+                            <div className="absolute inset-0 w-full h-full bg-black">
+                                <iframe
+                                    src="https://www.youtube.com/embed/CBYfXlP7ppQ?autoplay=1"
+                                    className="w-full h-full border-0"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    title="Preet Tech Video"
+                                />
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </main>
     );
 }

@@ -9,7 +9,7 @@ import HeroLaunch from '@/components/services/start-your-business/HeroLaunch';
 import WhoIsThisFor from '@/components/services/start-your-business/WhoIsThisFor';
 import Challenges from '@/components/services/start-your-business/Challenges';
 import WhyChoosePreetTech from '@/components/services/start-your-business/WhyChoosePreetTech';
-import ServicesOverview from '@/components/services/start-your-business/ServicesOverview';
+
 import RegistrationServices from '@/components/services/start-your-business/RegistrationServices';
 import CreativeServices from '@/components/services/start-your-business/CreativeServices';
 import StrategyAndMarketing from '@/components/services/start-your-business/StrategyAndMarketing';
@@ -17,20 +17,24 @@ import TrustAndProcess from '@/components/services/start-your-business/TrustAndP
 import FinalConsultation from '@/components/services/start-your-business/FinalConsultation';
 
 const StartYourBusiness = () => {
-    const [isDark, setIsDark] = useState(true);
+    const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
-        const isDarkMode = false;
-        setIsDark(isDarkMode);
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark') {
+            setIsDark(true);
+        } else if (storedTheme === 'light') {
+            setIsDark(false);
+        }
     }, []);
 
     const toggleTheme = () => {
         const newTheme = !isDark;
         setIsDark(newTheme);
         if (newTheme) {
-            /* handled by next-themes */
+            localStorage.setItem('theme', 'dark');
         } else {
-            /* handled by next-themes */
+            localStorage.setItem('theme', 'light');
         }
     };
 
@@ -42,7 +46,7 @@ const StartYourBusiness = () => {
             <WhoIsThisFor />
             <Challenges />
             <WhyChoosePreetTech />
-            <ServicesOverview />
+
 
             <RegistrationServices />
             <CreativeServices />

@@ -13,7 +13,7 @@ const STEPS = [
   },
   {
     num: "02",
-    title: "Architecture & Design",
+    title: "Planning & Design",
     desc: "Collaborative wireframing and technical system mapping. We design scalable brand ecosystems that look and feel premium.",
     icon: <PenTool className="w-8 h-8" />,
     color: "from-brand-medium to-brand-sky"

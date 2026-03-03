@@ -28,7 +28,7 @@ const TRENDS = [
         delay: 0.3
     },
     {
-        title: "Cloud & Scalable Architecture",
+        title: "Cloud & Scalable Infrastructure",
         description: "Designing elastic, multi-region infrastructures that maintain 99.99% uptime while handling exponential traffic surges.",
         icon: <Cloud className="w-8 h-8" />,
         color: "from-cyan-600/20 to-blue-600/20",

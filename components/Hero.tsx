@@ -11,7 +11,7 @@ const Hero: React.FC<HeroProps> = ({ isDark: _ignoredIsDark }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <section className="relative min-h-[75vh] md:min-h-[85vh] w-full flex items-center justify-center overflow-hidden bg-background py-16 lg:py-24">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background py-16 lg:py-32">
       {/* 1. LAYERED BACKGROUNDS */}
       <div className="absolute inset-0 z-0">
         {/* Tech Grid */}
@@ -93,7 +93,7 @@ const Hero: React.FC<HeroProps> = ({ isDark: _ignoredIsDark }) => {
       {/* 4. ANIMATED PROPS (LEFT & RIGHT) */}
 
       {/* Left Props */}
-      <div className="absolute left-4 lg:left-8 xl:left-12 2xl:left-20 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-6 2xl:gap-10 z-30 pointer-events-none scale-50 xl:scale-75 2xl:scale-90 origin-left">
+      <div className="absolute left-4 lg:left-8 xl:left-8 2xl:left-16 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-6 2xl:gap-10 z-30 pointer-events-none scale-75 2xl:scale-100 origin-left">
         {/* Prop 1: System Latency */}
         <motion.div
           animate={{ y: [0, -20, 0], rotate: [0, 2, 0] }}
@@ -146,7 +146,7 @@ const Hero: React.FC<HeroProps> = ({ isDark: _ignoredIsDark }) => {
       </div>
 
       {/* Right Props */}
-      <div className="absolute right-4 lg:right-8 xl:right-12 2xl:right-20 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-6 2xl:gap-10 z-30 pointer-events-none scale-50 xl:scale-75 2xl:scale-90 origin-right">
+      <div className="absolute right-4 lg:right-8 xl:right-8 2xl:right-16 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-6 2xl:gap-10 z-30 pointer-events-none scale-75 2xl:scale-100 origin-right">
         {/* Prop 3: Security Shield */}
         <motion.div
           animate={{ y: [0, 15, 0], rotate: [0, -2, 0] }}

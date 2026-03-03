@@ -18,12 +18,12 @@ const FinalConsultation = () => {
             {/* Free Consultation Section (Section 18) - High-Fidelity Redesign */}
             <div className="max-w-5xl mx-auto px-6 relative">
                 {/* Decorative Elements */}
-                <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-3 h-3 bg-brand-cyan rounded-full hidden lg:block opacity-60 shadow-[0_0_15px_rgba(95,211,230,0.8)]" />
+                <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-3 h-3 bg-brand-medium dark:bg-brand-cyan rounded-full hidden lg:block opacity-60 shadow-[0_0_15px_rgba(95,211,230,0.8)]" />
 
                 <div className="text-center mb-16 space-y-4">
-                    <span className="text-brand-cyan text-[11px] font-black uppercase tracking-[0.6em] block">Blueprint Your Success</span>
+                    <span className="text-brand-medium dark:text-brand-cyan text-[11px] font-black uppercase tracking-[0.6em] block">Blueprint Your Success</span>
                     <h2 className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-none">
-                        FREE <span className="text-brand-cyan italic">CONSULTATION</span>
+                        FREE <span className="text-brand-medium dark:text-brand-cyan italic">CONSULTATION</span>
                     </h2>
                 </div>
 
@@ -48,44 +48,44 @@ const FinalConsultation = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {/* Name Input */}
                                 <div className="relative group">
-                                    <User className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300 group-focus-within:text-brand-cyan transition-colors" />
-                                    <input required type="text" placeholder="Your Name" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-base font-medium placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
+                                    <User className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-700 dark:text-slate-300 group-focus-within:text-brand-medium dark:text-brand-cyan transition-colors" />
+                                    <input required type="text" placeholder="Your Name" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-base font-medium placeholder:text-slate-600 dark:text-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-medium/10 dark:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
                                 </div>
 
                                 {/* Email Input */}
                                 <div className="relative group">
-                                    <Mail className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300 group-focus-within:text-brand-cyan transition-colors" />
-                                    <input required type="email" placeholder="Email Address" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-base font-medium placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
+                                    <Mail className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-700 dark:text-slate-300 group-focus-within:text-brand-medium dark:text-brand-cyan transition-colors" />
+                                    <input required type="email" placeholder="Email Address" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-base font-medium placeholder:text-slate-600 dark:text-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-medium/10 dark:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
                                 </div>
 
                                 {/* Phone Input */}
                                 <div className="relative group">
-                                    <Phone className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300 group-focus-within:text-brand-cyan transition-colors" />
-                                    <input required type="tel" placeholder="Phone Number" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-base font-medium placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
+                                    <Phone className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-700 dark:text-slate-300 group-focus-within:text-brand-medium dark:text-brand-cyan transition-colors" />
+                                    <input required type="tel" placeholder="Phone Number" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-base font-medium placeholder:text-slate-600 dark:text-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-medium/10 dark:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
                                 </div>
 
                                 {/* Timeline Input */}
                                 <div className="relative group">
-                                    <Calendar className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300 group-focus-within:text-brand-cyan transition-colors" />
-                                    <input required type="text" placeholder="Timeline (e.g. ASAP)" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-[11px] font-black uppercase text-slate-700 dark:text-slate-300 tracking-[0.2em] placeholder:text-slate-300 focus:outline-none focus:ring-4 focus:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
+                                    <Calendar className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-700 dark:text-slate-300 group-focus-within:text-brand-medium dark:text-brand-cyan transition-colors" />
+                                    <input required type="text" placeholder="Timeline (e.g. ASAP)" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-[11px] font-black uppercase text-slate-700 dark:text-slate-300 tracking-[0.2em] placeholder:text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-4 focus:ring-brand-medium/10 dark:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
                                 </div>
                             </div>
 
                             {/* Business Idea */}
                             <div className="relative group">
-                                <Lightbulb className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300 group-focus-within:text-brand-cyan transition-colors" />
-                                <input required type="text" placeholder="Business Idea" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-base font-medium placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
+                                <Lightbulb className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-700 dark:text-slate-300 group-focus-within:text-brand-medium dark:text-brand-cyan transition-colors" />
+                                <input required type="text" placeholder="Business Idea" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-base font-medium placeholder:text-slate-600 dark:text-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-medium/10 dark:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
                             </div>
 
                             {/* Target Budget */}
                             <div className="relative group">
-                                <DollarSign className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300 group-focus-within:text-brand-cyan transition-colors" />
-                                <input required type="text" placeholder="TARGET BUDGET" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-[11px] font-black uppercase text-slate-700 dark:text-slate-300 tracking-[0.2em] placeholder:text-slate-300 focus:outline-none focus:ring-4 focus:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
+                                <DollarSign className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-700 dark:text-slate-300 group-focus-within:text-brand-medium dark:text-brand-cyan transition-colors" />
+                                <input required type="text" placeholder="TARGET BUDGET" className="w-full h-16 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 rounded-2xl py-2 pl-16 pr-6 text-[11px] font-black uppercase text-slate-700 dark:text-slate-300 tracking-[0.2em] placeholder:text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-4 focus:ring-brand-medium/10 dark:ring-brand-cyan/10 focus:bg-white dark:focus:bg-black transition-all" />
                             </div>
 
                             <button
                                 disabled={formStatus === 'submitting'}
-                                className="w-full h-20 bg-brand-cyan text-[#030712] rounded-2xl font-black text-[11px] uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-3 shadow-[0_20px_40px_-10px_rgba(95,211,230,0.5)] hover:shadow-[0_30px_60px_-10px_rgba(95,211,230,0.6)] hover:-translate-y-1 active:scale-95 disabled:opacity-50 group"
+                                className="w-full h-20 bg-brand-medium dark:bg-brand-cyan text-white dark:text-[#030712] rounded-2xl font-black text-[11px] uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-3 shadow-[0_20px_40px_-10px_rgba(95,211,230,0.5)] hover:shadow-[0_30px_60px_-10px_rgba(95,211,230,0.6)] hover:-translate-y-1 active:scale-95 disabled:opacity-50 group"
                             >
                                 {formStatus === 'submitting' ? 'SYNCHRONIZING...' : 'GET FREE CONSULTATION'}
                                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
@@ -96,20 +96,20 @@ const FinalConsultation = () => {
             </div>
 
             {/* Final CTA (Section 19) */}
-            <div className="bg-[#030712] py-32 px-6 relative overflow-hidden group">
+            <div className="bg-white dark:bg-[#030712] py-32 px-6 relative overflow-hidden group">
                 <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-brand-cyan to-transparent animate-pulse" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-cyan opacity-5 blur-[120px] rounded-full pointer-events-none group-hover:opacity-10 transition-opacity" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-medium dark:bg-brand-cyan opacity-5 blur-[120px] rounded-full pointer-events-none group-hover:opacity-10 transition-opacity" />
 
                 <div className="max-w-5xl mx-auto text-center relative z-10 space-y-10">
-                    <h2 className="text-4xl md:text-[80px] font-black text-white uppercase tracking-tight leading-[0.8] mb-12">
+                    <h2 className="text-4xl md:text-[80px] font-black text-slate-900 dark:text-white uppercase tracking-tight leading-[0.8] mb-12">
                         From Idea To Income — <br />
-                        <span className="text-brand-cyan italic">Let's Build It Together</span>
+                        <span className="text-brand-medium dark:text-brand-cyan italic">Let's Build It Together</span>
                     </h2>
 
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-16 py-8 bg-brand-cyan text-[#030712] rounded-full font-black text-xs uppercase tracking-[0.3em] shadow-[0_0_40px_rgba(95,211,230,0.4)] relative group"
+                        className="px-16 py-8 bg-brand-medium dark:bg-brand-cyan text-white dark:text-[#030712] rounded-full font-black text-xs uppercase tracking-[0.3em] shadow-[0_0_40px_rgba(95,211,230,0.4)] relative group"
                     >
                         <span className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:animate-ping group-hover:opacity-20 pointer-events-none" />
                         Start My Business Today

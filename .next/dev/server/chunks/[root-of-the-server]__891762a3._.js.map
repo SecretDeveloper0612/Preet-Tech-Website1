@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///Users/haldwani/Documents/Working/preet-tech-next-gen-digital-agency%202/app/api/leads/route.ts"],"sourcesContent":["export const POST = () => {}\n"],"names":[],"mappings":";;;;AAAO,MAAM,OAAO,KAAO"}}]
+}

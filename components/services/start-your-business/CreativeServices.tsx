@@ -15,9 +15,9 @@ const CreativeServices = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Visual Identity</span>
+                        <span className="text-brand-medium dark:text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Visual Identity</span>
                         <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-8">
-                            Branding & <br /> <span className="text-brand-cyan italic">Identity Creation</span>
+                            Branding & <br /> <span className="text-brand-medium dark:text-brand-cyan italic">Identity Creation</span>
                         </h2>
                         <p className="text-slate-600 dark:text-slate-400 text-lg font-medium leading-relaxed mb-10 max-w-lg">
                             We don't just design logos; we build iconic brands that resonate with your target audience and stand the test of time.
@@ -30,8 +30,8 @@ const CreativeServices = () => {
                                 { title: "Business Cards", icon: Smartphone },
                                 { title: "Social Media Kits", icon: Share2 }
                             ].map((item, i) => (
-                                <div key={i} className="flex flex-col gap-4 p-6 rounded-3xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-brand-cyan transition-all group">
-                                    <item.icon className="w-6 h-6 text-brand-cyan group-hover:scale-110 transition-transform" />
+                                <div key={i} className="flex flex-col gap-4 p-6 rounded-3xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-brand-medium dark:hover:border-brand-cyan transition-all group">
+                                    <item.icon className="w-6 h-6 text-brand-medium dark:text-brand-cyan group-hover:scale-110 transition-transform" />
                                     <span className="text-[10px] font-black uppercase tracking-widest text-slate-900 dark:text-white">{item.title}</span>
                                 </div>
                             ))}
@@ -39,7 +39,7 @@ const CreativeServices = () => {
                     </motion.div>
 
                     <div className="relative group">
-                        <div className="absolute -inset-4 bg-brand-cyan/20 blur-3xl opacity-30 rounded-full group-hover:opacity-50 transition-opacity" />
+                        <div className="absolute -inset-4 bg-brand-medium/20 dark:bg-brand-cyan/20 blur-3xl opacity-30 rounded-full group-hover:opacity-50 transition-opacity" />
                         <div className="relative aspect-video bg-white dark:bg-slate-900 rounded-[3rem] border border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl">
                             <img
                                 src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop"
@@ -47,7 +47,7 @@ const CreativeServices = () => {
                                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                             />
                             <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
-                                <p className="text-white font-black uppercase tracking-widest text-[10px]">Premium Identity Mockup</p>
+                                <p className="text-slate-900 dark:text-white font-black uppercase tracking-widest text-[10px]">Premium Identity Mockup</p>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ const CreativeServices = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center lg:flex-row-reverse flex-col-reverse">
                     <div className="relative order-2 lg:order-1">
                         <div className="aspect-square bg-white dark:bg-slate-900 rounded-[4rem] border border-slate-200 dark:border-white/10 overflow-hidden relative shadow-2xl p-6">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/20 blur-3xl" />
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-medium/20 dark:bg-brand-cyan/20 blur-3xl" />
                             <div className="relative h-full w-full rounded-[3rem] overflow-hidden border border-slate-100 dark:border-white/5">
                                 <img
                                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
@@ -70,7 +70,7 @@ const CreativeServices = () => {
                             <motion.div
                                 animate={{ y: [0, -10, 0] }}
                                 transition={{ duration: 4, repeat: Infinity }}
-                                className="absolute bottom-12 right-12 w-24 h-48 bg-slate-900 rounded-3xl border-4 border-slate-800 shadow-2xl overflow-hidden hidden md:block"
+                                className="absolute bottom-12 right-12 w-24 h-48 bg-white dark:bg-slate-900 rounded-3xl border-4 border-white dark:border-slate-800 shadow-2xl overflow-hidden hidden md:block"
                             >
                                 <img
                                     src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop"
@@ -87,9 +87,9 @@ const CreativeServices = () => {
                         viewport={{ once: true }}
                         className="order-1 lg:order-2"
                     >
-                        <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Digital Presence</span>
+                        <span className="text-brand-medium dark:text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Digital Presence</span>
                         <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-8">
-                            Website & <br /> <span className="text-brand-cyan italic">Digital Presence</span>
+                            Website & <br /> <span className="text-brand-medium dark:text-brand-cyan italic">Digital Presence</span>
                         </h2>
 
                         <div className="space-y-8">
@@ -97,14 +97,14 @@ const CreativeServices = () => {
                                 { title: "Business Website", desc: "High-performance Next.js architectures.", icon: Globe },
                                 { title: "Landing Pages", desc: "Optimized for maximum conversion rate.", icon: Smartphone },
                                 { title: "Google Business Setup", desc: "Be visible where your customers search.", icon: MapPin },
-                                { title: "Social Media Architecture", desc: "Cohesive profiles across all platforms.", icon: Share2 }
+                                { title: "Social Media Strategy", desc: "Cohesive profiles across all platforms.", icon: Share2 }
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-6 group">
-                                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-cyan transition-all">
-                                        <item.icon className="w-5 h-5 text-brand-cyan group-hover:text-[#030712]" />
+                                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-medium dark:hover:bg-brand-cyan transition-all">
+                                        <item.icon className="w-5 h-5 text-brand-medium dark:text-brand-cyan group-hover:text-slate-900 dark:group-hover:text-[#030712]" />
                                     </div>
                                     <div>
-                                        <h4 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-tight group-hover:text-brand-cyan transition-colors">{item.title}</h4>
+                                        <h4 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-tight group-hover:text-brand-medium dark:hover:text-brand-cyan transition-colors">{item.title}</h4>
                                         <p className="text-slate-500 text-[10px] font-medium uppercase tracking-widest mt-1">{item.desc}</p>
                                     </div>
                                 </div>

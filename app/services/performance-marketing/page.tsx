@@ -148,16 +148,6 @@ const PerformanceMarketing = () => {
                 ease: "power3.out"
             });
         });
-
-        // Icon floating animation
-        gsap.to(".floating-icon", {
-            y: "random(-20, 20)",
-            duration: "random(2, 4)",
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
-        });
-
     }, { scope: containerRef });
 
     const trustLogos = [
@@ -237,7 +227,7 @@ const PerformanceMarketing = () => {
             title: "Retargeting Campaigns",
             desc: "Re-capturing lost visitors with dynamic product ads and personalized messaging to complete the sale.",
             icon: Target,
-            gradient: "from-brand-medium to-brand-cyan"
+            gradient: "from-brand-medium to-brand-medium"
         }
     ];
 
@@ -282,6 +272,30 @@ const PerformanceMarketing = () => {
             before: "Static Leads",
             after: "Predictable Pipeline",
             image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2346&auto=format&fit=crop"
+        },
+        {
+            client: "HealthTech AI",
+            results: "4.5x Installs",
+            growth: "210% Active Users",
+            before: "2k MAU",
+            after: "15k MAU",
+            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2340&auto=format&fit=crop"
+        },
+        {
+            client: "EduPlatform",
+            results: "85% Target",
+            growth: "180% Signups",
+            before: "5k Users",
+            after: "20k Users",
+            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2340&auto=format&fit=crop"
+        },
+        {
+            client: "FinServe Global",
+            results: "6x Output",
+            growth: "400% Target",
+            before: "$10M",
+            after: "$50M",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop"
         }
     ];
 
@@ -326,13 +340,29 @@ const PerformanceMarketing = () => {
 
     const [openFaq, setOpenFaq] = useState<number | null>(0);
     const [currentCaseIndex, setCurrentCaseIndex] = useState(0);
+    const sliderRef = useRef<HTMLDivElement>(null);
 
     const nextCase = () => {
-        setCurrentCaseIndex((prev) => (prev + 1) % caseStudies.length);
+        if (sliderRef.current) {
+            const cardWidth = sliderRef.current.firstElementChild?.clientWidth || 0;
+            sliderRef.current.scrollBy({ left: cardWidth + 32, behavior: 'smooth' });
+        }
     };
 
     const prevCase = () => {
-        setCurrentCaseIndex((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
+        if (sliderRef.current) {
+            const cardWidth = sliderRef.current.firstElementChild?.clientWidth || 0;
+            sliderRef.current.scrollBy({ left: -(cardWidth + 32), behavior: 'smooth' });
+        }
+    };
+
+    const handleScroll = () => {
+        if (sliderRef.current) {
+            const scrollLeft = sliderRef.current.scrollLeft;
+            const cardWidth = sliderRef.current.firstElementChild?.clientWidth || 0;
+            const index = Math.round(scrollLeft / (cardWidth + 32));
+            setCurrentCaseIndex(index);
+        }
     };
 
     return (
@@ -341,31 +371,12 @@ const PerformanceMarketing = () => {
 
             {/* 1. Hero Section */}
             <section className="relative min-h-screen pt-32 pb-20 px-6 lg:px-20 flex items-center overflow-hidden bg-white dark:bg-[#030712]">
-                {/* Futuristic Background Elements */}
+                {/* Static Background Effects - GPU composited, no JS animation */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {/* Animated Gradients */}
-                    <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand-cyan/20 blur-[120px] rounded-full animate-pulse" />
-                    <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-medium/20 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
-
-                    {/* Floating Abstract Shapes */}
-                    <motion.div
-                        animate={{
-                            y: [0, -20, 0],
-                            rotate: [0, 5, 0],
-                            scale: [1, 1.05, 1]
-                        }}
-                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-1/4 right-1/3 w-32 h-32 bg-gradient-to-br from-brand-cyan/20 to-transparent rounded-3xl blur-xl"
-                    />
-                    <motion.div
-                        animate={{
-                            y: [0, 20, 0],
-                            rotate: [0, -5, 0],
-                            scale: [1, 1.1, 1]
-                        }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                        className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-gradient-to-tr from-brand-medium/20 to-transparent rounded-full blur-2xl"
-                    />
+                    <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand-medium/10 blur-[120px] rounded-full" />
+                    <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-medium/10 blur-[120px] rounded-full" />
+                    <div className="absolute top-1/4 right-1/3 w-32 h-32 bg-gradient-to-br from-brand-medium/15 to-transparent rounded-3xl blur-xl" />
+                    <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-gradient-to-tr from-brand-medium/15 to-transparent rounded-full blur-2xl" />
                 </div>
 
                 <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center relative z-10">
@@ -375,9 +386,9 @@ const PerformanceMarketing = () => {
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-[10px] font-black uppercase tracking-[0.2em] mb-8"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-medium/10 border border-brand-medium/20 text-brand-medium text-[10px] font-black uppercase tracking-[0.2em] mb-8"
                         >
-                            <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
+                            <span className="w-2 h-2 rounded-full bg-brand-medium animate-pulse" />
                             Next-Gen Performance Marketing
                         </motion.div>
 
@@ -388,7 +399,7 @@ const PerformanceMarketing = () => {
                             className="text-4xl sm:text-5xl md:text-7xl lg:text-[80px] font-black text-slate-900 dark:text-white leading-[0.95] md:leading-[0.9] tracking-tighter mb-6 md:mb-8"
                         >
                             Performance Marketing <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-medium italic">That Drives</span> <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-medium italic">That Drives</span> <br />
                             Measurable Growth
                         </motion.h1>
 
@@ -407,10 +418,10 @@ const PerformanceMarketing = () => {
                             transition={{ duration: 0.8, delay: 0.3 }}
                             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6"
                         >
-                            <button className="px-10 py-5 bg-brand-cyan text-[#030712] rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl shadow-brand-cyan/20 group flex items-center justify-center gap-2">
+                            <button className="px-10 py-5 bg-brand-medium text-[#030712] rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl shadow-brand-medium/20 group flex items-center justify-center gap-2">
                                 Get Free Audit <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </button>
-                            <button className="px-10 py-5 bg-transparent border-2 border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:border-brand-cyan transition-all flex items-center justify-center">
+                            <button className="px-10 py-5 bg-transparent border-2 border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:border-brand-medium transition-all flex items-center justify-center">
                                 View Case Studies
                             </button>
                         </motion.div>
@@ -425,7 +436,7 @@ const PerformanceMarketing = () => {
                     >
                         <div className="relative group">
                             {/* Card Glow Effect */}
-                            <div className="absolute -inset-1 bg-gradient-to-r from-brand-cyan to-brand-medium rounded-[3rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
+                            <div className="absolute -inset-1 bg-gradient-to-r from-brand-medium to-brand-medium rounded-[3rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
 
                             <div className="relative bg-white/70 dark:bg-[#030712]/70 backdrop-blur-2xl rounded-[3rem] p-8 md:p-10 border border-white/20 dark:border-white/5 shadow-2xl">
                                 <div className="mb-8 text-left">
@@ -436,43 +447,43 @@ const PerformanceMarketing = () => {
                                 <form className="space-y-4">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div className="space-y-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-brand-cyan ml-1">Full Name</label>
+                                            <label className="text-[10px] font-black uppercase tracking-widest text-brand-medium ml-1">Full Name</label>
                                             <div className="relative group/input">
-                                                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within/input:text-brand-cyan transition-colors" />
-                                                <input type="text" placeholder="John Doe" className="w-full bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/30 transition-all font-medium" />
+                                                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within/input:text-brand-medium transition-colors" />
+                                                <input type="text" placeholder="John Doe" className="w-full bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-medium/30 transition-all font-medium" />
                                             </div>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-brand-cyan ml-1">Business Name</label>
+                                            <label className="text-[10px] font-black uppercase tracking-widest text-brand-medium ml-1">Business Name</label>
                                             <div className="relative group/input">
-                                                <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within/input:text-brand-cyan transition-colors" />
-                                                <input type="text" placeholder="Acme Corp" className="w-full bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/30 transition-all font-medium" />
+                                                <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within/input:text-brand-medium transition-colors" />
+                                                <input type="text" placeholder="Acme Corp" className="w-full bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-medium/30 transition-all font-medium" />
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div className="space-y-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-brand-cyan ml-1">Email</label>
+                                            <label className="text-[10px] font-black uppercase tracking-widest text-brand-medium ml-1">Email</label>
                                             <div className="relative group/input">
-                                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within/input:text-brand-cyan transition-colors" />
-                                                <input type="email" placeholder="john@company.com" className="w-full bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/30 transition-all font-medium" />
+                                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within/input:text-brand-medium transition-colors" />
+                                                <input type="email" placeholder="john@company.com" className="w-full bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-medium/30 transition-all font-medium" />
                                             </div>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-brand-cyan ml-1">Phone</label>
+                                            <label className="text-[10px] font-black uppercase tracking-widest text-brand-medium ml-1">Phone</label>
                                             <div className="relative group/input">
-                                                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within/input:text-brand-cyan transition-colors" />
-                                                <input type="tel" placeholder="+1 (555) 000-0000" className="w-full bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/30 transition-all font-medium" />
+                                                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within/input:text-brand-medium transition-colors" />
+                                                <input type="tel" placeholder="+1 (555) 000-0000" className="w-full bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-medium/30 transition-all font-medium" />
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-brand-cyan ml-1">Monthly Ad Budget</label>
+                                        <label className="text-[10px] font-black uppercase tracking-widest text-brand-medium ml-1">Monthly Ad Budget</label>
                                         <div className="relative group/input">
-                                            <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within/input:text-brand-cyan transition-colors" />
-                                            <select defaultValue="" className="w-full bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl py-3.5 pl-12 pr-10 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/30 transition-all font-medium appearance-none">
+                                            <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within/input:text-brand-medium transition-colors" />
+                                            <select defaultValue="" className="w-full bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 rounded-2xl py-3.5 pl-12 pr-10 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-medium/30 transition-all font-medium appearance-none">
                                                 <option value="" disabled>Select Budget Range</option>
                                                 <option value="1k-5k">$1,000 - $5,000</option>
                                                 <option value="5k-10k">$5,000 - $10,000</option>
@@ -484,12 +495,12 @@ const PerformanceMarketing = () => {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-brand-cyan ml-1">Select Platform</label>
+                                        <label className="text-[10px] font-black uppercase tracking-widest text-brand-medium ml-1">Select Platform</label>
                                         <div className="grid grid-cols-3 gap-2">
                                             {['Meta', 'Google', 'Both'].map((platform) => (
                                                 <label key={platform} className="relative cursor-pointer group/choice">
                                                     <input type="radio" name="platform" value={platform} className="peer sr-only" />
-                                                    <div className="px-4 py-2 text-center rounded-xl bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 text-[10px] font-bold uppercase text-slate-500 peer-checked:bg-brand-cyan/20 peer-checked:border-brand-cyan peer-checked:text-brand-cyan transition-all">
+                                                    <div className="px-4 py-2 text-center rounded-xl bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-white/10 text-[10px] font-bold uppercase text-slate-500 peer-checked:bg-brand-medium/20 peer-checked:border-brand-medium peer-checked:text-brand-medium transition-all">
                                                         {platform}
                                                     </div>
                                                 </label>
@@ -497,7 +508,7 @@ const PerformanceMarketing = () => {
                                         </div>
                                     </div>
 
-                                    <button className="w-full group mt-4 relative bg-brand-cyan hover:bg-white text-[#030712] rounded-2xl py-4 font-black text-xs uppercase tracking-[0.2em] transition-all overflow-hidden shadow-2xl shadow-brand-cyan/20 flex items-center justify-center gap-2">
+                                    <button className="w-full group mt-4 relative bg-brand-medium hover:bg-white text-[#030712] rounded-2xl py-4 font-black text-xs uppercase tracking-[0.2em] transition-all overflow-hidden shadow-2xl shadow-brand-medium/20 flex items-center justify-center gap-2">
                                         Get My Free Strategy <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </button>
                                 </form>
@@ -528,9 +539,9 @@ const PerformanceMarketing = () => {
             <section className="py-24 px-6 relative overflow-hidden bg-white dark:bg-[#030712] scroll-reveal">
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="text-center mb-16">
-                        <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">The ROI Advantage</span>
+                        <span className="text-brand-medium text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">The ROI Advantage</span>
                         <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white uppercase">
-                            Why Choose <span className="text-brand-cyan">Preet Tech</span>
+                            Why Choose <span className="text-brand-medium">Preet Tech</span>
                         </h2>
                     </div>
 
@@ -542,10 +553,10 @@ const PerformanceMarketing = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
                                 whileHover={{ y: -5 }}
-                                className="group p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 hover:border-brand-cyan/30 transition-all"
+                                className="group p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 hover:border-brand-medium/30 transition-all"
                             >
-                                <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(95,211,230,0.2)] transition-all">
-                                    <item.icon className="w-6 h-6 text-brand-cyan" />
+                                <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(63,143,204,0.2)] transition-all">
+                                    <item.icon className="w-6 h-6 text-brand-medium" />
                                 </div>
                                 <h3 className="text-lg font-black uppercase tracking-tight text-slate-900 dark:text-white mb-3">{item.title}</h3>
                                 <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed font-medium">{item.desc}</p>
@@ -559,10 +570,10 @@ const PerformanceMarketing = () => {
             <section className="py-24 px-6 bg-white dark:bg-[#030712] scroll-reveal">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-16">
-                        <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">The Definition</span>
+                        <span className="text-brand-medium text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">The Definition</span>
                         <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-tight">
                             Performance Marketing <br />
-                            Is <span className="text-brand-cyan">Results-Only</span> Growth.
+                            Is <span className="text-brand-medium">Results-Only</span> Growth.
                         </h2>
                     </div>
 
@@ -602,7 +613,7 @@ const PerformanceMarketing = () => {
                         <p className="text-base font-medium text-slate-600 dark:text-slate-400">
                             <span className="text-slate-900 dark:text-white font-black uppercase text-xs">The Result:</span> You only pay for the growth we deliver.
                         </p>
-                        <button className="px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-[#030712] rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-brand-cyan transition-colors whitespace-nowrap">
+                        <button className="px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-[#030712] rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-brand-medium transition-colors whitespace-nowrap">
                             Request Your Audit
                         </button>
                     </div>
@@ -613,9 +624,9 @@ const PerformanceMarketing = () => {
             <section className="py-20 px-6 bg-white dark:bg-[#030712] relative overflow-hidden scroll-reveal">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-3 block">Full-Funnel Mastery</span>
+                        <span className="text-brand-medium text-[10px] font-black uppercase tracking-[0.4em] mb-3 block">Full-Funnel Mastery</span>
                         <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white uppercase">
-                            Core Performance <span className="text-brand-cyan">Services</span>
+                            Core Performance <span className="text-brand-medium">Services</span>
                         </h2>
                     </div>
 
@@ -629,16 +640,16 @@ const PerformanceMarketing = () => {
                                 className="group relative p-0.5 rounded-3xl bg-slate-200 dark:bg-white/5 hover:bg-gradient-to-br transition-all duration-500 overflow-hidden"
                             >
                                 <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                                <div className="relative p-8 rounded-[1.4rem] bg-white dark:bg-slate-900/90 h-full">
-                                    <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                        <service.icon className="w-6 h-6 text-brand-cyan" />
+                                <div className="relative p-6 md:p-8 rounded-[1.4rem] bg-white dark:bg-slate-900/90 h-full flex flex-col">
+                                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-50 dark:bg-white/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                        <service.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-medium" />
                                     </div>
-                                    <h3 className="text-xl font-black uppercase tracking-tight text-slate-900 dark:text-white mb-3 group-hover:text-brand-cyan transition-colors">{service.title}</h3>
-                                    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium mb-6">
+                                    <h3 className="text-base md:text-lg font-black uppercase tracking-tight text-slate-900 dark:text-white mb-2 group-hover:text-brand-medium transition-colors">{service.title}</h3>
+                                    <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm leading-relaxed font-medium mb-6 flex-grow">
                                         {service.desc}
                                     </p>
-                                    <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-brand-cyan group-hover:gap-4 transition-all">
-                                        Learn More <ArrowRight className="w-4 h-4" />
+                                    <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] font-black uppercase tracking-widest text-brand-medium group-hover:gap-4 transition-all mt-auto">
+                                        Learn More <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
                                     </div>
                                 </div>
                             </motion.div>
@@ -650,19 +661,19 @@ const PerformanceMarketing = () => {
             {/* 6. Platforms We Master (Strategic Ecosystem Redesign) */}
             <section className="py-24 px-6 bg-white dark:bg-[#030712] relative overflow-hidden scroll-reveal">
                 {/* Background Tech Texture */}
-                <div className="absolute inset-0 bg-[radial-gradient(#5fd3e6_0.5px,transparent_0.5px)] bg-[size:24px_24px] opacity-[0.05] pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(#3f8fcc_0.5px,transparent_0.5px)] bg-[size:24px_24px] opacity-[0.05] pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                         <div className="max-w-xl">
-                            <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Omni-Channel Authority</span>
+                            <span className="text-brand-medium text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Omni-Channel Authority</span>
                             <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase leading-tight tracking-tighter">
                                 Strategic <br />
-                                <span className="text-brand-cyan">Ecosystem</span>
+                                <span className="text-brand-medium">Ecosystem</span>
                             </h3>
                         </div>
                         <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
-                            <div className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
+                            <div className="w-2 h-2 rounded-full bg-brand-medium animate-pulse" />
                             <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Live Optimization Active</span>
                         </div>
                     </div>
@@ -677,25 +688,25 @@ const PerformanceMarketing = () => {
                                 whileHover={{ y: -8 }}
                                 className="group relative"
                             >
-                                <div className="absolute -inset-0.5 bg-gradient-to-br from-brand-cyan/0 to-brand-cyan/0 group-hover:from-brand-cyan/20 group-hover:to-brand-medium/20 rounded-[2rem] transition-all duration-500 blur-sm" />
-                                <div className="relative h-full p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 backdrop-blur-sm flex flex-col items-center gap-6 transition-all group-hover:border-brand-cyan/30 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] dark:group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                                <div className="absolute -inset-0.5 bg-gradient-to-br from-brand-medium/0 to-brand-medium/0 group-hover:from-brand-medium/20 group-hover:to-brand-medium/20 rounded-[2rem] transition-all duration-500 blur-sm" />
+                                <div className="relative h-full p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 backdrop-blur-sm flex flex-col items-center gap-6 transition-all group-hover:border-brand-medium/30 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] dark:group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                                     <div className="relative">
-                                        <div className="absolute -inset-4 bg-brand-cyan/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
+                                        <div className="absolute -inset-4 bg-brand-medium/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
                                         <platform.icon className="w-10 h-10 transition-all duration-500 opacity-40 group-hover:opacity-100 group-hover:scale-110" style={{ color: platform.color }} />
                                     </div>
                                     <div className="text-center">
                                         <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Channel 0{i + 1}</p>
-                                        <span className="text-sm font-black uppercase tracking-tight text-slate-900 dark:text-white transition-colors group-hover:text-brand-cyan">{platform.name}</span>
+                                        <span className="text-sm font-black uppercase tracking-tight text-slate-900 dark:text-white transition-colors group-hover:text-brand-medium">{platform.name}</span>
                                     </div>
 
                                     {/* Tech Status readout */}
                                     <div className="mt-auto w-full pt-4 border-t border-slate-50 dark:border-white/5 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
                                         <div className="flex gap-1">
-                                            <div className="w-1 h-3 bg-brand-cyan/40 rounded-full" />
-                                            <div className="w-1 h-3 bg-brand-cyan/60 rounded-full" />
-                                            <div className="w-1 h-3 bg-brand-cyan rounded-full" />
+                                            <div className="w-1 h-3 bg-brand-medium/40 rounded-full" />
+                                            <div className="w-1 h-3 bg-brand-medium/60 rounded-full" />
+                                            <div className="w-1 h-3 bg-brand-medium rounded-full" />
                                         </div>
-                                        <span className="text-[8px] font-black uppercase tracking-widest text-brand-cyan">Mastered</span>
+                                        <span className="text-[8px] font-black uppercase tracking-widest text-brand-medium">Mastered</span>
                                     </div>
                                 </div>
                             </motion.div>
@@ -708,9 +719,9 @@ const PerformanceMarketing = () => {
             <section className="py-24 px-6 bg-white dark:bg-[#030712] overflow-hidden scroll-reveal">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Our Roadmap</span>
+                        <span className="text-brand-medium text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Our Roadmap</span>
                         <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white uppercase">
-                            Strategy <span className="text-brand-cyan">Process</span>
+                            Strategy <span className="text-brand-medium">Process</span>
                         </h2>
                     </div>
 
@@ -721,7 +732,7 @@ const PerformanceMarketing = () => {
                                 initial={{ width: 0 }}
                                 whileInView={{ width: '100%' }}
                                 transition={{ duration: 2, ease: "easeInOut" }}
-                                className="h-full bg-brand-cyan shadow-[0_0_10px_#5fd3e6]"
+                                className="h-full bg-brand-medium shadow-[0_0_10px_#3f8fcc]"
                             />
                         </div>
 
@@ -734,11 +745,11 @@ const PerformanceMarketing = () => {
                                     transition={{ delay: i * 0.1 }}
                                     className="flex flex-col items-center text-center group"
                                 >
-                                    <div className="w-16 h-16 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-white/10 flex items-center justify-center mb-4 md:mb-6 group-hover:border-brand-cyan transition-all relative">
-                                        <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-brand-cyan text-[#030712] text-[8px] font-black flex items-center justify-center border-2 border-white dark:border-[#030712]">
+                                    <div className="w-16 h-16 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-white/10 flex items-center justify-center mb-4 md:mb-6 group-hover:border-brand-medium transition-all relative">
+                                        <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-brand-medium text-[#030712] text-[8px] font-black flex items-center justify-center border-2 border-white dark:border-[#030712]">
                                             0{i + 1}
                                         </div>
-                                        <step.icon className="w-6 h-6 text-brand-cyan" />
+                                        <step.icon className="w-6 h-6 text-brand-medium" />
                                     </div>
                                     <h4 className="text-sm md:text-base font-black uppercase tracking-tight text-slate-900 dark:text-white mb-2">{step.phase}</h4>
                                     <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-[160px]">{step.desc}</p>
@@ -752,48 +763,48 @@ const PerformanceMarketing = () => {
             {/* 8. Case Studies / Results Section (Loop Slider Redesign) */}
             <section className="py-24 px-6 bg-slate-50 dark:bg-[#030712] relative overflow-hidden scroll-reveal">
                 {/* Dynamic Background Element */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-brand-cyan/5 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-brand-medium/5 blur-[120px] rounded-full pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                         <div className="max-w-2xl">
-                            <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Proof Projecting ROI</span>
+                            <span className="text-brand-medium text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Proof Projecting ROI</span>
                             <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase text-slate-900 dark:text-white leading-[0.9]">
                                 High Velocity <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-medium">Growth Stories</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-medium">Growth Stories</span>
                             </h2>
                         </div>
 
                         <div className="flex gap-4 mb-2">
                             <button
                                 onClick={prevCase}
-                                className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-400 hover:text-brand-cyan hover:border-brand-cyan/30 transition-all group"
+                                className="w-12 h-12 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-400 hover:text-brand-medium hover:border-brand-medium/30 transition-all group"
                             >
-                                <ChevronRight className="w-6 h-6 rotate-180 transition-transform group-hover:-translate-x-1" />
+                                <ChevronRight className="w-5 h-5 rotate-180 transition-transform group-hover:-translate-x-1" />
                             </button>
                             <button
                                 onClick={nextCase}
-                                className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-400 hover:text-brand-cyan hover:border-brand-cyan/30 transition-all group"
+                                className="w-12 h-12 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-400 hover:text-brand-medium hover:border-brand-medium/30 transition-all group"
                             >
-                                <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+                                <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                             </button>
                         </div>
                     </div>
 
                     <div className="relative">
                         <div className="overflow-hidden px-4 -mx-4">
-                            <motion.div
-                                className="flex gap-8"
-                                animate={{ x: `calc(-${currentCaseIndex * 100}% - ${currentCaseIndex * 2}rem)` }}
-                                transition={{ type: "spring", damping: 30, stiffness: 200 }}
+                            <div
+                                ref={sliderRef}
+                                onScroll={handleScroll}
+                                className="flex gap-8 overflow-x-auto snap-x snap-mandatory pt-4 pb-12 px-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
                             >
                                 {caseStudies.map((study, i) => (
-                                    <div key={i} className="min-w-full group relative">
-                                        <div className="absolute -inset-2 bg-gradient-to-b from-brand-cyan/20 to-transparent rounded-[3.5rem] opacity-0 group-hover:opacity-100 transition-opacity blur-2xl" />
+                                    <div key={i} className="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.33rem)] group relative snap-start shrink-0">
+                                        <div className="absolute -inset-2 bg-gradient-to-b from-brand-medium/20 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity blur-xl" />
 
-                                        <div className="relative h-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-[3rem] overflow-hidden flex flex-col">
+                                        <div className="relative h-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl overflow-hidden flex flex-col">
                                             {/* Immersive Image Header */}
-                                            <div className="h-64 relative overflow-hidden">
+                                            <div className="h-64 lg:h-72 relative overflow-hidden">
                                                 <img
                                                     src={study.image}
                                                     alt={study.client}
@@ -803,58 +814,58 @@ const PerformanceMarketing = () => {
 
                                                 {/* HUD Overlay */}
                                                 <div className="absolute top-6 left-6 right-6 flex justify-between items-start">
-                                                    <div className="px-3 py-1 rounded-lg bg-brand-cyan/20 backdrop-blur-md border border-brand-cyan/30">
-                                                        <span className="text-[8px] font-black uppercase tracking-widest text-brand-cyan">{study.client}</span>
+                                                    <div className="px-3 py-1 rounded-lg bg-brand-medium/20 backdrop-blur-md border border-brand-medium/30">
+                                                        <span className="text-[8px] font-black uppercase tracking-widest text-brand-medium">{study.client}</span>
                                                     </div>
-                                                    <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                                                        <TrendingUp className="w-5 h-5 text-brand-cyan" />
+                                                    <div className="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                                                        <TrendingUp className="w-4 h-4 text-brand-medium" />
                                                     </div>
                                                 </div>
 
-                                                <div className="absolute bottom-6 left-8 right-8">
-                                                    <p className="text-3xl font-black text-white leading-tight uppercase tracking-tighter">
-                                                        {study.results} <span className="text-brand-cyan italic">Impact</span>
+                                                <div className="absolute bottom-6 left-6 right-6">
+                                                    <p className="text-3xl lg:text-4xl font-black text-white leading-tight uppercase tracking-tighter">
+                                                        {study.results} <br className="hidden lg:block lg:mb-0" /><span className="text-brand-medium italic text-2xl lg:text-3xl">Impact</span>
                                                     </p>
                                                 </div>
                                             </div>
 
                                             {/* Growth Dashboard Bottom */}
-                                            <div className="p-10 flex-grow flex flex-col">
-                                                <div className="flex justify-between items-center mb-10 pb-6 border-b border-slate-100 dark:border-white/5">
+                                            <div className="p-6 lg:p-8 flex-grow flex flex-col">
+                                                <div className="flex justify-between items-center mb-6 lg:mb-8 pb-4 border-b border-slate-100 dark:border-white/5">
                                                     <div>
-                                                        <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Total Scaling</p>
-                                                        <p className="text-2xl font-black text-slate-900 dark:text-white uppercase">{study.growth}</p>
+                                                        <p className="text-[8px] font-black uppercase tracking-widest text-slate-400 mb-1">Total Scaling</p>
+                                                        <p className="text-xl font-black text-slate-900 dark:text-white uppercase">{study.growth}</p>
                                                     </div>
                                                     <div className="text-right">
-                                                        <div className="inline-flex items-center gap-1 text-[8px] font-black text-brand-cyan uppercase tracking-widest px-2 py-1 bg-brand-cyan/10 rounded-full">
+                                                        <div className="inline-flex items-center gap-1 text-[8px] font-black text-brand-medium uppercase tracking-widest px-2 py-1 bg-brand-medium/10 rounded-full">
                                                             Verified ROI
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div className="mt-auto space-y-4">
-                                                    <div className="relative h-20 rounded-2xl bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 p-4 flex items-center justify-between overflow-hidden group/metric">
-                                                        <div className="absolute inset-0 bg-gradient-to-r from-brand-cyan/5 to-transparent -translate-x-full group-hover/metric:translate-x-0 transition-transform duration-500" />
+                                                    <div className="relative h-16 rounded-2xl bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 p-3 flex items-center justify-between overflow-hidden group/metric mt-4">
+                                                        <div className="absolute inset-0 bg-gradient-to-r from-brand-medium/5 to-transparent -translate-x-full group-hover/metric:translate-x-0 transition-transform duration-500" />
 
-                                                        <div className="relative z-10 flex items-center gap-4">
-                                                            <div className="w-10 h-10 rounded-xl bg-white dark:bg-black/20 flex items-center justify-center shadow-sm">
-                                                                <ArrowRight className="w-4 h-4 text-slate-300 dark:text-slate-600 rotate-180" />
+                                                        <div className="relative z-10 flex items-center gap-3">
+                                                            <div className="w-8 h-8 rounded-full bg-white dark:bg-black/20 flex items-center justify-center shadow-sm">
+                                                                <ArrowRight className="w-3 h-3 text-slate-300 dark:text-slate-600 rotate-180" />
                                                             </div>
                                                             <div>
-                                                                <p className="text-[8px] font-black uppercase tracking-[0.2em] text-slate-400 mb-0.5 whitespace-nowrap">Baseline Metric</p>
-                                                                <p className="text-sm font-black text-slate-400 line-through decoration-brand-cyan/30">{study.before}</p>
+                                                                <p className="text-[7px] font-black uppercase tracking-[0.2em] text-slate-400 mb-0.5 whitespace-nowrap">Baseline Metric</p>
+                                                                <p className="text-xs font-black text-slate-500">{study.before}</p>
                                                             </div>
                                                         </div>
 
-                                                        <ArrowRight className="relative z-10 w-4 h-4 text-brand-cyan animate-pulse" />
+                                                        <ArrowRight className="relative z-10 w-3 h-3 text-brand-medium" />
 
                                                         <div className="relative z-10 text-right">
-                                                            <p className="text-[8px] font-black uppercase tracking-[0.2em] text-brand-cyan mb-0.5 whitespace-nowrap">Current Status</p>
-                                                            <p className="text-lg font-black text-slate-900 dark:text-white">{study.after}</p>
+                                                            <p className="text-[7px] font-black uppercase tracking-[0.2em] text-brand-medium mb-0.5 whitespace-nowrap">Current Status</p>
+                                                            <p className="text-sm font-black text-slate-900 dark:text-white">{study.after}</p>
                                                         </div>
                                                     </div>
 
-                                                    <button className="w-full py-4 text-[10px] font-black uppercase tracking-[.4em] text-slate-400 hover:text-brand-cyan border border-transparent hover:border-brand-cyan/20 rounded-xl transition-all flex items-center justify-center gap-3 group/btn">
+                                                    <button className="w-full py-4 text-[10px] font-black uppercase tracking-[.4em] text-slate-400 hover:text-brand-medium border border-transparent hover:border-brand-medium/20 rounded-xl transition-all flex items-center justify-center gap-3 group/btn">
                                                         Full Disclosure <ArrowUpRight className="w-3 h-3 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                                                     </button>
                                                 </div>
@@ -862,16 +873,21 @@ const PerformanceMarketing = () => {
                                         </div>
                                     </div>
                                 ))}
-                            </motion.div>
+                            </div>
                         </div>
 
                         {/* Progress Indicator */}
-                        <div className="flex justify-center gap-2 mt-12">
+                        <div className="flex justify-center gap-2 mt-4">
                             {caseStudies.map((_, i) => (
                                 <button
                                     key={i}
-                                    onClick={() => setCurrentCaseIndex(i)}
-                                    className={`h-1 transition-all duration-500 rounded-full ${currentCaseIndex === i ? 'w-12 bg-brand-cyan' : 'w-4 bg-slate-200 dark:bg-white/10 hover:bg-slate-300 dark:hover:bg-white/20'}`}
+                                    onClick={() => {
+                                        if (sliderRef.current) {
+                                            const cardWidth = sliderRef.current.firstElementChild?.clientWidth || 0;
+                                            sliderRef.current.scrollTo({ left: i * (cardWidth + 32), behavior: 'smooth' });
+                                        }
+                                    }}
+                                    className={`h-1 transition-all duration-500 rounded-full ${currentCaseIndex === i ? 'w-12 bg-brand-medium' : 'w-4 bg-slate-200 dark:bg-white/10 hover:bg-slate-300 dark:hover:bg-white/20'}`}
                                 />
                             ))}
                         </div>
@@ -883,9 +899,9 @@ const PerformanceMarketing = () => {
             <section className="py-32 px-6 bg-white dark:bg-[#030712] relative scroll-reveal">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-24">
-                        <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Sectors We Transform</span>
+                        <span className="text-brand-medium text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Sectors We Transform</span>
                         <h2 className="text-4xl md:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
-                            Industries <span className="text-brand-cyan">We Scale</span>
+                            Industries <span className="text-brand-medium">We Scale</span>
                         </h2>
                     </div>
 
@@ -894,10 +910,10 @@ const PerformanceMarketing = () => {
                             <motion.div
                                 key={i}
                                 whileHover={{ y: -10 }}
-                                className="group p-10 rounded-[2.5rem] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-brand-cyan/30 transition-all shadow-sm"
+                                className="group p-10 rounded-[2.5rem] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-brand-medium/30 transition-all shadow-sm"
                             >
-                                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-900 flex items-center justify-center mb-8 border border-slate-200 dark:border-white/10 group-hover:bg-brand-cyan transition-all">
-                                    <industry.icon className="w-8 h-8 text-brand-cyan group-hover:text-[#030712] transition-colors" />
+                                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-900 flex items-center justify-center mb-8 border border-slate-200 dark:border-white/10 group-hover:bg-brand-medium transition-all">
+                                    <industry.icon className="w-8 h-8 text-brand-medium group-hover:text-[#030712] transition-colors" />
                                 </div>
                                 <h4 className="text-2xl font-black uppercase tracking-tight text-slate-900 dark:text-white mb-4">{industry.name}</h4>
                                 <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">{industry.desc}</p>
@@ -911,18 +927,18 @@ const PerformanceMarketing = () => {
             <section className="py-16 px-6 relative overflow-hidden scroll-reveal">
                 <div className="max-w-7xl mx-auto">
                     <div className="relative rounded-[3rem] bg-slate-900 dark:bg-black p-10 md:p-16 overflow-hidden border border-white/10">
-                        {/* Animated Glows */}
-                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-cyan/10 blur-[100px] rounded-full animate-pulse" />
-                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-medium/10 blur-[100px] rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+                        {/* Static Glows */}
+                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-medium/8 blur-[100px] rounded-full" />
+                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-medium/8 blur-[100px] rounded-full" />
 
                         <div className="relative z-10 max-w-2xl mx-auto">
                             <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter mb-6 leading-[0.9]">
-                                Ready to Scale <br /> <span className="text-brand-cyan italic">Your Revenue?</span>
+                                Ready to Scale <br /> <span className="text-brand-medium italic">Your Revenue?</span>
                             </h2>
                             <p className="text-slate-400 text-base md:text-lg font-medium mb-10">
                                 Don't leave your growth to chance. Get a custom performance roadmap designed for your specific business goals.
                             </p>
-                            <button className="px-10 py-5 bg-brand-cyan text-[#030712] rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-white transition-all shadow-2xl shadow-brand-cyan/20 group flex items-center gap-2 mx-auto">
+                            <button className="px-10 py-5 bg-brand-medium text-[#030712] rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-white transition-all shadow-2xl shadow-brand-medium/20 group flex items-center gap-2 mx-auto">
                                 Book Free Performance Audit <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                             </button>
                         </div>
@@ -930,121 +946,181 @@ const PerformanceMarketing = () => {
                 </div>
             </section>
 
-            {/* 11. Ad Creatives & Funnel Showcase (Command Center Redesign - Compact) */}
-            <section className="py-20 px-6 bg-slate-50 dark:bg-[#030712] relative overflow-hidden scroll-reveal">
-                {/* Visual Connector Line */}
-                <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-cyan/20 to-transparent -rotate-12 pointer-events-none" />
+            {/* 11. Creative Command Center — Gradient Portrait Cards */}
+            <section className="relative scroll-reveal overflow-hidden bg-slate-50 dark:bg-[#06080f] py-24 px-6">
+
+                {/* Subtle dot grid */}
+                <div className="absolute inset-0 pointer-events-none opacity-[0.35] dark:opacity-[0.06]"
+                    style={{ backgroundImage: 'radial-gradient(#3f8fcc 0.75px, transparent 0.75px)', backgroundSize: '28px 28px' }} />
 
                 <div className="max-w-7xl mx-auto relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        <div className="lg:col-span-7">
-                            <div className="relative">
-                                {/* Dashboard View - Floating Browser Frame */}
-                                <motion.div
-                                    whileHover={{ y: -3, rotateX: 2 }}
-                                    className="relative z-20 mb-8 rounded-[1.5rem] overflow-hidden border border-white dark:border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] perspective"
-                                >
-                                    <div className="absolute top-0 left-0 w-full h-8 bg-white/90 dark:bg-black/90 backdrop-blur-md flex items-center px-4 gap-1.5 border-b border-slate-100 dark:border-white/5">
-                                        <div className="flex gap-1">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-slate-200 dark:bg-white/10" />
-                                            <div className="w-1.5 h-1.5 rounded-full bg-slate-200 dark:bg-white/10" />
-                                            <div className="w-1.5 h-1.5 rounded-full bg-slate-200 dark:bg-white/10" />
-                                        </div>
-                                        <span className="text-[7px] font-black uppercase tracking-[0.3em] text-slate-400 ml-3">Creative_Command_System</span>
-                                    </div>
-                                    <div className="bg-slate-100 dark:bg-slate-900 pt-8 aspect-[16/9]">
-                                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop" alt="Dashboard" className="w-full h-full object-cover grayscale brightness-50 contrast-125 transition-all duration-700 hover:grayscale-0 hover:brightness-100" />
-                                    </div>
-                                </motion.div>
 
-                                {/* Creative Duo - Overlapping perspective cards */}
-                                <div className="relative h-[350px] sm:h-72 lg:h-[400px] mt-12">
-                                    <motion.div
-                                        initial={{ rotate: -8, x: -10 }}
-                                        whileHover={{ rotate: 0, scale: 1.05, z: 20 }}
-                                        className="absolute top-0 left-0 w-[55%] sm:w-[45%] aspect-[9/16] rounded-[1.5rem] sm:rounded-[2rem] bg-slate-200 overflow-hidden shadow-2xl border-2 border-white dark:border-white/10 z-10 transition-all duration-500"
-                                    >
-                                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop" alt="Production" className="w-full h-full object-cover" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                        <div className="absolute top-3 left-3 px-2 py-0.5 bg-brand-cyan text-[#030712] rounded-md text-[7px] font-black uppercase tracking-widest">Top Creative</div>
-                                    </motion.div>
-
-                                    <motion.div
-                                        initial={{ rotate: 8, x: 30, y: 40 }}
-                                        whileHover={{ rotate: 0, scale: 1.05, z: 30, y: 20 }}
-                                        className="absolute top-0 right-0 sm:right-[15%] w-[55%] sm:w-[45%] aspect-[9/16] rounded-[1.5rem] sm:rounded-[2rem] bg-slate-200 overflow-hidden shadow-2xl border-2 border-white dark:border-white/10 z-20 transition-all duration-500"
-                                    >
-                                        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=1974&auto=format&fit=crop" alt="Output" className="w-full h-full object-cover" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                        <div className="absolute top-3 left-3 px-2 py-0.5 bg-white text-[#030712] rounded-md text-[7px] font-black uppercase tracking-widest">Winning Funnel</div>
-                                    </motion.div>
-                                </div>
+                    {/* ── TITLE BLOCK ── */}
+                    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-medium/10 border border-brand-medium/20 mb-5">
+                                <span className="w-1.5 h-1.5 rounded-full bg-brand-medium animate-pulse" />
+                                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-brand-medium">High-Velocity Production</span>
                             </div>
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white uppercase leading-[0.9] tracking-tighter">
+                                Creative <span className="text-brand-medium">Command</span><br />Center.
+                            </h2>
                         </div>
-
-                        <div className="lg:col-span-5">
-                            <div className="mb-10">
-                                <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] block mb-3">High-Velocity Production</span>
-                                <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase leading-[0.9] tracking-tighter mb-4">
-                                    Creative <br />
-                                    <span className="text-brand-cyan">Command</span> <br />
-                                    Center.
-                                </h2>
-                                <p className="text-slate-500 dark:text-slate-400 font-medium text-sm leading-relaxed max-w-sm">
-                                    Bridging the gap between raw creativity and predictive ROI.
-                                </p>
-                            </div>
-
-                            <div className="space-y-3">
-                                {[
-                                    { label: "Production", title: "Cinematic High-Fi", desc: "Studio-grade video production optimized for rapid 3-second hooks.", icon: Layers },
-                                    { label: "Psychology", title: "Behavioral Design", desc: "Landing experiences engineered with psychological triggers.", icon: Layout },
-                                    { label: "Analytical", title: "Iterative Testing", desc: "Constant A/B/C testing metrics that scale the winners.", icon: Activity }
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={i}
-                                        whileHover={{ x: 6 }}
-                                        className="p-6 rounded-[1.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:border-brand-cyan/40 transition-all flex flex-col gap-2 group shadow-sm"
-                                    >
-                                        <div className="flex justify-between items-center">
-                                            <div className="flex items-center gap-2">
-                                                <div className="p-1.5 rounded-lg bg-slate-50 dark:bg-white/5 group-hover:bg-brand-cyan transition-colors">
-                                                    <item.icon className="w-3 h-3 text-brand-cyan group-hover:text-[#030712]" />
-                                                </div>
-                                                <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{item.label}</span>
-                                            </div>
-                                            <div className="w-1 h-1 rounded-full bg-slate-200 dark:bg-white/10 group-hover:bg-brand-cyan group-hover:animate-pulse" />
-                                        </div>
-                                        <h4 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight">{item.title}</h4>
-                                        <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">{item.desc}</p>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </div>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed max-w-xs">
+                            Bridging the gap between raw creativity and predictive ROI — at machine speed.
+                        </p>
                     </div>
+
+                    {/* ── THREE PORTRAIT CARDS ── */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        {[
+                            {
+                                num: '01',
+                                label: 'Production',
+                                title: 'Cinematic\nHigh-Fi',
+                                desc: 'Studio-grade video production built for rapid 3-second hooks that arrest attention and drive conversion before the scroll.',
+                                icon: Layers,
+                                metric: '3s',
+                                metricLabel: 'Hook Window',
+                                bg: 'linear-gradient(160deg, #0f2a4a 0%, #0a1628 40%, #061020 100%)',
+                                accent: '#1d4ed8',
+                                glow: 'rgba(29,78,216,0.3)',
+                            },
+                            {
+                                num: '02',
+                                label: 'Psychology',
+                                title: 'Behavioral\nDesign',
+                                desc: 'Landing experiences architected with neuro-psychological persuasion principles, cognitive trigger mapping, and zero-friction flows.',
+                                icon: Layout,
+                                metric: '↑42%',
+                                metricLabel: 'Avg. CVR Lift',
+                                bg: 'linear-gradient(160deg, #0a2e35 0%, #061e24 40%, #040f12 100%)',
+                                accent: '#0891b2',
+                                glow: 'rgba(8,145,178,0.3)',
+                            },
+                            {
+                                num: '03',
+                                label: 'Analytical',
+                                title: 'Iterative\nTesting',
+                                desc: 'Constant A/B/C testing at velocity — a 24/7 data loop that kills losers fast and compounds winning signals every cycle.',
+                                icon: Activity,
+                                metric: '200+',
+                                metricLabel: 'Variants / Month',
+                                bg: 'linear-gradient(160deg, #0d2040 0%, #091530 40%, #050c1e 100%)',
+                                accent: '#3f8fcc',
+                                glow: 'rgba(63,143,204,0.3)',
+                            },
+                        ].map((card, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.12, duration: 0.6 }}
+                                whileHover={{ y: -8, scale: 1.02 }}
+                                className="relative rounded-3xl overflow-hidden flex flex-col cursor-default group"
+                                style={{
+                                    background: card.bg,
+                                    minHeight: '440px',
+                                    boxShadow: `0 20px 60px -10px ${card.glow}, 0 0 0 1px rgba(255,255,255,0.06)`,
+                                }}
+                            >
+                                {/* Card inner glow on hover */}
+                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl"
+                                    style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, ${card.glow} 0%, transparent 70%)` }} />
+
+                                {/* Top accent line */}
+                                <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(90deg, transparent, ${card.accent}, transparent)` }} />
+
+                                {/* Content */}
+                                <div className="relative flex flex-col h-full p-8">
+
+                                    {/* Number watermark */}
+                                    <div className="absolute top-4 right-6 text-[100px] font-black leading-none select-none pointer-events-none"
+                                        style={{ color: 'rgba(255,255,255,0.04)', fontVariantNumeric: 'tabular-nums' }}>
+                                        {card.num}
+                                    </div>
+
+                                    {/* Icon + label */}
+                                    <div className="flex items-center gap-3 mb-auto">
+                                        <div className="w-10 h-10 rounded-xl flex items-center justify-center"
+                                            style={{ background: `${card.accent}22`, border: `1px solid ${card.accent}44` }}>
+                                            <card.icon className="w-5 h-5" style={{ color: card.accent }} />
+                                        </div>
+                                        <span className="text-[8px] font-black uppercase tracking-[0.3em]" style={{ color: `${card.accent}99` }}>
+                                            {card.label}
+                                        </span>
+                                    </div>
+
+                                    {/* Spacer */}
+                                    <div className="flex-1 min-h-[80px]" />
+
+                                    {/* Title */}
+                                    <h3 className="text-3xl font-black text-white uppercase leading-[1.05] tracking-tight mb-4 whitespace-pre-line">
+                                        {card.title}
+                                    </h3>
+
+                                    {/* Description */}
+                                    <p className="text-[11px] font-medium leading-relaxed text-white/40 mb-6 group-hover:text-white/60 transition-colors">
+                                        {card.desc}
+                                    </p>
+
+                                    {/* Metric pill — frosted glass */}
+                                    <div className="flex items-center justify-between px-5 py-4 rounded-2xl backdrop-blur-md"
+                                        style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                                        <div>
+                                            <p className="text-2xl font-black text-white leading-none">{card.metric}</p>
+                                            <p className="text-[7px] font-bold uppercase tracking-widest text-white/40 mt-1">{card.metricLabel}</p>
+                                        </div>
+                                        <div className="w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all"
+                                            style={{ background: card.accent }}>
+                                            <ArrowRight className="w-3.5 h-3.5 text-white" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* ── STAT BAR ── */}
+                    <div className="mt-5 grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-200 dark:divide-white/5 bg-white dark:bg-white/[0.02] rounded-2xl border border-slate-100 dark:border-white/5 overflow-hidden">
+                        {[
+                            { value: '$10M+', label: 'Ad Spend Managed' },
+                            { value: '4.8×', label: 'Average ROAS' },
+                            { value: '500K+', label: 'Conversions Generated' },
+                            { value: '95%', label: 'Client Retention' },
+                        ].map((stat, i) => (
+                            <div key={i} className="flex flex-col items-center justify-center px-6 py-5 hover:bg-brand-medium/5 dark:hover:bg-brand-medium/10 transition-colors">
+                                <p className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white leading-none">{stat.value}</p>
+                                <p className="text-[8px] font-bold uppercase tracking-widest text-slate-400 mt-2 text-center">{stat.label}</p>
+                            </div>
+                        ))}
+                    </div>
+
                 </div>
             </section>
 
             {/* 12. Technology & Tools Stack */}
-            <section className="py-32 px-6 bg-white dark:bg-[#030712] relative overflow-hidden scroll-reveal">
-                <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-12 mb-20">
-                        <div className="max-w-md">
-                            <h3 className="text-2xl font-black uppercase tracking-tight text-slate-900 dark:text-white mb-4">
-                                The <span className="text-brand-cyan">Growth</span> Stack
+            <section className="py-24 px-6 bg-white dark:bg-[#030712] relative overflow-hidden scroll-reveal">
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-16 lg:gap-32">
+                        <div className="max-w-[280px] w-full relative shrink-0">
+                            <div className="absolute -left-6 top-2.5 w-1.5 h-1.5 bg-indigo-500 rotate-45 rounded-[1px]" />
+                            <h3 className="text-lg md:text-xl font-black tracking-tight text-slate-900 dark:text-white mb-4 uppercase">
+                                THE <span className="text-brand-medium">GROWTH</span> STACK
                             </h3>
-                            <p className="text-sm text-slate-500 font-medium">
+                            <p className="text-[10px] text-slate-500 font-medium leading-[1.8]">
                                 We utilize the world's most advanced marketing platforms and tracking technologies to ensure your business stays ahead of the curve.
                             </p>
                         </div>
-                        <div className="flex-1 max-w-2xl">
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                        <div className="w-full lg:flex-1">
+                            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
                                 {tools.map((tool, i) => (
-                                    <div key={i} className="flex flex-col items-center p-8 rounded-3xl bg-slate-50 dark:bg-white/[0.02] border border-slate-100 dark:border-white/5 group hover:border-brand-cyan/30 transition-all">
-                                        <div className="w-12 h-12 mb-4 bg-white dark:bg-black/20 rounded-xl p-2 flex items-center justify-center">
-                                            <img src={tool.icon} alt={tool.name} className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500" />
+                                    <div key={i} className="flex flex-col items-center justify-center h-28 md:h-32 rounded-3xl bg-white dark:bg-white/[0.02] shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-slate-50 dark:border-white/5 transition-all w-full group">
+                                        <div className="w-8 h-8 md:w-10 md:h-10 mb-4 flex items-center justify-center opacity-40 group-hover:opacity-100 transition-opacity">
+                                            <img src={tool.icon} alt={tool.name} className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 pointer-events-none" />
                                         </div>
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors text-center">{tool.name}</span>
+                                        <span className="text-[6px] md:text-[7px] font-black uppercase tracking-[0.2em] text-[#94a3b8] dark:text-slate-500 text-center">{tool.name}</span>
                                     </div>
                                 ))}
                             </div>
@@ -1057,9 +1133,9 @@ const PerformanceMarketing = () => {
             <section className="py-32 px-6 bg-slate-50 dark:bg-black relative overflow-hidden text-slate-900 dark:text-white scroll-reveal">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div>
-                        <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Total Transparency</span>
+                        <span className="text-brand-medium text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Total Transparency</span>
                         <h2 className="text-4xl md:text-5xl font-black tracking-tight uppercase mb-8 leading-tight">
-                            ROI & Reporting <br /> <span className="text-brand-cyan">System</span>
+                            ROI & Reporting <br /> <span className="text-brand-medium">System</span>
                         </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {[
@@ -1069,8 +1145,8 @@ const PerformanceMarketing = () => {
                                 { title: "Real-Time Data", icon: Gauge }
                             ].map((item, i) => (
                                 <div key={i} className="p-6 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-2xl flex items-center gap-4 group hover:bg-slate-50 dark:hover:bg-white/10 transition-colors">
-                                    <div className="w-10 h-10 rounded-lg bg-brand-cyan/20 flex items-center justify-center">
-                                        <item.icon className="w-5 h-5 text-brand-cyan" />
+                                    <div className="w-10 h-10 rounded-lg bg-brand-medium/20 flex items-center justify-center">
+                                        <item.icon className="w-5 h-5 text-brand-medium" />
                                     </div>
                                     <span className="text-sm font-black uppercase tracking-tight">
                                         {item.title}
@@ -1096,22 +1172,20 @@ const PerformanceMarketing = () => {
                                             initial={{ height: 0 }}
                                             whileInView={{ height: `${h}%` }}
                                             transition={{ delay: i * 0.1, duration: 1 }}
-                                            className="flex-1 bg-gradient-to-t from-brand-cyan to-brand-medium rounded-t-lg opacity-80"
+                                            className="flex-1 bg-gradient-to-t from-brand-medium to-brand-medium rounded-t-lg opacity-80"
                                         />
                                     ))}
                                 </div>
                                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white dark:from-[#030712] to-transparent pointer-events-none" />
                             </div>
                         </div>
-                        {/* Floating elements */}
-                        <motion.div
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                        {/* Floating stat badge - static position, no infinite loop */}
+                        <div
                             className="absolute -top-5 -right-5 sm:-top-10 sm:-right-10 p-4 sm:p-6 bg-white dark:bg-white/10 backdrop-blur-xl border border-slate-200 dark:border-white/20 rounded-2xl shadow-2xl z-20"
                         >
-                            <p className="text-[8px] font-black uppercase tracking-widest text-brand-cyan mb-1 text-center">Live ROAS</p>
+                            <p className="text-[8px] font-black uppercase tracking-widest text-brand-medium mb-1 text-center">Live ROAS</p>
                             <p className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">4.82x</p>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1119,8 +1193,8 @@ const PerformanceMarketing = () => {
             {/* 14. Free Audit / Consultation Form Section (The Command Center Redesign) */}
             <section className="py-32 px-6 bg-white dark:bg-[#030712] relative overflow-hidden transition-colors duration-500">
                 {/* Immersive Background */}
-                <div className="absolute inset-0 bg-[radial-gradient(#5fd3e6_0.5px,transparent_0.5px)] bg-[size:32px_32px] opacity-[0.05] dark:opacity-[0.03]" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-cyan/5 blur-[150px] rounded-full pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(#3f8fcc_0.5px,transparent_0.5px)] bg-[size:32px_32px] opacity-[0.05] dark:opacity-[0.03]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-medium/5 blur-[150px] rounded-full pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -1131,10 +1205,10 @@ const PerformanceMarketing = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8 }}
                             >
-                                <span className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Immediate Value</span>
+                                <span className="text-brand-medium text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Immediate Value</span>
                                 <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 dark:text-white uppercase leading-[0.95] md:leading-[0.9] tracking-tighter mb-8">
                                     The <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-medium">Performance</span> <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-medium">Performance</span> <br />
                                     Command Center.
                                 </h2>
                                 <p className="text-slate-500 dark:text-slate-400 text-lg font-medium leading-relaxed max-w-xl mb-12">
@@ -1150,8 +1224,8 @@ const PerformanceMarketing = () => {
                                         { label: "Cost", value: "FREE", icon: DollarSign }
                                     ].map((stat, i) => (
                                         <div key={i} className="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 backdrop-blur-sm flex items-center gap-4 group hover:bg-white dark:hover:bg-white/10 transition-all shadow-sm dark:shadow-none">
-                                            <div className="w-10 h-10 rounded-xl bg-brand-cyan/10 flex items-center justify-center">
-                                                <stat.icon className="w-5 h-5 text-brand-cyan" />
+                                            <div className="w-10 h-10 rounded-xl bg-brand-medium/10 flex items-center justify-center">
+                                                <stat.icon className="w-5 h-5 text-brand-medium" />
                                             </div>
                                             <div>
                                                 <p className="text-[8px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-0.5">{stat.label}</p>
@@ -1166,7 +1240,7 @@ const PerformanceMarketing = () => {
                         {/* Right Content: The Form Card */}
                         <div className="lg:col-span-6 relative">
                             {/* Decorative Elements */}
-                            <div className="absolute -top-12 -right-12 w-32 h-32 bg-brand-cyan/10 blur-2xl rounded-full" />
+                            <div className="absolute -top-12 -right-12 w-32 h-32 bg-brand-medium/10 blur-2xl rounded-full" />
                             <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-brand-medium/10 blur-3xl rounded-full" />
 
                             <motion.div
@@ -1175,7 +1249,7 @@ const PerformanceMarketing = () => {
                                 transition={{ duration: 0.8 }}
                                 className="relative bg-white/70 dark:bg-white/[0.03] backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-[3rem] p-8 md:p-12 shadow-2xl overflow-hidden group"
                             >
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-cyan/20 to-transparent blur-xl scale-0 group-hover:scale-150 transition-transform duration-700" />
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-medium/20 to-transparent blur-xl scale-0 group-hover:scale-150 transition-transform duration-700" />
 
                                 <div className="mb-10 text-center lg:text-left">
                                     <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-2">Initialize Your Audit</h3>
@@ -1185,39 +1259,39 @@ const PerformanceMarketing = () => {
                                 <form className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <label className="text-[9px] font-black uppercase tracking-widest text-brand-cyan ml-1">Company Name</label>
+                                            <label className="text-[9px] font-black uppercase tracking-widest text-brand-medium ml-1">Company Name</label>
                                             <input
                                                 type="text"
                                                 placeholder="e.g. Acme Scaling"
-                                                className="w-full bg-slate-50 dark:bg-[#030712]/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-brand-cyan/20 focus:border-brand-cyan/40 transition-all font-medium"
+                                                className="w-full bg-slate-50 dark:bg-[#030712]/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-brand-medium/20 focus:border-brand-medium/40 transition-all font-medium"
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-[9px] font-black uppercase tracking-widest text-brand-cyan ml-1">Current ROAS</label>
+                                            <label className="text-[9px] font-black uppercase tracking-widest text-brand-medium ml-1">Current ROAS</label>
                                             <input
                                                 type="text"
                                                 placeholder="e.g. 2.5x"
-                                                className="w-full bg-slate-50 dark:bg-[#030712]/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-brand-cyan/20 focus:border-brand-cyan/40 transition-all font-medium"
+                                                className="w-full bg-slate-50 dark:bg-[#030712]/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-brand-medium/20 focus:border-brand-medium/40 transition-all font-medium"
                                             />
                                         </div>
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-[9px] font-black uppercase tracking-widest text-brand-cyan ml-1">Website URL</label>
+                                        <label className="text-[9px] font-black uppercase tracking-widest text-brand-medium ml-1">Website URL</label>
                                         <div className="relative">
                                             <Globe className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-slate-600" />
                                             <input
                                                 type="url"
                                                 placeholder="https://yourbrand.com"
-                                                className="w-full bg-slate-50 dark:bg-[#030712]/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 pl-14 pr-6 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-brand-cyan/20 focus:border-brand-cyan/40 transition-all font-medium"
+                                                className="w-full bg-slate-50 dark:bg-[#030712]/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 pl-14 pr-6 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-brand-medium/20 focus:border-brand-medium/40 transition-all font-medium"
                                             />
                                         </div>
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <label className="text-[9px] font-black uppercase tracking-widest text-brand-cyan ml-1">Monthly Budget</label>
-                                            <select defaultValue="" className="w-full bg-slate-50 dark:bg-[#030712]/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/20 focus:border-brand-cyan/40 transition-all font-medium appearance-none cursor-pointer">
+                                            <label className="text-[9px] font-black uppercase tracking-widest text-brand-medium ml-1">Monthly Budget</label>
+                                            <select defaultValue="" className="w-full bg-slate-50 dark:bg-[#030712]/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-medium/20 focus:border-brand-medium/40 transition-all font-medium appearance-none cursor-pointer">
                                                 <option value="" disabled className="bg-white dark:bg-[#030712]">Select Range</option>
                                                 <option value="5k-10k" className="bg-white dark:bg-[#030712]">$5k - $10k</option>
                                                 <option value="10k-50k" className="bg-white dark:bg-[#030712]">$10k - $50k</option>
@@ -1225,8 +1299,8 @@ const PerformanceMarketing = () => {
                                             </select>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-[9px] font-black uppercase tracking-widest text-brand-cyan ml-1">Growth Goal</label>
-                                            <select defaultValue="" className="w-full bg-slate-50 dark:bg-[#030712]/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/20 focus:border-brand-cyan/40 transition-all font-medium appearance-none cursor-pointer">
+                                            <label className="text-[9px] font-black uppercase tracking-widest text-brand-medium ml-1">Growth Goal</label>
+                                            <select defaultValue="" className="w-full bg-slate-50 dark:bg-[#030712]/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-medium/20 focus:border-brand-medium/40 transition-all font-medium appearance-none cursor-pointer">
                                                 <option value="" disabled className="bg-white dark:bg-[#030712]">Primary Objective</option>
                                                 <option value="roas" className="bg-white dark:bg-[#030712]">Maximize ROAS</option>
                                                 <option value="scale" className="bg-white dark:bg-[#030712]">Vertical Scaling</option>
@@ -1235,7 +1309,7 @@ const PerformanceMarketing = () => {
                                         </div>
                                     </div>
 
-                                    <button className="w-full group relative bg-brand-cyan hover:bg-slate-900 dark:hover:bg-white text-[#030712] dark:text-[#030712] hover:text-white transition-all rounded-2xl py-5 font-black text-[10px] uppercase tracking-[0.3em] overflow-hidden flex items-center justify-center gap-3 shadow-xl shadow-brand-cyan/20">
+                                    <button className="w-full group relative bg-brand-medium hover:bg-slate-900 dark:hover:bg-white text-[#030712] dark:text-[#030712] hover:text-white transition-all rounded-2xl py-5 font-black text-[10px] uppercase tracking-[0.3em] overflow-hidden flex items-center justify-center gap-3 shadow-xl shadow-brand-medium/20">
                                         <span className="relative z-10">Request Data Audit</span>
                                         <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
                                         <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-medium group-hover:h-full transition-all duration-500 opacity-20" />
@@ -1254,12 +1328,9 @@ const PerformanceMarketing = () => {
 
             {/* 15. Final Strong CTA Section */}
             <section className="py-12 px-6 mb-12 scroll-reveal">
-                <div className="max-w-7xl mx-auto relative rounded-[3rem] bg-gradient-to-br from-brand-cyan via-brand-medium to-brand-cyan p-10 md:p-16 overflow-hidden text-[#030712] text-center shadow-[0_30px_100px_rgba(95,211,230,0.2)]">
-                    <motion.div
-                        animate={{ scale: [1, 1.2, 1], rotate: [0, 5, 0] }}
-                        transition={{ duration: 10, repeat: Infinity }}
-                        className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/20 blur-[80px] rounded-full"
-                    />
+                <div className="max-w-7xl mx-auto relative rounded-[3rem] bg-gradient-to-br from-brand-medium via-brand-medium to-brand-medium p-10 md:p-16 overflow-hidden text-[#030712] text-center shadow-[0_30px_100px_rgba(63,143,204,0.2)]">
+                    {/* Static glow for performance */}
+                    <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 blur-[80px] rounded-full" />
 
                     <div className="relative z-10 max-w-3xl mx-auto">
                         <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter mb-6 leading-[0.9]">

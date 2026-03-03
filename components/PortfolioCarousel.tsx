@@ -1,7 +1,7 @@
 "use client";
-import React, { useState, useRef, useCallback } from 'react';
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight, ArrowLeft } from 'lucide-react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
+import { motion, useMotionValue, animate } from 'framer-motion';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 
 interface CardData {
     id: string;
@@ -23,16 +23,31 @@ const CARD_STEP = CARD_WIDTH + CARD_GAP;
 export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const x = useMotionValue(0);
     const trackRef = useRef<HTMLDivElement>(null);
 
-    const clamp = (val: number, min: number, max: number) => Math.max(min, Math.min(max, val));
-
     const snapTo = useCallback((index: number) => {
-        const clamped = clamp(index, 0, cards.length - 1);
-        setActiveIndex(clamped);
-        animate(x, -clamped * CARD_STEP, { type: 'spring', stiffness: 280, damping: 30 });
+        let nextIndex = index;
+        if (nextIndex < 0) {
+            nextIndex = cards.length - 1;
+        } else if (nextIndex >= cards.length) {
+            nextIndex = 0;
+        }
+
+        setActiveIndex(nextIndex);
+        animate(x, -nextIndex * CARD_STEP, { type: 'spring', stiffness: 280, damping: 30 });
     }, [cards.length, x]);
+
+    useEffect(() => {
+        if (isDragging || isHovered) return;
+
+        const autoSlide = setInterval(() => {
+            snapTo(activeIndex + 1);
+        }, 3000); // 3-second delay for auto slide
+
+        return () => clearInterval(autoSlide);
+    }, [activeIndex, isDragging, isHovered, snapTo]);
 
     const handleDragEnd = (_: any, info: any) => {
         setIsDragging(false);
@@ -55,11 +70,11 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
     };
 
     return (
-        <section className="py-16 md:py-28 bg-[#060911] text-white overflow-hidden reveal-section relative">
+        <section className="py-16 md:py-28 bg-[#fafafa] dark:bg-[#060911] text-slate-900 dark:text-white overflow-hidden reveal-section relative">
             {/* Background glows */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-brand-deep/10 blur-[180px] rounded-full" />
-                <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-cyan/8 blur-[140px] rounded-full" />
+                <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-brand-deep/5 dark:bg-brand-deep/10 blur-[180px] rounded-full" />
+                <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#3f8fcc]/5 dark:bg-[#3f8fcc]/8 blur-[140px] rounded-full" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
@@ -67,18 +82,18 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
                     <div className="space-y-3">
                         <div className="flex items-center gap-3">
-                            <div className="h-px w-8 bg-brand-cyan" />
-                            <span className="text-brand-cyan font-bold uppercase tracking-[0.25em] text-xs">Our Work</span>
+                            <div className="h-px w-8 bg-[#3f8fcc]" />
+                            <span className="text-[#3f8fcc] font-bold uppercase tracking-[0.25em] text-xs">Our Work</span>
                         </div>
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
                             Content That<br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-sky to-brand-cyan">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#3f8fcc]">
                                 Stops the Scroll.
                             </span>
                         </h2>
                     </div>
                     <div className="flex flex-col items-start md:items-end gap-4">
-                        <p className="text-slate-400 max-w-xs text-sm leading-relaxed md:text-right">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-xs text-sm leading-relaxed md:text-right">
                             Premium content crafted for every platform — built to grow your brand.
                         </p>
                         {/* Nav Buttons */}
@@ -86,20 +101,18 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
                             <button
                                 id="portfolio-prev"
                                 onClick={() => snapTo(activeIndex - 1)}
-                                disabled={activeIndex === 0}
-                                className="w-11 h-11 rounded-full border-2 border-white/10 flex items-center justify-center transition-all disabled:opacity-30 disabled:cursor-not-allowed text-slate-400 hover:bg-brand-medium hover:text-white hover:border-brand-medium"
+                                className="w-11 h-11 rounded-full border-2 border-slate-200 dark:border-white/10 flex items-center justify-center transition-all text-slate-500 dark:text-slate-400 hover:bg-[#3f8fcc] hover:text-white hover:border-[#3f8fcc]"
                                 aria-label="Previous slide"
                             >
                                 <ArrowLeft className="w-5 h-5" />
                             </button>
-                            <span className="text-slate-500 text-sm font-bold tabular-nums">
+                            <span className="text-slate-600 dark:text-slate-500 text-sm font-bold tabular-nums">
                                 {String(activeIndex + 1).padStart(2, '0')} / {String(cards.length).padStart(2, '0')}
                             </span>
                             <button
                                 id="portfolio-next"
                                 onClick={() => snapTo(activeIndex + 1)}
-                                disabled={activeIndex === cards.length - 1}
-                                className="w-11 h-11 rounded-full border-2 border-white/10 flex items-center justify-center transition-all disabled:opacity-30 disabled:cursor-not-allowed text-slate-400 hover:bg-brand-medium hover:text-white hover:border-brand-medium"
+                                className="w-11 h-11 rounded-full border-2 border-slate-200 dark:border-white/10 flex items-center justify-center transition-all text-slate-500 dark:text-slate-400 hover:bg-[#3f8fcc] hover:text-white hover:border-[#3f8fcc]"
                                 aria-label="Next slide"
                             >
                                 <ArrowRight className="w-5 h-5" />
@@ -110,7 +123,7 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
             </div>
 
             {/* Carousel Track — full bleed */}
-            <div className="relative pl-4 md:pl-[max(1rem,calc((100vw-80rem)/2+1.5rem))]">
+            <div className="relative pl-4 md:pl-[max(1rem,calc((100%-80rem)/2+1.5rem))]">
                 {/* Drag hint */}
                 <motion.div
                     animate={{ opacity: isDragging ? 0 : 1 }}
@@ -122,7 +135,7 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
                     Drag to explore
                 </motion.div>
 
-                <div ref={trackRef} className="overflow-visible cursor-grab active:cursor-grabbing">
+                <div ref={trackRef} className="overflow-visible cursor-grab active:cursor-grabbing" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                     <motion.div
                         drag="x"
                         dragConstraints={{ left: -((cards.length - 1) * CARD_STEP), right: 0 }}
@@ -166,7 +179,7 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
                                 {i === activeIndex && (
                                     <motion.div
                                         layoutId="activeBorder"
-                                        className="absolute inset-0 rounded-3xl border-2 border-brand-cyan/60 pointer-events-none z-30"
+                                        className="absolute inset-0 rounded-3xl border-2 border-[#3f8fcc]/60 pointer-events-none z-30"
                                     />
                                 )}
                             </motion.div>
@@ -185,8 +198,8 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
                         key={i}
                         onClick={() => snapTo(i)}
                         className={`transition-all duration-300 rounded-full ${i === activeIndex
-                            ? 'w-7 h-2 bg-brand-cyan'
-                            : 'w-2 h-2 bg-white/20 hover:bg-white/40'
+                            ? 'w-7 h-2 bg-[#3f8fcc]'
+                            : 'w-2 h-2 bg-slate-300 dark:bg-white/20 hover:bg-slate-400 dark:hover:bg-white/40'
                             }`}
                         aria-label={`Go to slide ${i + 1}`}
                     />
@@ -197,22 +210,22 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
             <div className="max-w-7xl mx-auto px-4 md:px-6 mt-10">
                 <motion.div
                     initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
-                    className="p-5 rounded-2xl bg-white/[0.04] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4"
+                    className="p-5 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 shadow-lg dark:shadow-none flex flex-col sm:flex-row items-center justify-between gap-4"
                 >
                     <div className="flex items-center gap-4">
                         <div className="flex -space-x-2">
                             {['#3F8FCC', '#5FD3E6', '#2F6FB5'].map((c, i) => (
-                                <div key={i} className="w-8 h-8 rounded-full border-2 border-[#060911]" style={{ background: c }} />
+                                <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-[#060911]" style={{ background: c }} />
                             ))}
                         </div>
                         <div>
-                            <div className="text-white font-bold text-sm">500+ posts created for 50+ brands</div>
+                            <div className="text-slate-900 dark:text-white font-bold text-sm">500+ posts created for 50+ brands</div>
                             <div className="text-slate-500 text-xs">Across Instagram, LinkedIn, YouTube & more</div>
                         </div>
                     </div>
                     <a
                         href="#audit"
-                        className="shrink-0 px-6 py-3 bg-gradient-to-r from-brand-medium to-brand-deep rounded-xl font-bold text-white text-xs uppercase tracking-wider hover:shadow-lg hover:shadow-brand-medium/30 transition-all flex items-center gap-2"
+                        className="shrink-0 px-6 py-3 bg-[#3f8fcc] rounded-xl font-bold text-white text-xs uppercase tracking-wider hover:shadow-lg hover:shadow-[#3f8fcc]/30 transition-all flex items-center gap-2"
                     >
                         Get Our Portfolio <ArrowRight className="w-4 h-4" />
                     </a>
