@@ -42,7 +42,7 @@ const CreativeServices = () => {
                         <div className="absolute -inset-4 bg-brand-medium/20 dark:bg-brand-cyan/20 blur-3xl opacity-30 rounded-full group-hover:opacity-50 transition-opacity" />
                         <div className="relative aspect-video bg-white dark:bg-slate-900 rounded-[3rem] border border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop"
+                                src="/images/services/content-creation.png"
                                 alt="Branding Mockup"
                                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                             />
@@ -60,7 +60,7 @@ const CreativeServices = () => {
                             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-medium/20 dark:bg-brand-cyan/20 blur-3xl" />
                             <div className="relative h-full w-full rounded-[3rem] overflow-hidden border border-slate-100 dark:border-white/5">
                                 <img
-                                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+                                    src="/images/services/advance-website.png"
                                     alt="Website Mockup"
                                     className="w-full h-full object-cover"
                                 />
@@ -73,7 +73,7 @@ const CreativeServices = () => {
                                 className="absolute bottom-12 right-12 w-24 h-48 bg-white dark:bg-slate-900 rounded-3xl border-4 border-white dark:border-slate-800 shadow-2xl overflow-hidden hidden md:block"
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop"
+                                    src="/images/services/app-development.png"
                                     alt="Mobile Mockup"
                                     className="w-full h-full object-cover"
                                 />

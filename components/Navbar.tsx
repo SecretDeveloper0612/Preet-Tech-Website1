@@ -32,7 +32,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 20);
+          const scrolled = window.scrollY > 20;
+          setIsScrolled(prev => prev !== scrolled ? scrolled : prev);
           ticking = false;
         });
         ticking = true;

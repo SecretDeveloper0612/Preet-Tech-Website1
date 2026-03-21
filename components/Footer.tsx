@@ -150,6 +150,7 @@ const Footer: React.FC = () => {
                                 value={subscribeEmail}
                                 onChange={(e) => setSubscribeEmail(e.target.value)}
                                 required
+                                suppressHydrationWarning
                                 disabled={subscribeStatus === 'loading'}
                                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-brand-medium transition-all text-sm text-white placeholder:text-slate-600 group-hover:bg-white/[0.07] disabled:opacity-50"
                             />

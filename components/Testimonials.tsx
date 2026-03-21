@@ -10,7 +10,7 @@ const REVIEWS = [
     company: "Nebula Enterprise",
     text: "Preet Tech is one of the few partners who actually delivers on the promise of high-performance engineering. Their strategic approach to our legacy migration was flawless.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=200"
+    image: null
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const REVIEWS = [
     company: "Solaris Tech",
     text: "The measurable ROI increase we saw after implementing Preet Tech's performance engine was unprecedented. A truly professional team with deep technical expertise.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200"
+    image: null
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const REVIEWS = [
     company: "Zenith Global",
     text: "Beyond just coding, they understand business objectives. Our global infrastructure is now more secure and scalable than ever before. Simply outstanding work.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200"
+    image: null
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const REVIEWS = [
     company: "Vortex Systems",
     text: "Their ability to translate complex requirements into intuitive user experiences is unmatched. The new platform has transformed our customer engagement metrics.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200"
+    image: null
   }
 ];
 

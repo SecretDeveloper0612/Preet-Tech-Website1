@@ -139,7 +139,7 @@ const caseStudies = [
         challenge: "Manual tracking of 500+ daily shipments causing 15% error rate.",
         solution: "Custom AI-driven automated tracking and driver management app.",
         result: "Error rate reduced to <0.5% and 40% faster delivery times.",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+        image: "/images/services/logicflow-logistics.png"
     },
     {
         company: "Medivault",
@@ -147,7 +147,7 @@ const caseStudies = [
         challenge: "Fragmented patient data across 10+ clinics with security risks.",
         solution: "Centralized HIPAA-compliant ERP with end-to-end encryption.",
         result: "Integrated patient care and zero security breaches over 2 years.",
-        image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"
+        image: "/images/services/medivault-healthcare.png"
     }
 ];
 

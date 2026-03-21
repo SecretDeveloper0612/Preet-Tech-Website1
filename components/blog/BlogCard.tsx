@@ -17,11 +17,8 @@ interface BlogCardProps {
 export default function BlogCard({ post }: BlogCardProps) {
     return (
         <motion.div
-            
-            
-            
             whileHover={{ y: -8 }}
-            className="group flex flex-col bg-white dark:bg-slate-900 border border-slate-100 dark:border-white/5 rounded-[2rem] overflow-hidden transition-all duration-500 hover:shadow-[0_50px_100px_-20px_rgba(95,211,230,0.12)] hover:border-brand-cyan/20"
+            className="group flex flex-col bg-white dark:bg-slate-900 border border-slate-100 dark:border-white/5 rounded-[2rem] overflow-hidden transition-[transform,box-shadow,border-color,background-color] duration-500 hover:shadow-2xl hover:border-brand-cyan/20 gpu"
         >
             {/* Image Container */}
             <Link href={`/blog/${post.slug}`} className="relative aspect-[16/10] overflow-hidden block">

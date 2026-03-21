@@ -234,7 +234,7 @@ const Services: React.FC = () => {
       </div>
 
       {/* Infinite Loop Slider Layout - Bleeding to edges */}
-      <div className="relative w-full mt-4">
+      <div className="relative w-full mt-4 gpu">
         <div
           ref={scrollContainerRef}
           onScroll={handleInfiniteScroll}
@@ -242,15 +242,15 @@ const Services: React.FC = () => {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
-          className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-6 md:pl-[max(1.5rem,calc((100%-1280px+3rem)/2))] md:pr-[max(1.5rem,calc((100%-1280px+3rem)/2))] pb-8 cursor-grab active:cursor-grabbing"
+          className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-6 md:pl-[max(1.5rem,calc((100%-1280px+3rem)/2))] md:pr-[max(1.5rem,calc((100%-1280px+3rem)/2))] pb-8 cursor-grab active:cursor-grabbing will-change-scroll"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', overscrollBehaviorX: 'contain' }}
         >
           {LOOPED_SERVICES.map((service, idx) => (
             <div
               key={`${service.id}-${idx}`}
-              className="service-card snap-center snap-always shrink-0"
+              className="service-card snap-center snap-always shrink-0 gpu"
             >
-              <div className="group w-[calc(100vw-48px)] md:w-[310px] h-[320px] md:h-[400px] relative rounded-[2rem] bg-slate-50/80 dark:bg-[#080c14]/40 border border-slate-200/60 dark:border-white/[0.05] p-6 md:p-8 flex flex-col justify-between overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-none hover:shadow-2xl hover:shadow-brand-medium/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="group w-[calc(100vw-48px)] md:w-[310px] h-[320px] md:h-[400px] relative rounded-[2rem] bg-slate-50/80 dark:bg-[#080c14]/40 border border-slate-200/60 dark:border-white/[0.05] p-6 md:p-8 flex flex-col justify-between overflow-hidden transition-[transform,shadow,border-color,background-color] duration-500 hover:shadow-xl hover:shadow-brand-medium/5 hover:-translate-y-2 will-change-transform gpu">
 
                 {/* Decorative Background Glow */}
                 <div className={`absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br ${service.bg} blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000`} />

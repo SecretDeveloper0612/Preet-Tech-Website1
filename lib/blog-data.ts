@@ -73,11 +73,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Feb 20, 2026",
     readTime: "6 min read",
-    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+    featuredImage: "/images/services/performance-marketing.png",
     isFeatured: true,
     tags: ["SaaS", "Growth", "Marketing"],
     seo: {
@@ -114,11 +114,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Dev Rohan",
       role: "Head of Tech",
-      avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Feb 18, 2026",
     readTime: "5 min read",
-    featuredImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/app-development.png",
     tags: ["Mobile Apps", "AI", "Technology"],
     seo: {
       title: "The Future of Mobile App Development in 2026 | Trends & Insights",
@@ -148,11 +148,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Alice Chen",
       role: "Lead Architect",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Feb 15, 2026",
     readTime: "8 min read",
-    featuredImage: "https://thisisglance.com/hubfs/article-images/how-do-you-build-a-scalable-backend-for-high-traffic-apps-featured.webp",
+    featuredImage: "/images/services/software-development.png",
     tags: ["Backend", "Infrastructure", "Scaling"],
     seo: {
       title: "Building Scalable Backend Systems for Startups",
@@ -170,11 +170,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Sarah Miller",
       role: "Content Lead",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Feb 12, 2026",
     readTime: "4 min read",
-    featuredImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/content-creation.png",
     tags: ["Content Marketing", "Strategy", "SEO"],
     seo: {
       title: "Content Strategy for Growth | Preet Tech",
@@ -213,11 +213,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Feb 24, 2026",
     readTime: "5 min read",
-    featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/software-development.png",
     tags: ["AI", "Artificial Intelligence", "Technology", "Innovation"],
     seo: {
       title: "What is AI? | Understanding Artificial Intelligence | Preet Tech",
@@ -259,11 +259,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Mar 1, 2026",
     readTime: "6 min read",
-    featuredImage: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/eco-website.png",
     isFeatured: true,
     tags: ["Eco Website", "Web Design", "Sustainability", "Green Tech"],
     seo: {
@@ -309,11 +309,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Dev Rohan",
       role: "Head of Tech",
-      avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Mar 3, 2026",
     readTime: "7 min read",
-    featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/business-tools.png",
     tags: ["AI Tools", "Automation", "Tech", "Productivity"],
     seo: {
       title: "Top 10 AI Tools Every Business Must Use in 2026 | Preet Tech",
@@ -359,11 +359,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Mar 5, 2026",
     readTime: "6 min read",
-    featuredImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/software-development.png",
     isFeatured: true,
     tags: ["Vibe Coding", "AI Development", "No-Code", "Cursor AI", "Founders"],
     seo: {
@@ -406,11 +406,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Alice Chen",
       role: "Lead Architect",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Mar 6, 2026",
     readTime: "5 min read",
-    featuredImage: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/advance-website.png",
     tags: ["Web Design", "UI/UX", "Design Trends", "Glassmorphism"],
     seo: {
       title: "Website Design Trends That Will Dominate 2026 | Preet Tech",
@@ -452,11 +452,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Sarah Miller",
       role: "Content Lead",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Mar 7, 2026",
     readTime: "7 min read",
-    featuredImage: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/luxliving-ecommerce.png",
     tags: ["E-Commerce", "Shopify", "Conversion Rate", "Online Store"],
     seo: {
       title: "How to Build a High-Converting E-Commerce Website | Preet Tech",
@@ -495,11 +495,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Mar 8, 2026",
     readTime: "6 min read",
-    featuredImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/performance-marketing.png",
     tags: ["SEO", "AI Search", "Google", "Digital Marketing"],
     seo: {
       title: "SEO in 2026: How AI Search Is Changing Everything | Preet Tech",
@@ -538,11 +538,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Dev Rohan",
       role: "Head of Tech",
-      avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Mar 9, 2026",
     readTime: "5 min read",
-    featuredImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/software-development.png",
     tags: ["No-Code", "Low-Code", "Development", "Startups"],
     seo: {
       title: "No-Code vs Low-Code vs Full-Code: Which Should You Choose? | Preet Tech",
@@ -587,11 +587,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Alice Chen",
       role: "Lead Architect",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Mar 10, 2026",
     readTime: "6 min read",
-    featuredImage: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/medivault-healthcare.png",
     tags: ["AI Chatbot", "Automation", "Customer Support", "Business Tools"],
     seo: {
       title: "How to Build an AI Chatbot for Your Business Website | Preet Tech",
@@ -633,11 +633,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Mar 10, 2026",
     readTime: "5 min read",
-    featuredImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2340&auto=format&fit=crop",
+    featuredImage: "/images/services/advance-website.png",
     tags: ["Agency Website", "Web Design", "Lead Generation", "Digital Agency"],
     seo: {
       title: "Why Your Digital Agency Needs a World-Class Website | Preet Tech",
@@ -698,11 +698,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Oct 12, 2024",
     readTime: "5 min read",
-    featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2426&auto=format&fit=crop",
+    featuredImage: "/images/services/eco-website.png",
     isFeatured: false,
     tags: ["E-Commerce", "Retail", "Digital Transformation", "Case Study"],
     seo: {
@@ -760,11 +760,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Oct 08, 2024",
     readTime: "7 min read",
-    featuredImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2426&auto=format&fit=crop",
+    featuredImage: "/images/services/content-creation.png",
     isFeatured: false,
     tags: ["EdTech", "Operations", "Compliance", "Custom Software", "Case Study"],
     seo: {
@@ -839,11 +839,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Sep 28, 2024",
     readTime: "6 min read",
-    featuredImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2426&auto=format&fit=crop",
+    featuredImage: "/images/services/medivault-healthcare.png",
     isFeatured: false,
     tags: ["Healthcare", "HIPAA", "Security", "Patient Management", "Case Study"],
     seo: {
@@ -900,11 +900,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Oct 12, 2024",
     readTime: "5 min read",
-    featuredImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=2426",
+    featuredImage: "/images/services/software-development.png",
     isFeatured: false,
     tags: ["AI", "Fintech", "Machine Learning", "Fraud Detection", "Wealth Management"],
     seo: {
@@ -972,11 +972,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Oct 08, 2024",
     readTime: "7 min read",
-    featuredImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2426",
+    featuredImage: "/images/services/saasflow-dashboard.png",
     isFeatured: false,
     tags: ["SaaS", "Startup", "Scalability", "Product-Led Growth", "Architecture"],
     seo: {
@@ -1042,11 +1042,11 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Preet Singh",
       role: "CEO & Growth Strategist",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      avatar: null,
     },
     date: "Sep 28, 2024",
     readTime: "6 min read",
-    featuredImage: "https://www.technoloader.com/blog/wp-content/uploads/2025/06/Web3-Is-the-Future-of-the-Internet.webp",
+    featuredImage: "/images/services/logicflow-logistics.png",
     isFeatured: false,
     tags: ["Web3", "Blockchain", "Decentralisation", "Smart Contracts", "IPFS", "Enterprise"],
     seo: {

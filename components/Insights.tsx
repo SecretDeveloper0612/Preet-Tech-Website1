@@ -11,7 +11,7 @@ const INSIGHTS = [
         category: "Fintech",
         readTime: "5 min read",
         date: "Oct 12, 2024",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
+        image: "/images/services/software-development.png",
         color: "text-emerald-500",
         bg: "bg-emerald-500/10",
         slug: "future-ai-fintech-beyond-automation"
@@ -23,7 +23,7 @@ const INSIGHTS = [
         category: "Startup Strategy",
         readTime: "7 min read",
         date: "Oct 08, 2024",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+        image: "/images/services/saasflow-dashboard.png",
         color: "text-blue-500",
         bg: "bg-blue-500/10",
         slug: "scaling-saas-mvp-to-market-leader"
@@ -35,7 +35,7 @@ const INSIGHTS = [
         category: "Technology",
         readTime: "6 min read",
         date: "Sep 28, 2024",
-        image: "https://www.technoloader.com/blog/wp-content/uploads/2025/06/Web3-Is-the-Future-of-the-Internet.webp",
+        image: "/images/services/logicflow-logistics.png",
         color: "text-purple-500",
         bg: "bg-purple-500/10",
         slug: "web3-new-internet-infrastructure"

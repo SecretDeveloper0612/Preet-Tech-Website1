@@ -35,7 +35,7 @@ const SERVICE_CATEGORIES = [
                 tag: "WEB_ECO_01",
                 color: "from-blue-500 to-cyan-400",
                 href: "/services/eco-website",
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+                image: "/images/services/eco-website.png"
             },
             {
                 title: "Advance Website",
@@ -44,7 +44,7 @@ const SERVICE_CATEGORIES = [
                 tag: "WEB_ADV_02",
                 color: "from-cyan-500 to-blue-500",
                 href: "/services/advance-website",
-                image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=800"
+                image: "/images/services/advance-website.png"
             },
             {
                 title: "Software Development",
@@ -53,7 +53,7 @@ const SERVICE_CATEGORIES = [
                 tag: "CODE_03",
                 color: "from-indigo-500 to-blue-600",
                 href: "/services/software-development",
-                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
+                image: "/images/services/software-development.png"
             },
             {
                 title: "App Development",
@@ -62,7 +62,7 @@ const SERVICE_CATEGORIES = [
                 tag: "APP_04",
                 color: "from-blue-400 to-indigo-500",
                 href: "/services/app-development",
-                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800"
+                image: "/images/services/app-development.png"
             }
         ]
     },
@@ -77,7 +77,7 @@ const SERVICE_CATEGORIES = [
                 tag: "ROI_06",
                 color: "from-emerald-500 to-teal-400",
                 href: "/services/performance-marketing",
-                image: "https://images.unsplash.com/photo-1551288049-bbdac8626ad1?auto=format&fit=crop&q=80&w=800"
+                image: "/images/services/performance-marketing.png"
             },
             {
                 title: "Social Media Handling",
@@ -86,7 +86,7 @@ const SERVICE_CATEGORIES = [
                 tag: "SYNC_07",
                 color: "from-teal-400 to-emerald-600",
                 href: "/services/social-media-handling",
-                image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800"
+                image: "/images/services/social-media.png"
             },
             {
                 title: "Partnership Marketing",
@@ -95,7 +95,7 @@ const SERVICE_CATEGORIES = [
                 tag: "ALLOY_08",
                 color: "from-emerald-600 to-teal-500",
                 href: "/services/partnership-marketing",
-                image: "https://images.unsplash.com/photo-1556761175-5973bcad58bc?auto=format&fit=crop&q=80&w=800"
+                image: "/images/services/partnership.png"
             },
             {
                 title: "Content Creation",
@@ -104,7 +104,7 @@ const SERVICE_CATEGORIES = [
                 tag: "MEDIA_11",
                 color: "from-rose-600 to-orange-500",
                 href: "/services/content-creation",
-                image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&q=80&w=800"
+                image: "/images/services/content-creation.png"
             }
         ]
     },
@@ -119,7 +119,7 @@ const SERVICE_CATEGORIES = [
                 tag: "LAUNCH_09",
                 color: "from-orange-500 to-red-500",
                 href: "/services/start-your-business",
-                image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=800"
+                image: "/images/services/start-business.png"
             },
             {
                 title: "Premium Tools",
@@ -128,7 +128,7 @@ const SERVICE_CATEGORIES = [
                 tag: "DEALS_05",
                 color: "from-indigo-600 to-cyan-500",
                 href: "/services/business-tools",
-                image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+                image: "/images/services/business-tools.png"
             }
         ]
     }
@@ -157,11 +157,11 @@ export default function ServicesPage() {
             <Navbar isDark={theme === 'dark'} toggleTheme={toggleTheme} />
 
             {/* Hero Section */}
-            <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden pt-32 pb-24 bg-gradient-to-b from-transparent to-slate-50/50 dark:from-transparent dark:to-slate-900/50">
-                {/* Immersive Background */}
+            <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden pt-32 pb-24 bg-gradient-to-b from-transparent to-slate-50/50 dark:from-transparent dark:to-slate-900/50 gpu">
+                {/* Immersive Background - Optimized with radial gradients instead of heavy blurs */}
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-brand-medium/10 rounded-full blur-[100px] animate-pulse" />
-                    <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-cyan/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+                    <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(57,148,250,0.1),transparent_70%)] rounded-full blur-[40px]" />
+                    <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(0,186,224,0.08),transparent_70%)] rounded-full blur-[40px]" />
 
                     {/* Grid Pattern */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />

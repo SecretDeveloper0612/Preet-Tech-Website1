@@ -145,9 +145,9 @@ export default function BlogPage() {
 
             {/* Newsletter Section - Dark Premium Redesign */}
             <section className="py-24 md:py-32 w-full bg-[#040b1a] relative overflow-hidden">
-                {/* Ambient background glows */}
-                <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#3994fa] rounded-full opacity-[0.06] blur-[120px] pointer-events-none" />
-                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#004aad] rounded-full opacity-[0.08] blur-[100px] pointer-events-none" />
+                {/* Ambient background glows - Optimized with radial gradients instead of blur */}
+                <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(57,148,250,0.1),transparent_70%)] pointer-events-none" />
+                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(0,74,173,0.12),transparent_70%)] pointer-events-none" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(57,148,250,0.04),transparent_70%)] pointer-events-none" />
 
                 {/* Top border glow line */}
@@ -238,6 +238,7 @@ export default function BlogPage() {
                                         value={subscribeEmail}
                                         onChange={(e) => setSubscribeEmail(e.target.value)}
                                         required
+                                        suppressHydrationWarning
                                         disabled={subscribeStatus === 'loading'}
                                         className="w-full h-14 px-6 rounded-xl bg-white/5 border border-white/10 focus:border-[#3994fa] focus:ring-1 focus:ring-[#3994fa]/50 outline-none transition-all text-base text-white placeholder:text-white/30 disabled:opacity-50"
                                     />

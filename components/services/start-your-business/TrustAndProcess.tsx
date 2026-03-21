@@ -45,7 +45,7 @@ const CASE_STUDIES = [
         industry: "Retail",
         date: "OCT 12, 2024",
         readTime: "5 MIN READ",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop",
+        image: "/images/services/eco-website.png",
         desc: "How we scaled an offline retail brand to a digital-first powerhouse through strategic e-commerce registration.",
         tag: "MARKET SCALE",
         slug: "case-study-urban-store-retail-digital"
@@ -55,7 +55,7 @@ const CASE_STUDIES = [
         industry: "Education",
         date: "OCT 08, 2024",
         readTime: "7 MIN READ",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+        image: "/images/services/content-creation.png",
         desc: "Architecting a custom CMS that automated legal compliance and reduced administrative overhead by 60%.",
         tag: "EFFICIENCY",
         slug: "case-study-eduflow-operations-automation"
@@ -65,7 +65,7 @@ const CASE_STUDIES = [
         industry: "Healthcare",
         date: "SEP 28, 2024",
         readTime: "6 MIN READ",
-        image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
+        image: "/images/services/medivault-healthcare.png",
         desc: "Engineering a HIPAA-compliant patient management system for a high-growth medical startup.",
         tag: "COMPLIANCE",
         slug: "case-study-healthkey-hipaa-patient-management"

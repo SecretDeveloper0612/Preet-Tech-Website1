@@ -40,7 +40,7 @@ const StrategyAndMarketing = () => {
                                 
                                 
                                 
-                                src="https://images.unsplash.com/photo-1543286386-713bcd51403b?q=80&w=1200&auto=format&fit=crop"
+                                src="/images/services/advance-website.png"
                                 alt="Strategy Infographic"
                                 className="w-full h-auto drop-shadow-2xl rounded-2xl"
                             />

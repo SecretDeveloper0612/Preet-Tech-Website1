@@ -291,7 +291,7 @@ const PerformanceMarketing = () => {
             growth: "320% Revenue",
             before: "$12k/mo",
             after: "$65k/mo",
-            image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2340&auto=format&fit=crop"
+            image: "/images/services/luxliving-ecommerce.png"
         },
         {
             client: "SaaS Flow Pro",
@@ -299,7 +299,7 @@ const PerformanceMarketing = () => {
             growth: "45% Lower CPA",
             before: "$45 CPA",
             after: "$24 CPA",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+            image: "/images/services/saasflow-dashboard.png"
         },
         {
             client: "Prime Real Estate",
@@ -307,7 +307,7 @@ const PerformanceMarketing = () => {
             growth: "150% ROI",
             before: "Static Leads",
             after: "Predictable Pipeline",
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2346&auto=format&fit=crop"
+            image: "/images/services/advance-website.png"
         },
         {
             client: "HealthTech AI",
@@ -315,7 +315,7 @@ const PerformanceMarketing = () => {
             growth: "210% Active Users",
             before: "2k MAU",
             after: "15k MAU",
-            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2340&auto=format&fit=crop"
+            image: "/images/services/app-development.png"
         },
         {
             client: "EduPlatform",
@@ -323,7 +323,7 @@ const PerformanceMarketing = () => {
             growth: "180% Signups",
             before: "5k Users",
             after: "20k Users",
-            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2340&auto=format&fit=crop"
+            image: "/images/services/content-creation.png"
         },
         {
             client: "FinServe Global",
@@ -331,7 +331,7 @@ const PerformanceMarketing = () => {
             growth: "400% Target",
             before: "$10M",
             after: "$50M",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop"
+            image: "/images/services/business-tools.png"
         }
     ];
 

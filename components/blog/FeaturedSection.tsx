@@ -34,7 +34,7 @@ export default function FeaturedSection({ posts }: FeaturedSectionProps) {
                 {/* Bento Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 h-auto lg:min-h-[540px]">
                     {/* Main Featured Post */}
-                    <div className="lg:col-span-8 group relative overflow-hidden rounded-[2rem] bg-slate-950 shadow-2xl min-h-[480px] lg:h-full border border-slate-200 dark:border-white/10 hover:border-brand-cyan/30 transition-all duration-500">
+                    <div className="lg:col-span-8 group relative overflow-hidden rounded-[2rem] bg-slate-950 shadow-xl min-h-[480px] lg:h-full border border-slate-200 dark:border-white/10 hover:border-brand-cyan/30 transition-[border-color,transform] duration-500 will-change-transform gpu">
                         <Link href={`/blog/${mainPost.slug}`} className="flex flex-col w-full h-full relative">
                             {/* Background Image */}
                             <Image
@@ -93,7 +93,7 @@ export default function FeaturedSection({ posts }: FeaturedSectionProps) {
 
 
                                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                                className="group relative overflow-hidden rounded-[1.5rem] bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/5 hover:border-brand-cyan/30 transition-all duration-300 flex-1"
+                                className="group relative overflow-hidden rounded-[1.5rem] bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/5 hover:border-brand-cyan/30 transition-[border-color,background-color] duration-300 flex-1 gpu"
                             >
                                 <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-20" />
                                 <div className="p-5 md:p-6 flex flex-col h-full relative z-10">

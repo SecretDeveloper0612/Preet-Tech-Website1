@@ -33,14 +33,14 @@ const NeuralCore = memo(() => {
     <group scale={0.6}>
       {/* 1. DISTORTED ENERGY CORE */}
       <mesh ref={coreRef}>
-        <icosahedronGeometry args={[2, 10]} />
+        <icosahedronGeometry args={[2, 4]} />
         <MeshDistortMaterial
           color="#6366f1"
-          speed={2}
-          distort={0.4}
+          speed={1}
+          distort={0.3}
           radius={1}
           emissive="#6366f1"
-          emissiveIntensity={0.5}
+          emissiveIntensity={0.3}
           metalness={0.8}
           roughness={0.2}
         />
@@ -83,7 +83,7 @@ const NeuralCore = memo(() => {
   );
 });
 
-const NeuralParticles = memo(({ count = 1500, isDark }: { count?: number; isDark: boolean }) => {
+const NeuralParticles = memo(({ count = 300, isDark }: { count?: number; isDark: boolean }) => {
   const points = useMemo(() => {
     const p = new Float32Array(count * 3);
     const colorArr = new Float32Array(count * 3);
@@ -138,38 +138,55 @@ interface ThreeSphereProps {
 const ThreeSphereScene: React.FC<ThreeSphereProps> = ({ isDark: _ignoredIsDark }) => {
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
   }, []);
 
   const currentTheme = theme === 'system' ? systemTheme : theme;
   const isDark = mounted ? currentTheme === 'dark' : false;
 
+  if (!mounted) return null;
+
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none">
-      <Canvas
-        camera={{ position: [0, 0, 10], fov: 45 }}
-        gl={{
-          antialias: true,
-          powerPreference: "high-performance",
-          alpha: true
-        }}
-        dpr={[1, 1.5]}
-      >
-        <ambientLight intensity={0.4} />
-        <pointLight position={[10, 10, 10]} intensity={2} color="#6366f1" />
-        <pointLight position={[-10, -10, -10]} intensity={1} color="#0ea5e9" />
-        <spotLight position={[0, 0, 8]} intensity={1.5} angle={0.5} penumbra={1} color="#ffffff" />
+    <div ref={containerRef} className="absolute inset-0 z-0 pointer-events-none">
+      {isVisible && (
+        <Canvas
+          camera={{ position: [0, 0, 10], fov: 45 }}
+          gl={{
+            antialias: false,
+            powerPreference: "high-performance",
+            alpha: true,
+            stencil: false,
+            depth: true,
+          }}
+          dpr={1} // Force 1.0 for massive performance gain on high-res screens
+          frameloop="always"
+        >
+          <ambientLight intensity={0.4} />
+          <pointLight position={[10, 10, 10]} intensity={2} color="#6366f1" />
+          <pointLight position={[-10, -10, -10]} intensity={1} color="#0ea5e9" />
+          <spotLight position={[0, 0, 8]} intensity={1.5} angle={0.5} penumbra={1} color="#ffffff" />
 
-        <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-          <Suspense fallback={null}>
-            <NeuralParticles count={400} isDark={isDark} />
-          </Suspense>
-        </Float>
+          <Float speed={0.8} rotationIntensity={0.1} floatIntensity={0.1}>
+            <Suspense fallback={null}>
+              <NeuralParticles count={100} isDark={isDark} />
+            </Suspense>
+          </Float>
 
-        <Preload all />
-      </Canvas>
+          <Preload all />
+        </Canvas>
+      )}
     </div>
   );
 };
