@@ -1,5 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, memo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowLeft, BookOpen, Calendar, Clock, Tag } from 'lucide-react';
 
@@ -42,56 +43,123 @@ const INSIGHTS = [
     }
 ];
 
+const InsightCard = memo(({ post, index, dragDistance }: { post: any; index: number; dragDistance: number }) => (
+    <motion.div
+        className="insight-card group flex flex-col w-[calc(100%-48px)] md:w-[320px] bg-white dark:bg-[#111624] rounded-[2rem] overflow-hidden border border-slate-200 dark:border-white/5 hover:border-brand-medium/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(99,102,241,0.2)] snap-center snap-always flex-shrink-0 [contain:content]"
+    >
+        <Link
+            href={`/blog/${post.slug}`}
+            className="flex flex-col h-full"
+            onClick={(e) => { if (dragDistance > 8) e.preventDefault(); }}
+            draggable={false}
+        >
+            {/* Image Visual */}
+            <div className="relative h-44 md:h-48 overflow-hidden">
+                <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1"
+                    draggable={false}
+                    sizes="(max-width: 768px) 100vw, 320px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-5 left-5">
+                    <span className={`px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest bg-white/95 dark:bg-black/80 backdrop-blur-md ${post.color} border border-white/10 shadow-xl`}>
+                        {post.category}
+                    </span>
+                </div>
+            </div>
+
+            {/* Post Content */}
+            <div className="flex-1 p-5 md:p-8 flex flex-col">
+                <div className="flex items-center gap-5 text-[10px] font-mono text-slate-500 mb-6 uppercase tracking-widest">
+                    <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3 text-brand-medium" /> {post.date}</span>
+                    <span className="flex items-center gap-1.5"><Clock className="w-3 h-3 text-brand-medium" /> {post.readTime}</span>
+                </div>
+
+                <h3 className="text-base md:text-lg font-black text-foreground mb-4 leading-tight group-hover:text-brand-medium transition-colors line-clamp-2">
+                    {post.title}
+                </h3>
+
+                <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-8 line-clamp-3">
+                    {post.excerpt}
+                </p>
+
+                <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground group-hover:text-brand-medium transition-colors">
+                        Read Analysis
+                    </span>
+                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center group-hover:bg-brand-medium group-hover:text-white transition-all duration-300 shadow-sm">
+                        <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                    </div>
+                </div>
+            </div>
+        </Link>
+    </motion.div>
+));
+
+InsightCard.displayName = 'InsightCard';
+
 const Insights: React.FC = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [dragDistance, setDragDistance] = useState(0);
 
-    // Create a base set that is wide enough to exceed ultra-wide screens
-    const BASE_SET = [...INSIGHTS, ...INSIGHTS, ...INSIGHTS, ...INSIGHTS, ...INSIGHTS];
-    // Triple the data for seamless looping (Left Buffer, Center View, Right Buffer)
-    const SLIDER_INSIGHTS = [...BASE_SET, ...BASE_SET, ...BASE_SET];
+    const BASE_SET = [...INSIGHTS, ...INSIGHTS, ...INSIGHTS];
+    const SLIDER_INSIGHTS = BASE_SET; // 9 cards total is enough for infinite feel
+    const lastScrollTime = useRef(0);
 
+    // Set initial scroll to middle of the 3 repeated sets so both directions work
     useEffect(() => {
         const container = scrollContainerRef.current;
-        if (container) {
-            // Initial centered scroll position
-            const setupInitialScroll = () => {
-                const singleSetWidth = container.scrollWidth / 3;
-                container.scrollLeft = singleSetWidth;
-            };
-            setTimeout(setupInitialScroll, 100);
-        }
+        if (!container) return;
+        const setup = () => {
+            container.scrollLeft = container.scrollWidth / 3;
+        };
+        setup();
+        const t = setTimeout(setup, 100);
+        return () => clearTimeout(t);
     }, []);
 
-    // Auto-slide functionality
+    // Pause when off-screen
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.1 }
+        );
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+    // Auto-slide — only when visible
     useEffect(() => {
         let interval: NodeJS.Timeout;
-        if (isAutoPlaying && !isDragging) {
+        if (isAutoPlaying && !isDragging && isVisible) {
             interval = setInterval(() => {
                 scroll('right');
-            }, 6000);
+            }, 8000);
         }
         return () => clearInterval(interval);
-    }, [isAutoPlaying, isDragging]);
+    }, [isAutoPlaying, isDragging, isVisible]);
 
     const handleInfiniteScroll = () => {
         if (!scrollContainerRef.current) return;
+        const now = performance.now();
+        if (now - lastScrollTime.current < 16) return;
+        lastScrollTime.current = now;
+
         const { scrollLeft, scrollWidth } = scrollContainerRef.current;
         const singleSetWidth = scrollWidth / 3;
 
-        // Update current index for dots/state
-        const relativeScroll = scrollLeft % singleSetWidth;
-        const index = Math.round(relativeScroll / (scrollWidth / SLIDER_INSIGHTS.length));
-        setCurrentIndex(index % INSIGHTS.length);
-
         if (scrollLeft >= singleSetWidth * 2) {
             scrollContainerRef.current.scrollLeft = scrollLeft - singleSetWidth;
-        } else if (scrollLeft <= singleSetWidth / 2) {
+        } else if (scrollLeft <= 4) {
             scrollContainerRef.current.scrollLeft = scrollLeft + singleSetWidth;
         }
     };
@@ -135,6 +203,7 @@ const Insights: React.FC = () => {
     return (
         <section
             id="insights"
+            ref={sectionRef}
             className="pt-8 md:pt-12 pb-24 bg-slate-50 dark:bg-[#080c14] overflow-hidden"
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => !isDragging && setIsAutoPlaying(true)}
@@ -187,67 +256,24 @@ const Insights: React.FC = () => {
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {SLIDER_INSIGHTS.map((post, index) => (
-                        <motion.div
-                            key={`${post.id}-${index}`}
-                            className="insight-card group flex flex-col w-[calc(100%-48px)] md:w-[320px] bg-white dark:bg-[#111624] rounded-[2rem] overflow-hidden border border-slate-200 dark:border-white/5 hover:border-brand-medium/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(99,102,241,0.2)] snap-center snap-always flex-shrink-0"
-                        >
-                            <Link
-                                href={`/blog/${post.slug}`}
-                                className="flex flex-col h-full"
-                                onClick={(e) => { if (dragDistance > 8) e.preventDefault(); }}
-                                draggable={false}
-                            >
-                                {/* Image Visual */}
-                                <div className="relative h-44 md:h-48 overflow-hidden">
-                                    <img
-                                        src={post.image}
-                                        alt={post.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
-                                        draggable={false}
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    <div className="absolute top-5 left-5">
-                                        <span className={`px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest bg-white/95 dark:bg-black/80 backdrop-blur-md ${post.color} border border-white/10 shadow-xl`}>
-                                            {post.category}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                {/* Post Content */}
-                                <div className="flex-1 p-5 md:p-8 flex flex-col">
-                                    <div className="flex items-center gap-5 text-[10px] font-mono text-slate-500 mb-6 uppercase tracking-widest">
-                                        <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3 text-brand-medium" /> {post.date}</span>
-                                        <span className="flex items-center gap-1.5"><Clock className="w-3 h-3 text-brand-medium" /> {post.readTime}</span>
-                                    </div>
-
-                                    <h3 className="text-base md:text-lg font-black text-foreground mb-4 leading-tight group-hover:text-brand-medium transition-colors line-clamp-2">
-                                        {post.title}
-                                    </h3>
-
-                                    <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-8 line-clamp-3">
-                                        {post.excerpt}
-                                    </p>
-
-                                    <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground group-hover:text-brand-medium transition-colors">
-                                            Read Analysis
-                                        </span>
-                                        <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center group-hover:bg-brand-medium group-hover:text-white transition-all duration-500 shadow-sm">
-                                            <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </motion.div>
+                        <InsightCard 
+                            key={`${post.id}-${index}`} 
+                            post={post} 
+                            index={index} 
+                            dragDistance={dragDistance} 
+                        />
                     ))}
                 </div>
             </div>
 
             <div className="mt-8 flex justify-center w-full">
-                <button className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-medium text-white shadow-lg shadow-brand-medium/20 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-brand-medium/90 hover:-translate-y-0.5 transition-all">
+                <Link
+                    href="/blog"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-medium text-white shadow-lg shadow-brand-medium/20 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-brand-medium/90 hover:-translate-y-0.5 transition-all"
+                >
                     Enter Archives
                     <ArrowRight className="w-4 h-4" />
-                </button>
+                </Link>
             </div>
         </section>
     );

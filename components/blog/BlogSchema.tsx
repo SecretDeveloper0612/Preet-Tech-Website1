@@ -18,10 +18,10 @@ export default function BlogSchema({ post }: BlogSchemaProps) {
         },
         "publisher": {
             "@type": "Organization",
-            "name": "Preet Tech",
+            "name": "Preet Tech OPC Private Limited",
             "logo": {
                 "@type": "ImageObject",
-                "url": "/logo.png"
+                "url": "/logo-preet-tech.png"
             }
         },
         "datePublished": post.date,

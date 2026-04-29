@@ -4,6 +4,14 @@
 
 @layer base {
     :root {
+        --background: #030712;
+        --foreground: #f8fafc;
+        --surface: #0b0f1a;
+        --accent: #3994fa;
+        --accent-glow: rgba(63, 143, 204, 0.4);
+    }
+
+    .light {
         --background: #ffffff;
         --foreground: #020617;
         --surface: #f1f5f9;
@@ -47,20 +55,22 @@ body {
 /* Optimize for mobile/low-power */
 @media (prefers-reduced-motion: reduce) {
     * {
-        animation-duration: 0.01ms !important;
+        animation-duration: 0.1ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        transition-duration: 0.1ms !important;
         scroll-behavior: auto !important;
     }
 }
 
 section {
+    /* content-visibility: auto skips paint/layout for off-screen sections */
     content-visibility: auto;
-    contain-intrinsic-size: 1px 500px;
+    contain-intrinsic-size: auto 600px;
 }
 
-#hero, .hero-section {
-    content-visibility: visible;
+/* Hero & navbar must always be visible */
+#hero, .hero-section, section:first-of-type, nav {
+    content-visibility: visible !important;
 }
 
 .mask-radial {
@@ -69,8 +79,8 @@ section {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
+    width: 4px;
+    height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -78,51 +88,46 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1f2937;
+    background: #3994fa;
     border-radius: 10px;
 }
 
-/* Animations */
-@keyframes float {
-    0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-    50% { transform: translate3d(0, -10px, 0) rotate(1deg); }
-}
-
-.floating {
-    animation: float 6s ease-in-out infinite;
-    will-change: transform;
-}
-
+/* Hardware Acceleration — applied only to actively animated elements */
 .gpu {
-    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
     backface-visibility: hidden;
-    perspective: 1000px;
     will-change: transform;
 }
 
-/* Performance Overrides */
+.service-card {
+    contain: style paint;
+}
+
+/* glass-morphism: GPU promote only, no will-change (avoids layer explosion) */
+.glass-morphism {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Smooth scrolling - prioritize speed over silkiness for desktop mousewheels */
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+@media (min-width: 1024px) {
+  html {
+    /* Increase scrolling performance on large screens */
+    scrollbar-gutter: stable;
+  }
+}
+
+/* duplicate body block removed */
+
 .shadow-2xl, .shadow-xl {
     --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
-}
-
-* {
-    -webkit-tap-highlight-color: transparent;
-}
-
-.will-change-transform {
-    will-change: transform;
-}
-
-.will-change-opacity {
-    will-change: opacity;
-}
-
-.will-change-scroll {
-    will-change: scroll-position;
-}
-
-.text-balance {
-    text-wrap: balance;
 }
 
 .clip-path-slant {

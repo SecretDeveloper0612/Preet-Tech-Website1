@@ -39,7 +39,7 @@ const StartYourBusiness = () => {
     };
 
     return (
-        <main className="bg-white dark:bg-[#030712] transition-colors duration-500 selection:bg-brand-cyan/30">
+        <main className="bg-white dark:bg-[#030712] transition-colors duration-300 selection:bg-brand-cyan/30">
             <Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
             <HeroLaunch />

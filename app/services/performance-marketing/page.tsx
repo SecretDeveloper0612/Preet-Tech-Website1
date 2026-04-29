@@ -118,13 +118,13 @@ const TechnicalBackground = ({ isDarkMode }: { isDarkMode: boolean }) => (
             }}
         />
         {/* Two static ambient glows — no animation, GPU-composited */}
-        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[100px] rounded-full opacity-60" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[100px] rounded-full opacity-40" />
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[48px] rounded-full opacity-60" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[48px] rounded-full opacity-40" />
     </div>
 );
 
 const PerformanceMarketing = () => {
-    const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
+    const [theme, setTheme] = useState<Theme>(Theme.DARK);
     const containerRef = useRef<HTMLDivElement>(null);
     const [isVideoOpen, setIsVideoOpen] = useState(false);
 
@@ -369,7 +369,7 @@ const PerformanceMarketing = () => {
     const faqs = [
         { q: "How long does it take to see results from performance marketing?", a: "While initial data starts flowing in within the first 48 hours, meaningful ROI optimization typically takes 2-4 weeks. Our performance marketing services focus on 'quick wins' while simultaneously building long-term scalable funnels for your business." },
         { q: "What is your typical management fee for ad campaigns?", a: "Our pricing architecture is customized based on project complexity and ad spend. We offer both performance-based models and monthly retainers, ensuring our goals are perfectly aligned with your business growth and ROAS targets." },
-        { q: "Do your performance marketing services include creative production?", a: "Yes. Preet Tech's High-Velocity Content Engine handles everything from creative direction to cinematic ad visuals, ensuring your ads stop the scroll and drive conversions effectively." },
+        { q: "Do your performance marketing services include creative production?", a: "Yes. Preet Tech OPC Private Limited's High-Velocity Content Engine handles everything from creative direction to cinematic ad visuals, ensuring your ads stop the scroll and drive conversions effectively." },
         { q: "Which ad platforms should I start with for my business?", a: "This depends entirely on your industry and audience. During our initial Strategy Call, we perform a deep-dive audit to recommend the highest-impact channels like Meta, Google, or YouTube for your specific goals." },
         { q: "How do you track and report campaign performance?", a: "We provide detailed, transparent real-time reporting dashboards. Every single conversion is tracked via advanced server-side tagging to ensure 100% data accuracy for your ROAS monitoring." }
     ];
@@ -402,7 +402,7 @@ const PerformanceMarketing = () => {
     };
 
     return (
-        <main ref={containerRef} className="bg-white dark:bg-[#030712] transition-colors duration-500">
+        <main ref={containerRef} className="bg-white dark:bg-[#030712] transition-colors duration-300">
             <Navbar isDark={theme === Theme.DARK} toggleTheme={toggleTheme} />
 
             {/* 1. Hero Section */}
@@ -519,7 +519,7 @@ const PerformanceMarketing = () => {
                                 )}
                             </form>
                         </div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3994fa]/20 to-[#6366f1]/20 rounded-full blur-[100px] -z-10 animate-pulse" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3994fa]/20 to-[#6366f1]/20 rounded-full blur-[48px] -z-10 animate-pulse" />
                     </div>
                 </div>
             </section>
@@ -534,7 +534,7 @@ const PerformanceMarketing = () => {
                                 key={i}
                                 src={logo.logo}
                                 alt={logo.name}
-                                className="h-6 sm:h-8 md:h-10 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"
+                                className="h-6 sm:h-8 md:h-10 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
                                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                             />
                         ))}
@@ -542,7 +542,7 @@ const PerformanceMarketing = () => {
                 </div>
             </section>
 
-            {/* 3. Why Choose Preet Tech */}
+            {/* 3. Why Choose Preet Tech OPC Private Limited */}
             <section className="py-24 px-6 relative overflow-hidden bg-white dark:bg-[#030712] scroll-reveal">
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="text-center mb-16">
@@ -582,7 +582,7 @@ const PerformanceMarketing = () => {
 
                     <div className="max-w-3xl mb-12">
                         <p className="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                            <strong>Performance marketing</strong> is a comprehensive term for online marketing and advertising programs in which advertisers pay only when a specific action is completed—such as a sale, lead, or click. At Preet Tech, we combine this accountability with advanced data analytics to ensure every marketing dollar generates a measurable return on investment (ROI).
+                            <strong>Performance marketing</strong> is a comprehensive term for online marketing and advertising programs in which advertisers pay only when a specific action is completed—such as a sale, lead, or click. At Preet Tech OPC Private Limited, we combine this accountability with advanced data analytics to ensure every marketing dollar generates a measurable return on investment (ROI).
                         </p>
                     </div>
 
@@ -643,9 +643,9 @@ const PerformanceMarketing = () => {
                         {services.map((service, i) => (
                             <div
                                 key={i}
-                                className="group relative p-0.5 rounded-3xl bg-slate-200 dark:bg-white/5 hover:bg-gradient-to-br transition-all duration-500 overflow-hidden"
+                                className="group relative p-0.5 rounded-3xl bg-slate-200 dark:bg-white/5 hover:bg-gradient-to-br transition-all duration-300 overflow-hidden"
                             >
-                                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                                 <div className="relative p-6 md:p-8 rounded-[1.4rem] bg-white dark:bg-slate-900/90 h-full flex flex-col">
                                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-50 dark:bg-white/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                                         <service.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-medium" />
@@ -690,11 +690,11 @@ const PerformanceMarketing = () => {
                                 key={i}
                                 className="group relative hover:-translate-y-2 transition-transform duration-300"
                             >
-                                <div className="absolute -inset-0.5 bg-gradient-to-br from-brand-medium/0 to-brand-medium/0 group-hover:from-brand-medium/20 group-hover:to-brand-medium/20 rounded-[2rem] transition-all duration-500 blur-sm" />
+                                <div className="absolute -inset-0.5 bg-gradient-to-br from-brand-medium/0 to-brand-medium/0 group-hover:from-brand-medium/20 group-hover:to-brand-medium/20 rounded-[2rem] transition-all duration-300 blur-sm" />
                                 <div className="relative h-full p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 backdrop-blur-sm flex flex-col items-center gap-6 transition-all group-hover:border-brand-medium/30 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] dark:group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                                     <div className="relative">
-                                        <div className="absolute -inset-4 bg-brand-medium/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
-                                        <platform.icon className="w-10 h-10 transition-all duration-500 opacity-40 group-hover:opacity-100 group-hover:scale-110" style={{ color: platform.color }} />
+                                        <div className="absolute -inset-4 bg-brand-medium/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
+                                        <platform.icon className="w-10 h-10 transition-all duration-300 opacity-40 group-hover:opacity-100 group-hover:scale-110" style={{ color: platform.color }} />
                                     </div>
                                     <div className="text-center">
                                         <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Channel 0{i + 1}</p>
@@ -759,7 +759,7 @@ const PerformanceMarketing = () => {
             {/* 8. Case Studies / Results Section (Loop Slider Redesign) */}
             <section className="py-24 px-6 bg-slate-50 dark:bg-[#030712] relative overflow-hidden scroll-reveal">
                 {/* Dynamic Background Element */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-brand-medium/5 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-brand-medium/5 blur-[60px] rounded-full pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
@@ -804,7 +804,7 @@ const PerformanceMarketing = () => {
                                                 <img
                                                     src={study.image}
                                                     alt={study.client}
-                                                    className="absolute inset-0 w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
+                                                    className="absolute inset-0 w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
 
@@ -841,7 +841,7 @@ const PerformanceMarketing = () => {
 
                                                 <div className="mt-auto space-y-4">
                                                     <div className="relative h-16 rounded-2xl bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-white/5 p-3 flex items-center justify-between overflow-hidden group/metric mt-4">
-                                                        <div className="absolute inset-0 bg-gradient-to-r from-brand-medium/5 to-transparent -translate-x-full group-hover/metric:translate-x-0 transition-transform duration-500" />
+                                                        <div className="absolute inset-0 bg-gradient-to-r from-brand-medium/5 to-transparent -translate-x-full group-hover/metric:translate-x-0 transition-transform duration-300" />
 
                                                         <div className="relative z-10 flex items-center gap-3">
                                                             <div className="w-8 h-8 rounded-full bg-white dark:bg-black/20 flex items-center justify-center shadow-sm">
@@ -883,7 +883,7 @@ const PerformanceMarketing = () => {
                                             sliderRef.current.scrollTo({ left: i * (cardWidth + 32), behavior: 'smooth' });
                                         }
                                     }}
-                                    className={`h-1 transition-all duration-500 rounded-full ${currentCaseIndex === i ? 'w-12 bg-brand-medium' : 'w-4 bg-slate-200 dark:bg-white/10 hover:bg-slate-300 dark:hover:bg-white/20'}`}
+                                    className={`h-1 transition-all duration-300 rounded-full ${currentCaseIndex === i ? 'w-12 bg-brand-medium' : 'w-4 bg-slate-200 dark:bg-white/10 hover:bg-slate-300 dark:hover:bg-white/20'}`}
                                 />
                             ))}
                         </div>
@@ -923,8 +923,8 @@ const PerformanceMarketing = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="relative rounded-[3rem] bg-slate-900 dark:bg-black p-10 md:p-16 overflow-hidden border border-white/10">
                         {/* Static Glows */}
-                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-medium/8 blur-[100px] rounded-full" />
-                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-medium/8 blur-[100px] rounded-full" />
+                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-medium/8 blur-[48px] rounded-full" />
+                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-medium/8 blur-[48px] rounded-full" />
 
                         <div className="relative z-10 max-w-2xl mx-auto">
                             <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter mb-6 leading-[0.9]">
@@ -1016,7 +1016,7 @@ const PerformanceMarketing = () => {
                                 }}
                             >
                                 {/* Card inner glow on hover */}
-                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl"
+                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none rounded-3xl"
                                     style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, ${card.glow} 0%, transparent 70%)` }} />
 
                                 {/* Top accent line */}
@@ -1193,7 +1193,7 @@ const PerformanceMarketing = () => {
                         </div>
                         {/* Floating stat badge - static position, no infinite loop */}
                         <div
-                            className="absolute -top-5 -right-5 sm:-top-10 sm:-right-10 p-4 sm:p-6 bg-white dark:bg-white/10 backdrop-blur-xl border border-slate-200 dark:border-white/20 rounded-2xl shadow-2xl z-20"
+                            className="absolute -top-5 -right-5 sm:-top-10 sm:-right-10 p-4 sm:p-6 bg-white dark:bg-white/10 backdrop-blur-md border border-slate-200 dark:border-white/20 rounded-2xl shadow-2xl z-20"
                         >
                             <p className="text-[8px] font-black uppercase tracking-widest text-brand-medium mb-1 text-center">Live ROAS</p>
                             <p className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">4.82x</p>
@@ -1203,7 +1203,7 @@ const PerformanceMarketing = () => {
             </section>
 
             {/* 14. Free Audit / Consultation Form Section (The Command Center Redesign) */}
-            <section className="py-32 px-6 bg-white dark:bg-[#030712] relative overflow-hidden transition-colors duration-500">
+            <section className="py-32 px-6 bg-white dark:bg-[#030712] relative overflow-hidden transition-colors duration-300">
                 {/* Immersive Background */}
                 <div className="absolute inset-0 bg-[radial-gradient(#3994fa_0.5px,transparent_0.5px)] bg-[size:32px_32px] opacity-[0.05] dark:opacity-[0.03]" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-medium/5 blur-[150px] rounded-full pointer-events-none" />
@@ -1252,9 +1252,9 @@ const PerformanceMarketing = () => {
                             <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-brand-medium/10 blur-3xl rounded-full" />
 
                             <div
-                                className="relative bg-white/70 dark:bg-white/[0.03] backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-[3rem] p-8 md:p-12 shadow-2xl overflow-hidden group"
+                                className="relative bg-white/70 dark:bg-white/[0.03] backdrop-blur-md border border-slate-200 dark:border-white/10 rounded-[3rem] p-8 md:p-12 shadow-2xl overflow-hidden group"
                             >
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-medium/20 to-transparent blur-xl scale-0 group-hover:scale-150 transition-transform duration-700" />
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-medium/20 to-transparent blur-xl scale-0 group-hover:scale-150 transition-transform duration-400" />
 
                                 <div className="mb-10 text-center lg:text-left">
                                     <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-2">Initialize Your Audit</h3>
@@ -1334,7 +1334,7 @@ const PerformanceMarketing = () => {
             <section className="py-12 px-6 mb-12 scroll-reveal">
                 <div className="max-w-7xl mx-auto relative rounded-[3rem] bg-gradient-to-br from-brand-medium via-brand-medium to-brand-medium p-10 md:p-16 overflow-hidden text-[#030712] text-center shadow-[0_30px_100px_rgba(63,143,204,0.2)]">
                     {/* Static glow for performance */}
-                    <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 blur-[80px] rounded-full" />
+                    <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 blur-[40px] rounded-full" />
 
                     <div className="relative z-10 max-w-3xl mx-auto">
                         <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter mb-6 leading-[0.9]">
@@ -1376,7 +1376,7 @@ const PerformanceMarketing = () => {
                                 className="w-full h-full border-0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
-                                title="Preet Tech Video"
+                                title="Preet Tech OPC Private Limited Video"
                             />
                         </div>
                     </div>

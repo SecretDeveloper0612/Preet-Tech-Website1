@@ -30,9 +30,9 @@ const WhoIsThisFor = () => {
                             key={i}
                             
                             
-                            transition={{ delay: i * 0.1 }}
                             
-                            whileHover={{ y: -10 }}
+                            
+                            
                             className="group p-10 rounded-[2.5rem] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 hover:border-brand-medium/30 dark:hover:border-brand-cyan/30 transition-all flex flex-col items-center text-center shadow-sm"
                         >
                             <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 flex items-center justify-center mb-6 group-hover:bg-brand-medium dark:hover:bg-brand-cyan group-hover:shadow-[0_0_30px_rgba(95,211,230,0.3)] transition-all">

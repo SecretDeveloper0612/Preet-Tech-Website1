@@ -96,26 +96,73 @@ const SERVICES = [
   }
 ];
 
+const ServiceCard = React.memo(({ service, idx }: { service: any; idx: number }) => (
+  <div
+    className="service-card snap-center snap-always shrink-0 [contain:content]"
+  >
+    <div className="group w-[calc(100vw-48px)] md:w-[310px] h-[320px] md:h-[400px] relative rounded-[2rem] bg-slate-50/80 dark:bg-[#080c14]/40 border border-slate-200/60 dark:border-white/[0.05] p-6 md:p-8 flex flex-col justify-between overflow-hidden transition-[transform,shadow,border-color,background-color] duration-300 hover:shadow-xl hover:shadow-brand-medium/5 hover:-translate-y-2 will-change-transform gpu">
+
+      {/* Decorative Background Glow */}
+      <div className={`absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br ${service.bg} blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+      <div className="relative z-10">
+        <div className="flex justify-between items-start mb-4 md:mb-8">
+          <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-100 dark:bg-white/5 flex items-center justify-center ${service.accent} group-hover:bg-brand-medium group-hover:text-white transition-all duration-300`}>
+            <service.icon className="w-5 h-5 md:w-6 md:h-6" />
+          </div>
+        </div>
+
+        <div className="space-y-3 md:space-y-4">
+          <h3 className="text-lg md:text-xl font-black text-foreground uppercase tracking-tight group-hover:text-brand-medium transition-colors leading-[1.1]">
+            {service.title}
+          </h3>
+          <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm font-medium leading-relaxed line-clamp-4">
+            {service.description}
+          </p>
+        </div>
+      </div>
+
+      <div className="relative z-10 pt-5 md:pt-6 border-t border-slate-200/50 dark:border-white/5 flex items-center justify-between">
+        <div className="flex flex-col gap-0.5">
+          <span className="text-[8px] font-mono text-slate-400 uppercase tracking-widest font-black">Status</span>
+          <div className="flex items-center gap-1">
+            <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-[9px] font-black text-foreground/80 dark:text-white/80 uppercase">Available</span>
+          </div>
+        </div>
+
+        <Link href={`/services/${service.id}`} className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-slate-100 dark:border-white/10 flex items-center justify-center group-hover:bg-brand-medium group-hover:text-white transition-all duration-300 group-hover:border-brand-medium">
+          <ArrowUpRight className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        </Link>
+      </div>
+    </div>
+  </div>
+));
+
+ServiceCard.displayName = 'ServiceCard';
+
 const Services: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Triple the data for infinite feeling
   const LOOPED_SERVICES = [...SERVICES, ...SERVICES, ...SERVICES];
 
+  const lastScrollTime = useRef(0);
   const handleInfiniteScroll = () => {
     if (!scrollContainerRef.current) return;
 
-    window.requestAnimationFrame(() => {
-      if (!scrollContainerRef.current) return;
-      const { scrollLeft, scrollWidth } = scrollContainerRef.current;
-      const singleSetWidth = scrollWidth / 3;
+    const now = performance.now();
+    if (now - lastScrollTime.current < 16) return; // Throttle to roughly 60fps
+    lastScrollTime.current = now;
 
-      if (scrollLeft >= singleSetWidth * 2) {
-        scrollContainerRef.current.scrollLeft = scrollLeft - singleSetWidth;
-      } else if (scrollLeft <= 5) { // Small buffer for scrolling back
-        scrollContainerRef.current.scrollLeft = scrollLeft + singleSetWidth;
-      }
-    });
+    const { scrollLeft, scrollWidth } = scrollContainerRef.current;
+    const singleSetWidth = scrollWidth / 3;
+
+    if (scrollLeft >= singleSetWidth * 2) {
+      scrollContainerRef.current.scrollLeft = scrollLeft - singleSetWidth;
+    } else if (scrollLeft <= 5) {
+      scrollContainerRef.current.scrollLeft = scrollLeft + singleSetWidth;
+    }
   };
 
   useEffect(() => {
@@ -135,19 +182,31 @@ const Services: React.FC = () => {
 
   const [isDragging, setIsDragging] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  // Auto-slide functionality
+  // Pause auto-slide when section is not visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-slide functionality — only when visible
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    if (isAutoPlaying && !isDragging) {
+    if (isAutoPlaying && !isDragging && isVisible) {
       interval = setInterval(() => {
         scroll('right');
-      }, 4000);
+      }, 6000); // 6s reduces writes by 33% vs 4s
     }
     return () => clearInterval(interval);
-  }, [isAutoPlaying, isDragging]);
+  }, [isAutoPlaying, isDragging, isVisible]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
@@ -190,7 +249,8 @@ const Services: React.FC = () => {
   return (
     <section
       id="services"
-      className="pt-12 md:pt-20 pb-6 md:pb-8 relative bg-background overflow-hidden transition-colors duration-500"
+      ref={sectionRef}
+      className="pt-12 md:pt-20 pb-6 md:pb-8 relative bg-background overflow-hidden transition-colors duration-300"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => !isDragging && setIsAutoPlaying(true)}
     >
@@ -203,12 +263,12 @@ const Services: React.FC = () => {
         <div className="mb-6 md:mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-10">
           <div className="space-y-2 md:space-y-4 max-w-2xl">
             <span className="text-sm md:text-base font-bold text-brand-medium tracking-widest uppercase">Digital Transformation Services</span>
-            <motion.h2
+            <h2
               className="text-4xl sm:text-5xl md:text-7xl font-black text-foreground uppercase tracking-tighter leading-none"
             >
               Our Core <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-cyan italic font-black">Solutions.</span>
-            </motion.h2>
+            </h2>
             <p className="text-slate-600 dark:text-slate-400 mt-4 text-base md:text-lg font-medium leading-relaxed">
               As a premier <span className="font-bold text-foreground dark:text-white">web and app development company</span>, we empower brands with <span className="font-bold text-foreground dark:text-white">generative AI integration</span>, robust <span className="font-bold text-foreground dark:text-white">e-commerce development</span>, and <span className="font-bold text-foreground dark:text-white">B2B digital agency</span> expertise.
             </p>
@@ -246,48 +306,7 @@ const Services: React.FC = () => {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', overscrollBehaviorX: 'contain' }}
         >
           {LOOPED_SERVICES.map((service, idx) => (
-            <div
-              key={`${service.id}-${idx}`}
-              className="service-card snap-center snap-always shrink-0 gpu"
-            >
-              <div className="group w-[calc(100vw-48px)] md:w-[310px] h-[320px] md:h-[400px] relative rounded-[2rem] bg-slate-50/80 dark:bg-[#080c14]/40 border border-slate-200/60 dark:border-white/[0.05] p-6 md:p-8 flex flex-col justify-between overflow-hidden transition-[transform,shadow,border-color,background-color] duration-500 hover:shadow-xl hover:shadow-brand-medium/5 hover:-translate-y-2 will-change-transform gpu">
-
-                {/* Decorative Background Glow */}
-                <div className={`absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br ${service.bg} blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000`} />
-
-                <div className="relative z-10">
-                  <div className="flex justify-between items-start mb-4 md:mb-8">
-                    <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-100 dark:bg-white/5 flex items-center justify-center ${service.accent} group-hover:bg-brand-medium group-hover:text-white transition-all duration-500`}>
-                      <service.icon className="w-5 h-5 md:w-6 md:h-6" />
-                    </div>
-                  </div>
-
-                  <div className="space-y-3 md:space-y-4">
-                    <h3 className="text-lg md:text-xl font-black text-foreground uppercase tracking-tight group-hover:text-brand-medium transition-colors leading-[1.1]">
-                      {service.title}
-                    </h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm font-medium leading-relaxed line-clamp-4">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative z-10 pt-5 md:pt-6 border-t border-slate-200/50 dark:border-white/5 flex items-center justify-between">
-                  <div className="flex flex-col gap-0.5">
-                    <span className="text-[8px] font-mono text-slate-400 uppercase tracking-widest font-black">Status</span>
-                    <div className="flex items-center gap-1">
-                      <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
-                      <span className="text-[9px] font-black text-foreground/80 dark:text-white/80 uppercase">Available</span>
-                    </div>
-                  </div>
-
-                  <Link href={`/services/${service.id}`} className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-slate-100 dark:border-white/10 flex items-center justify-center group-hover:bg-brand-medium group-hover:text-white transition-all duration-500 group-hover:border-brand-medium">
-                    <ArrowUpRight className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </Link>
-                </div>
-
-              </div>
-            </div>
+            <ServiceCard key={`${service.id}-${idx}`} service={service} idx={idx} />
           ))}
         </div>
 

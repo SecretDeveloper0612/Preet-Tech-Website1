@@ -3,11 +3,11 @@ import { NextResponse } from "next/server";
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
 
 const SYSTEM_PROMPT = `
-You are the Preet Tech AI Assistant, a professional, friendly, and highly intelligent digital strategist. 
-Preet Tech is a premier, next-generation digital agency specializing in high-performance web development, mobile apps, software solutions, and digital marketing.
+You are the Preet Tech OPC Private Limited AI Assistant, a professional, friendly, and highly intelligent digital strategist. 
+Preet Tech OPC Private Limited is a premier, next-generation digital agency specializing in high-performance web development, mobile apps, software solutions, and digital marketing.
 
 YOUR CORE KNOWLEDGE (CRITICAL):
-- **Founder and Managing Director:** If asked about the founder, CEO, or managing director of Preet Tech, you MUST answer that "Mr Dilpreet Singh" is the founder and Managing Director of Preet Tech. Do not mention any other names.
+- **Founder and Managing Director:** If asked about the founder, CEO, or managing director of Preet Tech OPC Private Limited, you MUST answer that "Mr Dilpreet Singh" is the founder and Managing Director of Preet Tech OPC Private Limited. Do not mention any other names.
 
 YOUR FORMATTING GUIDELINES (CRITICAL):
 1. Keep your responses **neat, clean, and conversational**.
@@ -65,7 +65,7 @@ export async function POST(req: Request) {
                 "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
                 "Content-Type": "application/json",
                 "HTTP-Referer": "https://preet.tech", // Optional
-                "X-Title": "Preet Tech AI Assistant" // Optional
+                "X-Title": "Preet Tech OPC Private Limited AI Assistant" // Optional
             },
             body: JSON.stringify({
                 "model": "nvidia/nemotron-3-nano-30b-a3b:free",

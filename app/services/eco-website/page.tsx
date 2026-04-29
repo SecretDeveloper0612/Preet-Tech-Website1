@@ -32,8 +32,8 @@ const TechnicalBackground = ({ isDarkMode }: { isDarkMode: boolean }) => (
             }}
         />
         {/* Two static ambient glows — no animation, GPU-composited */}
-        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[100px] rounded-full opacity-60" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[100px] rounded-full opacity-40" />
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[48px] rounded-full opacity-60 gpu" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[48px] rounded-full opacity-40 gpu" />
     </div>
 );
 
@@ -159,7 +159,7 @@ export default function EcoWebsiteDevelopment() {
     };
 
     return (
-        <main ref={containerRef} className="relative z-10 selection:bg-[#3994fa]/30 overflow-x-hidden bg-white text-slate-900 dark:bg-[#020617] dark:text-white transition-colors duration-500 font-sans" style={{ willChange: 'scroll-position' }}>
+        <main ref={containerRef} className="relative z-10 selection:bg-[#3994fa]/30 overflow-x-hidden bg-white text-slate-900 dark:bg-[#020617] dark:text-white transition-colors duration-300 font-sans">
 
             {/* JSON-LD Structured Data for Rich Snippets */}
             <script
@@ -172,7 +172,7 @@ export default function EcoWebsiteDevelopment() {
                             "name": "Eco Website Development",
                             "provider": {
                                 "@type": "Organization",
-                                "name": "Preet Tech",
+                                "name": "Preet Tech OPC Private Limited",
                                 "url": "https://preettech.com",
                                 "logo": "https://preettech.com/logo.png",
                                 "contactPoint": {
@@ -345,7 +345,7 @@ export default function EcoWebsiteDevelopment() {
                         </div>
 
                         {/* Blob Background Details */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3994fa]/20 to-brand-medium/20 rounded-full blur-[100px] -z-10 animate-pulse" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3994fa]/20 to-brand-medium/20 rounded-full blur-[48px] -z-10 animate-pulse" />
                     </div>
                 </div>
             </section>
@@ -356,23 +356,23 @@ export default function EcoWebsiteDevelopment() {
 
                 {/* Static ambient blobs — no JS animation cost */}
                 <div className="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
-                    <div className="absolute w-64 h-64 bg-[#3994fa]/8 blur-[80px] rounded-full" style={{ left: '10%', top: '20%' }} />
-                    <div className="absolute w-64 h-64 bg-[#3994fa]/6 blur-[80px] rounded-full" style={{ left: '55%', top: '50%' }} />
+                    <div className="absolute w-64 h-64 bg-[#3994fa]/8 blur-[40px] rounded-full" style={{ left: '10%', top: '20%' }} />
+                    <div className="absolute w-64 h-64 bg-[#3994fa]/6 blur-[40px] rounded-full" style={{ left: '55%', top: '50%' }} />
                 </div>
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
                     <div className="space-y-6 md:space-y-8">
                         <div>
-                            <motion.span
+                            <span
                                 className="text-[#3994fa] font-bold uppercase tracking-widest text-[10px] md:text-xs"
                             >
                                 The Digital Necessity
-                            </motion.span>
-                            <motion.h2
+                            </span>
+                            <h2
                                 className="text-3xl md:text-4xl lg:text-5xl font-black mt-4 mb-6 text-slate-900 dark:text-white leading-[1.2]"
                             >
                                 Why Every Small Business <br className="hidden sm:block" />Needs a Website in 2025.
-                            </motion.h2>
+                            </h2>
                         </div>
                         <ul className="space-y-6">
                             {[
@@ -382,7 +382,7 @@ export default function EcoWebsiteDevelopment() {
                                 { title: "Showcases your products & services professionally", desc: "Present your offerings in the best light with a clean, modern design that converts browsers into buyers." },
                                 { title: "Affordable entry into digital growth", desc: "Start your digital journey without breaking the bank. Scale up anytime as your business grows." }
                             ].map((item, i) => (
-                                <motion.li
+                                <li
                                     key={i}
                                     className="flex items-start gap-4 group"
                                 >
@@ -393,14 +393,14 @@ export default function EcoWebsiteDevelopment() {
                                         <h4 className="font-bold text-slate-900 dark:text-white leading-none group-hover:text-[#3994fa] transition-colors">{item.title}</h4>
                                         <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">{item.desc}</p>
                                     </div>
-                                </motion.li>
+                                </li>
                             ))}
                         </ul>
                     </div>
 
                     <div className="relative">
-                        <div className="absolute -inset-10 bg-[#3994fa]/10 blur-[100px] rounded-full opacity-30" />
-                        <div className="relative bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl rounded-[2rem] sm:rounded-[2.5rem] p-4 sm:p-8 shadow-2xl border border-white/20 dark:border-white/5">
+                        <div className="absolute -inset-10 bg-[#3994fa]/10 blur-[48px] rounded-full opacity-30" />
+                        <div className="relative bg-white/70 dark:bg-slate-800/70 backdrop-blur-md rounded-[2rem] sm:rounded-[2.5rem] p-4 sm:p-8 shadow-2xl border border-white/20 dark:border-white/5">
                             <div className="grid grid-cols-2 gap-3 sm:gap-6">
                                 {[
                                     { icon: Globe, color: "text-[#3994fa]", bg: "bg-[#3994fa]/10", barBg: "bg-[#3994fa]", glow: "hover:shadow-[#3994fa]/20", progress: "85%", label: "99.9% Uptime", sub: "Global Availability" },
@@ -410,20 +410,20 @@ export default function EcoWebsiteDevelopment() {
                                 ].map((stat: any, i) => (
                                     <motion.div
                                         key={i}
-                                        whileHover={{ y: -5, scale: 1.02 }}
+                                        
                                         className={`bg-white dark:bg-slate-900/80 p-4 sm:p-6 rounded-[1.25rem] sm:rounded-2xl border border-slate-100 dark:border-white/5 relative overflow-hidden group/stat transition-all duration-300 shadow-sm hover:shadow-xl ${stat.shift ? 'mt-6 sm:mt-8' : ''} ${stat.glow}`}
                                     >
                                         {/* Floating decorative dot (like in the design for specific cards) */}
                                         {stat.dot && (
                                             <motion.div
-                                                animate={{ y: [0, -8, 0], scale: [1, 1.2, 1] }}
-                                                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                                                
+                                                
                                                 className={`absolute top-8 left-20 sm:top-10 sm:left-[6.5rem] w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${typeof stat.dot === 'string' ? stat.dot : stat.color.replace('text', 'bg')} opacity-90`}
                                             />
                                         )}
 
                                         <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-[0.85rem] sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 relative overflow-hidden`}>
-                                            <div className={`absolute inset-0 ${stat.bg} group-hover/stat:scale-125 transition-transform duration-500`} />
+                                            <div className={`absolute inset-0 ${stat.bg} group-hover/stat:scale-125 transition-transform duration-300`} />
                                             <stat.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.color} relative z-10 group-hover/stat:scale-110 transition-transform duration-300`} />
                                         </div>
                                         <div className="space-y-0.5 sm:space-y-1 relative z-10">
@@ -439,15 +439,15 @@ export default function EcoWebsiteDevelopment() {
                                                 className={`h-full relative overflow-hidden ${stat.barBg}`}
                                             >
                                                 <motion.div
-                                                    animate={{ x: ['-100%', '200%'] }}
-                                                    transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1 }}
+                                                    
+                                                    
                                                     className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/50 dark:via-white/30 to-transparent"
                                                 />
                                             </motion.div>
                                         </div>
 
                                         {/* Subtle Hover Glow Background */}
-                                        <div className={`absolute -bottom-10 -right-10 w-24 h-24 sm:w-32 sm:h-32 ${stat.bg} rounded-full blur-2xl opacity-0 group-hover/stat:opacity-60 transition-opacity duration-500`} />
+                                        <div className={`absolute -bottom-10 -right-10 w-24 h-24 sm:w-32 sm:h-32 ${stat.bg} rounded-full blur-2xl opacity-0 group-hover/stat:opacity-60 transition-opacity duration-300`} />
                                     </motion.div>
                                 ))}
                             </div>
@@ -456,11 +456,11 @@ export default function EcoWebsiteDevelopment() {
                 </div>
             </section>
 
-            {/* 3️⃣ Why Choose Preet Tech */}
+            {/* 3️⃣ Why Choose Preet Tech OPC Private Limited */}
             <section className="py-24 px-6 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12 md:mb-16">
-                        <span className="text-[#3994fa] font-bold uppercase tracking-widest text-[10px] md:text-xs">Why Preet Tech</span>
+                        <span className="text-[#3994fa] font-bold uppercase tracking-widest text-[10px] md:text-xs">Why Preet Tech OPC Private Limited</span>
                         <h2 className="text-2xl md:text-3xl lg:text-5xl font-black mt-4 text-slate-900 dark:text-white leading-tight">The Best Affordable Website Development Partner in India</h2>
                         <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-2xl mx-auto mt-4 leading-relaxed">Trusted by 150+ startups, freelancers, and SMEs across India for delivering polished websites fast and within budget.</p>
                     </div>
@@ -580,8 +580,8 @@ export default function EcoWebsiteDevelopment() {
                 <TechnicalBackground isDarkMode={isDarkMode} />
 
                 {/* Premium Glow Effects */}
-                <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-[#3994fa]/5 dark:bg-[#3994fa]/5 blur-[120px] rounded-full pointer-events-none" />
-                <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#3994fa]/5 dark:bg-[#3994fa]/5 blur-[100px] rounded-full pointer-events-none" />
+                <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-[#3994fa]/5 dark:bg-[#3994fa]/5 blur-[60px] rounded-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#3994fa]/5 dark:bg-[#3994fa]/5 blur-[48px] rounded-full pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="text-center mb-16 md:mb-20">
@@ -659,9 +659,9 @@ export default function EcoWebsiteDevelopment() {
                             ].map((tech, i) => (
                                 <div
                                     key={i}
-                                    className="group flex flex-col w-[160px] md:w-[180px] shrink-0 items-center justify-center p-4 md:p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-[#3994fa]/40 dark:hover:border-[#3994fa]/40 shadow-sm hover:shadow-[0_10px_40px_rgba(63,143,204,0.15)] dark:hover:shadow-[0_0_30px_rgba(63,143,204,0.2)] transition-all duration-500 relative overflow-hidden cursor-default"
+                                    className="group flex flex-col w-[160px] md:w-[180px] shrink-0 items-center justify-center p-4 md:p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-[#3994fa]/40 dark:hover:border-[#3994fa]/40 shadow-sm hover:shadow-[0_10px_40px_rgba(63,143,204,0.15)] dark:hover:shadow-[0_0_30px_rgba(63,143,204,0.2)] transition-all duration-300 relative overflow-hidden cursor-default"
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#3994fa]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[#3994fa]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                                     <tech.icon className="w-6 h-6 md:w-8 md:h-8 text-slate-800 dark:text-white mb-3 group-hover:scale-110 group-hover:text-[#3994fa] transition-all duration-300" strokeWidth={1.5} />
 
@@ -673,7 +673,7 @@ export default function EcoWebsiteDevelopment() {
                                     </span>
 
                                     {/* Subtle corner glow on hover */}
-                                    <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#3994fa]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#3994fa]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 </div>
                             ))}
                         </div>
@@ -697,9 +697,9 @@ export default function EcoWebsiteDevelopment() {
                             ].map((tech, i) => (
                                 <div
                                     key={`row2-${i}`}
-                                    className="group flex flex-col w-[160px] md:w-[180px] shrink-0 items-center justify-center p-4 md:p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-[#3994fa]/40 dark:hover:border-[#3994fa]/40 shadow-sm hover:shadow-[0_10px_40px_rgba(63,143,204,0.15)] dark:hover:shadow-[0_0_30px_rgba(63,143,204,0.2)] transition-all duration-500 relative overflow-hidden cursor-default"
+                                    className="group flex flex-col w-[160px] md:w-[180px] shrink-0 items-center justify-center p-4 md:p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-[#3994fa]/40 dark:hover:border-[#3994fa]/40 shadow-sm hover:shadow-[0_10px_40px_rgba(63,143,204,0.15)] dark:hover:shadow-[0_0_30px_rgba(63,143,204,0.2)] transition-all duration-300 relative overflow-hidden cursor-default"
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-[#3994fa]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-[#3994fa]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                                     <tech.icon className="w-6 h-6 md:w-8 md:h-8 text-slate-800 dark:text-white mb-3 group-hover:scale-110 group-hover:text-[#3994fa] transition-all duration-300" strokeWidth={1.5} />
 
@@ -710,7 +710,7 @@ export default function EcoWebsiteDevelopment() {
                                         {tech.category}
                                     </span>
 
-                                    <div className="absolute top-0 left-0 w-16 h-16 bg-[#3994fa]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="absolute top-0 left-0 w-16 h-16 bg-[#3994fa]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 </div>
                             ))}
                         </div>
@@ -725,8 +725,8 @@ export default function EcoWebsiteDevelopment() {
                     <div className="bg-slate-50 dark:bg-[#030712]/50 rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 border border-slate-200 dark:border-white/5 shadow-xl relative overflow-hidden">
 
                         {/* High-end aesthetic backgrounds */}
-                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-medium/5 blur-[120px] rounded-full pointer-events-none" />
-                        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#3994fa]/5 blur-[120px] rounded-full pointer-events-none" />
+                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-medium/5 blur-[60px] rounded-full pointer-events-none" />
+                        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#3994fa]/5 blur-[60px] rounded-full pointer-events-none" />
                         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-medium/50 to-transparent" />
 
                         <div className="text-center mb-10 md:mb-16 relative z-10">
@@ -803,10 +803,10 @@ export default function EcoWebsiteDevelopment() {
                                                 onClick={() => setIsIndustryDropdownOpen(false)}
                                             />
                                             <motion.div
-                                                initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                                
+                                                
                                                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                                className="absolute right-0 sm:left-0 sm:right-auto mt-3 w-72 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2.5rem] shadow-2xl z-50 overflow-hidden backdrop-blur-xl"
+                                                className="absolute right-0 sm:left-0 sm:right-auto mt-3 w-72 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2.5rem] shadow-2xl z-50 overflow-hidden backdrop-blur-md"
                                             >
                                                 <div className="max-h-[420px] overflow-y-auto custom-scrollbar p-2">
                                                     <div className="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-[#3994fa]/60 border-b border-slate-100 dark:border-slate-800 mb-2 sticky top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-10">
@@ -825,7 +825,7 @@ export default function EcoWebsiteDevelopment() {
                                                             All Industries
                                                         </div>
                                                         {selectedIndustry === null && (
-                                                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
+                                                            <motion.div >
                                                                 <Check className="w-4 h-4 text-[#3994fa]" />
                                                             </motion.div>
                                                         )}
@@ -845,7 +845,7 @@ export default function EcoWebsiteDevelopment() {
                                                                 {ind}
                                                             </div>
                                                             {selectedIndustry === ind && (
-                                                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
+                                                                <motion.div >
                                                                     <Check className="w-4 h-4 text-[#3994fa]" />
                                                                 </motion.div>
                                                             )}
@@ -903,7 +903,7 @@ export default function EcoWebsiteDevelopment() {
                                             src={item.image}
                                             alt={item.title}
                                             fill
-                                            className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                                            className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-400"
                                             sizes="(max-width: 768px) 100vw, 80vw"
                                         />
                                     </div>
@@ -911,7 +911,7 @@ export default function EcoWebsiteDevelopment() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 z-10" />
                                     {/* Content */}
                                     <div className="absolute bottom-0 left-0 p-6 md:p-10 z-20 w-full flex items-end justify-between">
-                                        <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                        <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                             <span className="text-[#3994fa] text-[10px] font-black uppercase tracking-widest mb-1 block">{item.category}</span>
                                             <h3 className="text-2xl md:text-3xl font-black text-white leading-tight">{item.title}</h3>
                                         </div>
@@ -949,8 +949,8 @@ export default function EcoWebsiteDevelopment() {
                 <TechnicalBackground isDarkMode={isDarkMode} />
 
                 {/* Premium Glow Effects */}
-                <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#3994fa]/5 dark:bg-[#3994fa]/10 blur-[100px] rounded-full pointer-events-none" />
-                <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#3994fa]/5 dark:bg-[#3994fa]/5 blur-[100px] rounded-full pointer-events-none" />
+                <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#3994fa]/5 dark:bg-[#3994fa]/10 blur-[48px] rounded-full pointer-events-none" />
+                <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#3994fa]/5 dark:bg-[#3994fa]/5 blur-[48px] rounded-full pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center relative z-10">
                     <div>
@@ -981,7 +981,7 @@ export default function EcoWebsiteDevelopment() {
                         </div>
 
                         <div className="p-6 md:p-8 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800/50 dark:to-slate-900/50 border border-slate-200 dark:border-white/10 rounded-2xl relative overflow-hidden group shadow-lg shadow-slate-200/50 dark:shadow-none">
-                            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500">
+                            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300">
                                 <Rocket className="w-24 h-24 text-[#3994fa]" />
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-r from-[#3994fa]/5 to-transparent dark:from-[#3994fa]/10" />
@@ -1021,11 +1021,11 @@ export default function EcoWebsiteDevelopment() {
                                         stroke="url(#speedGradientPremium)"
                                         strokeWidth="4"
                                         strokeDasharray="263"
-                                        initial={{ strokeDashoffset: 263 }}
-                                        whileInView={{ strokeDashoffset: 15 }}
-                                        viewport={{ once: true }}
+                                        
+                                        
+                                        
 
-                                        transition={{ duration: 2.5, ease: "easeOut", delay: 0.2 }}
+                                        
                                         strokeLinecap="round"
                                     />
                                     <defs>
@@ -1039,22 +1039,22 @@ export default function EcoWebsiteDevelopment() {
 
                             {/* Center Metrics (Elevated Glassmorphism) */}
                             <div className="absolute inset-[15%] rounded-full bg-slate-50/90 dark:bg-slate-900/90 border border-slate-200/50 dark:border-white/5 shadow-xl flex flex-col items-center justify-center text-center">
-                                <motion.span
+                                <span
 
 
 
-                                    transition={{ duration: 0.6, delay: 0.5 }}
+                                    
                                     className="text-7xl md:text-[100px] font-black text-slate-900 dark:text-white tracking-widest leading-none drop-shadow-sm"
                                 >
                                     99
-                                </motion.span>
+                                </span>
                                 <span className="text-[#3994fa] text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mt-2 md:mt-4">Mobile Score</span>
                             </div>
 
                             {/* Floating Premium Tech Chips */}
                             <motion.div
-                                animate={{ y: [0, -12, 0] }}
-                                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                                
+                                
                                 className="absolute -top-4 right-4 md:-top-6 md:right-8 bg-white/95 dark:bg-slate-800/95 border border-slate-200 dark:border-white/10 px-5 py-3 rounded-xl shadow-xl z-20"
                             >
                                 <div className="flex items-center gap-3">
@@ -1067,8 +1067,8 @@ export default function EcoWebsiteDevelopment() {
                             </motion.div>
 
                             <motion.div
-                                animate={{ y: [0, 12, 0] }}
-                                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                                
+                                
                                 className="absolute bottom-1/4 -left-6 md:-left-12 bg-white/95 dark:bg-slate-800/95 border border-slate-200 dark:border-white/10 px-5 py-3 rounded-xl shadow-xl z-20"
                             >
                                 <div className="flex items-center gap-2.5">
@@ -1112,7 +1112,7 @@ export default function EcoWebsiteDevelopment() {
                                         </div>
                                         <span className="text-[10px] text-slate-500">https://www.yourbusiness.com</span>
                                     </div>
-                                    <h4 className="text-xl font-bold text-blue-600 dark:text-blue-400 group-hover:underline cursor-pointer">Premium Website Development | Preet Tech</h4>
+                                    <h4 className="text-xl font-bold text-blue-600 dark:text-blue-400 group-hover:underline cursor-pointer">Premium Website Development | Preet Tech OPC Private Limited</h4>
                                     <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                                         Looking for a fast, responsive, and affordable website? Our eco-budget plans offer premium designs to get you online in just 7 days.
                                     </p>
@@ -1128,8 +1128,8 @@ export default function EcoWebsiteDevelopment() {
 
                             {/* Floating "Indexed" Badge */}
                             <motion.div
-                                animate={{ scale: [1, 1.1, 1] }}
-                                transition={{ duration: 2, repeat: Infinity }}
+                                
+                                
                                 className="absolute top-12 -right-4 bg-green-500 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-lg flex items-center gap-1"
                             >
                                 <CheckCircle2 className="w-3 h-3" /> INDEXED
@@ -1209,7 +1209,7 @@ export default function EcoWebsiteDevelopment() {
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
-                                    whileHover={{ y: -5 }}
+                                    
                                     className="relative flex flex-col items-start lg:items-center text-left lg:text-center"
                                 >
                                     {/* Pulse Marker */}
@@ -1267,7 +1267,7 @@ export default function EcoWebsiteDevelopment() {
                     <div className="hidden xl:block">
                         {/* Piece 1: Performance */}
                         <div
-                            className="absolute left-[-15%] top-[10%] w-56 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[-5deg]"
+                            className="absolute left-[-15%] top-[10%] w-56 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[-5deg] gpu"
                         >
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
@@ -1283,7 +1283,7 @@ export default function EcoWebsiteDevelopment() {
 
                         {/* Piece 2: Rapid Delivery */}
                         <div
-                            className="absolute left-[-12%] bottom-[10%] w-60 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[5deg]"
+                            className="absolute left-[-12%] bottom-[10%] w-60 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[5deg] gpu"
                         >
                             <div className="flex items-center gap-4 mb-3">
                                 <div className="w-10 h-10 rounded-xl bg-[#3994fa]/10 flex items-center justify-center">
@@ -1297,7 +1297,7 @@ export default function EcoWebsiteDevelopment() {
 
                         {/* Piece 3: Global Infra */}
                         <div
-                            className="absolute right-[-15%] top-[15%] w-56 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[8deg]"
+                            className="absolute right-[-15%] top-[15%] w-56 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[8deg] gpu"
                         >
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
@@ -1310,7 +1310,7 @@ export default function EcoWebsiteDevelopment() {
 
                         {/* Piece 4: Satisfaction */}
                         <div
-                            className="absolute right-[-12%] bottom-[15%] w-64 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[-8deg]"
+                            className="absolute right-[-12%] bottom-[15%] w-64 p-6 bg-white/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-white/20 dark:border-white/5 shadow-xl rotate-[-8deg] gpu"
                         >
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center">
@@ -1327,11 +1327,12 @@ export default function EcoWebsiteDevelopment() {
 
                     <div className="max-w-4xl mx-auto relative z-10">
                         {/* Animated Border Background */}
-                        <div className="absolute -inset-[2px] bg-gradient-to-r from-[#3994fa] via-brand-medium to-[#3994fa] bg-[length:200%_auto] rounded-[3rem] opacity-70 blur-sm animate-border-flow" />
+                        {/* Optimized Border Background - Opacity Pulse is cheaper than Background Position */}
+                        <div className="absolute -inset-[2px] bg-gradient-to-r from-[#3994fa] via-brand-medium to-[#3994fa] rounded-[3rem] opacity-40 blur-sm animate-pulse gpu" />
 
                         {/* Main Card - Landscape Transition (Compact) */}
                         <motion.div
-                            whileHover={{ y: -5, scale: 1.01 }}
+                            
                             className="relative bg-white dark:bg-slate-900 rounded-[2rem] sm:rounded-[2.8rem] overflow-hidden border border-white/20 dark:border-slate-800/50 shadow-2xl"
                         >
                             <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -1376,7 +1377,7 @@ export default function EcoWebsiteDevelopment() {
 
 
 
-                                                transition={{ delay: i * 0.1 }}
+                                                
                                                 className="flex items-center gap-3 sm:gap-4 group/item"
                                             >
                                                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#3994fa]/20 flex items-center justify-center shrink-0 group-hover/item:bg-[#3994fa] group-hover/item:text-slate-900 transition-all">
@@ -1401,7 +1402,7 @@ export default function EcoWebsiteDevelopment() {
                                             Start Your Project Now <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                                         </span>
                                         {/* Button Shine Effect */}
-                                        <div className="absolute inset-0 w-1/2 h-full bg-white opacity-0 group-hover:opacity-20 translate-x-[-100%] group-hover:translate-x-[200%] transition-all duration-1000 skew-x-[45deg]" />
+                                        <div className="absolute inset-0 w-1/2 h-full bg-white opacity-0 group-hover:opacity-20 translate-x-[-100%] group-hover:translate-x-[200%] transition-all duration-500 skew-x-[45deg]" />
                                     </a>
                                 </div>
                             </div>
@@ -1439,7 +1440,7 @@ export default function EcoWebsiteDevelopment() {
 
             {/* 1️⃣4️⃣ Our Simple 4-Step Process */}
             <section className="py-24 px-6 reveal-section relative overflow-hidden bg-transparent">
-                <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#3994fa]/5 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#3994fa]/5 blur-[60px] rounded-full pointer-events-none gpu" />
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="text-center mb-20 md:mb-28">
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 text-[10px] md:text-xs font-black uppercase tracking-widest text-[#3994fa] mb-6">
@@ -1464,15 +1465,15 @@ export default function EcoWebsiteDevelopment() {
                             ].map((item, i) => (
                                 <div key={i} className="group relative">
                                     {/* Hover glow */}
-                                    <div className="absolute -inset-2 bg-gradient-to-br from-[#3994fa]/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                                    <div className="absolute -inset-2 bg-gradient-to-br from-[#3994fa]/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full gpu" />
 
-                                    <div className="relative h-full bg-white dark:bg-[#030712]/50 backdrop-blur-2xl border border-slate-200 dark:border-white/5 p-8 md:p-10 rounded-[2rem] flex flex-col items-center text-center group-hover:-translate-y-3 transition-transform duration-500 hover:shadow-2xl hover:shadow-[#3994fa]/5">
+                                    <div className="relative h-full bg-white dark:bg-[#030712]/50 backdrop-blur-lg border border-slate-200 dark:border-white/5 p-8 md:p-10 rounded-[2rem] flex flex-col items-center text-center group-hover:-translate-y-3 transition-transform duration-300 hover:shadow-2xl hover:shadow-[#3994fa]/5">
                                         <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center border-4 border-white dark:border-[#020617] text-xs font-black text-[#3994fa] shadow-sm tracking-widest">
                                             0{i + 1}
                                         </div>
 
-                                        <div className="w-20 h-20 rounded-2xl bg-slate-50 dark:bg-white/5 flex items-center justify-center mb-6 shadow-sm border border-slate-100 dark:border-white/5 group-hover:scale-110 group-hover:bg-[#3994fa] transition-all duration-500">
-                                            <item.icon className="w-8 h-8 text-slate-400 group-hover:text-white transition-colors duration-500" />
+                                        <div className="w-20 h-20 rounded-2xl bg-slate-50 dark:bg-white/5 flex items-center justify-center mb-6 shadow-sm border border-slate-100 dark:border-white/5 group-hover:scale-110 group-hover:bg-[#3994fa] transition-all duration-300">
+                                            <item.icon className="w-8 h-8 text-slate-400 group-hover:text-white transition-colors duration-300" />
                                         </div>
 
                                         <h4 className="text-xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-[#3994fa] transition-colors">{item.title}</h4>
@@ -1493,7 +1494,7 @@ export default function EcoWebsiteDevelopment() {
                     <div className="text-center mb-16">
                         <span className="text-[#3994fa] font-bold uppercase tracking-widest text-xs">Got Questions?</span>
                         <h2 className="text-3xl md:text-5xl font-black mt-4 text-slate-900 dark:text-white">Frequently Asked Questions About Our Eco Website Plan</h2>
-                        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-xl mx-auto mt-4 leading-relaxed">Everything you need to know before launching your business website with Preet Tech.</p>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-xl mx-auto mt-4 leading-relaxed">Everything you need to know before launching your business website with Preet Tech OPC Private Limited.</p>
                     </div>
                     <div className="space-y-4 px-2 sm:px-0">
                         {[
@@ -1535,7 +1536,7 @@ export default function EcoWebsiteDevelopment() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-[#3994fa]">in 3–7 Days for ₹3,999</span>
                     </h2>
                     <p className="text-slate-500 dark:text-slate-400 text-sm md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-                        Join 150+ businesses, freelancers, and startups across India who trusted Preet Tech to get them online — professionally, affordably, and fast.
+                        Join 150+ businesses, freelancers, and startups across India who trusted Preet Tech OPC Private Limited to get them online — professionally, affordably, and fast.
                     </p>
                     <a href="#contact" className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-[#3994fa] to-[#004aad] hover:opacity-95 text-white rounded-full font-black text-sm sm:text-lg uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(63,143,204,0.3)] inline-block">
                         Get My Free Consultation Now →
@@ -1548,18 +1549,18 @@ export default function EcoWebsiteDevelopment() {
                 {isVideoOpen && (
                     <motion.div
 
-                        animate={{ opacity: 1 }}
+                        
 
 
-                        transition={{ duration: 0.8 }}
+                        
                         className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95"
                         onClick={() => setIsVideoOpen(false)}
                     >
                         <motion.div
-                            initial={{ scale: 0.95, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
+                            
+                            
                             exit={{ scale: 0.95, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            
                             className="relative w-full aspect-video max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center will-change-transform"
                             onClick={e => e.stopPropagation()}
                         >
@@ -1578,7 +1579,7 @@ export default function EcoWebsiteDevelopment() {
                                     loading="lazy"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
-                                    title="Preet Tech Video"
+                                    title="Preet Tech OPC Private Limited Video"
                                 />
                             </div>
                         </motion.div>

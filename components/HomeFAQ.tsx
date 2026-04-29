@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 
 const FAQS = [
     {
-        question: "What makes Preet Tech a top Next Gen Digital Agency?",
+        question: "What makes Preet Tech OPC Private Limited a top Next Gen Digital Agency?",
         answer: "As a leading Next Gen Digital Agency, we combine over a decade of IT experience with cutting-edge generative AI integration. We specialize in custom software development, AI-driven marketing, and scalable tech solutions to ensure your business stays ahead of the digital curve."
     },
     {
@@ -58,10 +58,10 @@ const HomeFAQ: React.FC = () => {
                             <AnimatePresence>
                                 {openIndex === index && (
                                     <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
+                                        
+                                        
                                         exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
+                                        
                                     >
                                         <div className="px-6 pb-6 text-slate-600 dark:text-slate-400 text-base leading-relaxed">
                                             {faq.answer}

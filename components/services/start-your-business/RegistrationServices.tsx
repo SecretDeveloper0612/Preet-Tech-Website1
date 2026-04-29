@@ -34,7 +34,7 @@ const RegistrationServices = () => {
                                     key={i}
                                     
                                     
-                                    transition={{ delay: i * 0.1 }}
+                                    
                                     
                                     className="flex items-center gap-6 p-6 rounded-3xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 hover:border-brand-medium/30 dark:hover:border-brand-cyan/30 transition-all group"
                                 >

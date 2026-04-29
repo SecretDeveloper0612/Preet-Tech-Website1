@@ -53,10 +53,10 @@ const SocialDashboard = () => {
                         {bars.map((h, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ height: 0 }}
-                                whileInView={{ height: `${h}%` }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.5 + i * 0.05, duration: 0.8, ease: "easeOut" }}
+                                
+                                
+                                
+                                
                                 className="flex-1 bg-gradient-to-t from-blue-500/80 to-blue-400/90 rounded-t-lg relative group"
                             >
                                 <motion.div
@@ -76,10 +76,10 @@ const SocialDashboard = () => {
                             </div>
                             <div className="h-10 w-full bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-100/50 dark:border-white/5 overflow-hidden">
                                 <motion.div
-                                    initial={{ x: '-100%' }}
-                                    whileInView={{ x: '0%' }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 1, delay: 1.2 }}
+                                    
+                                    
+                                    
+                                    
                                     className="h-full w-full bg-gradient-to-r from-blue-500/10 via-blue-400/20 to-blue-500/10"
                                 />
                             </div>
@@ -94,10 +94,10 @@ const SocialDashboard = () => {
                             </div>
                             <div className="relative h-2.5 w-full bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden">
                                 <motion.div
-                                    initial={{ width: '0' }}
-                                    whileInView={{ width: '85%' }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 1.5, delay: 1.2, ease: "easeInOut" }}
+                                    
+                                    
+                                    
+                                    
                                     className="h-full bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]"
                                 />
                             </div>

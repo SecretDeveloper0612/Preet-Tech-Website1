@@ -1,6 +1,11 @@
 "use client";
 
-import ChatWidget from "../components/ChatWidget";
+import React from "react";
+import dynamic from "next/dynamic";
+
+const ChatWidget = dynamic(() => import("../components/ChatWidget"), {
+    ssr: false,
+});
 
 export default function ClientLayout({
     children,

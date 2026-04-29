@@ -1101,9 +1101,9 @@ const ProductCard = memo(({ tool, handleBuy }: { tool: Tool; handleBuy: (t: Tool
     <motion.div
       layout
 
-      animate={{ opacity: 1, scale: 1 }}
+      
       exit={{ opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.3 }}
+      
       className={`group relative flex flex-col justify-between p-6 rounded-[2rem] border transition-all duration-300 shadow-sm hover:shadow-2xl ${is3D ? "bg-gradient-to-br from-slate-900 via-[#111] to-slate-900 border-slate-700/50 hover:border-brand-medium text-white"
         : "bg-white dark:bg-[#0a0a0a] border-slate-200 dark:border-white/10 hover:border-brand-medium/50"
         }`}
@@ -1169,7 +1169,7 @@ const ProductCard = memo(({ tool, handleBuy }: { tool: Tool; handleBuy: (t: Tool
       </div>
 
       {/* Magic Hover Glow */}
-      <div className="absolute -inset-px rounded-[2rem] border border-transparent bg-gradient-to-b from-brand-medium/0 to-brand-medium/0 opacity-0 group-hover:opacity-10 pointer-events-none transition-opacity duration-500" />
+      <div className="absolute -inset-px rounded-[2rem] border border-transparent bg-gradient-to-b from-brand-medium/0 to-brand-medium/0 opacity-0 group-hover:opacity-10 pointer-events-none transition-opacity duration-300" />
     </motion.div>
   );
 });
@@ -1204,7 +1204,7 @@ export default function ToolsMarketplace() {
   };
 
   const handleBuyViaWhatsApp = useCallback((tool: Tool) => {
-    const message = `Hi Preet Tech, I want to purchase ${tool.name} (${tool.variant}) for ${tool.duration}. Please share payment details.`;
+    const message = `Hi Preet Tech OPC Private Limited, I want to purchase ${tool.name} (${tool.variant}) for ${tool.duration}. Please share payment details.`;
     const encodedMessage = encodeURIComponent(message);
     const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     window.open(url, '_blank');
@@ -1232,23 +1232,23 @@ export default function ToolsMarketplace() {
   };
 
   return (
-    <main className="relative z-10 selection:bg-brand-medium/20 overflow-x-clip bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-500 font-sans">
+    <main className="relative z-10 selection:bg-brand-medium/20 overflow-x-clip bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-300 font-sans">
       <Navbar isDark={isDarkMode} toggleTheme={toggleTheme} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-12 md:pt-48 md:pb-20 px-4 md:px-6 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none -z-10">
           <motion.div
-            animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
-            transition={{ duration: 15, repeat: Infinity }}
-            className="absolute -top-[10%] -left-[5%] w-[600px] h-[600px] bg-brand-medium/20 blur-[120px] rounded-full"
+            
+            
+            className="absolute -top-[10%] -left-[5%] w-[600px] h-[600px] bg-brand-medium/20 blur-[60px] rounded-full"
           />
         </div>
 
         <div className="max-w-7xl mx-auto text-center space-y-8 relative">
           <motion.div
 
-            animate={{ opacity: 1, y: 0 }}
+            
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-medium/10 border border-brand-medium/20 text-brand-medium dark:text-brand-cyan text-xs font-black uppercase tracking-[0.3em]"
           >
             <Sparkles className="w-4 h-4" />
@@ -1256,30 +1256,30 @@ export default function ToolsMarketplace() {
           </motion.div>
 
           <div className="space-y-6">
-            <motion.h1
+            <h1
 
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              
+              
               className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase"
             >
               The Ultimate <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-sky via-brand-medium to-brand-cyan">Tools Marketplace.</span>
-            </motion.h1>
-            <motion.p
+            </h1>
+            <p
 
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              
+              
               className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed"
             >
               Explore hundreds of highly sought-after digital tools, premium memberships, and software keys for startups and professionals.
-            </motion.p>
+            </p>
           </div>
         </div>
       </section>
 
       {/* Horizontal Category Tabs */}
       <section className="sticky top-20 z-40 px-4 md:px-6 mb-8" id="marketplace-grid">
-        <div className="max-w-7xl mx-auto glass-morphism p-3 md:p-4 rounded-[2rem] border border-slate-200 dark:border-white/10 shadow-xl backdrop-blur-xl dark:bg-black/60 bg-white/80 overflow-hidden">
+        <div className="max-w-7xl mx-auto glass-morphism p-3 md:p-4 rounded-[2rem] border border-slate-200 dark:border-white/10 shadow-xl backdrop-blur-md dark:bg-black/60 bg-white/80 overflow-hidden">
 
           {/* Search Bar inside sticky header */}
           <div className="relative mb-4 group">
@@ -1378,15 +1378,15 @@ export default function ToolsMarketplace() {
                   className="w-full p-8 flex items-center justify-between text-left group"
                 >
                   <span className="font-bold text-lg uppercase tracking-tight group-hover:text-brand-medium transition-colors">{faq.q}</span>
-                  <motion.div animate={{ rotate: openFAQ === i ? 180 : 0 }}>
+                  <motion.div >
                     <ChevronDown className="w-6 h-6 text-brand-medium" />
                   </motion.div>
                 </button>
                 <AnimatePresence>
                   {openFAQ === i && (
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
+                      
+                      
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
@@ -1406,11 +1406,11 @@ export default function ToolsMarketplace() {
       <Footer />
 
       <motion.a
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        href={`https://wa.me/${whatsappNumber}?text=Hi Preet Tech, I have a question about the Business Tools Marketplace.`}
+        
+        
+        
+        
+        href={`https://wa.me/${whatsappNumber}?text=Hi Preet Tech OPC Private Limited, I have a question about the Business Tools Marketplace.`}
         target="_blank"
         className="fixed bottom-8 right-8 z-[100] w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center group"
       >

@@ -25,7 +25,7 @@ const OnboardingMentoresPage = () => {
     if (!mounted) return null;
 
     return (
-        <main className="bg-white dark:bg-[#030712] min-h-screen transition-colors duration-500 selection:bg-brand-cyan/30 flex flex-col">
+        <main className="bg-white dark:bg-[#030712] min-h-screen transition-colors duration-300 selection:bg-brand-cyan/30 flex flex-col">
             <Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
             <div className="flex-1 flex flex-col items-center justify-center px-6 pt-32 pb-20 relative overflow-hidden">
@@ -37,7 +37,7 @@ const OnboardingMentoresPage = () => {
 
                 <motion.div
 
-                    animate={{ opacity: 1, y: 0 }}
+                    
                     className="max-w-4xl w-full text-center relative z-10"
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-deep/10 border border-brand-deep/20 text-brand-deep text-[10px] font-black uppercase tracking-[0.3em] mb-8">
@@ -54,9 +54,9 @@ const OnboardingMentoresPage = () => {
                         <div className="relative">
                             <div className="absolute -inset-10 bg-brand-deep/10 blur-3xl rounded-full" />
                             <motion.div
-                                initial={{ scale: 0.9, opacity: 0.5 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
+                                
+                                
+                                
                             >
                                 <Clock className="w-24 h-24 text-brand-deep relative z-10" />
                             </motion.div>

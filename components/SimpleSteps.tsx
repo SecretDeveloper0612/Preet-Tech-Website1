@@ -45,17 +45,17 @@ const SimpleSteps: React.FC = () => {
                 {/* Header */}
                 <div className="text-center mb-16 md:mb-24">
 
-                    <motion.h2
+                    <h2
                         className="text-3xl md:text-5xl lg:text-7xl font-black text-foreground tracking-tighter mb-6 leading-tight uppercase"
                     >
                         THE GENESIS <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-cyan">PROCESS.</span>
-                    </motion.h2>
+                    </h2>
 
-                    <motion.p
+                    <p
                         className="text-base md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
                     >
                         Growth doesn't have to be complicated. We've streamlined our process to take you from discovery to digital dominance.
-                    </motion.p>
+                    </p>
                 </div>
 
                 {/* Steps Layout */}
@@ -78,7 +78,7 @@ const SimpleSteps: React.FC = () => {
                                         <div className="text-7xl md:text-8xl font-black text-slate-200 dark:text-white/[0.03] select-none leading-none group-hover:text-brand-medium/10 transition-colors">
                                             {step.id}
                                         </div>
-                                        <div className={`absolute top-1/2 left-1/2 sm:left-0 -translate-x-1/2 sm:translate-x-0 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br ${step.color} p-0.5 shadow-xl group-hover:scale-110 transition-transform duration-500`}>
+                                        <div className={`absolute top-1/2 left-1/2 sm:left-0 -translate-x-1/2 sm:translate-x-0 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br ${step.color} p-0.5 shadow-xl group-hover:scale-110 transition-transform duration-300`}>
                                             <div className="w-full h-full bg-white dark:bg-[#0b0f1a] rounded-[14px] flex items-center justify-center text-foreground">
                                                 {step.icon}
                                             </div>
@@ -107,14 +107,14 @@ const SimpleSteps: React.FC = () => {
                     className="mt-16 md:mt-24 relative rounded-[2rem] md:rounded-[3rem] p-[1px] overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-2xl dark:shadow-brand-medium/5"
                 >
                     {/* Animated Gradient Border */}
-                    <div className="absolute inset-[-50%] bg-[conic-gradient(from_0deg,transparent_0_340deg,var(--tw-colors-brand-medium)_360deg)] animate-[spin_4s_linear_infinite] opacity-20 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-[-50%] bg-[conic-gradient(from_0deg,transparent_0_340deg,var(--tw-colors-brand-medium)_360deg)] animate-[spin_4s_linear_infinite] opacity-20 group-hover:opacity-100 transition-opacity duration-400" />
                     <div className="absolute inset-0 bg-gradient-to-r from-brand-medium/30 via-brand-cyan/30 to-brand-medium/30 rounded-[2rem] md:rounded-[3rem] opacity-30 dark:opacity-50 group-hover:opacity-100 transition-opacity" />
 
-                    <div className="relative h-full w-full bg-slate-50/90 dark:bg-[#070b14] backdrop-blur-xl rounded-[2rem] md:rounded-[3rem] p-10 md:p-14 lg:p-20 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden">
+                    <div className="relative h-full w-full bg-slate-50/90 dark:bg-[#070b14] backdrop-blur-md rounded-[2rem] md:rounded-[3rem] p-10 md:p-14 lg:p-20 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden">
 
                         {/* Background Accents (Inner) */}
-                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-medium/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
-                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-cyan/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-medium/10 rounded-full blur-[48px] -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:opacity-100 transition-opacity duration-400" />
+                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-cyan/10 rounded-full blur-[40px] translate-y-1/2 -translate-x-1/2 opacity-50 group-hover:opacity-100 transition-opacity duration-400" />
 
                         <div className="relative z-10 text-center lg:text-left max-w-2xl">
                             <h4 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4 md:mb-6 tracking-tighter leading-[1.1]">

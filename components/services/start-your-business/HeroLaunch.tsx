@@ -61,7 +61,7 @@ const HeroLaunch = () => {
     };
 
     return (
-        <section className="relative min-h-[90vh] pt-32 pb-20 px-6 lg:px-20 flex items-center overflow-hidden bg-white dark:bg-[#030712] transition-colors duration-500">
+        <section className="relative min-h-[90vh] pt-32 pb-20 px-6 lg:px-20 flex items-center overflow-hidden bg-white dark:bg-[#030712] transition-colors duration-300">
             {/* Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Grid Pattern */}
@@ -77,17 +77,17 @@ const HeroLaunch = () => {
                 />
 
                 {/* Ambient Glows */}
-                <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-[#3994fa]/10 blur-[120px] rounded-full" />
-                <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#3994fa]/10 blur-[100px] rounded-full" />
+                <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-[#3994fa]/10 blur-[60px] rounded-full" />
+                <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#3994fa]/10 blur-[48px] rounded-full" />
             </div>
 
             <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
                 {/* Left Side: Content */}
                 <div className="lg:col-span-7">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                        
+                        
+                        
                         className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#3994fa]/5 border border-[#3994fa]/10 dark:bg-[#3994fa]/10 dark:border-[#3994fa]/20 mb-8"
                     >
                         <span className="text-[#3994fa] dark:text-[#3994fa] text-[10px] font-bold uppercase tracking-widest">
@@ -95,29 +95,29 @@ const HeroLaunch = () => {
                         </span>
                     </motion.div>
 
-                    <motion.h1
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                    <h1
+                        
+                        
+                        
                         className="text-[44px] sm:text-6xl md:text-7xl lg:text-[76px] font-black text-slate-900 dark:text-white leading-[1.05] tracking-tight mb-8"
                     >
                         From Idea To <br />
                         <span className="text-[#3994fa] dark:text-[#3994fa] italic">Income — Together.</span>
-                    </motion.h1>
+                    </h1>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                    <p
+                        
+                        
+                        
                         className="text-slate-600 dark:text-slate-400 text-lg md:text-xl font-medium leading-relaxed mb-10 max-w-2xl"
                     >
                         We architect, engineer, and launch your business from the ground up. Registration, branding, technology, and marketing — all synchronized for cinematic impact.
-                    </motion.p>
+                    </p>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
+                        
+                        
+                        
                     >
                         <button
                             onClick={() => setIsVideoOpen(true)}
@@ -133,17 +133,17 @@ const HeroLaunch = () => {
 
                 {/* Right Side: Form Card */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
+                    
+                    
+                    
                     className="lg:col-span-5 relative"
                 >
-                    <div className="relative bg-white dark:bg-slate-900/50 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 shadow-2xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-white/5">
+                    <div className="relative bg-white dark:bg-slate-900/50 backdrop-blur-md rounded-[2.5rem] p-8 md:p-10 shadow-2xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-white/5">
                         <div className="relative z-10">
                             {formStatus === 'success' ? (
                                 <motion.div
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
+                                    
+                                    
                                     className="py-16 text-center space-y-6"
                                 >
                                     <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -233,15 +233,15 @@ const HeroLaunch = () => {
             <AnimatePresence>
                 {isVideoOpen && (
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        
+                        
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
                         onClick={() => setIsVideoOpen(false)}
                     >
                         <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
+                            
+                            
                             exit={{ scale: 0.9, opacity: 0 }}
                             className="relative w-full max-w-5xl aspect-video rounded-3xl overflow-hidden shadow-2xl"
                             onClick={(e) => e.stopPropagation()}

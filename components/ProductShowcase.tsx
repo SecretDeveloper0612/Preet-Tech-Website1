@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, ArrowLeft, ShoppingCart, ChevronLeft, ChevronRight, MessageCircle, ArrowUpRight, ShoppingBag } from 'lucide-react';
+"use client";
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { ArrowRight, ArrowLeft, ShoppingCart, MessageCircle, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const PRODUCTS = [
     {
@@ -10,11 +11,8 @@ const PRODUCTS = [
         category: 'Management',
         description: 'Operations & growth automation engine. Streamline workflows, track key metrics, and scale your operations effortlessly.',
         image: '/business-tool.png',
-        originalPrice: 249.99,
-        discountedPrice: 49.99,
         discountBadge: '80% OFF',
-        whatsappMsg: "Hello Preet Tech, I would like to enquire about the Preet Tech Business Tool.",
-        color: "from-blue-500/20 to-cyan-400/20"
+        whatsappMsg: "Hello Preet Tech OPC Private Limited, I would like to enquire about the Business Tool.",
     },
     {
         id: 'crm-tool',
@@ -22,11 +20,8 @@ const PRODUCTS = [
         category: 'SaaS',
         description: 'Next-gen customer management portal. Build stronger relationships, track interactions, and drive sales pipeline growth.',
         image: '/crm-tool.png',
-        originalPrice: 399.99,
-        discountedPrice: 79.99,
         discountBadge: '80% OFF',
-        whatsappMsg: "Hello Preet Tech, I would like to enquire about the Nexus CRM portal.",
-        color: "from-indigo-500/20 to-purple-400/20"
+        whatsappMsg: "Hello Preet Tech OPC Private Limited, I would like to enquire about the Nexus CRM portal.",
     },
     {
         id: 'analytics-tool',
@@ -34,11 +29,8 @@ const PRODUCTS = [
         category: 'Analytics',
         description: 'Real-time data visualization streams. Transform raw data into actionable insights with beautiful, dynamic dashboards.',
         image: '/analytics-tool.png',
-        originalPrice: 199.99,
-        discountedPrice: 39.99,
         discountBadge: '80% OFF',
-        whatsappMsg: "Hello Preet Tech, I would like to enquire about the Insight Pro Analytics tool.",
-        color: "from-emerald-500/20 to-teal-400/20"
+        whatsappMsg: "Hello Preet Tech OPC Private Limited, I would like to enquire about the Insight Pro Analytics tool.",
     },
     {
         id: 'automation-tool',
@@ -46,201 +38,210 @@ const PRODUCTS = [
         category: 'Automation',
         description: 'Intelligent high-velocity automation. Connect your core apps, automate repetitive tasks, and boost team productivity.',
         image: '/automation-tool.png',
-        originalPrice: 299.99,
-        discountedPrice: 59.99,
         discountBadge: '80% OFF',
-        whatsappMsg: "Hello Preet Tech, I would like to enquire about the Flow Master Automation suite.",
-        color: "from-orange-500/20 to-rose-400/20"
+        whatsappMsg: "Hello Preet Tech OPC Private Limited, I would like to enquire about the Flow Master Automation suite.",
     }
 ];
 
+// Triple for seamless infinite loop (12 cards total)
+const LOOPED = [...PRODUCTS, ...PRODUCTS, ...PRODUCTS];
+
 const ProductShowcase: React.FC = () => {
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
-    const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    // Use ref callback so scrollLeft is set BEFORE first paint (no flicker)
+    const containerRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
+    const initialized = useRef(false);
 
-    // Create a base set that is sufficient for infinite feel without over-rendering
-    const BASE_SET = [...PRODUCTS, ...PRODUCTS];
-    // Looped data for infinite feel (Left Buffer, Center View, Right Buffer)
-    const LOOPED_PRODUCTS = [...BASE_SET, ...BASE_SET, ...BASE_SET];
-
-    const handleInfiniteScroll = () => {
-        if (!scrollContainerRef.current) return;
-        const container = scrollContainerRef.current;
-
-        window.requestAnimationFrame(() => {
-            const { scrollLeft, scrollWidth } = container;
-            const singleSetWidth = scrollWidth / 3;
-
-            // Update dot index
-            const relativeScroll = scrollLeft % singleSetWidth;
-            const index = Math.round(relativeScroll / (scrollWidth / LOOPED_PRODUCTS.length));
-            setCurrentIndex(index % PRODUCTS.length);
-
-            // Seamless infinite loop jump
-            if (!isDragging) {
-                if (scrollLeft >= singleSetWidth * 2) {
-                    container.scrollLeft = scrollLeft - singleSetWidth;
-                } else if (scrollLeft <= 5) {
-                    container.scrollLeft = scrollLeft + singleSetWidth;
-                }
-            }
-        });
-    };
-
-    useEffect(() => {
-        const container = scrollContainerRef.current;
-        if (container) {
-            const setupInitialScroll = () => {
-                container.style.scrollBehavior = 'auto';
-                container.scrollLeft = container.scrollWidth / 3;
-            };
-            setupInitialScroll();
-            const timeout = setTimeout(setupInitialScroll, 100);
-            return () => clearTimeout(timeout);
+    const setContainerRef = useCallback((el: HTMLDivElement | null) => {
+        (containerRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
+        if (el && !initialized.current) {
+            initialized.current = true;
+            // Set to middle third immediately
+            el.style.scrollBehavior = 'auto';
+            el.scrollLeft = el.scrollWidth / 3;
         }
     }, []);
 
-    const scroll = (direction: 'left' | 'right') => {
-        if (scrollContainerRef.current) {
-            const container = scrollContainerRef.current;
-            const firstCard = container.querySelector('.product-card') as HTMLElement;
-            if (firstCard) {
-                const cardWidth = firstCard.offsetWidth + 24; // includes gap size
-                container.style.scrollBehavior = 'smooth';
-                container.scrollLeft += direction === 'left' ? -cardWidth : cardWidth;
-            }
-        }
-    };
+    // All drag state in refs — ZERO React re-renders during drag/scroll
+    const isDragging = useRef(false);
+    const startX = useRef(0);
+    const startScrollLeft = useRef(0);
+    const lastScrollTime = useRef(0);
+    const rafId = useRef<number | null>(null);
 
-    // --- Auto Slide and Loop Logic ---
+    const [isVisible, setIsVisible] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+
+    // IntersectionObserver — only auto-slide when visible
     useEffect(() => {
-        let interval: NodeJS.Timeout;
-        if (isAutoPlaying && !isDragging) {
-            interval = setInterval(() => {
-                scroll('right');
-            }, 3000); // 3 seconds for a prominent auto slide
+        const obs = new IntersectionObserver(
+            ([e]) => setIsVisible(e.isIntersecting),
+            { threshold: 0.15 }
+        );
+        if (sectionRef.current) obs.observe(sectionRef.current);
+        return () => obs.disconnect();
+    }, []);
+
+    const scrollBy = useCallback((dir: 'left' | 'right') => {
+        const el = containerRef.current;
+        if (!el) return;
+        const card = el.querySelector('.p-card') as HTMLElement;
+        if (!card) return;
+        const step = card.offsetWidth + 24;
+        el.style.scrollBehavior = 'smooth';
+        el.scrollLeft += dir === 'left' ? -step : step;
+    }, []);
+
+    // Smooth Auto-scroll marquee logic
+    const animate = useCallback(() => {
+        if (!isVisible || isHovered || isDragging.current || !containerRef.current) {
+            rafId.current = requestAnimationFrame(animate);
+            return;
         }
-        return () => clearInterval(interval);
-    }, [isAutoPlaying, isDragging]);
+        
+        const el = containerRef.current;
+        el.style.scrollBehavior = 'auto';
+        // Slow, smooth movement (approx 1px per frame @ 60fps = 60px/s)
+        el.scrollLeft += 0.5; 
+        
+        // Manual jump check inside animation frame for zero-latency looping
+        const third = el.scrollWidth / 3;
+        if (el.scrollLeft >= third * 2) {
+            el.scrollLeft = third;
+        } else if (el.scrollLeft <= 0) {
+            el.scrollLeft = third;
+        }
 
-    const handleMouseDown = (e: React.MouseEvent) => {
-        setIsDragging(true);
-        setIsAutoPlaying(false);
-        if (!scrollContainerRef.current) return;
-        scrollContainerRef.current.style.scrollBehavior = 'auto';
-        setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
-        setScrollLeft(scrollContainerRef.current.scrollLeft);
-    };
+        rafId.current = requestAnimationFrame(animate);
+    }, [isVisible, isHovered]);
 
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (!isDragging || !scrollContainerRef.current) return;
+    useEffect(() => {
+        rafId.current = requestAnimationFrame(animate);
+        return () => { if (rafId.current) cancelAnimationFrame(rafId.current); };
+    }, [animate]);
+
+    // Infinite loop jump for manual scroll/drag
+    const handleScroll = useCallback(() => {
+        const el = containerRef.current;
+        if (!el || isDragging.current) return;
+        
+        const third = el.scrollWidth / 3;
+        if (el.scrollLeft >= third * 2) {
+            el.scrollLeft = third;
+        } else if (el.scrollLeft <= 0) {
+            el.scrollLeft = third;
+        }
+    }, []);
+
+    // Mouse drag — direct DOM manipulation, no React state
+    const onMouseDown = useCallback((e: React.MouseEvent) => {
+        const el = containerRef.current;
+        if (!el) return;
+        isDragging.current = true;
+        startX.current = e.pageX - el.offsetLeft;
+        startScrollLeft.current = el.scrollLeft;
+        el.style.scrollBehavior = 'auto';
+        el.style.cursor = 'grabbing';
+    }, []);
+
+    const onMouseMove = useCallback((e: React.MouseEvent) => {
+        if (!isDragging.current || !containerRef.current) return;
         e.preventDefault();
-        const x = e.pageX - scrollContainerRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-    };
+        const x = e.pageX - containerRef.current.offsetLeft;
+        const walk = (x - startX.current) * 1.5;
+        containerRef.current.scrollLeft = startScrollLeft.current - walk;
+        handleScroll(); // Check loop during drag
+    }, []);
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
-        setTimeout(() => setIsAutoPlaying(true), 2500); // Resume sliding after user interacts
-    };
+    const onMouseUp = useCallback(() => {
+        isDragging.current = false;
+        if (containerRef.current) containerRef.current.style.cursor = 'grab';
+    }, []);
 
     return (
         <section
+            ref={sectionRef}
             className="py-8 md:py-16 relative bg-background overflow-hidden transition-colors duration-300"
-            onMouseEnter={() => setIsAutoPlaying(false)}
-            onMouseLeave={() => !isDragging && setIsAutoPlaying(true)}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => { setIsHovered(false); onMouseUp(); }}
         >
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
                     <div className="space-y-4">
-                        <motion.div
-                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-medium/10 border border-brand-medium/20 text-brand-medium text-[10px] font-black uppercase tracking-[0.3em]"
-                        >
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-medium/10 border border-brand-medium/20 text-brand-medium text-[10px] font-black uppercase tracking-[0.3em]">
                             <ShoppingCart className="w-3.5 h-3.5" />
                             Inventory_Assets
-                        </motion.div>
-                        <motion.h2
-                            className="text-5xl md:text-7xl font-black text-foreground tracking-tighter uppercase leading-none"
-                        >
+                        </div>
+                        <h2 className="text-5xl md:text-7xl font-black text-foreground tracking-tighter uppercase leading-none">
                             Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-cyan italic">Tools.</span>
-                        </motion.h2>
+                        </h2>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-4">
-
-                        <div className="hidden md:flex items-center gap-4">
-                            <button
-                                onClick={() => scroll('left')}
-                                className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full border-2 border-[#E9EEF4] dark:border-white/10 flex items-center justify-center text-[#8C9FAF] hover:bg-gradient-to-r hover:from-[#3994fa] hover:to-[#004aad] hover:text-white dark:hover:text-white hover:border-transparent shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
-                            >
-                                <ArrowLeft className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
-                            </button>
-                            <button
-                                onClick={() => scroll('right')}
-                                className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full border-2 border-[#E9EEF4] dark:border-white/10 flex items-center justify-center text-[#8C9FAF] hover:bg-gradient-to-r hover:from-[#3994fa] hover:to-[#004aad] hover:text-white dark:hover:text-white hover:border-transparent shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
-                            >
-                                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
-                            </button>
-                        </div>
+                    <div className="hidden md:flex items-center gap-4">
+                        <button
+                            onClick={() => scrollBy('left')}
+                            className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full border-2 border-[#E9EEF4] dark:border-white/10 flex items-center justify-center text-[#8C9FAF] hover:bg-gradient-to-r hover:from-[#3994fa] hover:to-[#004aad] hover:text-white hover:border-transparent shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95"
+                            aria-label="Previous"
+                        >
+                            <ArrowLeft className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
+                        </button>
+                        <button
+                            onClick={() => scrollBy('right')}
+                            className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-transparent rounded-full border-2 border-[#E9EEF4] dark:border-white/10 flex items-center justify-center text-[#8C9FAF] hover:bg-gradient-to-r hover:from-[#3994fa] hover:to-[#004aad] hover:text-white hover:border-transparent shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95"
+                            aria-label="Next"
+                        >
+                            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 stroke-[2px]" />
+                        </button>
                     </div>
                 </div>
             </div>
 
-            {/* Slider Container */}
+            {/* Slider */}
             <div className="relative w-full">
                 <div
-                    ref={scrollContainerRef}
-                    onScroll={handleInfiniteScroll}
-                    onMouseDown={handleMouseDown}
-                    onMouseMove={handleMouseMove}
-                    onMouseUp={handleMouseUp}
-                    onMouseLeave={handleMouseUp}
-                    className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-6 md:pl-[max(1.5rem,calc((100%-1280px+3rem)/2))] md:pr-[max(1.5rem,calc((100%-1280px+3rem)/2))] pb-12 cursor-grab active:cursor-grabbing"
-                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    ref={setContainerRef}
+                    onScroll={handleScroll}
+                    onMouseDown={onMouseDown}
+                    onMouseMove={onMouseMove}
+                    onMouseUp={onMouseUp}
+                    onMouseLeave={onMouseUp}
+                    className="flex gap-6 overflow-x-auto pb-12 px-6 md:pl-[max(1.5rem,calc((100%-1280px+3rem)/2))] md:pr-[max(1.5rem,calc((100%-1280px+3rem)/2))] cursor-grab"
+                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
                 >
-                    {LOOPED_PRODUCTS.map((product, idx) => (
+                    {LOOPED.map((product, idx) => (
                         <div
                             key={`${product.id}-${idx}`}
-                            className="product-card shrink-0 snap-center snap-always w-[calc(100%-48px)] md:w-[280px] lg:w-[calc((100%-120px)/4)] xl:w-[290px]"
+                            className="p-card shrink-0 w-[calc(100%-48px)] md:w-[280px] lg:w-[calc((100%-120px)/4)] xl:w-[290px]"
                         >
-                            <motion.div
-                                className="group relative h-[360px] md:h-[400px] bg-white dark:bg-slate-900/50 rounded-[2rem] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm hover:shadow-2xl hover:border-brand-medium/50 transition-all duration-500 flex flex-col"
-                            >
-                                {/* 1. Image & Overlay Container */}
+                            <div className="group relative h-[360px] md:h-[400px] bg-white dark:bg-slate-900/50 rounded-[2rem] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm hover:shadow-2xl hover:border-brand-medium/50 transition-all duration-300 flex flex-col">
+                                {/* Image */}
                                 <div className="relative h-36 w-full overflow-hidden shrink-0">
-                                    <img
+                                    <Image
                                         src={product.image}
                                         alt={product.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        sizes="(max-width: 768px) 100vw, 290px"
+                                        loading="lazy"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                                    {/* Top Badges */}
                                     <div className="absolute top-3 left-3 right-3 flex justify-between items-center">
-                                        <div className="px-2.5 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-full">
+                                        <div className="px-2.5 py-1 bg-black/40 backdrop-blur border border-white/10 rounded-full">
                                             <span className="text-[8px] font-black text-white uppercase tracking-widest">{product.category}</span>
                                         </div>
-                                        <div className="px-2.5 py-1 bg-brand-medium text-white rounded-full shadow-lg shadow-brand-medium/30">
-                                            <span className="text-[9px] font-black uppercase tracking-tighter">{product.discountBadge}</span>
+                                        <div className="px-2.5 py-1 bg-brand-medium text-white rounded-full">
+                                            <span className="text-[9px] font-black uppercase">{product.discountBadge}</span>
                                         </div>
                                     </div>
-
-                                    {/* Verified Overlay */}
                                     <div className="absolute bottom-3 left-3">
-                                        <div className="flex items-center gap-1.5 px-2 py-1 bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 rounded-lg">
+                                        <div className="flex items-center gap-1.5 px-2 py-1 bg-emerald-500/20 backdrop-blur border border-emerald-500/30 rounded-lg">
                                             <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
                                             <span className="text-[8px] font-black text-emerald-400 uppercase tracking-widest">Verified Logic</span>
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* 2. Content Section */}
+                                {/* Content */}
                                 <div className="p-5 flex-1 flex flex-col">
                                     <div className="space-y-2 mb-auto">
                                         <div className="flex items-start justify-between gap-3">
@@ -256,32 +257,26 @@ const ProductShowcase: React.FC = () => {
                                         </p>
                                     </div>
 
-                                    {/* 3. Pricing & CTA Section */}
-                                    <div className="mt-5 pt-5 border-t border-slate-100 dark:border-white/5 space-y-4">
+                                    <div className="mt-5 pt-5 border-t border-slate-100 dark:border-white/5">
                                         <a
                                             href={`https://wa.me/917900310428?text=${encodeURIComponent(product.whatsappMsg)}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="w-full group/btn relative overflow-hidden py-3 bg-gradient-to-r from-[#3994fa] to-[#004aad] text-white rounded-xl font-black text-[9px] uppercase tracking-[0.25em] transition-all flex items-center justify-center gap-2 active:scale-[0.98] shadow-lg hover:shadow-[#3994fa]/20"
+                                            className="w-full py-3 bg-gradient-to-r from-[#3994fa] to-[#004aad] text-white rounded-xl font-black text-[9px] uppercase tracking-[0.25em] flex items-center justify-center gap-2 active:scale-[0.98] shadow-lg hover:shadow-[#3994fa]/20 transition-all"
                                         >
-                                            <MessageCircle className="w-3.5 h-3.5 relative z-10 transition-transform group-hover/btn:-rotate-12" />
-                                            <span className="relative z-10">Buy via WhatsApp</span>
+                                            <MessageCircle className="w-3.5 h-3.5" />
+                                            Buy via WhatsApp
                                         </a>
                                     </div>
                                 </div>
-
-                                {/* Subtle Background Mark */}
-                                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-medium/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                            </motion.div>
+                            </div>
                         </div>
                     ))}
                 </div>
-                {/* Bleed Masking Gradients */}
                 <div className="absolute left-0 top-0 bottom-0 w-12 lg:w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none hidden md:block" />
                 <div className="absolute right-0 top-0 bottom-0 w-12 lg:w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none hidden md:block" />
             </div>
 
-            {/* Bottom View More Button */}
             <div className="mt-2 md:mt-6 flex justify-center items-center w-full px-6 relative z-10">
                 <Link
                     href="/services/business-tools"

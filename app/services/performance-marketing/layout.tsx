@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-    title: "Performance Marketing Services | Scale Your ROI & Revenue | Preet Tech",
+    title: "Performance Marketing Services | Scale Your ROI & Revenue | Preet Tech OPC Private Limited",
     description: "Maximize your business growth with ROI-driven performance marketing services starting at ₹19,999. Expert Meta Ads, Google Ads management, and data-backed scaling strategies for startups and e-commerce.",
     keywords: [
         "Performance Marketing Services",
@@ -21,16 +21,16 @@ export const metadata: Metadata = {
         canonical: 'https://preettech.com/services/performance-marketing',
     },
     openGraph: {
-        title: "Performance Marketing that Delivers Measurable Growth | Preet Tech",
+        title: "Performance Marketing that Delivers Measurable Growth | Preet Tech OPC Private Limited",
         description: "Stop guessing and start growing. We use advanced analytics and precision targeting to turn your marketing spend into a high-octane growth engine.",
         url: 'https://preettech.com/services/performance-marketing',
-        siteName: 'Preet Tech',
+        siteName: 'Preet Tech OPC Private Limited',
         images: [
             {
                 url: 'https://preettech.com/og-performance-marketing.jpg', // Placeholder for actual OG image
                 width: 1200,
                 height: 630,
-                alt: 'Preet Tech Performance Marketing Dashboard',
+                alt: 'Preet Tech OPC Private Limited Performance Marketing Dashboard',
             },
         ],
         locale: 'en_IN',
@@ -50,7 +50,7 @@ export default function PerformanceMarketingLayout({
         "description": "Comprehensive performance marketing including PPC management, social media ads, and conversion optimization.",
         "provider": {
             "@type": "Organization",
-            "name": "Preet Tech",
+            "name": "Preet Tech OPC Private Limited",
             "url": "https://preettech.com"
         },
         "serviceType": "Digital Marketing",
@@ -107,7 +107,7 @@ export default function PerformanceMarketingLayout({
                 "name": "Do your performance marketing services include creative production?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, Preet Tech's High-Velocity Content Engine handles everything from creative direction to cinematic ad visuals, ensuring your ads stop the scroll and drive conversions effectively."
+                    "text": "Yes, Preet Tech OPC Private Limited's High-Velocity Content Engine handles everything from creative direction to cinematic ad visuals, ensuring your ads stop the scroll and drive conversions effectively."
                 }
             }
         ]

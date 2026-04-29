@@ -73,7 +73,7 @@ const CASE_STUDIES = [
 ];
 
 const TESTIMONIALS = [
-    { name: "Rajiv M.", initials: "RM", color: "from-blue-500 to-cyan-400", review: "Preet Tech turned my side project into a registered, profitable company in 4 weeks." },
+    { name: "Rajiv M.", initials: "RM", color: "from-blue-500 to-cyan-400", review: "Preet Tech OPC Private Limited turned my side project into a registered, profitable company in 4 weeks." },
     { name: "Sarah J.", initials: "SJ", color: "from-purple-500 to-pink-400", review: "The branding and website they built were world-class. Absolute professionals." },
     { name: "Aman K.", initials: "AK", color: "from-emerald-500 to-teal-400", review: "Their legal support and strategic roadmap were exactly what I needed to scale." }
 ];
@@ -99,7 +99,7 @@ const TrustAndProcess = () => {
 
 
 
-                                transition={{ delay: i * 0.1 }}
+                                
                                 className="flex flex-col items-center group"
                             >
                                 <div className="w-20 h-20 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-brand-cyan/20 flex items-center justify-center mb-6 group-hover:border-brand-medium dark:hover:border-brand-cyan group-hover:shadow-[0_0_30px_rgba(95,211,230,0.3)] transition-all bg-glow">
@@ -146,7 +146,7 @@ const TrustAndProcess = () => {
                             {INDUSTRIES.map((ind, i) => (
                                 <motion.div
                                     key={i}
-                                    whileHover={{ y: -4, backgroundColor: "rgba(95, 211, 230, 0.15)" }}
+                                    
                                     className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 group transition-all cursor-pointer shadow-sm hover:border-brand-medium/40 dark:hover:border-brand-cyan/40"
                                 >
                                     <ind.icon className="w-4 h-4 text-brand-medium dark:text-brand-cyan group-hover:scale-110 transition-transform" />
@@ -159,7 +159,7 @@ const TrustAndProcess = () => {
                     {/* Right: Tools Section - Dynamic Grid */}
                     <div className="lg:col-span-7">
                         <div className="p-10 md:p-14 rounded-[4rem] bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-white/5 relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-medium/10 dark:bg-brand-cyan/10 blur-[100px] pointer-events-none group-hover:bg-brand-medium/20 dark:hover:bg-brand-cyan/20 transition-all duration-700" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-medium/10 dark:bg-brand-cyan/10 blur-[48px] pointer-events-none group-hover:bg-brand-medium/20 dark:hover:bg-brand-cyan/20 transition-all duration-400" />
 
                             <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
                                 <div>
@@ -176,14 +176,14 @@ const TrustAndProcess = () => {
                                 {TOOLS.map((tool, i) => (
                                     <motion.div
                                         key={i}
-                                        whileHover={{ scale: 1.05 }}
+                                        
                                         className="flex flex-col items-center gap-4 group/tool"
                                     >
-                                        <div className="w-20 h-20 rounded-[2rem] bg-white dark:bg-black/40 border border-slate-200 dark:border-white/5 flex items-center justify-center p-5 group-hover/tool:border-brand-medium/50 dark:border-brand-cyan/50 group-hover/tool:shadow-2xl group-hover/tool:shadow-brand-cyan/10 transition-all duration-500">
+                                        <div className="w-20 h-20 rounded-[2rem] bg-white dark:bg-black/40 border border-slate-200 dark:border-white/5 flex items-center justify-center p-5 group-hover/tool:border-brand-medium/50 dark:border-brand-cyan/50 group-hover/tool:shadow-2xl group-hover/tool:shadow-brand-cyan/10 transition-all duration-300">
                                             <img
                                                 src={tool.logo}
                                                 alt={tool.name}
-                                                className="w-full h-full object-contain filter grayscale opacity-60 group-hover/tool:grayscale-0 group-hover/tool:opacity-100 transition-all duration-500"
+                                                className="w-full h-full object-contain filter grayscale opacity-60 group-hover/tool:grayscale-0 group-hover/tool:opacity-100 transition-all duration-300"
                                                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                                             />
                                         </div>
@@ -221,8 +221,8 @@ const TrustAndProcess = () => {
                                 className="group cursor-pointer block"
                             >
                                 <motion.div
-                                    transition={{ delay: i * 0.1 }}
-                                    className="bg-white dark:bg-slate-900/30 rounded-[2.5rem] border border-slate-100 dark:border-white/5 overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-brand-cyan/10 transition-all duration-500 h-full flex flex-col hover:border-brand-medium/40 dark:hover:border-brand-cyan/30"
+                                    
+                                    className="bg-white dark:bg-slate-900/30 rounded-[2.5rem] border border-slate-100 dark:border-white/5 overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-brand-cyan/10 transition-all duration-300 h-full flex flex-col hover:border-brand-medium/40 dark:hover:border-brand-cyan/30"
                                 >
                                     {/* Card Header: Image & Badge */}
                                     <div className="relative h-64 overflow-hidden p-3">
@@ -234,7 +234,7 @@ const TrustAndProcess = () => {
                                         <img
                                             src={study.image}
                                             alt={study.name}
-                                            className="w-full h-full object-cover rounded-[2rem] group-hover:scale-110 transition-transform duration-700"
+                                            className="w-full h-full object-cover rounded-[2rem] group-hover:scale-110 transition-transform duration-400"
                                             onError={(e) => { const t = e.target as HTMLImageElement; t.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" fill="%23334155"><rect width="800" height="600"/></svg>'; }}
                                         />
                                         <div className="absolute inset-x-3 inset-y-3 bg-gradient-to-t from-black/20 to-transparent rounded-[2rem]" />

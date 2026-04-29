@@ -71,27 +71,27 @@ const AboutPerformanceGraph = () => {
                         </defs>
 
                         {/* Background Area */}
-                        <motion.path
+                        <path
                             d={`M0,100 L${points} L400,100 Z`}
                             fill="url(#graphGradient)"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, delay: 0.5 }}
+                            
+                            
+                            
+                            
                         />
 
                         {/* The Line */}
-                        <motion.polyline
+                        <polyline
                             points={points}
                             fill="none"
                             stroke="#3994fa"
                             strokeWidth="3"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            initial={{ pathLength: 0, opacity: 0 }}
-                            whileInView={{ pathLength: 1, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 2, ease: "easeInOut" }}
+                            
+                            
+                            
+                            
                         />
 
                         {/* Animated Points */}
@@ -106,10 +106,10 @@ const AboutPerformanceGraph = () => {
                                     fill="white"
                                     stroke="#3994fa"
                                     strokeWidth="2"
-                                    initial={{ scale: 0, opacity: 0 }}
-                                    whileInView={{ scale: 1, opacity: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: 1 + i * 0.1, duration: 0.3 }}
+                                    
+                                    
+                                    
+                                    
                                 />
                             );
                         })}
@@ -130,10 +130,10 @@ const AboutPerformanceGraph = () => {
                 {stats.map((stat, i) => (
                     <motion.div
                         key={i}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 1.5 + i * 0.1 }}
+                        
+                        
+                        
+                        
                         className="p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 flex flex-col items-center text-center group hover:border-brand-medium/30 transition-colors"
                     >
                         <stat.icon className={`w-5 h-5 mb-2 ${stat.color} group-hover:scale-110 transition-transform`} />

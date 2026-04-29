@@ -25,19 +25,19 @@ const PartyDialPage = () => {
     if (!mounted) return null;
 
     return (
-        <main className="bg-white dark:bg-[#030712] min-h-screen transition-colors duration-500 selection:bg-brand-cyan/30 flex flex-col">
+        <main className="bg-white dark:bg-[#030712] min-h-screen transition-colors duration-300 selection:bg-brand-cyan/30 flex flex-col">
             <Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
             <div className="flex-1 flex flex-col items-center justify-center px-6 pt-32 pb-20 relative overflow-hidden">
                 {/* Background Decor */}
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-1/4 right-[-10%] w-[600px] h-[600px] bg-brand-medium/5 blur-[120px] rounded-full animate-pulse" />
-                    <div className="absolute bottom-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-cyan/5 blur-[100px] rounded-full animate-pulse delay-700" />
+                    <div className="absolute top-1/4 right-[-10%] w-[600px] h-[600px] bg-brand-medium/5 blur-[60px] rounded-full animate-pulse" />
+                    <div className="absolute bottom-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-cyan/5 blur-[48px] rounded-full animate-pulse delay-200" />
                 </div>
 
                 <motion.div
 
-                    animate={{ opacity: 1, y: 0 }}
+                    
                     className="max-w-4xl w-full text-center relative z-10"
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-medium/10 border border-brand-medium/20 text-brand-medium text-[10px] font-black uppercase tracking-[0.3em] mb-8">
@@ -52,8 +52,8 @@ const PartyDialPage = () => {
 
                     <div className="flex flex-col items-center gap-8">
                         <motion.div
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                            
+                            
                             className="relative"
                         >
                             <div className="absolute -inset-8 bg-brand-medium/20 blur-2xl rounded-full" />

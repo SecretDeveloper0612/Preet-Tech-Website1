@@ -69,7 +69,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
     };
 
     return (
-        <main className="min-h-screen bg-background text-foreground transition-colors duration-500">
+        <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
             <Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
             <article className="pt-32 pb-24">

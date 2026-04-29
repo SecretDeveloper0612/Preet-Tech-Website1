@@ -28,7 +28,7 @@ export default function ChatWidget() {
     const [isOpen, setIsOpen] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
-        { role: 'assistant', content: "Welcome to Preet Tech. I am your Digital Assistant. How can I help you build the future today?" }
+        { role: 'assistant', content: "Welcome to Preet Tech OPC Private Limited. I am your Digital Assistant. How can I help you build the future today?" }
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -91,10 +91,10 @@ export default function ChatWidget() {
                 {isOpen && (
                     <motion.div
                         layout
-                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
+
+
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                        transition={{ 
+                        transition={{
                             layout: { duration: 0.4, ease: [0.23, 1, 0.32, 1] },
                             opacity: { duration: 0.2 },
                             y: { duration: 0.3 }
@@ -109,11 +109,11 @@ export default function ChatWidget() {
                         {/* Header */}
                         <div className="p-6 border-b border-slate-200 dark:border-white/10 flex items-center justify-between bg-gradient-to-r from-brand-medium/10 to-transparent">
                             <div className="flex items-center gap-3">
-                                <div className="w-20 h-20 rounded-2xl bg-brand-medium flex items-center justify-center text-black overflow-hidden shadow-inner">
-                                    <img src="/chatbot-icon.png" alt="Preet Tech AI" className="w-full h-full object-cover" loading="eager" />
+                                <div className="w-10 h-10 rounded-2xl bg-brand-medium flex items-center justify-center text-black overflow-hidden shadow-inner">
+                                    <img src="/ChatBot Icon.png" alt="Preet Tech OPC Private Limited AI" className="w-full h-full object-cover" loading="eager" />
                                 </div>
                                 <div>
-                                    <h3 className="text-sm font-black uppercase tracking-wider">Preet Tech AI</h3>
+                                    <h3 className="text-sm font-black uppercase tracking-wider">Preet Tech OPC Private Limited AI</h3>
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                                         <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">System Online</span>
@@ -143,9 +143,9 @@ export default function ChatWidget() {
                         >
                             {messages.map((m, i) => (
                                 <motion.div
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.3 }}
+
+
+
                                     key={i}
                                     className={cn(
                                         "flex flex-col gap-2 max-w-[85%] gpu",
@@ -224,7 +224,7 @@ export default function ChatWidget() {
                                     type="text"
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
-                                    placeholder="Message Preet Tech AI..."
+                                    placeholder="Message Preet Tech OPC Private Limited AI..."
                                     className="w-full px-6 py-4 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-medium/50 text-sm transition-all shadow-inner"
                                 />
                                 <button
@@ -236,7 +236,7 @@ export default function ChatWidget() {
                                 </button>
                             </form>
                             <p className="mt-4 text-[9px] text-center font-bold text-slate-400 uppercase tracking-[0.2em]">
-                                © {new Date().getFullYear()} Preet Tech. All Rights Reserved.
+                                © {new Date().getFullYear()} Preet Tech OPC Private Limited. All Rights Reserved.
                             </p>
                         </div>
                     </motion.div>
@@ -245,11 +245,11 @@ export default function ChatWidget() {
 
             {/* Toggle Button */}
             <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+
+
                 onClick={() => setIsOpen(!isOpen)}
                 className={cn(
-                    "flex items-center justify-center transition-all duration-500 relative z-50 shadow-2xl overflow-hidden",
+                    "flex items-center justify-center transition-all duration-300 relative z-50 shadow-2xl overflow-hidden",
                     isOpen
                         ? "w-14 h-14 md:w-16 md:h-16 bg-slate-900 rounded-full border border-white/10 text-white rotate-90"
                         : "w-20 h-20 md:w-24 md:h-24 bg-transparent border-0 p-0"
@@ -260,7 +260,7 @@ export default function ChatWidget() {
                 ) : (
                     <div className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none">
                         <img
-                            src="/chatbot-icon.png"
+                            src="/ChatBot Icon.png"
                             alt="ChatBot"
                             className="w-full h-full object-contain drop-shadow-2xl"
                             loading="eager"

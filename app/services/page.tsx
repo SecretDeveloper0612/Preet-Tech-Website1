@@ -153,7 +153,7 @@ export default function ServicesPage() {
     };
 
     return (
-        <main className="min-h-screen bg-background text-foreground selection:bg-brand-medium/30 transition-colors duration-500">
+        <main className="min-h-screen bg-background text-foreground selection:bg-brand-medium/30 transition-colors duration-300">
             <Navbar isDark={theme === 'dark'} toggleTheme={toggleTheme} />
 
             {/* Hero Section */}
@@ -169,19 +169,19 @@ export default function ServicesPage() {
 
                 {/* Floating Elements Background */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                    <div className="absolute top-[20%] left-[10%] xl:left-[15%] w-16 h-16 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-2xl flex items-center justify-center text-brand-medium shadow-2xl">
+                    <div className="absolute top-[20%] left-[10%] xl:left-[15%] w-16 h-16 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border border-slate-200/50 dark:border-white/10 rounded-2xl flex items-center justify-center text-brand-medium shadow-2xl">
                         <Code2 size={24} />
                     </div>
 
-                    <div className="absolute top-[25%] right-[10%] xl:right-[15%] w-20 h-20 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-full flex items-center justify-center text-brand-cyan shadow-2xl">
+                    <div className="absolute top-[25%] right-[10%] xl:right-[15%] w-20 h-20 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border border-slate-200/50 dark:border-white/10 rounded-full flex items-center justify-center text-brand-cyan shadow-2xl">
                         <Rocket size={32} />
                     </div>
 
-                    <div className="absolute bottom-[20%] left-[15%] xl:left-[20%] w-14 h-14 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-xl flex items-center justify-center text-rose-500 shadow-2xl hidden md:flex">
+                    <div className="absolute bottom-[20%] left-[15%] xl:left-[20%] w-14 h-14 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border border-slate-200/50 dark:border-white/10 rounded-xl flex items-center justify-center text-rose-500 shadow-2xl hidden md:flex">
                         <Palette size={20} />
                     </div>
 
-                    <div className="absolute bottom-[25%] right-[15%] xl:right-[20%] w-16 h-16 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-2xl flex items-center justify-center text-emerald-500 shadow-2xl hidden md:flex">
+                    <div className="absolute bottom-[25%] right-[15%] xl:right-[20%] w-16 h-16 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border border-slate-200/50 dark:border-white/10 rounded-2xl flex items-center justify-center text-emerald-500 shadow-2xl hidden md:flex">
                         <BarChart3 size={24} />
                     </div>
                 </div>
@@ -208,7 +208,7 @@ export default function ServicesPage() {
 
                     <div className="max-w-3xl mx-auto relative cursor-default">
                         {/* Decorative blur behind text */}
-                        <div className="absolute inset-0 bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl rounded-full -z-10" />
+                        <div className="absolute inset-0 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md rounded-full -z-10" />
 
                         <p
                             className="text-lg md:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-12 relative z-10 px-4"
@@ -247,7 +247,7 @@ export default function ServicesPage() {
 
             {/* Services Sections by Category */}
             {SERVICE_CATEGORIES.map((category, catIndex) => (
-                <section key={catIndex} className="py-20 relative border-t border-slate-100 dark:border-white/5 bg-white dark:bg-[#010309] transition-colors duration-500">
+                <section key={catIndex} className="py-20 relative border-t border-slate-100 dark:border-white/5 bg-white dark:bg-[#010309] transition-colors duration-300">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
                             <div className="space-y-4">
@@ -288,7 +288,7 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
                 <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-110"
                     onError={(e) => { const t = e.target as HTMLImageElement; t.style.background = 'linear-gradient(135deg, #1e293b 0%, #334155 100%)'; t.style.opacity = '1'; t.src = ''; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
@@ -309,7 +309,7 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
             </div>
 
             {/* Content Container */}
-            <div className="flex-1 bg-white dark:bg-slate-900/40 backdrop-blur-xl border-x border-b border-slate-200 dark:border-white/5 rounded-b-[2.5rem] p-8 flex flex-col transition-all duration-500 group-hover:border-brand-medium/50 group-hover:shadow-2xl group-hover:shadow-brand-medium/10">
+            <div className="flex-1 bg-white dark:bg-slate-900/40 backdrop-blur-md border-x border-b border-slate-200 dark:border-white/5 rounded-b-[2.5rem] p-8 flex flex-col transition-all duration-300 group-hover:border-brand-medium/50 group-hover:shadow-2xl group-hover:shadow-brand-medium/10">
                 <p className="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed mb-8 flex-grow">
                     {service.description}
                 </p>
@@ -333,7 +333,7 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
             </div>
 
             {/* Hover Accent Glow */}
-            <div className={`absolute -bottom-10 left-1/2 -translate-x-1/2 w-4/5 h-10 bg-gradient-to-r ${service.color} blur-[50px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none`} />
+            <div className={`absolute -bottom-10 left-1/2 -translate-x-1/2 w-4/5 h-10 bg-gradient-to-r ${service.color} blur-[50px] opacity-0 group-hover:opacity-20 transition-opacity duration-400 pointer-events-none`} />
         </div>
     );
 }

@@ -24,7 +24,7 @@ enum Theme {
 }
 
 const ContactPage = () => {
-    const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
+    const [theme, setTheme] = useState<Theme>(Theme.DARK);
     const [formState, setFormState] = useState({
         fullName: '',
         email: '',
@@ -80,7 +80,7 @@ const ContactPage = () => {
     };
 
     return (
-        <main className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500 overflow-x-clip">
+        <main className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300 overflow-x-clip">
             <Navbar isDark={theme === Theme.DARK} toggleTheme={toggleTheme} />
 
             <div className="pt-32 pb-20 px-4 md:px-6">
@@ -105,7 +105,7 @@ const ContactPage = () => {
                                 {[
                                     { icon: Mail, label: "Email", value: "info@preettech.com" },
                                     { icon: Phone, label: "Phone", value: "+91 97566 67397" },
-                                    { icon: MapPin, label: "Studio", value: "Preet Tech, near Krishna Hospital, Subhash Nagar, Haldwani, Uttarakhand 263139" }
+                                    { icon: MapPin, label: "Studio", value: "Preet Tech OPC Private Limited, near Krishna Hospital, Subhash Nagar, Haldwani, Uttarakhand 263139" }
                                 ].map((item, i) => (
                                     <motion.div
                                         key={i}
@@ -136,7 +136,7 @@ const ContactPage = () => {
                                     }}
                                     allowFullScreen
                                     loading="lazy"
-                                    className="transition-all duration-700 group-hover:grayscale-0"
+                                    className="transition-all duration-400 group-hover:grayscale-0"
                                 ></iframe>
                                 <div className="absolute inset-x-0 bottom-0 p-4 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-between">
                                     <span className="text-[10px] font-bold dark:text-white">Our Location</span>
@@ -220,7 +220,7 @@ const ContactPage = () => {
                                 >
                                     <AnimatePresence mode="wait">
                                         {submitted ? (
-                                            <motion.div key="1" initial={{ y: 5, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="flex items-center gap-2">
+                                            <motion.div key="1"  className="flex items-center gap-2">
                                                 Received <ShieldCheck className="w-4 h-4" />
                                             </motion.div>
                                         ) : isSubmitting ? (

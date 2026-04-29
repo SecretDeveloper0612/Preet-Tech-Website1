@@ -14,7 +14,7 @@ const CHALLENGES = [
 
 const Challenges = () => {
     return (
-        <section className="py-16 md:py-20 px-6 bg-white dark:bg-[#030712] relative overflow-hidden transition-colors duration-500 font-jakarta">
+        <section className="py-16 md:py-20 px-6 bg-white dark:bg-[#030712] relative overflow-hidden transition-colors duration-300 font-jakarta">
             {/* Soft Ambient Shadow */}
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent" />
 
@@ -23,7 +23,7 @@ const Challenges = () => {
                     
                     
                     
-                    transition={{ duration: 0.8 }}
+                    
                     className="space-y-8 md:space-y-10"
                 >
                     <div>
@@ -44,7 +44,7 @@ const Challenges = () => {
                                 
                                 
                                 
-                                transition={{ delay: i * 0.1 }}
+                                
                                 className="flex gap-4 md:gap-5 items-center p-4 md:p-5 rounded-[1.5rem] bg-[#FAFBFC] dark:bg-white/5 border border-slate-100 dark:border-white/5 group hover:bg-white dark:hover:bg-slate-100 dark:bg-white/10 hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-all cursor-default"
                             >
                                 <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-white/5 flex items-center justify-center text-red-500 group-hover:scale-110 transition-transform shrink-0">
@@ -63,15 +63,15 @@ const Challenges = () => {
                     
                     
                     
-                    transition={{ duration: 1 }}
+                    
                     className="relative w-full max-w-lg mx-auto lg:ml-auto lg:mr-0 lg:scale-[0.85] lg:origin-right"
                 >
                     <div className="aspect-square bg-[#FAFBFC] dark:bg-slate-900/50 rounded-[2.5rem] md:rounded-[3rem] border border-slate-100 dark:border-white/5 p-6 md:p-10 relative overflow-hidden flex items-center justify-center shadow-inner">
                         {/* Technical Blueprint Visual */}
                         <div className="relative w-[90%] md:w-full aspect-square border-[1.5px] border-dashed border-slate-200 dark:border-white/10 rounded-full flex items-center justify-center">
                             <motion.div
-                                animate={{ rotate: -360 }}
-                                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                                
+                                
                                 className="absolute inset-2 md:inset-3 border-[1px] border-[#3994fa]/20 dark:border-brand-cyan/20 rounded-full"
                             />
 
@@ -89,8 +89,8 @@ const Challenges = () => {
 
                             {/* Orbiting Tech Points */}
                             <motion.div
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                                
+                                
                                 className="absolute h-[105%] md:h-full w-[105%] md:w-full"
                             >
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#3994fa] shadow-[0_0_15px_rgba(63,143,204,0.6)]" />

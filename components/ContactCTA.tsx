@@ -18,7 +18,7 @@ const ContactCTA: React.FC = () => {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full py-20 md:py-24 overflow-hidden bg-slate-50 dark:bg-[#030712] transition-colors duration-500 gpu"
+            className="relative w-full py-20 md:py-24 overflow-hidden bg-slate-50 dark:bg-[#030712] transition-colors duration-300 gpu"
         >
             {/* Massive Background Typography - Simplified for Performance */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.05] dark:opacity-[0.02] select-none">
@@ -43,26 +43,26 @@ const ContactCTA: React.FC = () => {
                     <div className="text-center space-y-8">
                         {/* Heading */}
                         <div className="space-y-4">
-                            <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
+                            <h2
+                                
+                                
+                                
+                                
                                 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-none"
                             >
                                 Let's Build the <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-cyan italic">Future.</span>
-                            </motion.h2>
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
+                            </h2>
+                            <p
+                                
+                                
+                                
+                                
                                 className="text-base md:text-lg text-slate-600 dark:text-slate-400 font-medium max-w-xl mx-auto leading-relaxed"
                             >
                                 The architecture for your next digital leap is ready.
                                 Initialize the project protocol and scale your vision.
-                            </motion.p>
+                            </p>
                         </div>
 
                         {/* Strategic Actions */}

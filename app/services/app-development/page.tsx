@@ -25,8 +25,8 @@ const TechnicalBackground = ({ isDarkMode }: { isDarkMode: boolean }) => (
             }}
         />
         {/* Two static ambient glows — no animation, GPU-composited */}
-        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[100px] rounded-full opacity-60" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[100px] rounded-full opacity-40" />
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[48px] rounded-full opacity-60" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[48px] rounded-full opacity-40" />
     </div>
 );
 
@@ -123,10 +123,10 @@ const SolutionsCarousel = () => {
                         key={i}
                         className="group relative p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:bg-slate-50 dark:hover:bg-white/10 hover:border-[#3994fa]/30 dark:hover:border-[#3994fa]/30 shadow-xl shadow-slate-200/50 dark:shadow-lg shrink-0 w-[85vw] md:w-[400px] snap-center md:snap-start hover:-translate-y-2"
                     >
-                        <div className={`absolute inset-0 bg-gradient-to-br ${sol.color} opacity-0 group-hover:opacity-[0.05] transition-opacity duration-500 pointer-events-none`} />
-                        <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${sol.color} opacity-0 group-hover:opacity-10 dark:group-hover:opacity-20 blur-[30px] rounded-full transition-opacity duration-500 pointer-events-none`} />
+                        <div className={`absolute inset-0 bg-gradient-to-br ${sol.color} opacity-0 group-hover:opacity-[0.05] transition-opacity duration-300 pointer-events-none`} />
+                        <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${sol.color} opacity-0 group-hover:opacity-10 dark:group-hover:opacity-20 blur-[30px] rounded-full transition-opacity duration-300 pointer-events-none`} />
                         <div className="relative z-10 flex flex-col h-full pointer-events-none select-none">
-                            <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center mb-6 transition-transform duration-500 relative overflow-hidden group-hover:border-[#3994fa]/30">
+                            <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center mb-6 transition-transform duration-300 relative overflow-hidden group-hover:border-[#3994fa]/30">
                                 <div className={`absolute inset-0 bg-gradient-to-br ${sol.color} opacity-10 dark:opacity-20`} />
                                 <sol.icon className="w-6 h-6 text-slate-700 dark:text-white relative z-10" />
                             </div>
@@ -216,7 +216,7 @@ export default function AppDevelopmentPage() {
                     </div>
                     <div className="flex-1 flex items-center justify-center my-6">
                         <div className="text-center space-y-3">
-                            <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 3, repeat: Infinity }} className="text-6xl font-black text-white/90 leading-none">FinPay</motion.div>
+                            <motion.div  className="text-6xl font-black text-white/90 leading-none">FinPay</motion.div>
                             <div className="text-white/60 text-sm font-bold uppercase tracking-widest">Fintech Mobile App</div>
                             <div className="h-0.5 w-28 bg-gradient-to-r from-transparent via-white/50 to-transparent mx-auto" />
                         </div>
@@ -380,11 +380,11 @@ export default function AppDevelopmentPage() {
     ];
 
     return (
-        <main ref={containerRef} className="relative z-10 selection:bg-brand-cyan/20 overflow-x-clip bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-500 font-sans">
+        <main ref={containerRef} className="relative z-10 selection:bg-brand-cyan/20 overflow-x-clip bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-300 font-sans">
             <Navbar isDark={isDarkMode} toggleTheme={toggleTheme} />
 
             {/* Sticky Mobile CTA */}
-            <div className="fixed bottom-0 left-0 right-0 p-4 z-50 md:hidden bg-white/80 dark:bg-[#050608]/80 backdrop-blur-xl border-t border-slate-200 dark:border-white/10">
+            <div className="fixed bottom-0 left-0 right-0 p-4 z-50 md:hidden bg-white/80 dark:bg-[#050608]/80 backdrop-blur-md border-t border-slate-200 dark:border-white/10">
                 <a href="#consultation" className="flex w-full items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#3994fa] to-[#004aad] text-white font-black text-sm uppercase tracking-widest rounded-xl shadow-lg shadow-[#3994fa]/20">
                     Start Your Project <ArrowRight className="w-4 h-4" />
                 </a>
@@ -493,7 +493,7 @@ export default function AppDevelopmentPage() {
                                 )}
                             </form>
                         </div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3994fa]/20 to-[#6366f1]/20 rounded-full blur-[100px] -z-10 animate-pulse" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3994fa]/20 to-[#6366f1]/20 rounded-full blur-[48px] -z-10 animate-pulse" />
                     </div>
                 </div>
             </section>
@@ -525,12 +525,12 @@ export default function AppDevelopmentPage() {
                 </div>
             </section>
 
-            {/* 3️⃣ Why Choose Preet Tech */}
+            {/* 3️⃣ Why Choose Preet Tech OPC Private Limited */}
             <section className="py-20 md:py-32 px-4 md:px-6 bg-slate-50 dark:bg-slate-900/50 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16 space-y-4">
-                        <span className="text-brand-medium font-bold uppercase tracking-[0.2em] text-xs">The Preet Tech Advantage</span>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Why Choose Preet Tech.</h2>
+                        <span className="text-brand-medium font-bold uppercase tracking-[0.2em] text-xs">The Preet Tech OPC Private Limited Advantage</span>
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Why Choose Preet Tech OPC Private Limited.</h2>
                         <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">We don't just write code. We build scalable, business-focused digital solutions engineered for growth and longevity.</p>
                     </div>
 
@@ -679,7 +679,7 @@ export default function AppDevelopmentPage() {
                                 </button>
                                 <AnimatePresence>
                                     {openFAQ === i && (
-                                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                                        <motion.div  className="overflow-hidden">
                                             <div className="px-6 pb-6 pt-2 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{faq.a}</div>
                                         </motion.div>
                                     )}
@@ -704,7 +704,7 @@ export default function AppDevelopmentPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#3994fa] dark:to-cyan-400">Drives Real Growth?</span>
                     </h2>
                     <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
-                        Join modern startups and enterprise leaders who trust Preet Tech for robust, scalable, and long-term mobile success.
+                        Join modern startups and enterprise leaders who trust Preet Tech OPC Private Limited for robust, scalable, and long-term mobile success.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
                         <a href="#consultation" className="w-full sm:w-auto px-12 py-6 bg-gradient-to-r from-[#3994fa] to-[#004aad] hover:opacity-95 text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl shadow-[#3994fa]/25 flex items-center justify-center gap-3">
@@ -724,16 +724,16 @@ export default function AppDevelopmentPage() {
                 {isVideoOpen && (
                     <motion.div
 
-                        animate={{ opacity: 1 }}
+                        
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95"
                         onClick={() => setIsVideoOpen(false)}
                     >
                         <motion.div
-                            initial={{ scale: 0.95, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
+                            
+                            
                             exit={{ scale: 0.95, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            
                             className="relative w-full aspect-video max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center"
                             onClick={e => e.stopPropagation()}
                         >
@@ -751,7 +751,7 @@ export default function AppDevelopmentPage() {
                                     className="w-full h-full border-0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
-                                    title="Preet Tech Video"
+                                    title="Preet Tech OPC Private Limited Video"
                                 />
                             </div>
                         </motion.div>

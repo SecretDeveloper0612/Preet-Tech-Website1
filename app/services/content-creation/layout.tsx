@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-    title: "Professional Content Creation Services | Social Media & Ad Creatives | Preet Tech",
+    title: "Professional Content Creation Services | Social Media & Ad Creatives | Preet Tech OPC Private Limited",
     description: "Elevate your brand with award-winning content creation services starting at ₹4,999. Specializing in high-engaging social media reels, short-form videos, and performance-driven ad creatives for startups and E-commerce brands.",
     keywords: [
         "Content Creation Services",
@@ -20,16 +20,16 @@ export const metadata: Metadata = {
         canonical: 'https://preettech.com/services/content-creation',
     },
     openGraph: {
-        title: "Content Creation Services that Drive Growth | Preet Tech Studio",
+        title: "Content Creation Services that Drive Growth | Preet Tech OPC Private Limited Studio",
         description: "From strategy to post-production, we handle your entire content lifecycle. Get scroll-stopping visuals that convert viewers into customers.",
         url: 'https://preettech.com/services/content-creation',
-        siteName: 'Preet Tech',
+        siteName: 'Preet Tech OPC Private Limited',
         images: [
             {
                 url: 'https://preettech.com/og-content-creation.jpg', // Placeholder for actual OG image
                 width: 1200,
                 height: 630,
-                alt: 'Preet Tech Content Creation Studio',
+                alt: 'Preet Tech OPC Private Limited Content Creation Studio',
             },
         ],
         locale: 'en_IN',
@@ -49,7 +49,7 @@ export default function ContentCreationLayout({
         "description": "Professional content creation including social media management, short-form video production, and ad creatives.",
         "provider": {
             "@type": "Organization",
-            "name": "Preet Tech",
+            "name": "Preet Tech OPC Private Limited",
             "url": "https://preettech.com"
         },
         "serviceType": "Digital Content Production",
@@ -106,7 +106,7 @@ export default function ContentCreationLayout({
                 "name": "Do your content creation services include both shooting and editing?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, Preet Tech provides full-service content production. This includes creative direction, professional filming/photography on-site or in-studio, and advanced post-production editing for platforms like Reels, TikTok, and YouTube."
+                    "text": "Yes, Preet Tech OPC Private Limited provides full-service content production. This includes creative direction, professional filming/photography on-site or in-studio, and advanced post-production editing for platforms like Reels, TikTok, and YouTube."
                 }
             }
         ]

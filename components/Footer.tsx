@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
                         <div className="flex items-center gap-4">
                             <img
                                 src="/logo-preet-tech-black.png"
-                                alt="Preet Tech Logo"
+                                alt="Preet Tech OPC Private Limited Logo"
                                 className="h-12 md:h-14 w-auto object-contain"
                             />
                         </div>
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                                     href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    whileHover={{ y: -4, color: '#6366f1' }}
+                                    
                                     className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center text-slate-400 transition-all border border-white/5 hover:bg-white/10 hover:border-brand-medium/30"
                                 >
                                     <Icon className="w-5 h-5" />
@@ -172,15 +172,14 @@ const Footer: React.FC = () => {
                             </p>
                         )}
                         <div className="space-y-3">
-                            <div className="flex items-center gap-3 text-xs font-mono text-slate-500">
-                                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                            <div className="flex items-center gap-3 text-[10px] font-mono text-slate-500">
+                                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                                     <MapPin className="w-3.5 h-3.5" />
-                                </div>Preet Tech, near Krishna Hospital, Subhash Nagar, Haldwani, Uttarakhand 263139
-
-
+                                </div>
+                                <span className="flex-1">Preet Tech OPC Private Limited, near Krishna Hospital, Subhash Nagar, Haldwani, Uttarakhand 263139</span>
                             </div>
-                            <div className="flex items-center gap-3 text-xs font-mono text-slate-500">
-                                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                            <div className="flex items-center gap-3 text-[10px] font-mono text-slate-500">
+                                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                                     <Mail className="w-3.5 h-3.5" />
                                 </div>
                                 info@preettech.com
@@ -192,11 +191,11 @@ const Footer: React.FC = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 text-center md:text-left">
-                        <span className="text-slate-500 text-[11px] font-medium tracking-wide italic">© {new Date().getFullYear()} Preet Tech. All Rights Reserved. Designed & Developed by Preet Tech.</span>
-                        <div className="flex gap-6">
+                    <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-12 text-center lg:text-left">
+                        <span className="text-slate-500 text-[9px] font-medium tracking-wide italic">© {new Date().getFullYear()} Preet Tech OPC Private Limited. All Rights Reserved. Designed & Developed by Preet Tech OPC Private Limited.</span>
+                        <div className="flex gap-4 lg:gap-6">
                             {FOOTER_LINKS.Legal.map(link => (
-                                <Link key={link.name} href={link.href} className="text-slate-500 hover:text-brand-medium text-[11px] transition-colors uppercase tracking-widest font-bold">{link.name}</Link>
+                                <Link key={link.name} href={link.href} className="text-slate-500 hover:text-brand-medium text-[9px] transition-colors uppercase tracking-widest font-bold">{link.name}</Link>
                             ))}
                         </div>
                     </div>

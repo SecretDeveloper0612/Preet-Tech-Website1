@@ -1,64 +1,42 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+"use client";
+
+import React, { memo } from 'react';
+import { motion } from 'framer-motion';
 import { Activity, Users, Zap, Briefcase } from 'lucide-react';
 
-const Odometer = ({ value, suffix }: { value: number; suffix: string }) => {
-    const [displayValue, setDisplayValue] = useState(0);
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-    useEffect(() => {
-        if (isInView) {
-            let start = 0;
-            const end = value;
-            const duration = 2000;
-            const startTime = Date.now();
-
-            const updateCounter = () => {
-                const now = Date.now();
-                const progress = Math.min((now - startTime) / duration, 1);
-                const easedProgress = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-
-                setDisplayValue(Math.floor(easedProgress * end));
-
-                if (progress < 1) {
-                    requestAnimationFrame(updateCounter);
-                }
-            };
-
-            requestAnimationFrame(updateCounter);
-        }
-    }, [isInView, value]);
-
+const Odometer = memo(({ value, suffix }: { value: number; suffix: string }) => {
     return (
-        <span ref={ref} className="tabular-nums">
-            {displayValue}{suffix}
+        <span className="tabular-nums">
+            {value}{suffix}
         </span>
     );
-};
+});
+
+Odometer.displayName = 'Odometer';
+
+const STATS = [
+    { value: 124, suffix: "+", label: "Number Of Customers", icon: <Briefcase className="w-4 h-4" /> },
+    { value: 250, suffix: "+", label: "Total Projects Delivered", icon: <Users className="w-4 h-4" /> },
+    { value: 500, suffix: "M+", label: "Digital Reach", icon: <Zap className="w-4 h-4" /> },
+    { value: 24, suffix: "/7", label: "Chat Support", icon: <Activity className="w-4 h-4" /> }
+];
 
 const StatsCounter: React.FC = () => {
-    const STATS = [
-        { value: 124, suffix: "+", label: "Number Of Customers", icon: <Briefcase className="w-4 h-4" /> },
-        { value: 250, suffix: "+", label: "Total Projects Delivered", icon: <Users className="w-4 h-4" /> },
-        { value: 500, suffix: "M+", label: "Digital Reach", icon: <Zap className="w-4 h-4" /> },
-        { value: 24, suffix: "/7", label: "Chat Support", icon: <Activity className="w-4 h-4" /> }
-    ];
 
     return (
-        <section className="py-12 md:py-16 relative overflow-hidden bg-white dark:bg-[#020408] transition-colors duration-500">
+        <section className="py-12 md:py-16 relative overflow-hidden bg-white dark:bg-[#020408] transition-colors duration-300">
             {/* Desktop Background Atmosphere */}
             <div className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent hidden lg:block" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-10 md:mb-14 max-w-3xl mx-auto">
                     <span className="text-sm md:text-base font-bold text-brand-medium tracking-widest uppercase mb-4 block">Proven IT Expertise</span>
-                    <motion.h2
+                    <h2
                         className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tighter uppercase leading-[1.1] md:leading-[0.9]"
                     >
                         Impact by the <br className="block md:hidden" />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-cyan italic md:ml-2">Numbers.</span>
-                    </motion.h2>
+                    </h2>
                     <p className="mt-4 text-slate-600 dark:text-slate-400 text-base md:text-lg font-medium leading-relaxed">
                         Backed by over a decade of industry experience and an authoritative team of engineers, we consistently deliver high-performance digital solutions that earn clients' trust globally.
                     </p>
@@ -86,7 +64,7 @@ const StatsCounter: React.FC = () => {
                                 </div>
 
                                 {/* Main Value */}
-                                <div className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white tracking-tighter mb-2 group-hover:scale-105 transition-transform duration-500 leading-none">
+                                <div className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white tracking-tighter mb-2 group-hover:scale-105 transition-transform duration-300 leading-none">
                                     <Odometer value={stat.value} suffix={stat.suffix} />
                                 </div>
 
@@ -96,8 +74,8 @@ const StatsCounter: React.FC = () => {
                                 </div>
 
                                 {/* Animated Focus Bracket */}
-                                <div className="mt-5 md:mt-6 w-6 md:w-8 h-1 bg-slate-100 dark:bg-white/5 rounded-full overflow-hidden group-hover:w-16 transition-all duration-500">
-                                    <div className="h-full bg-brand-medium w-0 group-hover:w-full transition-all duration-700" />
+                                <div className="mt-5 md:mt-6 w-6 md:w-8 h-1 bg-slate-100 dark:bg-white/5 rounded-full overflow-hidden group-hover:w-16 transition-all duration-300">
+                                    <div className="h-full bg-brand-medium w-0 group-hover:w-full transition-all duration-400" />
                                 </div>
                             </motion.div>
                         </div>

@@ -28,8 +28,8 @@ const TechnicalBackground = ({ isDarkMode }: { isDarkMode: boolean }) => (
             }}
         />
         {/* Two static ambient glows — no animation, GPU-composited */}
-        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[100px] rounded-full opacity-60" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[100px] rounded-full opacity-40" />
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[48px] rounded-full opacity-60" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[48px] rounded-full opacity-40" />
     </div>
 );
 
@@ -101,7 +101,7 @@ export default function ContentCreation() {
     }
 
     return (
-        <main ref={containerRef} className="relative z-10 selection:bg-brand-cyan/20 overflow-x-clip bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-500 font-sans">
+        <main ref={containerRef} className="relative z-10 selection:bg-brand-cyan/20 overflow-x-clip bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-300 font-sans">
             <Navbar isDark={isDarkMode} toggleTheme={toggleTheme} />
 
             {/* 1️⃣ Hero Section */}
@@ -111,22 +111,22 @@ export default function ContentCreation() {
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
                     <div className="space-y-6 lg:space-y-8 hero-content text-center lg:text-left">
-                        <motion.span
+                        <span
                             className="inline-block px-4 py-1 rounded-full bg-[#3994fa]/10 dark:bg-[#3994fa]/10 text-[#3994fa] dark:text-[#3994fa] text-[10px] md:text-xs font-bold uppercase tracking-widest border border-[#3994fa]/20 dark:border-[#3994fa]/20"
                         >
                             Premium Content Studio
-                        </motion.span>
-                        <motion.h1
+                        </span>
+                        <h1
                             className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-[1.1] text-slate-900 dark:text-white"
                         >
                             Professional Content <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3994fa] to-slate-900 dark:to-white">Creation Services.</span>
-                        </motion.h1>
-                        <motion.p
+                        </h1>
+                        <p
                             className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium"
                         >
                             Scale your brand with high-engaging, conversion-optimized <strong>content creation services</strong> starting at just ₹4,999. From viral reels to professional ad creatives, we deliver premium visual assets in 3-7 working days.
-                        </motion.p>
+                        </p>
                         <motion.div
                             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                         >
@@ -201,7 +201,7 @@ export default function ContentCreation() {
                                 )}
                             </form>
                         </div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3994fa]/20 to-[#6366f1]/20 rounded-full blur-[100px] -z-10 animate-pulse" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3994fa]/20 to-[#6366f1]/20 rounded-full blur-[48px] -z-10 animate-pulse" />
                     </motion.div>
                 </div>
             </section>
@@ -232,10 +232,10 @@ export default function ContentCreation() {
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
-                                whileHover={{ y: -10 }}
+                                
                                 className="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 shadow-sm group hover:border-brand-medium/30 transition-all flex flex-col items-start gap-6"
                             >
-                                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-brand-medium/10 text-brand-medium group-hover:bg-brand-medium group-hover:text-white transition-colors duration-500">
+                                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-brand-medium/10 text-brand-medium group-hover:bg-brand-medium group-hover:text-white transition-colors duration-300">
                                     <item.i className="w-8 h-8" />
                                 </div>
                                 <div className="space-y-3">
@@ -250,11 +250,11 @@ export default function ContentCreation() {
                 </div>
             </section>
 
-            {/* 3️⃣ Why Choose Preet Tech */}
+            {/* 3️⃣ Why Choose Preet Tech OPC Private Limited */}
             <section className="py-20 md:py-32 px-4 md:px-6 bg-slate-100 dark:bg-slate-900/30 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20 space-y-4">
-                        <span className="text-brand-medium font-bold uppercase tracking-[0.2em] text-xs">The Preet Tech Edge</span>
+                        <span className="text-brand-medium font-bold uppercase tracking-[0.2em] text-xs">The Preet Tech OPC Private Limited Edge</span>
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight">The Best Content Creation Agency for You.</h2>
                         <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">We don't just "make content". We build growth assets that appreciate in value over time.</p>
                     </div>
@@ -343,7 +343,7 @@ export default function ContentCreation() {
                         ].map((s, i) => (
                             <motion.div
                                 key={i}
-                                whileHover={{ y: -5 }}
+                                
                                 className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-medium/50 transition-all group"
                             >
                                 <div className="w-12 h-12 rounded-xl bg-brand-medium/20 flex items-center justify-center mb-4 group-hover:bg-brand-medium transition-colors">
@@ -384,7 +384,7 @@ export default function ContentCreation() {
                                     key={i}
                                     className="text-center group"
                                 >
-                                    <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-white dark:bg-slate-900 border-4 border-slate-50 dark:border-white/5 flex items-center justify-center text-brand-medium shadow-xl group-hover:scale-110 group-hover:border-brand-medium transition-all duration-500">
+                                    <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-white dark:bg-slate-900 border-4 border-slate-50 dark:border-white/5 flex items-center justify-center text-brand-medium shadow-xl group-hover:scale-110 group-hover:border-brand-medium transition-all duration-300">
                                         <step.i className="w-8 h-8" />
                                     </div>
                                     <span className="text-xs font-black text-brand-medium/50 uppercase tracking-widest block mb-2">{step.s} — {step.t}</span>
@@ -408,7 +408,7 @@ export default function ContentCreation() {
                         bg: 'from-brand-deep to-brand-sky',
                         content: (
                             <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
-                                <motion.div animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity }} className="absolute inset-0 bg-black/20" />
+                                <motion.div  className="absolute inset-0 bg-black/20" />
                                 <div className="relative z-10 space-y-4">
                                     <div className="text-5xl font-black">1.2M</div>
                                     <div className="text-sm font-bold uppercase tracking-widest text-brand-cyan">Views Generated</div>
@@ -462,7 +462,7 @@ export default function ContentCreation() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                                     <Camera className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-white/20" />
                                     <div className="absolute bottom-4 left-4 right-4 h-2 bg-white/20 rounded-full">
-                                        <motion.div initial={{ width: 0 }} whileInView={{ width: '85%' }} viewport={{ once: true }} className="h-full bg-brand-cyan rounded-full" />
+                                        <motion.div  className="h-full bg-brand-cyan rounded-full" />
                                     </div>
                                 </div>
                                 <div className="text-center space-y-2">
@@ -518,7 +518,7 @@ export default function ContentCreation() {
                     <div className="space-y-4">
                         {[
                             { q: "How often should we post content for social media growth?", a: "Consistency is key for digital growth, but quality beats quantity. We usually recommend a minimum of 3-5 high-quality posts per week combined with daily stories. Our content creation services customize this frequency based on your industry and specific business goals." },
-                            { q: "Do your content creation services include shooting and editing?", a: "Yes, Preet Tech provides full-service content production. This includes creative direction, professional filming/photography on-site or in-studio, and advanced post-production editing for platforms like Reels, TikTok, and YouTube." },
+                            { q: "Do your content creation services include shooting and editing?", a: "Yes, Preet Tech OPC Private Limited provides full-service content production. This includes creative direction, professional filming/photography on-site or in-studio, and advanced post-production editing for platforms like Reels, TikTok, and YouTube." },
                             { q: "Can you manage our entire social media content calendar?", a: "Absolutely. We can take over the complete scheduling and posting process across all your social platforms, ensuring your content goes live at peak engagement times for maximum reach." },
                             { q: "Do you create high-converting ad creatives as well?", a: "Yes, performance-driven ad creatives are one of our specialties. We design specific assets for Facebook, Instagram, and TikTok ads that are built for high conversion rather than just organic engagement." },
                             { q: "How do you measure the performance of our content?", a: "We track reach, engagement rate, click-through rates (CTR), and ultimately, conversions. We provide detailed monthly reports that show exactly how your content is contributing to your brand's digital growth." }
@@ -529,15 +529,15 @@ export default function ContentCreation() {
                                     className="w-full p-6 flex items-center justify-between text-left hover:bg-slate-50 dark:hover:bg-white/5 transition-colors"
                                 >
                                     <span className="font-bold pr-8">{faq.q}</span>
-                                    <motion.div animate={{ rotate: openFAQ === i ? 180 : 0 }}>
+                                    <motion.div >
                                         <ChevronDown className="w-5 h-5 text-brand-medium" />
                                     </motion.div>
                                 </button>
                                 <AnimatePresence>
                                     {openFAQ === i && (
                                         <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: 'auto', opacity: 1 }}
+                                            
+                                            
                                             exit={{ height: 0, opacity: 0 }}
                                             className="overflow-hidden"
                                         >
@@ -590,22 +590,22 @@ export default function ContentCreation() {
                 <div className="max-w-4xl mx-auto text-center space-y-12">
                     <div className="space-y-4">
                         <h2 className="text-5xl md:text-7xl font-black tracking-tight">Ready to Turn Content <br /> Into <span className="text-brand-medium">Growth?</span></h2>
-                        <p className="text-xl text-slate-500 dark:text-slate-400">Join the top-tier brands using Preet Tech for strategic creative excellence.</p>
+                        <p className="text-xl text-slate-500 dark:text-slate-400">Join the top-tier brands using Preet Tech OPC Private Limited for strategic creative excellence.</p>
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <motion.button
                             onClick={() => document.getElementById('consultation')?.scrollIntoView({ behavior: 'smooth' })}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            
+                            
                             className="px-12 py-6 bg-gradient-to-r from-[#3994fa] to-[#004aad] hover:opacity-95 text-white font-black rounded-2xl shadow-2xl flex items-center gap-4 uppercase tracking-[0.15em] text-sm"
                         >
                             Start Your Content Project <Plus className="w-5 h-5" />
                         </motion.button>
                         <motion.button
                             onClick={() => document.getElementById('consultation')?.scrollIntoView({ behavior: 'smooth' })}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            
+                            
                             className="px-12 py-6 border-2 border-[#3994fa]/20 hover:bg-gradient-to-r hover:from-[#3994fa] hover:to-[#004aad] hover:text-white hover:border-transparent font-black rounded-2xl flex items-center gap-4 uppercase tracking-[0.15em] text-sm transition-all"
                         >
                             Schedule Free Call <Calendar className="w-5 h-5" />
@@ -619,16 +619,16 @@ export default function ContentCreation() {
                 {isVideoOpen && (
                     <motion.div
 
-                        animate={{ opacity: 1 }}
+                        
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95"
                         onClick={() => setIsVideoOpen(false)}
                     >
                         <motion.div
-                            initial={{ scale: 0.95, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
+                            
+                            
                             exit={{ scale: 0.95, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            
                             className="relative w-full aspect-video max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center"
                             onClick={e => e.stopPropagation()}
                         >
@@ -646,7 +646,7 @@ export default function ContentCreation() {
                                     className="w-full h-full border-0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
-                                    title="Preet Tech Video"
+                                    title="Preet Tech OPC Private Limited Video"
                                 />
                             </div>
                         </motion.div>
@@ -658,8 +658,8 @@ export default function ContentCreation() {
 
             {/* Mobile Sticky CTA */}
             <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
+                
+                
                 className="fixed bottom-0 left-0 right-0 p-4 z-50 md:hidden pointer-events-none"
             >
                 <div className="glass-morphism rounded-2xl border border-white/20 p-2 shadow-2xl pointer-events-auto">

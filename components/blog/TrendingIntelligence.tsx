@@ -39,8 +39,8 @@ export default function TrendingIntelligence() {
 
 
 
-                            transition={{ delay: idx * 0.1 }}
-                            className="group relative flex flex-col h-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 rounded-[2.5rem] p-6 md:p-8 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-brand-cyan/30 dark:hover:border-brand-cyan/30 transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-brand-cyan/5"
+                            
+                            className="group relative flex flex-col h-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 rounded-[2.5rem] p-6 md:p-8 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-brand-cyan/30 dark:hover:border-brand-cyan/30 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-brand-cyan/5"
                         >
                             <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
                                 <div className="relative aspect-video rounded-3xl overflow-hidden mb-6 shrink-0">
@@ -48,7 +48,7 @@ export default function TrendingIntelligence() {
                                         src={post.featuredImage}
                                         alt={post.title}
                                         fill
-                                        className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-transform duration-700"
+                                        className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-transform duration-400"
                                     />
                                     <div className="absolute top-3 left-3 z-10">
                                         <div className="flex items-center gap-1.5 px-3 py-1 bg-white/90 dark:bg-slate-950/80 backdrop-blur-md rounded-full border border-slate-200 dark:border-white/10 shadow-sm">

@@ -54,8 +54,8 @@ const TechnicalBackground = ({ isDarkMode }: { isDarkMode: boolean }) => (
             }}
         />
         {/* Two static ambient glows — no animation, GPU-composited */}
-        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[100px] rounded-full opacity-60" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[100px] rounded-full opacity-40" />
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[48px] rounded-full opacity-60" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#3994fa]/5 blur-[48px] rounded-full opacity-40" />
     </div>
 );
 
@@ -318,11 +318,11 @@ export default function PartnershipMarketing() {
     ];
 
     return (
-        <main className="relative selection:bg-brand-cyan/30 overflow-x-clip bg-background text-foreground dark:bg-[#020617] transition-colors duration-500 font-sans">
+        <main className="relative selection:bg-brand-cyan/30 overflow-x-clip bg-background text-foreground dark:bg-[#020617] transition-colors duration-300 font-sans">
             <Navbar isDark={isDarkMode} toggleTheme={toggleTheme} />
 
             {/* Sticky Mobile CTA */}
-            <div className="fixed bottom-0 left-0 right-0 z-[100] p-4 lg:hidden border-t border-slate-200 dark:border-white/10 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl">
+            <div className="fixed bottom-0 left-0 right-0 z-[100] p-4 lg:hidden border-t border-slate-200 dark:border-white/10 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
                 <button onClick={() => document.getElementById('consultation')?.scrollIntoView({ behavior: 'smooth' })} className="w-full py-4 bg-gradient-to-r from-[#3994fa] to-[#004aad] text-white rounded-xl font-black text-xs uppercase tracking-[0.2em] shadow-lg active:scale-95 transition-transform">
                     Book Strategy Call
                 </button>
@@ -335,22 +335,22 @@ export default function PartnershipMarketing() {
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
                     <div className="space-y-6 lg:space-y-8 hero-content text-center lg:text-left">
-                        <motion.span
+                        <span
                             className="inline-block px-4 py-1 rounded-full bg-[#3994fa]/10 dark:bg-[#3994fa]/10 text-[#3994fa] dark:text-[#3994fa] text-[10px] md:text-xs font-bold uppercase tracking-widest border border-[#3994fa]/20 dark:border-[#3994fa]/20"
                         >
                             Performance-Driven Partnerships
-                        </motion.span>
-                        <motion.h1
+                        </span>
+                        <h1
                             className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-[1.1] text-slate-900 dark:text-white"
                         >
                             Partnership Marketing <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3994fa] to-[#1e293b] dark:to-white">Starting on Revenue Share.</span>
-                        </motion.h1>
-                        <motion.p
+                        </h1>
+                        <p
                             className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium"
                         >
                             Grow your sales with zero upfront risk. We bridge the gap between complementary brands, driving measurable results where you only pay on performance.
-                        </motion.p>
+                        </p>
                         <motion.div
                             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                         >
@@ -424,7 +424,7 @@ export default function PartnershipMarketing() {
                                 )}
                             </form>
                         </div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3994fa]/20 to-[#6366f1]/20 rounded-full blur-[100px] -z-10 animate-pulse" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#3994fa]/20 to-[#6366f1]/20 rounded-full blur-[48px] -z-10 animate-pulse" />
                     </motion.div>
                 </div>
             </section>
@@ -447,9 +447,9 @@ export default function PartnershipMarketing() {
                         {whatWeDoItems.map((item, i) => (
                             <motion.div
                                 key={i}
-                                className="group relative p-8 rounded-[2.5rem] bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 hover:border-brand-cyan/30 transition-all duration-500"
+                                className="group relative p-8 rounded-[2.5rem] bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 hover:border-brand-cyan/30 transition-all duration-300"
                             >
-                                <div className="w-14 h-14 rounded-2xl bg-brand-cyan/10 flex items-center justify-center mb-8 border border-brand-cyan/5 group-hover:bg-brand-cyan group-hover:text-slate-950 transition-all duration-500">
+                                <div className="w-14 h-14 rounded-2xl bg-brand-cyan/10 flex items-center justify-center mb-8 border border-brand-cyan/5 group-hover:bg-brand-cyan group-hover:text-slate-950 transition-all duration-300">
                                     <item.icon className="w-7 h-7" />
                                 </div>
                                 <h4 className="text-lg font-black uppercase tracking-tight text-slate-900 dark:text-white mb-4 group-hover:text-brand-cyan transition-colors">{item.title}</h4>
@@ -460,13 +460,13 @@ export default function PartnershipMarketing() {
                 </div>
             </section>
 
-            {/* 3️⃣ Why Preet Tech for Your Collabs */}
+            {/* 3️⃣ Why Preet Tech OPC Private Limited for Your Collabs */}
             <section className="py-32 px-6 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div>
                         <span className="text-brand-medium dark:text-brand-cyan text-[11px] font-black uppercase tracking-[0.4em] mb-4 block">The Advantage</span>
                         <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[1.1] mb-8 text-slate-900 dark:text-white">
-                            Why Choose <span className="italic text-brand-cyan">Preet Tech?</span>
+                            Why Choose <span className="italic text-brand-cyan">Preet Tech OPC Private Limited?</span>
                         </h2>
                         <p className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-12">
                             Traditional agencies sell 'hours' and 'services.' We sell outcomes. Our authority is built on real sales data and high-trust partnerships.
@@ -491,7 +491,7 @@ export default function PartnershipMarketing() {
                     </div>
 
                     <div className="relative">
-                        <div className="absolute -inset-10 bg-brand-cyan/20 blur-[120px] rounded-full pointer-events-none" />
+                        <div className="absolute -inset-10 bg-brand-cyan/20 blur-[60px] rounded-full pointer-events-none" />
                         <div className="relative p-2 bg-gradient-to-br from-slate-200 dark:from-white/10 to-transparent rounded-[3rem] shadow-xl">
                             <div className="bg-white dark:bg-[#0a0f1a] rounded-[2.8rem] p-10 md:p-14 border border-slate-100 dark:border-white/5 overflow-hidden">
                                 <div className="space-y-8">
@@ -510,10 +510,10 @@ export default function PartnershipMarketing() {
                                             {[1, 2, 3, 4, 5, 6].map(i => (
                                                 <div key={i} className="h-12 flex-1 bg-brand-cyan/10 rounded-lg relative overflow-hidden">
                                                     <motion.div
-                                                        initial={{ height: 0 }}
-                                                        whileInView={{ height: `${20 + (i * 15)}%` }}
-                                                        viewport={{ once: true }}
-                                                        transition={{ duration: 1, delay: i * 0.1 }}
+                                                        
+                                                        
+                                                        
+                                                        
                                                         className="absolute bottom-0 left-0 right-0 bg-brand-cyan"
                                                     />
                                                 </div>
@@ -597,7 +597,7 @@ export default function PartnershipMarketing() {
                         {audiences.map((aud, i) => (
                             <motion.div
                                 key={i}
-                                className="group p-10 rounded-[3rem] bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-white/5 hover:border-brand-cyan/30 transition-all duration-500 shadow-lg"
+                                className="group p-10 rounded-[3rem] bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-white/5 hover:border-brand-cyan/30 transition-all duration-300 shadow-lg"
                             >
                                 <div className="mb-10 p-5 rounded-2xl bg-slate-50 dark:bg-white/5 w-fit border border-slate-100 dark:border-white/10 group-hover:scale-110 transition-transform">
                                     <div className="w-10 h-10 flex items-center justify-center">
@@ -672,7 +672,7 @@ export default function PartnershipMarketing() {
                         {revenueModels.map((model, i) => (
                             <motion.div
                                 key={i}
-                                className={`relative p-12 rounded-[3.5rem] flex flex-col transition-all duration-500 ${model.highlight ? 'bg-slate-900 text-white scale-105 z-10 shadow-2xl' : 'bg-white dark:bg-slate-900/30 border border-slate-200 dark:border-white/5'}`}
+                                className={`relative p-12 rounded-[3.5rem] flex flex-col transition-all duration-300 ${model.highlight ? 'bg-slate-900 text-white scale-105 z-10 shadow-2xl' : 'bg-white dark:bg-slate-900/30 border border-slate-200 dark:border-white/5'}`}
                             >
                                 {model.highlight && (
                                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-brand-cyan text-slate-950 font-black text-[10px] uppercase tracking-[0.2em] whitespace-nowrap">
@@ -743,13 +743,13 @@ export default function PartnershipMarketing() {
                 {/* Background Decorations */}
                 <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                     <motion.div
-                        animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
-                        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+                        
+                        
                         className="absolute -top-[50%] -left-[10%] w-[800px] h-[800px] bg-[#3994fa]/10 blur-[150px] rounded-full"
                     />
                     <motion.div
-                        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }}
-                        transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+                        
+                        
                         className="absolute -bottom-[50%] -right-[10%] w-[600px] h-[600px] bg-[#3994fa]/10 blur-[150px] rounded-full"
                     />
 
@@ -790,7 +790,7 @@ export default function PartnershipMarketing() {
                             Future-Proof Your Business
                         </motion.div>
 
-                        <motion.h2
+                        <h2
 
 
 
@@ -798,7 +798,7 @@ export default function PartnershipMarketing() {
                         >
                             Scale Your Brand Beyond <br className="hidden md:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3994fa] via-white to-[#3994fa] bg-[length:200%_auto] italic pr-4">Costly Ad Platforms.</span>
-                        </motion.h2>
+                        </h2>
 
                         {/* Animated Growth Graph */}
                         <div className="relative max-w-4xl mx-auto py-12 px-4 group">
@@ -807,12 +807,12 @@ export default function PartnershipMarketing() {
                             <div className="absolute inset-x-0 top-3/4 -translate-y-1/2 h-px bg-white/[0.02]" />
 
                             <svg width="100%" height="160" viewBox="0 0 1000 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="overflow-visible relative z-10">
-                                <motion.path
-                                    initial={{ pathLength: 0, opacity: 0 }}
-                                    whileInView={{ pathLength: 1, opacity: 1 }}
-                                    viewport={{ once: true }}
+                                <path
+                                    
+                                    
+                                    
 
-                                    transition={{ duration: 2.5, ease: "easeInOut" }}
+                                    
                                     d="M0 150C100 145 150 140 200 110C250 80 350 120 450 90C550 60 650 70 750 30C850 -10 950 20 1000 0"
                                     stroke="url(#growthGradient)"
                                     strokeWidth="4"
@@ -831,19 +831,19 @@ export default function PartnershipMarketing() {
 
 
 
-                                transition={{ delay: 2.2, duration: 0.5 }}
+                                
                                 className="absolute top-12 right-4 md:right-8 w-4 h-4 bg-[#3994fa] rounded-full shadow-[0_0_20px_#3994fa] z-20"
                             />
                         </div>
 
-                        <motion.p
+                        <p
 
 
 
                             className="text-lg md:text-xl text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed"
                         >
-                            Join elite D2C brands and scaling startups that trust Preet Tech for zero-risk, high-affinity, and 100% performance-aligned collaborations.
-                        </motion.p>
+                            Join elite D2C brands and scaling startups that trust Preet Tech OPC Private Limited for zero-risk, high-affinity, and 100% performance-aligned collaborations.
+                        </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
                             <button onClick={() => document.getElementById('consultation')?.scrollIntoView({ behavior: 'smooth' })} className="w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-[#3994fa] to-[#004aad] text-white rounded-2xl font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all shadow-xl shadow-[#3994fa]/20 flex items-center justify-center gap-3">
@@ -867,7 +867,7 @@ export default function PartnershipMarketing() {
 
 
 
-                                transition={{ delay: i * 0.1 }}
+                                
                                 className="group cursor-default"
                             >
                                 <div className="text-3xl md:text-5xl font-black text-[#3994fa] mb-2 group-hover:scale-110 transition-transform">{stat.v}</div>
@@ -889,16 +889,16 @@ export default function PartnershipMarketing() {
                 {isVideoOpen && (
                     <motion.div
 
-                        animate={{ opacity: 1 }}
+                        
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95"
                         onClick={() => setIsVideoOpen(false)}
                     >
                         <motion.div
-                            initial={{ scale: 0.95, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
+                            
+                            
                             exit={{ scale: 0.95, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            
                             className="relative w-full aspect-video max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center"
                             onClick={e => e.stopPropagation()}
                         >
@@ -916,7 +916,7 @@ export default function PartnershipMarketing() {
                                     className="w-full h-full border-0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
-                                    title="Preet Tech Video"
+                                    title="Preet Tech OPC Private Limited Video"
                                 />
                             </div>
                         </motion.div>

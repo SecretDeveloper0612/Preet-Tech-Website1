@@ -44,7 +44,7 @@ const CreativeServices = () => {
                             <img
                                 src="/images/services/content-creation.png"
                                 alt="Branding Mockup"
-                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-400"
                             />
                             <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
                                 <p className="text-slate-900 dark:text-white font-black uppercase tracking-widest text-[10px]">Premium Identity Mockup</p>
@@ -68,8 +68,8 @@ const CreativeServices = () => {
 
                             {/* Device Floating Elements */}
                             <motion.div
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 4, repeat: Infinity }}
+                                
+                                
                                 className="absolute bottom-12 right-12 w-24 h-48 bg-white dark:bg-slate-900 rounded-3xl border-4 border-white dark:border-slate-800 shadow-2xl overflow-hidden hidden md:block"
                             >
                                 <img

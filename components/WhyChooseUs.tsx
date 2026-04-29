@@ -46,18 +46,18 @@ const WhyChooseUs: React.FC = () => {
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
 
-                    <motion.h2
+                    <h2
                         className="text-3xl md:text-6xl font-black text-foreground mb-6 tracking-tight leading-tight"
                     >
                         Why Leaders Choose Our <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-cyan">SEO & IT Agency.</span>
-                    </motion.h2>
+                    </h2>
 
-                    <motion.p
+                    <p
                         className="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto"
                     >
                         As a top <span className="font-bold text-foreground dark:text-white">performance marketing agency</span>, we bridge the gap between ambitious vision and technical reality with robust <span className="font-bold text-foreground dark:text-white">SEO optimization services</span>, secure <span className="font-bold text-foreground dark:text-white">cloud migration services</span>, and distinct <span className="font-bold text-foreground dark:text-white">brand identity design</span>. Partner with a team built for digital dominance.
-                    </motion.p>
+                    </p>
                 </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

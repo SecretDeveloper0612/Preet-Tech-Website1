@@ -17,8 +17,8 @@ interface BlogCardProps {
 export default function BlogCard({ post }: BlogCardProps) {
     return (
         <motion.div
-            whileHover={{ y: -8 }}
-            className="group flex flex-col bg-white dark:bg-slate-900 border border-slate-100 dark:border-white/5 rounded-[2rem] overflow-hidden transition-[transform,box-shadow,border-color,background-color] duration-500 hover:shadow-2xl hover:border-brand-cyan/20 gpu"
+            
+            className="group flex flex-col bg-white dark:bg-slate-900 border border-slate-100 dark:border-white/5 rounded-[2rem] overflow-hidden transition-[transform,box-shadow,border-color,background-color] duration-300 hover:shadow-2xl hover:border-brand-cyan/20 gpu"
         >
             {/* Image Container */}
             <Link href={`/blog/${post.slug}`} className="relative aspect-[16/10] overflow-hidden block">
@@ -26,7 +26,7 @@ export default function BlogCard({ post }: BlogCardProps) {
                     src={post.featuredImage || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"}
                     alt={post.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover transition-transform duration-400 group-hover:scale-110"
                 />
 
                 {/* Visual Overlays */}

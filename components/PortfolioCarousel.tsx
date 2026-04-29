@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useRef, useCallback, useEffect, memo } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 
@@ -19,6 +19,35 @@ interface PortfolioCarouselProps {
 const CARD_WIDTH = 340;
 const CARD_GAP = 20;
 const CARD_STEP = CARD_WIDTH + CARD_GAP;
+
+const PortfolioCard = memo(({ card, i, activeIndex, isDragging, snapTo }: { card: CardData; i: number; activeIndex: number; isDragging: boolean; snapTo: (idx: number) => void }) => (
+    <motion.div
+        onClick={() => !isDragging && snapTo(i)}
+        className="shrink-0 relative rounded-3xl overflow-hidden cursor-grab active:cursor-grabbing shadow-xl shadow-slate-200/50 dark:shadow-none gpu"
+        style={{
+            width: `${CARD_WIDTH}px`,
+            height: '440px',
+            opacity: Math.abs(i - activeIndex) === 0 ? 1 : Math.abs(i - activeIndex) === 1 ? 0.75 : 0.45,
+            transition: 'opacity 0.3s ease',
+            ...(card.bgStyle ?? {}),
+        }}
+    >
+        {card.bg && (
+            <div className={`absolute inset-0 bg-gradient-to-br ${card.bg}`} />
+        )}
+        <div className="relative z-10 h-full">
+            {card.content}
+        </div>
+        <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-black/30 backdrop-blur border border-white/20 text-[10px] font-bold text-white uppercase tracking-wider">
+            {card.platform}
+        </div>
+        {i === activeIndex && (
+            <div className="absolute inset-0 rounded-3xl border-2 border-white/40 pointer-events-none z-30" />
+        )}
+    </motion.div>
+));
+
+PortfolioCard.displayName = 'PortfolioCard';
 
 export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
     // Triple elements for infinite illusion
@@ -64,7 +93,7 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
 
         const autoSlide = setInterval(() => {
             snapTo(activeIndex + 1);
-        }, 3000);
+        }, 5000); // Increased from 3s to reduce spring animation frequency
 
         return () => clearInterval(autoSlide);
     }, [activeIndex, isDragging, isHovered, snapTo]);
@@ -155,7 +184,7 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
             <div className="relative pl-4 md:pl-[max(1rem,calc((100%-80rem)/2+1.5rem))]">
                 {/* Drag hint */}
                 <motion.div
-                    animate={{ opacity: isDragging ? 0 : 1 }}
+                    
                     className="absolute top-[-28px] right-4 md:right-8 text-[10px] text-slate-600 font-bold uppercase tracking-widest flex items-center gap-1.5 pointer-events-none"
                 >
                     <svg className="w-3 h-3" viewBox="0 0 12 12" fill="currentColor">
@@ -179,41 +208,14 @@ export default function PortfolioCarousel({ cards }: PortfolioCarouselProps) {
                         onClick={(e) => { if (isDragging) e.preventDefault(); }}
                     >
                         {extendedCards.map((card, i) => (
-                            <motion.div
-                                key={`${card.id}-${i}`}
-                                animate={{ opacity: cardOpacity(i), scale: i === activeIndex ? 1 : 0.97 }}
-                                transition={{ duration: 0.3 }}
-                                onClick={() => !isDragging && snapTo(i)}
-                                className="shrink-0 relative rounded-3xl overflow-hidden cursor-grab active:cursor-grabbing shadow-xl shadow-slate-200/50 dark:shadow-none"
-                                style={{
-                                    width: `${CARD_WIDTH}px`,
-                                    height: '440px',
-                                    ...(card.bgStyle ?? {}),
-                                }}
-                            >
-                                {/* Gradient background */}
-                                {card.bg && (
-                                    <div className={`absolute inset-0 bg-gradient-to-br ${card.bg}`} />
-                                )}
-
-                                {/* Content */}
-                                <div className="relative z-10 h-full">
-                                    {card.content}
-                                </div>
-
-                                {/* Platform badge */}
-                                <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-black/30 backdrop-blur border border-white/20 text-[10px] font-bold text-white uppercase tracking-wider">
-                                    {card.platform}
-                                </div>
-
-                                {/* Active indicator border */}
-                                {i === activeIndex && (
-                                    <motion.div
-                                        layoutId="activeBorder"
-                                        className="absolute inset-0 rounded-3xl border-2 border-white/40 pointer-events-none z-30"
-                                    />
-                                )}
-                            </motion.div>
+                            <PortfolioCard 
+                                key={`${card.id}-${i}`} 
+                                card={card} 
+                                i={i} 
+                                activeIndex={activeIndex} 
+                                isDragging={isDragging} 
+                                snapTo={snapTo} 
+                            />
                         ))}
                     </motion.div>
                 </div>

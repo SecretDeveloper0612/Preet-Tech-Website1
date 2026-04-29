@@ -20,7 +20,7 @@ const WhyChoosePreetTech = () => {
                 <div className="text-center mb-20">
                     <span className="text-brand-medium dark:text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Engineered for Success</span>
                     <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight">
-                        Why Choose <span className="text-brand-medium dark:text-brand-cyan italic">Preet Tech?</span>
+                        Why Choose <span className="text-brand-medium dark:text-brand-cyan italic">Preet Tech OPC Private Limited?</span>
                     </h2>
                 </div>
 
@@ -30,7 +30,7 @@ const WhyChoosePreetTech = () => {
                             key={i}
                             
                             
-                            transition={{ delay: i * 0.1 }}
+                            
                             
                             className="group p-8 rounded-[2.5rem] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 hover:border-brand-medium/40 dark:hover:border-brand-cyan/40 transition-all duration-300"
                         >

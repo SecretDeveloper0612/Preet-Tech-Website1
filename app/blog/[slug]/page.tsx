@@ -20,12 +20,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!post) {
         return {
-            title: 'Post Not Found | Preet Tech',
+            title: 'Post Not Found | Preet Tech OPC Private Limited',
         };
     }
 
     return {
-        title: `${post.seo.title} | Preet Tech`,
+        title: `${post.seo.title} | Preet Tech OPC Private Limited`,
         description: post.seo.description,
         keywords: post.seo.keywords,
         openGraph: {

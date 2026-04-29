@@ -11,7 +11,7 @@ enum Theme {
 }
 
 export default function TermsOfServicePage() {
-    const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
+    const [theme, setTheme] = useState<Theme>(Theme.DARK);
 
     const isDark = theme === Theme.DARK;
 
@@ -26,11 +26,11 @@ export default function TermsOfServicePage() {
             {/* HERO SECTION */}
             <section className="relative min-h-[50vh] flex items-center justify-center pt-32 pb-16 overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-cyan/10 rounded-full blur-[120px]" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-cyan/10 rounded-full blur-[60px]" />
                 </div>
 
                 <div className="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-                    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-medium/10 text-brand-medium text-[10px] font-black uppercase tracking-[0.4em] mb-8 border border-brand-medium/20 backdrop-blur-xl">
+                    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-medium/10 text-brand-medium text-[10px] font-black uppercase tracking-[0.4em] mb-8 border border-brand-medium/20 backdrop-blur-md">
                         <Shield className="w-3 h-3" />
                         Legal Agreement
                     </span>
@@ -38,7 +38,7 @@ export default function TermsOfServicePage() {
                         Terms of <span className="text-brand-medium">Service</span>
                     </h1>
                     <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed font-medium">
-                        Last updated: March 2026. Read the operational and legal bounds of utilizing Preet Tech's services.
+                        Last updated: March 2026. Read the operational and legal bounds of utilizing Preet Tech OPC Private Limited's services.
                     </p>
                 </div>
             </section>
@@ -49,12 +49,12 @@ export default function TermsOfServicePage() {
 
                     <div className="space-y-4">
                         <h2 className="text-2xl font-black uppercase text-foreground dark:text-white">1. Agreement to Terms</h2>
-                        <p>These Terms of Service ("Terms") constitute a legally binding agreement between you (whether individually or on behalf of an entity) and Preet Tech Global ("we," "us," or "our"). By leveraging our digital transformation agency services, custom software deployments, or navigating our website, you expressly agree to be bound by these Terms.</p>
+                        <p>These Terms of Service ("Terms") constitute a legally binding agreement between you (whether individually or on behalf of an entity) and Preet Tech OPC Private Limited Global ("we," "us," or "our"). By leveraging our digital transformation agency services, custom software deployments, or navigating our website, you expressly agree to be bound by these Terms.</p>
                     </div>
 
                     <div className="space-y-4">
                         <h2 className="text-2xl font-black uppercase text-foreground dark:text-white">2. Our Services</h2>
-                        <p>Preet Tech is an innovative IT solutions company providing services including but not limited to:</p>
+                        <p>Preet Tech OPC Private Limited is an innovative IT solutions company providing services including but not limited to:</p>
                         <ul className="list-disc pl-6 space-y-2 mt-2">
                             <li>High-performance web architecture and scalable cloud infrastructure setups.</li>
                             <li>Mobile app development tools and artificial intelligence integration.</li>
@@ -65,12 +65,12 @@ export default function TermsOfServicePage() {
 
                     <div className="space-y-4">
                         <h2 className="text-2xl font-black uppercase text-foreground dark:text-white">3. Intellectual Property Rights</h2>
-                        <p>Unless expressly stated under mutual contract (e.g., specific white-label developments), Preet Tech retains complete intellectual property ownership over underlying frameworks, proprietary codebases, algorithms, UI/UX conceptual blueprints, and architectural innovations deployed during the creation process.</p>
+                        <p>Unless expressly stated under mutual contract (e.g., specific white-label developments), Preet Tech OPC Private Limited retains complete intellectual property ownership over underlying frameworks, proprietary codebases, algorithms, UI/UX conceptual blueprints, and architectural innovations deployed during the creation process.</p>
                     </div>
 
                     <div className="space-y-4">
                         <h2 className="text-2xl font-black uppercase text-foreground dark:text-white">4. User Representations</h2>
-                        <p>When retaining Preet Tech for IT execution, you warrant that:</p>
+                        <p>When retaining Preet Tech OPC Private Limited for IT execution, you warrant that:</p>
                         <ul className="list-disc pl-6 space-y-2 mt-2">
                             <li>You maintain the legal authority and authorization to greenlight requested infrastructure operations.</li>
                             <li>Your utilized digital assets do not infringe on third-party security, legality, or IP rights.</li>
@@ -80,7 +80,7 @@ export default function TermsOfServicePage() {
 
                     <div className="space-y-4">
                         <h2 className="text-2xl font-black uppercase text-foreground dark:text-white">5. Liability Limitations</h2>
-                        <p>In no event shall Preet Tech, its engineers, or direct affiliates be held liable for tangential, punitive, or consequential damages generated from third-party server downtime, zero-day vulnerabilities outside our immediate stack control, or user-driven data negligence.</p>
+                        <p>In no event shall Preet Tech OPC Private Limited, its engineers, or direct affiliates be held liable for tangential, punitive, or consequential damages generated from third-party server downtime, zero-day vulnerabilities outside our immediate stack control, or user-driven data negligence.</p>
                     </div>
 
                     <div className="space-y-4">
@@ -90,7 +90,7 @@ export default function TermsOfServicePage() {
 
                     <div className="space-y-4">
                         <h2 className="text-2xl font-black uppercase text-foreground dark:text-white">7. Governing Law</h2>
-                        <p>These Terms and corresponding engagements with Preet Tech are governed strictly according to the corporate laws of our operational jurisdiction, without regard to overarching conflict-of-law principles.</p>
+                        <p>These Terms and corresponding engagements with Preet Tech OPC Private Limited are governed strictly according to the corporate laws of our operational jurisdiction, without regard to overarching conflict-of-law principles.</p>
                     </div>
                 </div>
             </section>

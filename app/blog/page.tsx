@@ -18,7 +18,7 @@ export default function BlogPage() {
     const [activeCategory, setActiveCategory] = useState('All');
     const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(true);
 
     // Newsletter State
     const [subscribeEmail, setSubscribeEmail] = useState('');
@@ -167,43 +167,43 @@ export default function BlogPage() {
                     {/* Content Left */}
                     <div className="flex-1 text-center lg:text-left">
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
+                            
+                            
+                            
+                            
                             className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm"
                         >
                             <Mail className="w-4 h-4 text-[#3994fa]" />
                             <span className="text-[10px] font-black text-white/80 uppercase tracking-[0.3em]">Exclusive Intel</span>
                         </motion.div>
 
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
+                        <h2
+                            
+                            
+                            
+                            
                             className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tighter uppercase leading-[0.9]"
                         >
                             Master the <br className="hidden lg:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3994fa] to-[#5fD3E6]">Growth Engine.</span>
-                        </motion.h2>
+                        </h2>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                        <p
+                            
+                            
+                            
+                            
                             className="text-white/50 text-lg md:text-xl font-medium leading-relaxed max-w-xl mx-auto lg:mx-0"
                         >
                             Join 5,000+ ambitious founders receiving our best actionable frameworks directly to their inbox. Zero fluff. Pure signal.
-                        </motion.p>
+                        </p>
 
                         {/* Social proof dots */}
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.35 }}
+                            
+                            
+                            
+                            
                             className="mt-8 flex items-center gap-3 justify-center lg:justify-start"
                         >
                             <div className="flex -space-x-2">
@@ -219,15 +219,15 @@ export default function BlogPage() {
 
                     {/* Form Right */}
                     <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7, delay: 0.2 }}
+                        
+                        
+                        
+                        
                         className="flex-1 w-full max-w-xl lg:max-w-none"
                     >
-                        <div className="p-8 md:p-10 rounded-[2rem] bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
+                        <div className="p-8 md:p-10 rounded-[2rem] bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-2xl relative overflow-hidden group">
                             {/* Inner glow on hover */}
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(57,148,250,0.12),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]" />
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(57,148,250,0.12),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none rounded-[2rem]" />
                             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3994fa]/30 to-transparent" />
 
                             <form className="flex flex-col sm:flex-row gap-3 mb-6 relative z-10" onSubmit={handleSubscribe}>
@@ -287,7 +287,7 @@ export default function BlogPage() {
             <section className="py-12 md:py-16 border-t border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-background relative overflow-hidden transition-colors duration-300">
                 <div className="max-w-4xl mx-auto px-4 md:px-6">
                     <div className="relative rounded-[2rem] overflow-hidden bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 shadow-lg p-6 md:p-10 text-center group">
-                        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(95,211,230,0.05),transparent_60%)] pointer-events-none transition-opacity duration-700 opacity-0 group-hover:opacity-100" />
+                        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(95,211,230,0.05),transparent_60%)] pointer-events-none transition-opacity duration-400 opacity-0 group-hover:opacity-100" />
 
                         <motion.div
 

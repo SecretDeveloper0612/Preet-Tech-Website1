@@ -34,27 +34,27 @@ export default function FeaturedSection({ posts }: FeaturedSectionProps) {
                 {/* Bento Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 h-auto lg:min-h-[540px]">
                     {/* Main Featured Post */}
-                    <div className="lg:col-span-8 group relative overflow-hidden rounded-[2rem] bg-slate-950 shadow-xl min-h-[480px] lg:h-full border border-slate-200 dark:border-white/10 hover:border-brand-cyan/30 transition-[border-color,transform] duration-500 will-change-transform gpu">
+                    <div className="lg:col-span-8 group relative overflow-hidden rounded-[2rem] bg-slate-950 shadow-xl min-h-[480px] lg:h-full border border-slate-200 dark:border-white/10 hover:border-brand-cyan/30 transition-[border-color,transform] duration-300 will-change-transform gpu">
                         <Link href={`/blog/${mainPost.slug}`} className="flex flex-col w-full h-full relative">
                             {/* Background Image */}
                             <Image
                                 src={mainPost.featuredImage || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"}
                                 alt={mainPost.title}
                                 fill
-                                className="object-cover opacity-50 group-hover:scale-105 transition-transform duration-1000 group-hover:opacity-40"
+                                className="object-cover opacity-50 group-hover:scale-105 transition-transform duration-500 group-hover:opacity-40"
                                 priority
                             />
 
                             {/* Glass Gradients */}
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
                             {/* Content Content Content */}
                             <div className="absolute inset-0 p-6 md:p-8 lg:p-10 flex flex-col justify-end">
                                 <motion.div
 
 
-                                    transition={{ duration: 0.6 }}
+                                    
                                     className="max-w-3xl"
                                 >
                                     <div className="flex flex-wrap items-center gap-4 mb-4">
@@ -66,7 +66,7 @@ export default function FeaturedSection({ posts }: FeaturedSectionProps) {
                                         </span>
                                     </div>
 
-                                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-4 group-hover:text-brand-cyan transition-colors duration-500">
+                                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-4 group-hover:text-brand-cyan transition-colors duration-300">
                                         {mainPost.title}
                                     </h3>
 
@@ -92,7 +92,7 @@ export default function FeaturedSection({ posts }: FeaturedSectionProps) {
                                 key={post.id}
 
 
-                                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                                
                                 className="group relative overflow-hidden rounded-[1.5rem] bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/5 hover:border-brand-cyan/30 transition-[border-color,background-color] duration-300 flex-1 gpu"
                             >
                                 <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-20" />
@@ -103,7 +103,7 @@ export default function FeaturedSection({ posts }: FeaturedSectionProps) {
                                                 src={post.featuredImage || "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2426&auto=format&fit=crop"}
                                                 alt={post.title}
                                                 fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                                className="object-cover group-hover:scale-110 transition-transform duration-400"
                                             />
                                         </div>
                                         <span className="text-[9px] font-black uppercase tracking-widest text-brand-cyan bg-brand-cyan/5 px-3 py-1.5 rounded-full">
@@ -122,7 +122,7 @@ export default function FeaturedSection({ posts }: FeaturedSectionProps) {
                                         <span>{post.date}</span>
                                     </div>
                                 </div>
-                                <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/0 to-brand-cyan/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/0 to-brand-cyan/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                             </motion.div>
                         ))}
                     </div>

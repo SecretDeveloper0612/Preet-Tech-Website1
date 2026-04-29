@@ -94,7 +94,7 @@ export default function AdvancedWebsiteDevelopment() {
 
 
     return (
-        <main ref={containerRef} className="relative z-10 selection:bg-[#3994fa]/20 overflow-x-clip bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-500 font-sans">
+        <main ref={containerRef} className="relative z-10 selection:bg-[#3994fa]/20 overflow-x-clip bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-300 font-sans">
             <Navbar isDark={isDarkMode} toggleTheme={toggleTheme} />
 
             {/* Global Ambient Tech Grid */}
@@ -138,7 +138,7 @@ export default function AdvancedWebsiteDevelopment() {
 
                         {/* Status Badge */}
                         <div
-                            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-xl shadow-lg"
+                            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md shadow-lg"
                         >
                             <span className="relative flex h-2.5 w-2.5">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3994fa] opacity-75" />
@@ -212,8 +212,8 @@ export default function AdvancedWebsiteDevelopment() {
                             className="relative z-10 w-full bg-white dark:bg-[#0a0f18] border border-slate-200  dark:border-white/10 rounded-[2.5rem] p-8 sm:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_60px_-15px_rgba(63,143,204,0.05)] overflow-hidden group"
                         >
                             {/* Decorative background gradients */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#3994fa]/5 dark:bg-[#3994fa]/10 blur-[60px] rounded-full pointer-events-none transition-colors duration-1000 group-hover:bg-[#3994fa]/10 dark:group-hover:bg-[#3994fa]/20" />
-                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/5 dark:bg-indigo-500/10 blur-[60px] rounded-full pointer-events-none transition-colors duration-1000 group-hover:bg-indigo-500/10 dark:group-hover:bg-indigo-500/20" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#3994fa]/5 dark:bg-[#3994fa]/10 blur-[60px] rounded-full pointer-events-none transition-colors duration-500 group-hover:bg-[#3994fa]/10 dark:group-hover:bg-[#3994fa]/20" />
+                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/5 dark:bg-indigo-500/10 blur-[60px] rounded-full pointer-events-none transition-colors duration-500 group-hover:bg-indigo-500/10 dark:group-hover:bg-indigo-500/20" />
 
                             <div className="relative z-10">
                                 {isSubmitted ? (
@@ -393,11 +393,11 @@ export default function AdvancedWebsiteDevelopment() {
                 </div>
             </section>
 
-            {/* 3️⃣ Why Choose Preet Tech */}
+            {/* 3️⃣ Why Choose Preet Tech OPC Private Limited */}
             <section className="py-16 md:py-32 px-4 md:px-6 bg-slate-50 dark:bg-slate-900/50 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20 space-y-4">
-                        <span className="text-[#3994fa] font-bold uppercase tracking-[0.2em] text-xs">The Preet Tech Standard</span>
+                        <span className="text-[#3994fa] font-bold uppercase tracking-[0.2em] text-xs">The Preet Tech OPC Private Limited Standard</span>
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Engineered for Dominance.</h2>
                     </div>
 
@@ -412,7 +412,7 @@ export default function AdvancedWebsiteDevelopment() {
                         ].map((feat, i) => (
                             <div key={i} className="p-6 md:p-10 rounded-2xl md:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
                                 {/* Hover Glow */}
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#3994fa]/0 group-hover:bg-[#3994fa]/10 blur-[40px] rounded-full transition-colors duration-500" />
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#3994fa]/0 group-hover:bg-[#3994fa]/10 blur-[40px] rounded-full transition-colors duration-300" />
 
                                 <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-8 border border-slate-100 dark:border-white/10 group-hover:border-[#3994fa]/50 transition-colors">
                                     <feat.i className="w-6 h-6 text-[#3994fa]" />
@@ -457,8 +457,8 @@ export default function AdvancedWebsiteDevelopment() {
             </section>
 
             {/* 5️⃣ What Makes Advance Development Different */}
-            <section className="py-20 md:py-32 px-4 md:px-6 bg-slate-50 dark:bg-[#030508] text-slate-900 dark:text-white reveal-section border-y border-slate-200 dark:border-white/5 relative overflow-hidden transition-colors duration-500">
-                <div className="absolute inset-0 bg-[url('/grid-dark.png')] bg-repeat opacity-[0.03] dark:opacity-20" />
+            <section className="py-20 md:py-32 px-4 md:px-6 bg-slate-50 dark:bg-[#030508] text-slate-900 dark:text-white reveal-section border-y border-slate-200 dark:border-white/5 relative overflow-hidden transition-colors duration-300">
+                <div className="absolute inset-0 opacity-[0.03] dark:opacity-20" style={{ backgroundImage: 'linear-gradient(to right, #888 1px, transparent 1px), linear-gradient(to bottom, #888 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
                 {/* Decorative glows */}
                 <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#3994fa]/10 blur-[150px] rounded-full pointer-events-none" />
@@ -484,21 +484,21 @@ export default function AdvancedWebsiteDevelopment() {
                             { title: "Headless Integration", desc: "Seamlessly couple with any API, CRM, or external tool natively.", icon: Network, num: "04" },
                             { title: "Infinite Scalability", desc: "Microservices ensure your platform can handle explosive traffic spikes effortlessly.", icon: Activity, num: "05" }
                         ].map((block, i) => (
-                            <div key={i} className="group relative bg-white dark:bg-[#0a0f16] rounded-[2rem] p-6 lg:p-8 border border-slate-200 dark:border-white/[0.05] hover:border-[#3994fa]/30 dark:hover:border-[#3994fa]/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(63,143,204,0.15)] overflow-hidden flex flex-col h-full">
+                            <div key={i} className="group relative bg-white dark:bg-[#0a0f16] rounded-[2rem] p-6 lg:p-8 border border-slate-200 dark:border-white/[0.05] hover:border-[#3994fa]/30 dark:hover:border-[#3994fa]/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(63,143,204,0.15)] overflow-hidden flex flex-col h-full">
                                 {/* Hover Gradient Sweep */}
-                                <div className="absolute inset-0 bg-gradient-to-b from-[#3994fa]/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                <div className="absolute inset-0 bg-gradient-to-b from-[#3994fa]/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                                 {/* Top Highlight Line */}
-                                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#3994fa] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#3994fa] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                                 {/* Background Number */}
-                                <div className="absolute -bottom-2 -right-2 text-[6rem] font-black text-slate-900/[0.03] dark:text-white/[0.02] group-hover:text-slate-900/[0.06] dark:group-hover:text-white/[0.05] group-hover:-translate-x-2 transition-all duration-500 pointer-events-none leading-none">
+                                <div className="absolute -bottom-2 -right-2 text-[6rem] font-black text-slate-900/[0.03] dark:text-white/[0.02] group-hover:text-slate-900/[0.06] dark:group-hover:text-white/[0.05] group-hover:-translate-x-2 transition-all duration-300 pointer-events-none leading-none">
                                     {block.num}
                                 </div>
 
                                 <div className="relative z-10 flex flex-col flex-grow">
-                                    <div className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05] flex items-center justify-center mb-6 group-hover:bg-[#3994fa]/10 group-hover:border-[#3994fa]/30 transition-all duration-500">
-                                        <block.icon className="w-6 h-6 text-slate-400 group-hover:text-[#3994fa] transition-colors duration-500" strokeWidth={1.5} />
+                                    <div className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05] flex items-center justify-center mb-6 group-hover:bg-[#3994fa]/10 group-hover:border-[#3994fa]/30 transition-all duration-300">
+                                        <block.icon className="w-6 h-6 text-slate-400 group-hover:text-[#3994fa] transition-colors duration-300" strokeWidth={1.5} />
                                     </div>
                                     <h3 className="text-xl font-bold mb-3 text-slate-800 dark:text-white group-hover:text-[#3994fa] transition-colors duration-300">
                                         {block.title}
@@ -519,18 +519,18 @@ export default function AdvancedWebsiteDevelopment() {
                     <div className="order-2 lg:order-1 relative">
                         {/* Animated UI Mockup */}
                         <div className="bg-slate-100 dark:bg-slate-800 p-4 sm:p-8 rounded-2xl sm:rounded-[3rem] border border-slate-200 dark:border-white/10 relative shadow-2xl overflow-hidden group">
-                            <div className="absolute inset-0 bg-[#3994fa]/5 group-hover:bg-[#3994fa]/10 transition-colors duration-1000" />
+                            <div className="absolute inset-0 bg-[#3994fa]/5 group-hover:bg-[#3994fa]/10 transition-colors duration-500" />
                             <div className="relative z-10">
                                 {/* Wireframe layer */}
                                 <div className="border-4 border-dashed border-slate-300 dark:border-white/20 rounded-2xl absolute inset-0 -rotate-3 scale-95 opacity-50" />
                                 {/* High Fidelity layer */}
-                                <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg border border-slate-200 dark:border-white/5 p-6 space-y-6 relative rotate-2 group-hover:rotate-0 transition-transform duration-700">
+                                <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg border border-slate-200 dark:border-white/5 p-6 space-y-6 relative rotate-2 group-hover:rotate-0 transition-transform duration-400">
                                     <div className="flex justify-between items-center mb-6 border-b pb-4 dark:border-white/10">
                                         <div className="h-6 w-24 bg-slate-800 dark:bg-white rounded-full" />
                                         <div className="flex gap-2"><div className="w-4 h-4 rounded-full bg-slate-200 dark:bg-white/10" /><div className="w-4 h-4 rounded-full bg-slate-200 dark:bg-white/10" /></div>
                                     </div>
                                     <div className="w-full bg-slate-50 dark:bg-slate-800 rounded-xl relative overflow-hidden border border-slate-200 dark:border-white/10">
-                                        <img src="/neurological_ui_design.png" alt="Neurological UI/UX Design Demonstration" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                                        <img src="/neurological_ui_design.png" alt="Neurological UI/UX Design Demonstration" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-400 ease-out" />
                                     </div>
                                 </div>
                             </div>
@@ -621,7 +621,7 @@ export default function AdvancedWebsiteDevelopment() {
                         <div
                             className="lg:col-span-2 lg:row-span-2 relative rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 bg-[#080d14] dark:bg-[#060A10] border border-slate-800 dark:border-white/5 overflow-hidden group shadow-2xl flex flex-col justify-between"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#3994fa]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#3994fa]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                             {/* Dotted background */}
                             <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: 'radial-gradient(circle, #3994fa 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
@@ -644,7 +644,7 @@ export default function AdvancedWebsiteDevelopment() {
                             </div>
 
                             {/* Absolute image overlaying right side on desktop */}
-                            <div className="hidden lg:block absolute -right-20 -bottom-20 w-[55%] lg:w-[45%] h-auto rounded-xl shadow-2xl border border-white/10 group-hover:scale-[1.03] group-hover:-translate-y-2 group-hover:-translate-x-2 transition-all duration-700 ease-out z-10 rotate-[-2deg] group-hover:rotate-0 overflow-hidden bg-[#0a0f18] p-1.5">
+                            <div className="hidden lg:block absolute -right-20 -bottom-20 w-[55%] lg:w-[45%] h-auto rounded-xl shadow-2xl border border-white/10 group-hover:scale-[1.03] group-hover:-translate-y-2 group-hover:-translate-x-2 transition-all duration-400 ease-out z-10 rotate-[-2deg] group-hover:rotate-0 overflow-hidden bg-[#0a0f18] p-1.5">
                                 <img src="/advanced_ecommerce_dashboard.png" alt="E-Commerce Interface" className="w-full h-auto rounded-lg rounded-br-none" />
                             </div>
                             <div className="lg:hidden w-full h-[220px] mt-4 rounded-xl shadow-2xl border border-white/10 z-10 overflow-hidden relative bg-[#0a0f18] flex-shrink-0">
@@ -1017,7 +1017,7 @@ export default function AdvancedWebsiteDevelopment() {
 
 
 
-                                    transition={{ delay: i * 0.1 }}
+                                    
                                     className="relative text-center group"
                                 >
                                     {/* Step Circle */}
@@ -1299,7 +1299,7 @@ export default function AdvancedWebsiteDevelopment() {
                                 loading="lazy"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
-                                title="Preet Tech Video"
+                                title="Preet Tech OPC Private Limited Video"
                             />
                         </div>
                     </div>

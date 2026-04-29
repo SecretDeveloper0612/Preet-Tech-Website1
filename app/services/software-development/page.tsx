@@ -60,13 +60,13 @@ enum Theme {
 // Reusable Components
 const SectionHeader = ({ badge, title, subtitle, centered = true }: { badge: string; title: string; subtitle?: string; centered?: boolean }) => (
     <div className={`mb-16 ${centered ? 'text-center' : ''}`}>
-        <motion.span
+        <span
 
 
             className={`text-brand-cyan text-[10px] font-black uppercase tracking-[0.4em] mb-4 block`}
         >
             {badge}
-        </motion.span>
+        </span>
         <h2 className={`text-4xl md:text-5xl lg:text-6xl font-outfit font-black tracking-tight uppercase text-slate-900 dark:text-white leading-tight ${centered ? 'mx-auto max-w-4xl' : ''}`}>
             {title}
         </h2>
@@ -162,7 +162,7 @@ const faqs = [
 const marqueeTechs = ["Docker", "Kubernetes", "Redis", "AWS Lambda", "GraphQL", "Python", "TypeScript", "Go", "Rust", "Terraform", "Jenkins", "Vercel"];
 
 const SoftwareDevelopmentPage = () => {
-    const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
+    const [theme, setTheme] = useState<Theme>(Theme.DARK);
     const [expandedSolution, setExpandedSolution] = useState<number | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
@@ -282,7 +282,7 @@ const SoftwareDevelopmentPage = () => {
                 {/* Background Decor */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-medium/5 dark:bg-brand-medium/10 blur-[150px] rounded-full animate-pulse" />
-                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-cyan/5 dark:bg-brand-cyan/10 blur-[130px] rounded-full animate-pulse delay-700" />
+                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-cyan/5 dark:bg-brand-cyan/10 blur-[130px] rounded-full animate-pulse delay-200" />
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.2] dark:opacity-[0.1] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]" />
                 </div>
 
@@ -310,7 +310,7 @@ const SoftwareDevelopmentPage = () => {
                         </p>
 
                         <p className="text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed mb-8">
-                            At Preet Tech, we don't just build code; we architect solutions. We position ourselves as your long-term technology partner, ensuring your systems are ready for future market shifts and internal scaling.
+                            At Preet Tech OPC Private Limited, we don't just build code; we architect solutions. We position ourselves as your long-term technology partner, ensuring your systems are ready for future market shifts and internal scaling.
                         </p>
 
                         <div className="flex flex-wrap items-center gap-4 mb-10">
@@ -347,7 +347,7 @@ const SoftwareDevelopmentPage = () => {
 
                     {/* Hero Right: Strategy Form */}
                     <div className="lg:col-span-5 hero-form-box">
-                        <div className="glass-morphism rounded-[2.5rem] p-6 md:p-8 border border-slate-200 dark:border-white/10 shadow-xl relative z-10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl">
+                        <div className="glass-morphism rounded-[2.5rem] p-6 md:p-8 border border-slate-200 dark:border-white/10 shadow-xl relative z-10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-lg">
                             <div className="mb-6">
                                 <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-2">Request Strategy Call</h3>
                                 <p className="text-[10px] font-black text-brand-cyan uppercase tracking-widest">Free Consultation • Zero Obligation</p>
@@ -420,7 +420,7 @@ const SoftwareDevelopmentPage = () => {
                         {whyNeedCustomSoftware.map((item, i) => (
                             <motion.div
                                 key={i}
-                                whileHover={{ y: -10 }}
+                                
                                 className="group p-8 rounded-[2.5rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-white/5 hover:border-brand-cyan/30 transition-all"
                             >
                                 <div className="w-14 h-14 rounded-2xl bg-brand-cyan/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -434,7 +434,7 @@ const SoftwareDevelopmentPage = () => {
                 </div>
             </section>
 
-            {/* 3️⃣ Why Choose Preet Tech */}
+            {/* 3️⃣ Why Choose Preet Tech OPC Private Limited */}
             <section className="py-32 px-6 bg-slate-50/50 dark:bg-slate-950/50 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -494,7 +494,7 @@ const SoftwareDevelopmentPage = () => {
                         {targetAudience.map((item, i) => (
                             <motion.div
                                 key={i}
-                                whileHover={{ scale: 1.02 }}
+                                
                                 className="p-10 rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/30 flex flex-col items-start shadow-sm"
                             >
                                 <div className="w-12 h-12 rounded-xl bg-[#3994fa]/10 flex items-center justify-center mb-8 text-[#3994fa]">
@@ -572,7 +572,7 @@ const SoftwareDevelopmentPage = () => {
                                     className={`relative p-8 rounded-[2.5rem] border transition-all h-[400px] flex flex-col justify-between overflow-hidden ${activeIndex === i ? 'bg-brand-deep/20 border-brand-cyan/50 shadow-2xl shadow-brand-cyan/10' : 'bg-white/5 border-white/10'}`}
                                 >
                                     {/* Abstract background element */}
-                                    <div className={`absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 blur-3xl rounded-full -mr-16 -mt-16 transition-transform duration-700 ${activeIndex === i ? 'scale-150' : 'scale-100'}`} />
+                                    <div className={`absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 blur-3xl rounded-full -mr-16 -mt-16 transition-transform duration-400 ${activeIndex === i ? 'scale-150' : 'scale-100'}`} />
 
                                     <div>
                                         <div className="flex items-center justify-between mb-8">
@@ -610,7 +610,7 @@ const SoftwareDevelopmentPage = () => {
                         <button
                             key={i}
                             onClick={() => { stopTimer(); snapTo(i); }}
-                            className={`h-1.5 transition-all duration-500 rounded-full ${i === activeIndex ? 'w-12 bg-brand-cyan shadow-lg shadow-brand-cyan/20' : 'w-3 bg-white/10 hover:bg-white/30'}`}
+                            className={`h-1.5 transition-all duration-300 rounded-full ${i === activeIndex ? 'w-12 bg-brand-cyan shadow-lg shadow-brand-cyan/20' : 'w-3 bg-white/10 hover:bg-white/30'}`}
                             aria-label={`Go to slide ${i + 1}`}
                         />
                     ))}
@@ -662,13 +662,13 @@ const SoftwareDevelopmentPage = () => {
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="text-center mb-20">
-                        <motion.span
+                        <span
 
 
                             className="text-brand-cyan text-[10px] font-black uppercase tracking-[0.5em] mb-4 block"
                         >
                             The Engine Room
-                        </motion.span>
+                        </span>
                         <h2 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none mb-8 opacity-10 absolute left-1/2 -translate-x-1/2 top-20 w-full select-none">
                             Infrastructure
                         </h2>
@@ -686,8 +686,8 @@ const SoftwareDevelopmentPage = () => {
                                 key={i}
 
 
-                                transition={{ delay: i * 0.1 }}
-                                whileHover={{ y: -5 }}
+                                
+                                
                                 className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 hover:border-brand-cyan/30 transition-all group backdrop-blur-sm"
                             >
                                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/5">
@@ -715,8 +715,8 @@ const SoftwareDevelopmentPage = () => {
 
                         <div className="flex overflow-hidden py-10 rounded-full bg-white/[0.02] border border-white/5">
                             <motion.div
-                                animate={{ x: [0, -2000] }}
-                                transition={{ duration: 40, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                                
+                                
                                 className="flex flex-nowrap gap-20 items-center justify-around min-w-full shrink-0"
                             >
                                 {marqueeTechs.concat(marqueeTechs).map((tech, i) => (
@@ -746,7 +746,7 @@ const SoftwareDevelopmentPage = () => {
                         {caseStudies.map((caseStudy, i) => (
                             <div key={i} className="group flex flex-col md:flex-row gap-8 p-10 rounded-[3rem] border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-slate-900/30 hover:border-brand-medium/50 transition-all">
                                 <div className="w-full md:w-1/2 aspect-[4/5] rounded-[2rem] overflow-hidden">
-                                    <img src={caseStudy.image} alt={caseStudy.company} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onError={(e) => { const t = e.target as HTMLImageElement; t.style.background = 'linear-gradient(135deg, #1e293b 0%, #334155 100%)'; t.src = ''; }} />
+                                    <img src={caseStudy.image} alt={caseStudy.company} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400" onError={(e) => { const t = e.target as HTMLImageElement; t.style.background = 'linear-gradient(135deg, #1e293b 0%, #334155 100%)'; t.src = ''; }} />
                                 </div>
                                 <div className="w-full md:w-1/2 flex flex-col justify-between py-2">
                                     <div>
@@ -808,8 +808,8 @@ const SoftwareDevelopmentPage = () => {
             {/* 🔟 Free Software Strategy Consultation Section */}
             <section className="py-32 px-6 reveal-section">
                 <div className="max-w-6xl mx-auto glass-morphism rounded-[4rem] p-12 md:p-20 text-center border border-slate-200 dark:border-white/10 relative overflow-hidden bg-white dark:bg-slate-900/40">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-cyan/20 blur-[100px] -z-10" />
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-medium/20 blur-[100px] -z-10" />
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-cyan/20 blur-[48px] -z-10" />
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-medium/20 blur-[48px] -z-10" />
 
                     <SectionHeader
                         badge="Immediate Step"
@@ -863,14 +863,14 @@ const SoftwareDevelopmentPage = () => {
                 {isVideoModalOpen && (
                     <motion.div
 
-                        animate={{ opacity: 1 }}
+                        
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-10"
                         onClick={() => setIsVideoModalOpen(false)}
                     >
                         <motion.div
-                            initial={{ scale: 0.95, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
+                            
+                            
                             exit={{ scale: 0.95, opacity: 0 }}
                             className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/20"
                             onClick={(e) => e.stopPropagation()}

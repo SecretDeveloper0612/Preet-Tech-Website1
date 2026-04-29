@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: "Advanced Website Solutions | High-Performance Web Development",
         description: "Build robust, scalable, and ultra-fast advanced websites designed to convert visitors and scale your digital presence.",
         url: 'https://preettech.com/services/advance-website',
-        siteName: 'Preet Tech',
+        siteName: 'Preet Tech OPC Private Limited',
         type: 'website',
     }
 };

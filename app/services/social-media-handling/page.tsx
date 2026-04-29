@@ -90,7 +90,7 @@ export default function SocialMediaHandling() {
     };
 
     return (
-        <main ref={containerRef} className="relative z-10 selection:bg-brand-cyan/20 overflow-x-clip bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-500 font-sans">
+        <main ref={containerRef} className="relative z-10 selection:bg-brand-cyan/20 overflow-x-clip bg-[#fafafa] text-slate-900 dark:bg-[#050608] dark:text-white transition-colors duration-300 font-sans">
             <Navbar isDark={isDarkMode} toggleTheme={toggleTheme} />
 
             {/* 1️⃣ Hero Section */}
@@ -112,7 +112,7 @@ export default function SocialMediaHandling() {
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                     <div className="lg:col-span-6 space-y-6 md:space-y-10 relative z-10">
                         {/* Status Badge */}
-                        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-xl shadow-lg">
+                        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md shadow-lg">
                             <span className="relative flex h-2.5 w-2.5"><span className="absolute inline-flex h-full w-full rounded-full bg-brand-medium opacity-75" /><span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-medium" /></span>
                             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-slate-300">Social Media Experts</span>
                         </div>
@@ -145,8 +145,8 @@ export default function SocialMediaHandling() {
 
                         {/* Consultation Lead Form */}
                         <div className="relative z-10 w-full bg-white dark:bg-[#0a0f18] border border-slate-200 dark:border-white/10 rounded-[2.5rem] p-8 sm:p-12 shadow-2xl overflow-hidden group">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-medium/5 dark:bg-brand-medium/10 blur-[60px] rounded-full pointer-events-none group-hover:bg-brand-medium/10 transition-colors duration-1000" />
-                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-sky/5 dark:bg-brand-sky/10 blur-[60px] rounded-full pointer-events-none group-hover:bg-brand-sky/10 transition-colors duration-1000" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-medium/5 dark:bg-brand-medium/10 blur-[60px] rounded-full pointer-events-none group-hover:bg-brand-medium/10 transition-colors duration-500" />
+                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-sky/5 dark:bg-brand-sky/10 blur-[60px] rounded-full pointer-events-none group-hover:bg-brand-sky/10 transition-colors duration-500" />
 
                             <div className="relative z-10">
                                 {isHeroSubmitted ? (
@@ -246,12 +246,12 @@ export default function SocialMediaHandling() {
                 </div>
             </section>
 
-            {/* 3️⃣ Why Choose Preet Tech */}
+            {/* 3️⃣ Why Choose Preet Tech OPC Private Limited */}
             <section className="py-16 md:py-28 px-4 md:px-6 bg-slate-50 dark:bg-slate-900/50 reveal-section">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16 space-y-4">
-                        <span className="text-brand-medium font-bold uppercase tracking-[0.2em] text-xs">The Preet Tech Advantage</span>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Why Choose Preet Tech.</h2>
+                        <span className="text-brand-medium font-bold uppercase tracking-[0.2em] text-xs">The Preet Tech OPC Private Limited Advantage</span>
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Why Choose Preet Tech OPC Private Limited.</h2>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[{ t: 'Data-Driven Strategy', i: BarChart3, d: 'Every decision backed by analytics and performance data.' }, { t: 'Creative Content Experts', i: Sparkles, d: 'Scroll-stopping content that resonates with your audience.' }, { t: 'Consistent Posting System', i: Calendar, d: 'Never miss a post with our systematized content calendar.' }, { t: 'Organic Growth Focus', i: TrendingUp, d: 'Sustainable growth through genuine engagement and value.' }, {
@@ -650,7 +650,7 @@ export default function SocialMediaHandling() {
                         </div>
                         <div className="h-20 rounded-xl bg-gradient-to-r from-brand-medium/10 to-brand-deep/10 border border-brand-medium/10 flex items-end p-2 gap-1">
                             {[30, 45, 35, 60, 50, 70, 55, 80, 65, 85, 75, 90].map((h, i) => (
-                                <motion.div key={i} initial={{ height: 0 }} whileInView={{ height: `${h}%` }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex-1 bg-gradient-to-t from-brand-medium to-brand-deep rounded-t opacity-70" />
+                                <motion.div key={i}  className="flex-1 bg-gradient-to-t from-brand-medium to-brand-deep rounded-t opacity-70" />
                             ))}
                         </div>
                     </div>
@@ -1002,7 +1002,7 @@ export default function SocialMediaHandling() {
                 <div className="max-w-3xl mx-auto">
                     <div className="bg-white dark:bg-slate-900 p-6 sm:p-8 md:p-12 rounded-3xl border border-slate-200 dark:border-white/10 shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-sky via-brand-medium to-brand-cyan" />
-                        <div className="absolute -top-20 -right-20 w-40 h-40 bg-brand-medium/10 blur-[80px] rounded-full" />
+                        <div className="absolute -top-20 -right-20 w-40 h-40 bg-brand-medium/10 blur-[40px] rounded-full" />
 
                         {auditSubmitStatus === 'success' ? (
                             <div className="py-16 text-center space-y-6">

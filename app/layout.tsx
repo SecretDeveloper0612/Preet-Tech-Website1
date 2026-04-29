@@ -27,22 +27,22 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://preettech.com';
 export const metadata: Metadata = {
     metadataBase: new URL(baseUrl),
     title: {
-        default: "Preet Tech | Next Gen Digital Agency & IT Solutions",
-        template: "%s | Preet Tech - Digital Transformation Agency",
+        default: "Preet Tech OPC Private Limited | Next Gen Digital Agency & IT Solutions",
+        template: "%s | Preet Tech OPC Private Limited - Digital Transformation Agency",
     },
-    description: "Preet Tech is a top Next Gen Digital Agency offering custom software development, AI-driven marketing, web and app development, and enterprise IT solutions.",
+    description: "Preet Tech OPC Private Limited is a top Next Gen Digital Agency offering custom software development, AI-driven marketing, web and app development, and enterprise IT solutions.",
     keywords: ["Next Gen Digital Agency", "Top Digital Marketing & IT Agency", "custom software development", "AI-driven marketing", "SEO optimization services", "web and app development company", "enterprise IT solutions", "generative AI integration", "digital transformation services", "e-commerce development", "performance marketing agency", "cloud migration services", "B2B digital agency", "scalable tech solutions", "brand identity design"],
     openGraph: {
-        title: "Preet Tech | Next Gen Digital Agency & IT Solutions",
-        description: "Transform your business with Preet Tech, a leading digital agency and IT partner. We specialize in custom software development, digital marketing, and AI integration to accelerate your growth.",
+        title: "Preet Tech OPC Private Limited | Next Gen Digital Agency & IT Solutions",
+        description: "Transform your business with Preet Tech OPC Private Limited, a leading digital agency and IT partner. We specialize in custom software development, digital marketing, and AI integration to accelerate your growth.",
         url: baseUrl,
-        siteName: "Preet Tech",
+        siteName: "Preet Tech OPC Private Limited",
         type: "website",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Preet Tech | Next Gen Digital Agency & IT Solutions",
-        description: "Transform your business with Preet Tech, a leading digital agency and IT partner specializing in custom software and AI-driven marketing.",
+        title: "Preet Tech OPC Private Limited | Next Gen Digital Agency & IT Solutions",
+        description: "Transform your business with Preet Tech OPC Private Limited, a leading digital agency and IT partner specializing in custom software and AI-driven marketing.",
         creator: "@preettech",
     },
     robots: {
@@ -67,7 +67,7 @@ const schemaOrg = {
         {
             "@type": "Organization",
             "@id": `${baseUrl}/#organization`,
-            "name": "Preet Tech",
+            "name": "Preet Tech OPC Private Limited",
             "url": baseUrl,
             "logo": {
                 "@type": "ImageObject",
@@ -82,7 +82,7 @@ const schemaOrg = {
             "@type": "WebSite",
             "@id": `${baseUrl}/#website`,
             "url": baseUrl,
-            "name": "Preet Tech",
+            "name": "Preet Tech OPC Private Limited",
             "publisher": {
                 "@id": `${baseUrl}/#organization`
             },
@@ -109,7 +109,7 @@ export default function RootLayout({
                 />
             </head>
             <body className="antialiased font-sans bg-background text-foreground selection:bg-brand-medium/30 transition-colors duration-300" suppressHydrationWarning>
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
                     <ClientLayout>
                         {children}
                     </ClientLayout>

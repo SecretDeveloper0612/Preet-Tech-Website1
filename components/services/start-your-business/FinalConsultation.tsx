@@ -64,14 +64,14 @@ const FinalConsultation = () => {
                     </h2>
                 </div>
 
-                <div className="bg-white dark:bg-slate-900/40 rounded-[3.5rem] p-8 md:p-20 border border-slate-100 dark:border-white/5 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] dark:shadow-none relative overflow-hidden backdrop-blur-3xl">
+                <div className="bg-white dark:bg-slate-900/40 rounded-[3.5rem] p-8 md:p-20 border border-slate-100 dark:border-white/5 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] dark:shadow-none relative overflow-hidden backdrop-blur-md">
                     {/* Soft Inner Glow */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-brand-cyan/20 to-transparent" />
 
                     {formStatus === 'success' ? (
                         <motion.div
 
-                            animate={{ opacity: 1, scale: 1 }}
+                            
                             className="py-16 text-center"
                         >
                             <div className="w-24 h-24 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-8">
@@ -138,7 +138,7 @@ const FinalConsultation = () => {
             {/* Final CTA (Section 19) */}
             <div className="bg-white dark:bg-[#030712] py-32 px-6 relative overflow-hidden group">
                 <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-brand-cyan to-transparent animate-pulse" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-medium dark:bg-brand-cyan opacity-5 blur-[120px] rounded-full pointer-events-none group-hover:opacity-10 transition-opacity" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-medium dark:bg-brand-cyan opacity-5 blur-[60px] rounded-full pointer-events-none group-hover:opacity-10 transition-opacity" />
 
                 <div className="max-w-5xl mx-auto text-center relative z-10 space-y-10">
                     <h2 className="text-4xl md:text-[80px] font-black text-slate-900 dark:text-white uppercase tracking-tight leading-[0.8] mb-12">
@@ -148,8 +148,8 @@ const FinalConsultation = () => {
 
                     <motion.button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        
+                        
                         className="px-16 py-8 bg-gradient-to-r from-[#3994fa] to-[#004aad] text-white rounded-full font-black text-xs uppercase tracking-[0.3em] shadow-[0_0_40px_rgba(57,148,250,0.4)] relative group"
                     >
                         <span className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:animate-ping group-hover:opacity-20 pointer-events-none" />

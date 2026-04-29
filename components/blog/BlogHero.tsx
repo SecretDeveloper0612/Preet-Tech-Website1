@@ -39,8 +39,8 @@ export default function BlogHero({ activeCategory, onCategoryChange, onSearch }:
 
                     {/* Search Bar */}
                     <motion.div
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        
+                        
                         className="relative w-full max-w-2xl group"
                     >
                         <div className="absolute inset-0 bg-brand-cyan/20 blur-xl opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity" />
@@ -61,8 +61,8 @@ export default function BlogHero({ activeCategory, onCategoryChange, onSearch }:
                         {/* Scrollable tab pills */}
                         <div className="flex-1 relative -mx-4 px-4 sm:mx-0 sm:px-0 overflow-hidden">
                             <motion.div
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 1, delay: 0.2 }}
+                                
+                                
                                 className="flex justify-start sm:justify-center gap-2 overflow-x-auto hide-scrollbar pb-2 pt-2"
                             >
                                 {ALL_CATEGORIES.map((cat) => (
@@ -100,10 +100,10 @@ export default function BlogHero({ activeCategory, onCategoryChange, onSearch }:
                             <AnimatePresence>
                                 {dropdownOpen && (
                                     <motion.div
-                                        initial={{ opacity: 0, y: -8, scale: 0.96 }}
-                                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                                        
+                                        
                                         exit={{ opacity: 0, y: -8, scale: 0.96 }}
-                                        transition={{ duration: 0.18 }}
+                                        
                                         className="absolute right-0 top-full mt-2 w-56 bg-white dark:bg-[#0d1120] border border-slate-200 dark:border-white/10 rounded-2xl shadow-2xl shadow-black/20 overflow-hidden z-50"
                                     >
                                         <div className="p-2 space-y-0.5 max-h-72 overflow-y-auto">

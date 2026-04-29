@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, Sun, Moon, Globe, Smartphone, Palette, Share2, TrendingUp, ChevronRight, ChevronLeft, Target, Rocket, Cpu, Zap, Shield, Monitor, Layout, UserCheck } from 'lucide-react';
@@ -53,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
   }, [isOpen]);
 
   const links = [
-    { name: 'Home', href: '/', desc: 'Preet Tech Home' },
+    { name: 'Home', href: '/', desc: 'Preet Tech OPC Private Limited Home' },
     { name: 'About', href: '/about', desc: 'The Preet Edge' },
     { name: 'Services', href: '/services', desc: 'Strategic Multipliers', hasMegaMenu: true },
     { name: 'Business Tools', href: '/services/business-tools', desc: 'Measurable Outcomes' },
@@ -95,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[200] transition-all duration-500 px-4 md:px-10 ${isScrolled ? 'py-2' : 'py-4'
+      className={`fixed top-0 left-0 right-0 z-[200] transition-all duration-300 px-4 md:px-10 ${isScrolled ? 'py-2' : 'py-4'
         }`}
       onMouseLeave={() => {
         setShowMegaMenu(false);
@@ -104,7 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
     >
       <div className="max-w-7xl mx-auto md:px-6 relative">
         <div
-          className={`relative z-[120] rounded-[2rem] md:rounded-full px-4 md:px-8 py-1 md:py-1.5 flex items-center justify-between transition-all duration-500 backdrop-blur-md border ${isScrolled
+          className={`relative z-[120] rounded-[2rem] md:rounded-full px-4 md:px-8 py-1 md:py-1.5 flex items-center justify-between transition-all duration-300 backdrop-blur-md border ${isScrolled
             ? 'bg-white/95 dark:bg-black/90 border-brand-medium/30 shadow-2xl'
             : 'bg-white/80 dark:bg-black/50 border-slate-200 shadow-lg dark:border-white/10'
             }`}
@@ -113,8 +115,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
           <Link href="/" className="flex items-center group relative z-[210]" onClick={() => setIsOpen(false)}>
             <img
               src={isDark ? '/logo-preet-tech-black.png' : '/logo-preet-tech.png'}
-              alt="Preet Tech Logo"
-              className={`h-10 md:h-12 w-auto object-contain transition-all duration-500 group-hover:scale-105`}
+              alt="Preet Tech OPC Private Limited Logo"
+              className={`h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105`}
             />
           </Link>
 
@@ -173,9 +175,9 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
           {showMegaMenu && (
             <motion.div
 
-              animate={{ opacity: 1, y: 0 }}
+              
               exit={{ opacity: 0, y: 15 }}
-              transition={{ duration: 0.3, ease: "circOut" }}
+              
               className="absolute top-full left-6 right-6 mt-4 hidden lg:block"
               onMouseEnter={() => setShowMegaMenu(true)}
             >
@@ -216,20 +218,20 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                       <motion.div
                         key={activeTab}
 
-                        animate={{ opacity: 1, x: 0 }}
+                        
                         exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.3 }}
+                        
                         className="h-full flex flex-col"
                       >
                         <div className="mb-8 min-h-[80px] flex flex-col justify-end">
                           <AnimatePresence mode="wait">
                             {hoveredItem ? (
-                              <motion.div key={hoveredItem.name} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-2">
+                              <motion.div key={hoveredItem.name}  className="space-y-2">
                                 <h3 className="text-4xl font-black text-brand-medium tracking-tighter uppercase">{hoveredItem.name}</h3>
                                 <p className="text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed font-medium">{hoveredItem.longDesc}</p>
                               </motion.div>
                             ) : (
-                              <motion.div key={megaMenuContent[activeTab].title} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
+                              <motion.div key={megaMenuContent[activeTab].title} >
                                 <h3 className="text-4xl font-black text-foreground tracking-tighter uppercase mb-4">{megaMenuContent[activeTab].title}</h3>
                                 <p className="text-slate-500 dark:text-slate-400 max-w-lg leading-relaxed">{megaMenuContent[activeTab].desc}</p>
                               </motion.div>
@@ -271,13 +273,13 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
           <motion.div
             key="mobile-menu-portal"
 
-            animate={{ opacity: 1, y: 0 }}
+            
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 bg-white dark:bg-[#070708] z-[105] flex flex-col lg:hidden"
           >
             <div className="absolute inset-0 z-0 overflow-hidden opacity-30 dark:opacity-20 pointer-events-none">
-              <div className="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-brand-medium/30 rounded-full blur-[120px]" />
-              <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-brand-cyan/20 rounded-full blur-[100px]" />
+              <div className="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-brand-medium/30 rounded-full blur-[60px]" />
+              <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-brand-cyan/20 rounded-full blur-[48px]" />
             </div>
 
             <div className="relative z-10 flex flex-col h-full pt-32 pb-12 px-6 overflow-y-auto">
@@ -286,7 +288,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                   <motion.div
                     key="mobile-main"
 
-                    animate={{ opacity: 1, x: 0 }}
+                    
                     exit={{ opacity: 0, x: 20 }}
                     className="flex flex-col h-full"
                   >
@@ -300,8 +302,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                         <motion.div
                           key={link.name}
 
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: i * 0.05 }}
+                          
+                          
                         >
                           {link.hasMegaMenu ? (
                             <button onClick={() => setIsMobileSubMenuOpen(true)} className="group w-full text-left">
@@ -330,7 +332,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark: _ignoredIsDark, toggleTheme: _i
                   <motion.div
                     key="mobile-services"
 
-                    animate={{ opacity: 1, x: 0 }}
+                    
                     exit={{ opacity: 0, x: -10 }}
                     className="flex flex-col h-full"
                   >

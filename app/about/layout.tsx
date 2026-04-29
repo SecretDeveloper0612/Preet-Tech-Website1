@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "About Preet Tech | Innovative IT Solutions Company & Digital Agency",
-    description: "Preet Tech is an innovative IT solutions company specializing in custom software development, digital transformation, AI automation, and enterprise tech solutions.",
+    title: "About Preet Tech OPC Private Limited | Innovative IT Solutions Company & Digital Agency",
+    description: "Preet Tech OPC Private Limited is an innovative IT solutions company specializing in custom software development, digital transformation, AI automation, and enterprise tech solutions.",
     keywords: [
         "Innovative IT Solutions Company",
         "custom software development",
@@ -23,10 +23,10 @@ export const metadata: Metadata = {
         canonical: 'https://preettech.com/about',
     },
     openGraph: {
-        title: "About Preet Tech | Innovative IT Solutions Company",
-        description: "Preet Tech is an innovative IT solutions company specializing in custom software development, digital transformation, and enterprise tech solutions.",
+        title: "About Preet Tech OPC Private Limited | Innovative IT Solutions Company",
+        description: "Preet Tech OPC Private Limited is an innovative IT solutions company specializing in custom software development, digital transformation, and enterprise tech solutions.",
         url: 'https://preettech.com/about',
-        siteName: 'Preet Tech',
+        siteName: 'Preet Tech OPC Private Limited',
         type: 'website',
     }
 };
